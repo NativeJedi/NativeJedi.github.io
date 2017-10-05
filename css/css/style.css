@@ -1,25 +1,19 @@
 @charset "UTF-8";
-/* line 1, sass/style.sass */
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+  box-sizing: border-box; }
 
-/* line 6, sass/style.sass */
 html, button {
   font: bold 14px "Arial", "Helvetica Neue", Helvetica, sans-serif;
   background-color: #ccc; }
 
-/* line 11, sass/style.sass */
 .b-popup {
   margin: 100px auto;
   border-top: 1px solid red;
   max-width: 845px;
   position: relative;
-  -webkit-box-shadow: 0px 2px 1.8px 0.2px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 2px 1.8px 0.2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 1.8px 0.2px rgba(0, 0, 0, 0.25);
   background-color: #FFF; }
 
-/* line 21, sass/style.sass */
 .b-popup__header__close {
   position: absolute;
   top: 5px;
@@ -28,7 +22,6 @@ html, button {
   width: 30px;
   height: 30px;
   cursor: pointer; }
-  /* line 29, sass/style.sass */
   .b-popup__header__close:after, .b-popup__header__close:before {
     position: absolute;
     top: 3px;
@@ -37,27 +30,18 @@ html, button {
     height: 14px;
     width: 2px;
     background-color: #ccc; }
-  /* line 38, sass/style.sass */
   .b-popup__header__close:after {
-    -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg); }
-  /* line 40, sass/style.sass */
+    transform: rotate(-45deg); }
   .b-popup__header__close:before {
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg); }
+    transform: rotate(45deg); }
 
-/* line 43, sass/style.sass */
 .b-popup__header__title {
   text-align: center; }
 
-/* line 46, sass/style.sass */
 .b-popup__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   background-color: #F4F4F4;
   position: relative; }
-  /* line 50, sass/style.sass */
   .b-popup__content:after {
     content: "";
     display: inline-block;
@@ -68,22 +52,13 @@ html, button {
     top: 10%;
     right: 50%; }
 
-/* line 62, sass/style.sass */
 .b-popup__content__social {
   width: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  flex-direction: column;
   padding-bottom: 10em; }
 
-/* line 71, sass/style.sass */
 .b-btn {
   background-color: #3e5b96;
   padding: 0.5em 1em;
@@ -91,18 +66,13 @@ html, button {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 40px; }
-  /* line 78, sass/style.sass */
   .b-btn:hover {
-    -webkit-box-shadow: inset 0px 0px 0px 40px rgba(0, 0, 0, 0.15);
-            box-shadow: inset 0px 0px 0px 40px rgba(0, 0, 0, 0.15); }
-  /* line 80, sass/style.sass */
+    box-shadow: inset 0px 0px 0px 40px rgba(0, 0, 0, 0.15); }
   .b-btn a {
     color: #fff;
     text-decoration: none; }
-    /* line 83, sass/style.sass */
     .b-btn a:hover {
       color: #fff; }
-    /* line 85, sass/style.sass */
     .b-btn a:before {
       content: "";
       display: inline-block;
@@ -112,37 +82,26 @@ html, button {
       vertical-align: middle;
       margin-right: 65px; }
 
-/* line 96, sass/style.sass */
 .b-btn__gPlus {
   background-color: #E15E4B;
   margin-top: 20px; }
-  /* line 100, sass/style.sass */
   .b-btn__gPlus a:before {
     background: url(../img/g+.png);
     width: 26px;
     margin-right: 50px; }
 
-/* line 107, sass/style.sass */
 .b-popup__form {
   width: 50%;
   padding: 2.7em 4em; }
 
-/* line 111, sass/style.sass */
 .b-popup__form__form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column; }
+  flex-direction: column; }
 
-/* line 115, sass/style.sass */
 label {
   cursor: pointer;
   margin-bottom: 5px; }
 
-/* line 121, sass/style.sass */
 input:not([type=checkbox]) {
   border: 1px solid #dddddd;
   border-radius: 3px;
@@ -150,14 +109,11 @@ input:not([type=checkbox]) {
   height: 42px;
   margin-bottom: 20px; }
 
-/* line 128, sass/style.sass */
 input[type=checkbox] {
   display: none; }
 
-/* line 131, sass/style.sass */
 label[for=checkbox] {
   vertical-align: middle; }
-  /* line 133, sass/style.sass */
   label[for=checkbox]:before {
     content: "";
     display: inline-block;
@@ -168,27 +124,18 @@ label[for=checkbox] {
     vertical-align: middle;
     margin-right: 10px; }
 
-/* line 143, sass/style.sass */
 input[type=checkbox]:checked + label[for=checkbox]:before {
   content: "✓";
   font-size: 12px;
   color: #fff;
   text-align: center; }
 
-/* line 151, sass/style.sass */
 .form__log-btn-wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 20px; }
 
-/* line 157, sass/style.sass */
 .b-log-btn {
   border-radius: 3px;
   background-color: #252525;
@@ -198,30 +145,23 @@ input[type=checkbox]:checked + label[for=checkbox]:before {
   color: white;
   cursor: pointer;
   border: none; }
-  /* line 166, sass/style.sass */
   .b-log-btn:hover {
-    -webkit-box-shadow: inset 0px 0px 0px 40px #666666;
-            box-shadow: inset 0px 0px 0px 40px #666666; }
+    box-shadow: inset 0px 0px 0px 40px #666666; }
 
-/* line 169, sass/style.sass */
 a {
   color: #252525; }
-  /* line 171, sass/style.sass */
   a:hover {
     color: #666666; }
 
-/* line 176, sass/style.sass */
 .b-popup__footer {
   padding: 1em; }
 
-/* line 178, sass/style.sass */
 p {
   font-size: 18px;
   font-weight: normal;
   text-align: center;
   color: #666666; }
 
-/* line 183, sass/style.sass */
 a {
   margin-left: 5px;
   font-weight: bold; }

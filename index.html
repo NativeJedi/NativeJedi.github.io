@@ -9,47 +9,45 @@
 </head>
 <body>
 
-	<div class="b-form-wrapper">
-		
+	<div class="b-popup">
+		<div class="b-popup__header">
+			<h2 class="b-popup__header__title">Log in to the Site</h2>
 
-		<div class="b-form-header">
-
-			<h2 class="top_title">Log in to the Site</h2>
-
-			<span class="f_close"></span>
+			<span class="b-popup__header__close"></span>
 		</div>
 
-		<div class="b-form-content">
-			<div class="b-social">
-				<div class="b-btn b-fb-link">
+		<div class="b-popup__content">
+			<div class="b-popup__content__social">
+				<div class="b-btn b-btn__fb">
 					<a href="">Log in with Facebook</a>
 				</div>
-				<div class="b-btn b-google-link">
+				<div class="b-btn b-btn__gPlus">
 					<a href="">Log in with Google +</a>
 				</div>
 			</div>
 			
 			<div class="b-line"></div>
 
-			<div class="b-form">
-				<form action="#" name="MyForm">
+			<div class="b-popup__form">
+				<form action="#" name="MyForm" class="b-popup__form__form">
 					<label for="log">Login</label>
 					<input type="login" id="log">
 					<label for="pas">Password</label>
 					<input type="password" id="pas">
-					<div class="f_check-blue">
+					<div class="form__checkBlue">
 						<input id="checkbox" type="checkbox"><label for="checkbox">Remember me</label>
 					</div>
 				</form>
-				<div class="f_b-log-wrap">
-					<button>Log in</button>
+
+				<div class="form__log-btn-wrap">
+					<button class="b-log-btn">Log in</button>
 					<a href="">Need help logging in?</a>
 				</div>
 			</div>
 
 		</div>
 
-		<div class="b-form-footer">
+		<div class="b-popup__footer">
 			<p>Dont have an account yet?<a href="">Sign up</a></p>
 		</div>
 

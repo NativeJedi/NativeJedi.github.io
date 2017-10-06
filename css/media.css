@@ -1,20 +1,20 @@
 @media screen and (max-width: 768px) {
-  .b-form-wrapper {
+  .b-popup {
     width: 480px;
     margin: 0 auto;
   }
-  .b-form-content {
+  .b-popup__content {
     flex-direction: column-reverse;
-    padding: 2.7em 4em ;
+    padding: 2.7em 5.5em ;
   }
-  .b-form-content:after {
+  .b-popup__content:after {
     display: none;
   }
-  .b-social {
+  .b-popup__content__social {
     width: 100%;
     padding-bottom: 1em;
   }
-  .b-form{
+  .b-popup__form{
     width: 90%;
     margin: 0 auto;
     padding: 0;

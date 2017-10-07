@@ -1,0 +1,137 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+html,
+body {
+  font: 16px "Montserrat-Regular";
+  position: relative; }
+
+a {
+  text-decoration: none; }
+
+.s__top-title {
+  font: 24px "KaushanScript";
+  margin-bottom: 20px; }
+
+.s__main-title {
+  font: 30px "Montserrat-bold";
+  text-transform: uppercase;
+  margin-top: 0;
+  /* Pognali */ }
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative; }
+
+.header-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 10px; }
+
+.logo {
+  font: 30px "Montserrat-Bold"; }
+
+.head-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .head-nav a {
+    height: 100%;
+    color: #fff;
+    padding: 0.4em 0; }
+    .head-nav a:hover:not([class="link-icon"]) {
+      border-bottom: 4px solid #fce38a;
+      color: #fce38a; }
+
+.link-icon {
+  width: 18px;
+  height: 15px;
+  background: url(../images/Header_shoping.png) no-repeat;
+  background-position: center;
+  margin-bottom: 5px; }
+  .link-icon:last-of-type {
+    width: 18px;
+    height: 18px;
+    background: url(../images/header_MAGNIFYING_GLASS.png) no-repeat; }
+
+.main-section {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(252, 227, 138, 0.9)), to(rgba(243, 129, 129, 0.9))), url("../images/header_eagle.png") no-repeat;
+  background: linear-gradient(0deg, rgba(252, 227, 138, 0.9) 0%, rgba(243, 129, 129, 0.9) 100%), url("../images/header_eagle.png") no-repeat;
+  color: #fff;
+  background-size: cover;
+  background-position: center; }
+
+.main-slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .main-slider .s__top-title {
+    font-size: 72px; }
+  .main-slider .s__main-title {
+    width: 60%;
+    font-size: 118px;
+    text-align: center;
+    position: relative; }
+    .main-slider .s__main-title:after {
+      position: absolute;
+      top: 115%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      content: "";
+      height: 4px;
+      width: 75px;
+      background-color: #fff; }
+
+.learn-btn {
+  font: 14px "Montserrat-bold";
+  color: white;
+  text-transform: uppercase;
+  border: 3px solid #fff;
+  background-color: transparent;
+  padding: 0.4em 1.5em;
+  cursor: pointer;
+  margin-top: 35px; }
+
+.slider-controlls {
+  margin-top: 150px;
+  font: 24px "Montserrat-bold";
+  color: #fff;
+  text-transform: uppercase;
+  counter-reset: item;
+  padding-bottom: 1em; }
+  .slider-controlls li {
+    list-style: none;
+    display: inline-block;
+    border-top: 3px solid #fff;
+    padding-right: 120px;
+    padding-top: 20px;
+    margin-left: 20px; }
+    .slider-controlls li:first-of-type {
+      margin-left: 0; }
+    .slider-controlls li:before {
+      content: "0" counter(item);
+      counter-increment: item; }
+    .slider-controlls li a {
+      color: #fff;
+      padding-left: 10px; }

@@ -1,0 +1,115 @@
+*
+	box-sizing: border-box
+
+html,
+body 
+	font: 16px "Montserrat-Regular"
+	position: relative
+a
+	text-decoration: none
+
+.s__top-title
+	font: 24px "KaushanScript"
+	margin-bottom: 20px
+.s__main-title
+	font: 30px "Montserrat-bold"
+	text-transform: uppercase
+	margin-top: 0
+
+	/* Pognali */
+
+.wrapper
+	max-width: 1200px
+	margin: 0 auto
+	position: relative
+
+.header-wrap
+	display: flex
+	justify-content: space-between
+	padding-top: 10px
+
+.logo
+	font: 30px "Montserrat-Bold"
+
+.head-nav
+	display: flex
+	width: 50%
+	justify-content: space-between
+	align-items: center
+	a
+		height: 100%
+		color: #fff
+		padding: .4em 0
+		&:hover:not([class="link-icon"])
+			border-bottom: 4px solid rgb(252, 227, 138)
+			color: rgb(252, 227, 138)
+
+.link-icon
+	width: 18px
+	height: 15px
+	background: url(../images/Header_shoping.png) no-repeat
+	background-position: center
+	margin-bottom: 5px
+	&:last-of-type
+		width: 18px
+		height: 18px
+		background: url(../images/header_MAGNIFYING_GLASS.png) no-repeat
+
+.main-section
+	background: linear-gradient( 0deg, rgba(252,227,138,.9) 0%, rgba(243,129,129,.9) 100%), url("../images/header_eagle.png") no-repeat
+	color: #fff
+	background-size: cover
+	background-position: center
+.main-slider
+	display: flex
+	align-items: center
+	flex-direction: column
+	.s__top-title
+		font-size: 72px
+	.s__main-title
+		width: 60%
+		font-size: 118px 
+		text-align: center
+		position: relative
+		&:after
+			position: absolute
+			top: 115%
+			left: 50%
+			transform: translate(-50%, -50%)
+			content: ""
+			height: 4px
+			width: 75px
+			background-color: #fff
+
+.learn-btn
+	font: 14px "Montserrat-bold"
+	color: rgb(255, 255, 255)
+	text-transform: uppercase
+	border: 3px solid #fff
+	background-color: rgba(0, 0, 0, 0)
+	padding: .4em 1.5em
+	cursor: pointer
+	margin-top: 35px
+
+.slider-controlls
+	margin-top: 150px
+	font: 24px "Montserrat-bold"
+	color: #fff
+	text-transform: uppercase
+	counter-reset: item
+	padding-bottom: 1em
+	li
+		list-style: none
+		display: inline-block
+		border-top: 3px solid #fff
+		padding-right: 120px
+		padding-top: 20px
+		margin-left: 20px
+		&:first-of-type
+			margin-left: 0
+		&:before
+			content: "0" counter(item)
+			counter-increment: item
+		a
+			color: #fff
+			padding-left: 10px

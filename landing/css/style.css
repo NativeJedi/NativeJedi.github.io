@@ -12,7 +12,7 @@ a {
 
 .s__top-title {
   font: 24px "KaushanScript";
-  margin: 75px 0 20px 0;
+  margin: 10px 0 5px 0;
   text-align: center; }
 
 .s__main-title {
@@ -45,8 +45,7 @@ a {
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding-bottom: 5em; }
+          justify-content: space-between; }
 
 .media-item {
   position: relative;
@@ -103,7 +102,8 @@ a {
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  position: relative; }
+  position: relative;
+  padding: 4em 0; }
 
 .header-wrap {
   display: -webkit-box;
@@ -197,8 +197,7 @@ a {
   font: 24px "Montserrat-bold";
   color: #fff;
   text-transform: uppercase;
-  counter-reset: item;
-  padding-bottom: 1em; }
+  counter-reset: item; }
   .slider-controlls li {
     list-style: none;
     display: inline-block;
@@ -216,8 +215,7 @@ a {
       padding-left: 10px; }
 
 .s-facts {
-  background-color: #95e1d3;
-  padding: 4em 0; }
+  background-color: #95e1d3; }
   .s-facts .wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -234,3 +232,147 @@ a {
       color: white;
       text-align: center;
       margin: 0; }
+
+.s-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative; }
+  .s-content:before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #ccc;
+    top: 40%;
+    left: -1%; }
+
+.s-content-item {
+  width: 30%;
+  padding-left: 40px;
+  position: relative;
+  margin-bottom: 5em; }
+  .s-content-item img {
+    position: absolute;
+    left: -10px;
+    top: 20px; }
+
+.item__title {
+  font: 14px "Montserrat-Regular";
+  color: #333333;
+  text-transform: uppercase;
+  line-height: 1.2;
+  font-weight: bold;
+  margin-bottom: 0; }
+
+.item__content {
+  font: 15px "Roboto-Regular";
+  color: #999999;
+  line-height: 1.6; }
+
+.s-service .wrapper {
+  padding-bottom: 0; }
+
+.s-features {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.8))), url(../images/features-bg.png);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.8)), url(../images/features-bg.png);
+  background-size: cover;
+  background-position: center; }
+  .s-features .wrapper {
+    padding-bottom: 0; }
+
+.features-img-wrap {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .features-img-wrap img:last-child {
+    position: absolute;
+    right: 225px;
+    top: 40%; }
+
+.second-service__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+
+.content__descr {
+  width: 50%; }
+
+.accordeon {
+  list-style-type: none;
+  margin-top: 0; }
+  .accordeon li {
+    position: relative; }
+  .accordeon img {
+    position: absolute;
+    top: 8px; }
+    .accordeon img:last-child {
+      right: 5px;
+      top: 20px; }
+  .accordeon p {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 1em 0 1em 3em;
+    margin-top: 0;
+    font: 14px "Montserrat-Regular";
+    color: #333333;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer; }
+  .accordeon .s__descr {
+    padding: 0;
+    text-align: left;
+    display: none;
+    height: 100px;
+    overflow-y: scroll; }
+
+.s-quote {
+  background-color: #F8F8F8; }
+  .s-quote .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .s-quote img:nth-child(2) {
+    border: 3px solid #96e2d4;
+    width: 144px;
+    height: 144px;
+    padding: 35px;
+    margin-left: 50px; }
+  .s-quote blockquote {
+    margin-top: 0; }
+  .s-quote p {
+    font: 24px "Roboto-LightItalic";
+    line-height: 1.5;
+    text-align: left; }
+  .s-quote .s__top-title {
+    text-align: left;
+    position: relative;
+    margin: 0 0 10px 60px; }
+    .s-quote .s__top-title:before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 50px;
+      background-color: red;
+      left: -60px;
+      top: 15px; }

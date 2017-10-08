@@ -10,7 +10,7 @@ a
 
 .s__top-title
 	font: 24px "KaushanScript"
-	margin: 75px 0 20px 0
+	margin: 10px 0 5px 0
 	text-align: center
 
 .s__main-title
@@ -39,7 +39,6 @@ a
 .media-wrap
 	display: flex
 	justify-content: space-between
-	padding-bottom: 5em
 
 .media-item
 	position: relative
@@ -85,7 +84,7 @@ a
 	max-width: 1200px
 	margin: 0 auto
 	position: relative
-
+	padding: 4em 0
 .header-wrap
 	display: flex
 	justify-content: space-between
@@ -160,7 +159,6 @@ a
 	color: #fff
 	text-transform: uppercase
 	counter-reset: item
-	padding-bottom: 1em
 	li
 		list-style: none
 		display: inline-block
@@ -179,7 +177,6 @@ a
 
 .s-facts
 	background-color: rgb(149, 225, 211)
-	padding: 4em 0
 	.wrapper
 		display: flex
 		justify-content: space-around
@@ -193,3 +190,127 @@ a
 			color: rgb(255, 255, 255)
 			text-align: center
 			margin: 0
+
+.s-content
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	position: relative
+	&:before
+		content: ""
+		position: absolute
+		height: 2px
+		width: 100%
+		background-color: #ccc
+		top: 40%
+		left: -1%
+
+.s-content-item
+	width: 30%
+	padding-left: 40px
+	position: relative
+	margin-bottom: 5em
+	img
+		position: absolute
+		left: -10px
+		top: 20px
+
+.item__title
+	font: 14px "Montserrat-Regular"
+	color: rgb(51, 51, 51)
+	text-transform: uppercase
+	line-height: 1.2
+	font-weight: bold
+	margin-bottom: 0
+
+.item__content
+	font: 15px "Roboto-Regular"
+	color: rgb(153, 153, 153)
+	line-height: 1.6
+
+.s-service
+	.wrapper
+		padding-bottom: 0
+
+.s-features
+	background: linear-gradient( 0deg, rgba(255,255,255,.8)), url(../images/features-bg.png)
+	background-size: cover
+	background-position: center
+	.wrapper
+		padding-bottom: 0
+
+.features-img-wrap
+	position: relative
+	display: flex
+	justify-content: center
+	img
+		&:last-child
+			position: absolute
+			right: 225px
+			top: 40%
+
+.second-service__content
+	display: flex
+	justify-content: space-between
+	align-items: flex-start
+.content__descr
+	width: 50%
+.accordeon
+	list-style-type: none
+	margin-top: 0
+	li
+		position: relative
+	img
+		position: absolute
+		top: 8px
+		&:last-child
+			right: 5px
+			top: 20px
+	p
+		border-top: 1px solid #ccc
+		border-bottom: 1px solid #ccc
+		padding: 1em 0 1em 3em
+		margin-top: 0
+		font: 14px "Montserrat-Regular"
+		color: rgb(51, 51, 51)
+		text-transform: uppercase
+		font-weight: bold
+		cursor: pointer
+	.s__descr
+		padding: 0
+		text-align: left
+		display: none
+		height: 100px
+		overflow-y: scroll
+
+.s-quote
+	background-color: #F8F8F8
+	.wrapper
+		display: flex
+		justify-content: space-around
+		align-items: center
+	img
+		&:nth-child(2)
+			border: 3px solid rgb(150,226,212)
+			width: 144px
+			height: 144px
+			padding: 35px
+			margin-left: 50px
+	blockquote
+		margin-top: 0
+	p
+		font: 24px "Roboto-LightItalic"
+		line-height: 1.5
+		text-align: left
+	.s__top-title
+		text-align: left
+		position: relative
+		margin: 0 0 10px 60px
+		&:before
+			content: ""
+			position: absolute
+			height: 2px
+			width: 50px
+			background-color: red
+			left: -60px
+			top: 15px

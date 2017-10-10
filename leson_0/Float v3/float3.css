@@ -1,0 +1,61 @@
+*{
+  border: 1px solid #000;
+  margin: 1%;
+  border-size: border-box;
+}
+body {
+  width: auto;
+  margin: 0;
+}
+.header {
+  height: 100px;
+  padding: 1%;
+}
+.header .logo {
+  width: 20%;
+  float: left;
+  height: 96%;
+  margin: 0;
+}
+.header .banner {
+  float: right;
+  width: 50%;
+  height: 98%;
+  margin: 0;
+}
+.aside {
+  width: 31.3%;
+  float: left;
+  height: 600px;
+  margin-top: 0;
+}
+.content {
+  margin-left: 33.3%;
+  height: 600px;
+}
+.wrap_L {
+  width: 33.3%;
+  float: left;
+  height: 70%;
+  margin: 0;
+  border: none;
+}
+.wrap_R {
+  float: right;
+  width: 33.3%;
+  height: 70%;
+  margin: 0;
+  border: none;
+}
+.wrap_C {
+  margin: 0 33.4%;
+  height: 70%;
+  border: none;
+}
+.box { 
+  margin: 5% 3%;
+  height: 30.3%;
+}
+.footer {
+  height: 100px;
+}

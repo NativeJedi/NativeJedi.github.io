@@ -1,0 +1,44 @@
+*{
+  border: 1px solid #000;
+  box-sizing: border-box;
+  margin: 1%;
+  color: red;
+}
+body{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.t_img {
+  padding-top: 2%;
+  padding-left: 10%;
+  width: 30%;
+  float: left;
+  height: 150px;
+}
+.t_text {
+  padding-top: 2%;
+  padding-left: 10%;
+  margin-left: 32%;
+  height: 150px;
+}
+.m_img {
+  padding-top: 2%;
+  padding-left: 10%;
+  width: 30%;
+  float: right;
+  height: 150px;
+  margin-top: 0;
+}
+.m_text {
+  padding-top: 2%;
+  padding-left: 10%;
+  margin-right: 32%;
+  height: 150px;
+}
+.b_img {
+  padding-top: 2%;
+  padding-left: 10%;
+  clear: both;
+  height: 200px;
+}

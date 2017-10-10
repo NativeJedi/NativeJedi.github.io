@@ -1,0 +1,358 @@
+*
+	box-sizing: border-box
+
+html,
+body 
+	font: 16px "Montserrat-Regular"
+	position: relative
+a
+	text-decoration: none
+
+.s__top-title
+	font: 24px "KaushanScript"
+	margin: 10px 0 5px 0
+	text-align: center
+
+.s__main-title
+	font: 30px "Montserrat-bold"
+	text-transform: uppercase
+	margin: 0 0 100px 0
+	text-align: center
+	position: relative
+	&:after
+		position: absolute
+		top: 225%
+		left: 50%
+		transform: translate(-50%, -50%)
+		content: ""
+		height: 2px
+		width: 75px
+		background-color: red
+
+.s__descr
+	font: 15px "Roboto-Regular"
+	color: rgb(153, 153, 153)
+	line-height: 1.6
+	text-align: center
+	padding: 0 10% 6em 10%
+
+.media-wrap
+	display: flex
+	justify-content: space-between
+
+.media-item
+	position: relative
+	transition: all .75s
+	cursor: pointer
+	&:hover
+		transform: translate(-5%, -5%)
+		box-shadow: 10px 10px 0 #95e1d3
+		.media__add-info
+			opacity: .9
+
+.media__add-info
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background: linear-gradient( 0deg, rgb(252,227,138) 0%, rgb(243,129,129) 100%)
+	opacity: 0
+	display: flex
+	flex-direction: column
+	justify-content: center
+	transition: all .75s
+	p
+		font: 18px "Montserrat-bold"
+		color: rgb(255, 255, 255)
+		text-transform: uppercase
+		text-align: center
+		position: relative
+		&:before
+			content: ""
+			width: 32px
+			height: 23px
+			background: url(../images/mediaUSERS.png)
+			position: absolute
+			top: -100%
+			left: 50%
+			transform: translate(-50%, 0)
+
+	/* Pognali */
+
+.wrapper
+	max-width: 1200px
+	margin: 0 auto
+	position: relative
+	padding: 4em 0
+
+.header-wrap
+	position: absolute
+	min-width: 1200px
+	display: flex
+	justify-content: space-between
+	padding-top: 10px
+	left: 50%
+	transform: translateX(-50%)
+	z-index: 1
+
+.header__logo
+	a
+		color: #fff
+		font: 30px "Montserrat-Bold"
+		cursor: pointer
+
+.head-nav
+	display: flex
+	width: 50%
+	justify-content: space-between
+	align-items: center
+	a
+		height: 100%
+		color: #fff
+		padding: .4em 0
+		&:hover:not([class="link-icon"])
+			border-bottom: 4px solid rgb(252, 227, 138)
+			color: rgb(252, 227, 138)
+
+.link-icon
+	width: 18px
+	height: 15px
+	background: url(../images/Header_shoping.png) no-repeat center 
+	margin-bottom: 5px
+	&:last-of-type
+		height: 18px
+		background-image: url(../images/header_MAGNIFYING_GLASS.png)
+
+.main-section
+	padding-top: 100px
+	background: linear-gradient( 0deg, rgba(252,227,138,.9) 0%, rgba(243,129,129,.9) 100%), url("../images/header_eagle.png") no-repeat
+	color: #fff
+	background-size: cover
+	background-position: center
+
+.main-content
+	display: flex
+	align-items: center
+	flex-direction: column
+	.s__top-title
+		font-size: 72px
+	.s__main-title
+		width: 60%
+		font-size: 118px 
+		position: relative
+		&:after
+			position: absolute
+			top: 115%
+			left: 50%
+			transform: translate(-50%, -50%)
+			content: ""
+			height: 4px
+			width: 75px
+			background-color: #fff
+
+.learn-btn
+	font: 14px "Montserrat-bold"
+	color: rgb(255, 255, 255)
+	text-transform: uppercase
+	border: 3px solid #fff
+	background-color: rgba(0, 0, 0, 0)
+	padding: .4em 1.5em
+	cursor: pointer
+	margin-top: 35px
+
+.slider-controlls
+	margin-top: 150px
+	font: 24px "Montserrat-bold"
+	color: #fff
+	text-transform: uppercase
+	counter-reset: item
+	li
+		list-style: none
+		display: inline-block
+		padding: 20px 120px 0 20px
+		position: relative
+		&:first-of-type
+			margin-left: 0
+		&:before
+			content: "0" counter(item)
+			counter-increment: item
+		a
+			color: #fff
+			padding-left: 10px
+			&:before
+				content: ""
+				position: absolute
+				height: 3px
+				background-color: #fff
+				width: 220px
+				left: 20px
+				top: 0
+
+.s-facts
+	background-color: rgb(149, 225, 211)
+	.wrapper
+		display: flex
+		justify-content: space-around
+		h2
+			font: 72px "Montserrat-bold"
+			color: rgb(255, 255, 255)
+			text-align: center
+			margin: 0
+		p
+			font: 14px "Montserrat-Regular"
+			color: rgb(255, 255, 255)
+			text-align: center
+			margin: 0
+
+.s-content
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	position: relative
+	&:before
+		content: ""
+		position: absolute
+		height: 2px
+		width: 100%
+		background-color: #ccc
+		top: 40%
+		left: -1%
+
+.s-content-item
+	width: 30%
+	padding-left: 40px
+	position: relative
+	margin-bottom: 5em
+	img
+		position: absolute
+		left: -10px
+		top: 20px
+
+.item__title
+	font: 14px "Montserrat-Regular"
+	color: rgb(51, 51, 51)
+	text-transform: uppercase
+	line-height: 1.2
+	font-weight: bold
+	margin-bottom: 0
+
+.item__content
+	font: 15px "Roboto-Regular"
+	color: rgb(153, 153, 153)
+	line-height: 1.6
+
+.s-service
+	.wrapper
+		padding-bottom: 0
+
+.s-features
+	background: linear-gradient( 0deg, rgba(255,255,255,.8)), url(../images/features-bg.png)
+	background-size: cover
+	background-position: center
+	.wrapper
+		padding-bottom: 0
+
+.features-img-wrap
+	position: relative
+	display: flex
+	justify-content: center
+	img
+		&:last-child
+			position: absolute
+			right: 225px
+			top: 40%
+
+.second-service__content
+	display: flex
+	justify-content: space-between
+	align-items: flex-start
+.content__descr
+	width: 50%
+.accordeon
+	list-style-type: none
+	margin-top: 0
+	li
+		position: relative
+	img
+		position: absolute
+		top: 8px
+		&:last-child
+			right: 5px
+			top: 20px
+	p
+		border-top: 1px solid #ccc
+		border-bottom: 1px solid #ccc
+		padding: 1em 0 1em 3em
+		margin-top: 0
+		font: 14px "Montserrat-Regular"
+		color: rgb(51, 51, 51)
+		text-transform: uppercase
+		font-weight: bold
+		cursor: pointer
+	.s__descr
+		padding: 0
+		text-align: left
+		display: none
+		height: 100px
+		overflow-y: scroll
+
+.s-quote
+	background-color: #F8F8F8
+	.wrapper
+		display: flex
+		justify-content: space-around
+		align-items: center
+	img
+		&:nth-child(2)
+			border: 3px solid rgb(150,226,212)
+			width: 144px
+			height: 144px
+			padding: 35px
+			margin-left: 50px
+	blockquote
+		margin-top: 0
+	p
+		font: 24px "Roboto-LightItalic"
+		line-height: 1.5
+		text-align: left
+	.s__top-title
+		text-align: left
+		position: relative
+		margin: 0 0 10px 60px
+		&:before
+			content: ""
+			position: absolute
+			height: 2px
+			width: 50px
+			background-color: red
+			left: -60px
+			top: 15px
+
+.s-team
+	.media-item
+		&:hover
+			.item-social
+				opacity: 1
+.item-social
+	transition: all 1s
+	opacity: 0
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background: linear-gradient( 0deg, rgba(252,227,138,.9) 0%, rgba(243,129,129,.9) 100%)
+	.item-social-wrap
+		position: absolute
+		width: 50%
+		height: 50px
+		background: #FCE38A
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		display: flex
+		.social-item
+			width: 25%
+			&:hover
+				background-color: #F38181

@@ -137,12 +137,11 @@ input:not([type=checkbox]) {
   height: 42px;
   margin-bottom: 20px; }
 
-input[type=checkbox] {
+.form__checkBlue input[type=checkbox] {
   display: none; }
-
-label[for=checkbox] {
+.form__checkBlue label[for=checkbox] {
   vertical-align: middle; }
-  label[for=checkbox]:before {
+  .form__checkBlue label[for=checkbox]:before {
     content: "";
     display: inline-block;
     width: 15px;
@@ -151,8 +150,7 @@ label[for=checkbox] {
     border-radius: 5px;
     vertical-align: middle;
     margin-right: 10px; }
-
-input[type=checkbox]:checked + label[for=checkbox]:before {
+.form__checkBlue input[type=checkbox]:checked + label[for=checkbox]:before {
   content: "✓";
   font-size: 12px;
   color: #fff;

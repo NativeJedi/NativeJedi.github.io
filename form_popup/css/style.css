@@ -18,7 +18,7 @@ html, button {
   background-color: #FFF; }
 
 /*Close button in span-wrapper */
-.b-popup__header__close {
+.b-popup__header-close {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -26,7 +26,7 @@ html, button {
   width: 30px;
   height: 30px;
   cursor: pointer; }
-  .b-popup__header__close:after, .b-popup__header__close:before {
+  .b-popup__header-close:after, .b-popup__header-close:before {
     position: absolute;
     top: 3px;
     right: 10px;
@@ -34,14 +34,14 @@ html, button {
     height: 14px;
     width: 2px;
     background-color: #ccc; }
-  .b-popup__header__close:after {
+  .b-popup__header-close:after {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg); }
-  .b-popup__header__close:before {
+  .b-popup__header-close:before {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg); }
 
-.b-popup__header__title {
+.b-popup__header-title {
   text-align: center; }
 
 .b-popup__content {
@@ -61,7 +61,7 @@ html, button {
     right: 50%; }
 
 /*Form-social */
-.b-popup__content__social {
+.b-popup__content-social {
   width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -111,12 +111,12 @@ html, button {
     margin-right: 50px;
     background-size: 100%; }
 
-/*#Form-form) */
+/*#Form */
 .b-popup__form {
   width: 50%;
   padding: 2.7em 4em; }
 
-.b-popup__form__form {
+.b-popup__form-main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -159,7 +159,7 @@ input[type=checkbox]:checked + label[for=checkbox]:before {
   text-align: center; }
 
 /*Wrap for btn and link to make flex-position */
-.form__log-btn-wrap {
+.form__log-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -192,15 +192,11 @@ a {
 /*#Footer-form */
 .b-popup__footer {
   padding: 1em; }
-
-p {
-  font-size: 18px;
-  font-weight: normal;
-  text-align: center;
-  color: #666666; }
-
-a {
-  margin-left: 5px;
-  font-weight: bold; }
-
-/*# sourceMappingURL=style.css.map */
+  .b-popup__footer p {
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+    color: #666666; }
+  .b-popup__footer a {
+    margin-left: 5px;
+    font-weight: bold; }

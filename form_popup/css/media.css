@@ -10,7 +10,7 @@
   .b-popup__content:after {
     display: none;
   }
-  .b-popup__content__social {
+  .b-popup__content-social {
     width: 100%;
     padding-bottom: 1em;
   }

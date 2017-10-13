@@ -19,10 +19,10 @@ html, button {
 
 /*Close button in span-wrapper */
 .b-popup__header-close {
+  display: inline-block;
   position: absolute;
   top: 5px;
   right: 5px;
-  display: inline-block;
   width: 30px;
   height: 30px;
   cursor: pointer; }
@@ -54,11 +54,11 @@ html, button {
     content: "";
     display: inline-block;
     position: absolute;
+    top: 10%;
+    right: 50%;
     width: 1px;
     height: 80%;
-    background-color: #ccc;
-    top: 10%;
-    right: 50%; }
+    background-color: #ccc; }
 
 /*Form-social */
 .b-popup__content-social {
@@ -79,10 +79,10 @@ html, button {
 .b-btn {
   background-color: #3e5b96;
   padding: 0.5em 1em;
+  margin-top: 40px;
   min-width: 300px;
   border-radius: 5px;
-  cursor: pointer;
-  margin-top: 40px; }
+  cursor: pointer; }
   .b-btn:hover {
     -webkit-box-shadow: inset 0px 0px 0px 40px rgba(0, 0, 0, 0.15);
             box-shadow: inset 0px 0px 0px 40px rgba(0, 0, 0, 0.15); }

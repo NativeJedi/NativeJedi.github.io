@@ -1,250 +1,282 @@
 *
 	box-sizing: border-box
 
+
+/* Layout styles */
+
+
 html,
 body 
-	font: 16px "Montserrat-Regular"
 	position: relative
+	font: 16px "Montserrat-Regular"
+
 a
 	text-decoration: none
 
+header
+	position: absolute
+	width: 100%
+	z-index: 1
+
+
+/* Modules rules */
+
+
+.wrapper
+	position: relative
+	max-width: 1200px
+	margin:  0 auto
+	padding: 4em 0
+
+.flex-wrap
+	position: relative
+	display: flex
+	justify-content: space-between
+	align-items: center
+	flex-wrap: wrap
+
 .s__top-title
-	font: 24px "KaushanScript"
 	margin: 10px 0 5px 0
+	font: 24px "KaushanScript"
 	text-align: center
 
 .s__main-title
+	position: relative
+	margin: 0 0 100px 0
 	font: 30px "Montserrat-bold"
 	text-transform: uppercase
-	margin: 0 0 100px 0
 	text-align: center
-	position: relative
 	&:after
-		position: absolute
-		top: 225%
-		left: 50%
-		transform: translate(-50%, -50%)
 		content: ""
+		position: absolute
+		top:  225%
+		left: 50%
+		width:  75px
 		height: 2px
-		width: 75px
+		transform: translate(-50%, -50%)
 		background-color: red
 
 .s__descr
-	font: 15px "Roboto-Regular"
+	padding: 0 10% 6em 10%
 	color: rgb(153, 153, 153)
+	font: 15px "Roboto-Regular"
 	line-height: 1.6
 	text-align: center
-	padding: 0 10% 6em 10%
 
-.media-wrap
-	display: flex
-	justify-content: space-between
+.descr-title
+	font: 14px "Montserrat-Regular"
+	color: rgb(51, 51, 51)
+	text-transform: uppercase
+	font-weight: bold
 
 .media-item
 	position: relative
-	transition: all .75s
 	cursor: pointer
+	transition: all .75s
 	&:hover
 		transform: translate(-5%, -5%)
 		box-shadow: 10px 10px 0 #95e1d3
-		.media__add-info
-			opacity: .9
+		.media__grad
+			opacity: 1
 
-.media__add-info
+.media__grad
 	position: absolute
-	top: 0
-	left: 0
-	right: 0
+	top:    0
+	right:  0
 	bottom: 0
-	background: linear-gradient( 0deg, rgb(252,227,138) 0%, rgb(243,129,129) 100%)
-	opacity: 0
+	left:   0
 	display: flex
-	flex-direction: column
 	justify-content: center
+	align-items: center
+	background: linear-gradient( 0deg, rgba(252,227,138,.9) 0%, rgba(243,129,129,.9) 100%)
+	opacity: 0
 	transition: all .75s
-	p
-		font: 18px "Montserrat-bold"
-		color: rgb(255, 255, 255)
-		text-transform: uppercase
-		text-align: center
-		position: relative
-		&:before
-			content: ""
-			width: 32px
-			height: 23px
-			background: url(../images/mediaUSERS.png)
-			position: absolute
-			top: -100%
-			left: 50%
-			transform: translate(-50%, 0)
 
-	/* Pognali */
-
-.wrapper
-	max-width: 1200px
-	margin: 0 auto
+.info-text
 	position: relative
-	padding: 4em 0
+	color: rgb(255, 255, 255)
+	font: 18px "Montserrat-bold"
+	text-transform: uppercase
+	text-align: center
+	&:before
+		content: ""
+		position: absolute
+		top: -100%
+		left: 50%
+		width:  32px
+		height: 23px
+		background: url(../images/mediaUSERS.png)
+		transform: translate(-50%, 0)
 
-.header-wrap
-	position: absolute
-	min-width: 1200px
-	display: flex
-	justify-content: space-between
-	padding-top: 10px
-	left: 50%
-	transform: translateX(-50%)
-	z-index: 1
+.bg-gray
+	background-color: #F8F8F8
 
-.header__logo
-	a
-		color: #fff
-		font: 30px "Montserrat-Bold"
-		cursor: pointer
 
-.head-nav
-	display: flex
+/*State rules */
+/*#Header*/
+
+
+header
+	.wrapper
+		padding-top: 10px
+
+.header__logo-link
+	color: #fff
+	font: 30px "Montserrat-Bold"
+	cursor: pointer
+
+.header__nav
 	width: 50%
+	display: flex
 	justify-content: space-between
 	align-items: center
-	a
-		height: 100%
-		color: #fff
-		padding: .4em 0
-		&:hover:not([class="link-icon"])
-			border-bottom: 4px solid rgb(252, 227, 138)
-			color: rgb(252, 227, 138)
 
-.link-icon
-	width: 18px
-	height: 15px
-	background: url(../images/Header_shoping.png) no-repeat center 
-	margin-bottom: 5px
-	&:last-of-type
-		height: 18px
-		background-image: url(../images/header_MAGNIFYING_GLASS.png)
+.nav-link
+	height: 100%
+	padding: .4em 0
+	color: #fff
+	&:hover:not([class*="icon"])
+		border-bottom: 4px solid rgb(252, 227, 138)
+		color: rgb(252, 227, 138)
+	&--icon
+		width:  18px
+		height: 15px
+		margin-bottom: 5px
+		background: url(../images/Header_shoping.png) no-repeat center 
+		&:last-of-type
+			height: 18px
+			background-image: url(../images/header_MAGNIFYING_GLASS.png)	
+
+
+/*#Main section*/
+
 
 .main-section
 	padding-top: 100px
-	background: linear-gradient( 0deg, rgba(252,227,138,.9) 0%, rgba(243,129,129,.9) 100%), url("../images/header_eagle.png") no-repeat
 	color: #fff
+	background: linear-gradient( 0deg, rgba(252,227,138,.9) 0%, rgba(243,129,129,.9) 100%), url("../images/header_eagle.png") no-repeat
 	background-size: cover
 	background-position: center
 
-.main-content
+.main-section__content
 	display: flex
 	align-items: center
 	flex-direction: column
-	.s__top-title
-		font-size: 72px
-	.s__main-title
-		width: 60%
-		font-size: 118px 
-		position: relative
-		&:after
-			position: absolute
-			top: 115%
-			left: 50%
-			transform: translate(-50%, -50%)
-			content: ""
-			height: 4px
-			width: 75px
-			background-color: #fff
 
-.learn-btn
-	font: 14px "Montserrat-bold"
-	color: rgb(255, 255, 255)
-	text-transform: uppercase
-	border: 3px solid #fff
-	background-color: rgba(0, 0, 0, 0)
-	padding: .4em 1.5em
-	cursor: pointer
+.top-title--big
+	font-size: 72px
+
+.main-title--big
+	position: relative
+	width: 60%
+	font-size: 118px
+	&:after
+		content: ""
+		position: absolute
+		top: 	115%
+		left: 50%
+		transform: translate(-50%, -50%)
+		width: 75px
+		height: 4px
+		background-color: #fff
+
+.btn--learn
 	margin-top: 35px
+	padding: .4em 1.5em
+	border: 3px solid #fff
+	color: rgb(255, 255, 255)
+	font: 14px "Montserrat-bold"
+	text-transform: uppercase
+	background-color: rgba(0, 0, 0, 0)
+	cursor: pointer
 
-.slider-controlls
+.main-section__slider
 	margin-top: 150px
-	font: 24px "Montserrat-bold"
 	color: #fff
+	font: 24px "Montserrat-bold"
 	text-transform: uppercase
 	counter-reset: item
 	li
-		list-style: none
+		position: relative
 		display: inline-block
 		padding: 20px 120px 0 20px
-		position: relative
+		list-style: none
 		&:first-of-type
 			margin-left: 0
 		&:before
 			content: "0" counter(item)
 			counter-increment: item
-		a
-			color: #fff
-			padding-left: 10px
-			&:before
-				content: ""
-				position: absolute
-				height: 3px
-				background-color: #fff
-				width: 220px
-				left: 20px
-				top: 0
+
+.slider-link
+	padding-left: 10px
+	color: #fff
+	&:before
+		content: ""
+		width:  220px
+		height: 3px
+		position: absolute
+		top:  0
+		left: 20px
+		background-color: #fff
+
+
+/*#Facts section*/
+
 
 .s-facts
 	background-color: rgb(149, 225, 211)
-	.wrapper
-		display: flex
-		justify-content: space-around
-		h2
-			font: 72px "Montserrat-bold"
-			color: rgb(255, 255, 255)
-			text-align: center
-			margin: 0
-		p
-			font: 14px "Montserrat-Regular"
-			color: rgb(255, 255, 255)
-			text-align: center
-			margin: 0
 
-.s-content
-	display: flex
-	flex-wrap: wrap
-	justify-content: space-between
+.fact-content
+	text-align: center
+	color: rgb(255, 255, 255)
+	h2
+		font: 72px "Montserrat-bold"
+		margin: 0
+	p
+		font: 14px "Montserrat-Regular"
+		margin: 0
+
+
+/* #Service section */
+
+
+.s__content
 	position: relative
 	&:before
 		content: ""
 		position: absolute
-		height: 2px
-		width: 100%
-		background-color: #ccc
-		top: 40%
+		top:   40%
 		left: -1%
+		width:  100%
+		height: 2px
+		background-color: #ccc
 
-.s-content-item
-	width: 30%
-	padding-left: 40px
+.service-item
 	position: relative
+	width: 30%
 	margin-bottom: 5em
+	padding-left: 40px
 	img
 		position: absolute
+		top:   20px
 		left: -10px
-		top: 20px
 
 .item__title
+	margin-bottom: 0
 	font: 14px "Montserrat-Regular"
 	color: rgb(51, 51, 51)
 	text-transform: uppercase
 	line-height: 1.2
 	font-weight: bold
-	margin-bottom: 0
 
 .item__content
 	font: 15px "Roboto-Regular"
 	color: rgb(153, 153, 153)
 	line-height: 1.6
 
-.s-service
-	.wrapper
-		padding-bottom: 0
+
+/* #Features section */
+
 
 .s-features
 	background: linear-gradient( 0deg, rgba(255,255,255,.8)), url(../images/features-bg.png)
@@ -253,22 +285,24 @@ a
 	.wrapper
 		padding-bottom: 0
 
-.features-img-wrap
-	position: relative
-	display: flex
+.center
 	justify-content: center
-	img
-		&:last-child
-			position: absolute
-			right: 225px
-			top: 40%
+.features__img
+	&:last-child
+		position: absolute
+		top:   40%
+		right: 225px
+
+
+/* #Second service section */
+
+
+.align-start
+	align-items: flex-start
 
 .second-service__content
-	display: flex
-	justify-content: space-between
-	align-items: flex-start
-.content__descr
 	width: 50%
+
 .accordeon
 	list-style-type: none
 	margin-top: 0
@@ -278,81 +312,120 @@ a
 		position: absolute
 		top: 8px
 		&:last-child
+			top:   20px
 			right: 5px
-			top: 20px
 	p
-		border-top: 1px solid #ccc
-		border-bottom: 1px solid #ccc
 		padding: 1em 0 1em 3em
 		margin-top: 0
-		font: 14px "Montserrat-Regular"
-		color: rgb(51, 51, 51)
-		text-transform: uppercase
-		font-weight: bold
 		cursor: pointer
-	.s__descr
-		padding: 0
-		text-align: left
-		display: none
-		height: 100px
-		overflow-y: scroll
+
+.accord__descr
+	display: none
+	height: 100px
+	padding: 0
+	text-align: left
+	overflow-y: scroll
+
+
+/*#Section quote*/
+
 
 .s-quote
-	background-color: #F8F8F8
 	.wrapper
 		display: flex
 		justify-content: space-around
 		align-items: center
-	img
-		&:nth-child(2)
-			border: 3px solid rgb(150,226,212)
-			width: 144px
-			height: 144px
-			padding: 35px
-			margin-left: 50px
-	blockquote
-		margin-top: 0
+
+.icon--speech
+	border: 3px solid rgb(150,226,212)
+	width: 144px
+	height: 144px
+	padding: 35px
+	margin-left: 50px
+
+.quote__slider
+	margin-top: 0
+
 	p
 		font: 24px "Roboto-LightItalic"
 		line-height: 1.5
 		text-align: left
+
 	.s__top-title
+		margin: 0 0 10px 60px
 		text-align: left
 		position: relative
-		margin: 0 0 10px 60px
 		&:before
 			content: ""
 			position: absolute
-			height: 2px
-			width: 50px
-			background-color: red
 			left: -60px
-			top: 15px
+			top:   15px
+			width:  50px
+			height: 2px
+			background-color: red
 
-.s-team
-	.media-item
-		&:hover
-			.item-social
-				opacity: 1
-.item-social
-	transition: all 1s
-	opacity: 0
+
+/*#Section team*/
+
+
+.team-person
+	margin: 0
+.media__social-wrap
 	position: absolute
-	top: 0
-	left: 0
-	right: 0
-	bottom: 0
-	background: linear-gradient( 0deg, rgba(252,227,138,.9) 0%, rgba(243,129,129,.9) 100%)
-	.item-social-wrap
+	top:  50%
+	left: 50%
+	width:  50%
+	height: 50px
+	display: flex
+	background: #FCE38A
+	transform: translate(-50%, -50%)
+	svg
+		fill: #F38181
+		height: 30px
 		position: absolute
-		width: 50%
-		height: 50px
-		background: #FCE38A
 		top: 50%
 		left: 50%
 		transform: translate(-50%, -50%)
-		display: flex
-		.social-item
-			width: 25%
-			&:hover
-				background-color: #F38181
+
+.media__social-item
+	width: 25%
+	position: relative
+	&:hover
+		background-color: #F38181
+		svg
+			fill: #fff
+
+.team-person__info
+	.descr-title
+		text-align: center
+	p
+		color: rgb(153, 153, 153)
+		font: 15px "Roboto-LightItalic"
+		text-align: center
+
+
+/* #Work Section */
+
+.gallery
+	display: flex
+	flex-wrap: wrap
+	.media-item
+		&:hover
+			transform: none
+			box-shadow: none
+			.media__grad
+				opacity: 1
+.s_work
+	.info-text
+		font: 15px "Roboto-LightItalic"
+		text-transform: lowercase
+		p
+			margin: 0
+		.descr-title
+			color: #fff
+			margin-bottom: 10px
+		&:before
+			background: url(../images/gallery/PICTURE.svg)
+			width:  30px
+			height: 30px
+

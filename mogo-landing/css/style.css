@@ -6,7 +6,7 @@
 html,
 body {
   position: relative;
-  font: 16px "Montserrat-Regular"; }
+  font: 15px "Montserrat-Regular"; }
 
 a {
   text-decoration: none; }
@@ -335,7 +335,9 @@ header .wrapper {
   .accordeon p {
     padding: 1em 0 1em 3em;
     margin-top: 0;
-    cursor: pointer; }
+    cursor: pointer;
+    border: 1px solid;
+    border-color: #ccc transparent; }
 
 .accord__descr {
   display: none;
@@ -408,6 +410,8 @@ header .wrapper {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
+  .media__social-wrap .descr-title {
+    text-align: center; }
 
 .media__social-item {
   width: 25%;
@@ -417,9 +421,7 @@ header .wrapper {
     .media__social-item:hover svg {
       fill: #fff; }
 
-.team-person__info .descr-title {
-  text-align: center; }
-.team-person__info p {
+.person-position {
   color: #999999;
   font: 15px "Roboto-LightItalic";
   text-align: center; }
@@ -461,3 +463,100 @@ header .wrapper {
   width: 210px;
   height: 190px;
   cursor: pointer; }
+
+/* #Section review */
+.s-review {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.9))), url(../images/review_bg.jpg) center;
+  background: linear-gradient(rgba(255, 255, 255, 0.9)), url(../images/review_bg.jpg) center;
+  background-size: cover; }
+
+.s__reviews {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
+.review-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 40%;
+  padding-top: 50px; }
+
+.review-content {
+  color: #B0B0B0; }
+
+.circle-img {
+  border-radius: 50%;
+  margin-right: 30px; }
+
+.review-title {
+  text-align: left;
+  margin: 0; }
+
+.review__person-position {
+  color: #000;
+  font: 15px "Roboto-LightItalic";
+  margin: 10px 0 40px 0;
+  text-align: left;
+  position: relative; }
+  .review__person-position:after {
+    content: "";
+    position: absolute;
+    top: 200%;
+    left: 0;
+    height: 2px;
+    width: 60px;
+    border: 1px solid red; }
+
+/*#Stories section */
+.s__stories-wrap {
+  color: #B0B0B0; }
+
+.s__story {
+  width: 30%; }
+  .s__story .descr-title {
+    text-align: left; }
+
+.story-icon:before {
+  content: "";
+  display: inline-block;
+  margin-right: 5px;
+  cursor: pointer; }
+
+.view:before {
+  width: 20px;
+  height: 12px;
+  background: url(../images/stories/VIEW.svg) center; }
+
+.comment:before {
+  position: relative;
+  top: 2px;
+  width: 17px;
+  height: 15px;
+  margin-left: 10px;
+  background: url(../images/stories/SPEECH-BUBBLE-2.svg) center; }
+
+.img-wrap {
+  position: relative; }
+
+.story__calendar {
+  position: absolute;
+  bottom: 10px;
+  left: -10px;
+  width: 60px;
+  color: #fff;
+  background-color: #95E1D3;
+  padding: 10px 0; }
+  .story__calendar p {
+    text-align: center;
+    margin: 0; }
+    .story__calendar p:first-child {
+      font-size: 25px;
+      font-weight: bold; }

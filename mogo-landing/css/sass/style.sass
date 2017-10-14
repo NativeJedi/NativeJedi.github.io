@@ -73,12 +73,14 @@ header
 	position: relative
 	cursor: pointer
 	transition: all .75s
+	img
+		max-width: 100%
 	&:hover
 		transform: translate(-5%, -5%)
 		box-shadow: 10px 10px 0 #95e1d3
 		.media__grad
 			opacity: 1
-
+	
 .media__grad
 	position: absolute
 	top:    0
@@ -335,7 +337,8 @@ header
 		display: flex
 		justify-content: space-around
 		align-items: center
-
+	img[src*="ARROW"]
+		cursor: pointer
 .icon--speech
 	border: 3px solid rgb(150,226,212)
 	width: 144px
@@ -352,15 +355,16 @@ header
 		text-align: left
 
 	.s__top-title
-		margin: 0 0 10px 60px
-		text-align: left
+		margin: 0 0 10px 8%
+		display: inline-block
 		position: relative
 		&:before
 			content: ""
+			display: inline-block
 			position: absolute
-			left: -60px
+			left: -60%
 			top:   15px
-			width:  50px
+			width:  50%
 			height: 2px
 			background-color: red
 
@@ -406,26 +410,46 @@ header
 
 /* #Work Section */
 
+.s-work
+
+	.info-text
+		font: 15px "Roboto-LightItalic"
+		text-transform: lowercase
+		p
+			margin: 0
+
+		.descr-title
+			color: #fff
+			margin-bottom: 10px
+
+		&:before
+			background: url(../images/gallery/PICTURE.svg)
+			width:  30px
+			height: 30px
+
+	.wrapper
+		padding-bottom: 0
+
+
 .gallery
-	display: flex
-	flex-wrap: wrap
+	display: grid
+	grid-template-columns: repeat(4, 25%)
+	grid-template-rows: repeat(2, 274px)
 	.media-item
 		&:hover
 			transform: none
 			box-shadow: none
 			.media__grad
 				opacity: 1
-.s_work
-	.info-text
-		font: 15px "Roboto-LightItalic"
-		text-transform: lowercase
-		p
-			margin: 0
-		.descr-title
-			color: #fff
-			margin-bottom: 10px
-		&:before
-			background: url(../images/gallery/PICTURE.svg)
-			width:  30px
-			height: 30px
+		&:nth-child(3)
+			grid-row-start: span 2
 
+
+/* #Section quote-2 */
+
+.quote__person-img
+	margin-left: 20px
+	border-radius: 50%
+	width: 210px
+	height: 190px
+	cursor: pointer

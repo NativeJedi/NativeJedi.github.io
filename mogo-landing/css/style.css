@@ -77,6 +77,8 @@ header {
   cursor: pointer;
   -webkit-transition: all 0.75s;
   transition: all 0.75s; }
+  .media-item img {
+    max-width: 100%; }
   .media-item:hover {
     -webkit-transform: translate(-5%, -5%);
             transform: translate(-5%, -5%);
@@ -352,6 +354,8 @@ header .wrapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
+.s-quote img[src*="ARROW"] {
+  cursor: pointer; }
 
 .icon--speech {
   border: 3px solid #96e2d4;
@@ -367,15 +371,16 @@ header .wrapper {
     line-height: 1.5;
     text-align: left; }
   .quote__slider .s__top-title {
-    margin: 0 0 10px 60px;
-    text-align: left;
+    margin: 0 0 10px 8%;
+    display: inline-block;
     position: relative; }
     .quote__slider .s__top-title:before {
       content: "";
+      display: inline-block;
       position: absolute;
-      left: -60px;
+      left: -60%;
       top: 15px;
-      width: 50px;
+      width: 50%;
       height: 2px;
       background-color: red; }
 
@@ -420,12 +425,25 @@ header .wrapper {
   text-align: center; }
 
 /* #Work Section */
+.s-work .info-text {
+  font: 15px "Roboto-LightItalic";
+  text-transform: lowercase; }
+  .s-work .info-text p {
+    margin: 0; }
+  .s-work .info-text .descr-title {
+    color: #fff;
+    margin-bottom: 10px; }
+  .s-work .info-text:before {
+    background: url(../images/gallery/PICTURE.svg);
+    width: 30px;
+    height: 30px; }
+.s-work .wrapper {
+  padding-bottom: 0; }
+
 .gallery {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(2, 274px); }
   .gallery .media-item:hover {
     -webkit-transform: none;
             transform: none;
@@ -433,16 +451,13 @@ header .wrapper {
             box-shadow: none; }
     .gallery .media-item:hover .media__grad {
       opacity: 1; }
+  .gallery .media-item:nth-child(3) {
+    grid-row-start: span 2; }
 
-.s_work .info-text {
-  font: 15px "Roboto-LightItalic";
-  text-transform: lowercase; }
-  .s_work .info-text p {
-    margin: 0; }
-  .s_work .info-text .descr-title {
-    color: #fff;
-    margin-bottom: 10px; }
-  .s_work .info-text:before {
-    background: url(../images/gallery/PICTURE.svg);
-    width: 30px;
-    height: 30px; }
+/* #Section quote-2 */
+.quote__person-img {
+  margin-left: 20px;
+  border-radius: 50%;
+  width: 210px;
+  height: 190px;
+  cursor: pointer; }

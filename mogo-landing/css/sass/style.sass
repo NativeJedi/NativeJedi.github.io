@@ -68,6 +68,7 @@ header
 	color: rgb(51, 51, 51)
 	text-transform: uppercase
 	font-weight: bold
+	text-align: center
 
 .media-item
 	position: relative
@@ -122,7 +123,7 @@ header
 	.wrapper
 		padding-top: 10px
 
-.header__logo-link
+.logo-link
 	color: #fff
 	font: 30px "Montserrat-Bold"
 	cursor: pointer
@@ -316,12 +317,13 @@ header
 		&:last-child
 			top:   20px
 			right: 5px
-	p
-		padding: 1em 0 1em 3em
-		margin-top: 0
-		cursor: pointer
-		border: 1px solid
-		border-color: #ccc transparent
+.accordeon__p
+	padding: 1em 0 1em 3em
+	margin-top: 0
+	text-align: left
+	cursor: pointer
+	border: 1px solid
+	border-color: #ccc transparent
 
 .accord__descr
 	display: none
@@ -392,9 +394,6 @@ header
 		top: 50%
 		left: 50%
 		transform: translate(-50%, -50%)
-
-	.descr-title
-		text-align: center
 
 .media__social-item
 	width: 25%
@@ -497,7 +496,7 @@ header
 		left: 0
 		height: 2px
 		width:  60px
-		border: 1px solid red
+		background-color: red
 	
 
 /*#Stories section*/
@@ -508,6 +507,7 @@ header
 	width: 30%
 	.descr-title
 		text-align: left
+
 .story-icon
 	&:before
 		content: ""
@@ -544,3 +544,114 @@ header
 		&:first-child
 			font-size: 25px
 			font-weight: bold
+
+
+/*#Section map*/
+
+.s-map
+	background: linear-gradient(rgba(255,255,255,.7)), url(../images/map.jpg) center
+	background-size: cover
+.map__title
+	position: relative
+	display: block
+	margin: 0 auto
+	padding-top: 20px
+	color: #F38181
+	font: 24px "Montserrat-Bold"
+	text-align: center
+	text-transform: uppercase
+	&:before
+		content: ""
+		position: absolute
+		top: -1rem
+		left: 50%
+		transform: translateX(-50%)
+		width:  20px
+		height: 26px
+		background: url(../images/map-icon.svg)
+	&:after
+		content: ""
+		position: absolute
+		bottom: -1rem
+		left: 50%
+		transform: translateX(-50%)
+		width: 5%
+		height: 2px
+		background-color: red
+
+footer
+	background-color: #F8F8F8
+	.logo-link
+		color: #D1D1D1
+		&+p
+			color: #C1C1C1
+	.wrapper
+		padding-bottom: 0
+.h-350
+	display: flex
+	flex-flow: column wrap
+	justify-content: space-between
+	min-height: 350px
+	width: 32%
+.footer__follow
+	color: #C1C1C1
+	font: 15px "Roboto-LightItalic"
+	a
+		margin-left: 10px
+
+.follow-mail
+	width: 230px
+	height: 40px
+	border: 2px solid rgb(231, 231, 231)
+	border-right: none
+	&[placeholder]
+		font: 15px "Roboto-LightItalic"
+.btn--subscribe
+	width: 150px
+	height: 40px
+	border: none
+	background-color: rgb(149, 225, 211)
+	color: #fff
+	font: 14px "Montserrat-Bold"
+	text-transform: uppercase
+	cursor: pointer
+
+.blog
+	display: flex
+.blogs-title
+	margin-top: 0
+	font-size: 14px
+	text-transform: uppercase
+.blog-descr
+	display: inline-block
+	vertical-align: top
+	font-size: 12px
+	text-transform: uppercase
+	margin-left: .8rem
+.blog-data
+	display: block
+	margin-top: 5px
+	color: #C1C1C1
+	font: 13px "Roboto-LightItalic"
+	text-transform: none
+
+.footer__instagram
+	width: 23%
+.instagram-gallery
+	display: grid
+	grid-template-columns: repeat(3, 88px)
+	grid-template-rows: repeat(3, 88px)
+	grid-gap: .2rem
+	img
+		max-width: 100%
+
+.link-inst
+	color: #000
+
+.footer__copyright
+	width: 100%
+	text-align: center
+	font-size: 14px
+	padding-top: 3rem
+	span
+		color: #F4A3A3

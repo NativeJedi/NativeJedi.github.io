@@ -70,7 +70,8 @@ header {
   font: 14px "Montserrat-Regular";
   color: #333333;
   text-transform: uppercase;
-  font-weight: bold; }
+  font-weight: bold;
+  text-align: center; }
 
 .media-item {
   position: relative;
@@ -133,7 +134,7 @@ header {
 header .wrapper {
   padding-top: 10px; }
 
-.header__logo-link {
+.logo-link {
   color: #fff;
   font: 30px "Montserrat-Bold";
   cursor: pointer; }
@@ -332,12 +333,14 @@ header .wrapper {
     .accordeon img:last-child {
       top: 20px;
       right: 5px; }
-  .accordeon p {
-    padding: 1em 0 1em 3em;
-    margin-top: 0;
-    cursor: pointer;
-    border: 1px solid;
-    border-color: #ccc transparent; }
+
+.accordeon__p {
+  padding: 1em 0 1em 3em;
+  margin-top: 0;
+  text-align: left;
+  cursor: pointer;
+  border: 1px solid;
+  border-color: #ccc transparent; }
 
 .accord__descr {
   display: none;
@@ -410,8 +413,6 @@ header .wrapper {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
-  .media__social-wrap .descr-title {
-    text-align: center; }
 
 .media__social-item {
   width: 25%;
@@ -513,7 +514,7 @@ header .wrapper {
     left: 0;
     height: 2px;
     width: 60px;
-    border: 1px solid red; }
+    background-color: red; }
 
 /*#Stories section */
 .s__stories-wrap {
@@ -560,3 +561,132 @@ header .wrapper {
     .story__calendar p:first-child {
       font-size: 25px;
       font-weight: bold; }
+
+/*#Section map */
+.s-map {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.7))), url(../images/map.jpg) center;
+  background: linear-gradient(rgba(255, 255, 255, 0.7)), url(../images/map.jpg) center;
+  background-size: cover; }
+
+.map__title {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  padding-top: 20px;
+  color: #F38181;
+  font: 24px "Montserrat-Bold";
+  text-align: center;
+  text-transform: uppercase; }
+  .map__title:before {
+    content: "";
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 20px;
+    height: 26px;
+    background: url(../images/map-icon.svg); }
+  .map__title:after {
+    content: "";
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 5%;
+    height: 2px;
+    background-color: red; }
+
+footer {
+  background-color: #F8F8F8; }
+  footer .logo-link {
+    color: #D1D1D1; }
+    footer .logo-link + p {
+      color: #C1C1C1; }
+  footer .wrapper {
+    padding-bottom: 0; }
+
+.h-350 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-height: 350px;
+  width: 32%; }
+
+.footer__follow {
+  color: #C1C1C1;
+  font: 15px "Roboto-LightItalic"; }
+  .footer__follow a {
+    margin-left: 10px; }
+
+.follow-mail {
+  width: 230px;
+  height: 40px;
+  border: 2px solid #e7e7e7;
+  border-right: none; }
+  .follow-mail[placeholder] {
+    font: 15px "Roboto-LightItalic"; }
+
+.btn--subscribe {
+  width: 150px;
+  height: 40px;
+  border: none;
+  background-color: #95e1d3;
+  color: #fff;
+  font: 14px "Montserrat-Bold";
+  text-transform: uppercase;
+  cursor: pointer; }
+
+.blog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.blogs-title {
+  margin-top: 0;
+  font-size: 14px;
+  text-transform: uppercase; }
+
+.blog-descr {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-left: 0.8rem; }
+
+.blog-data {
+  display: block;
+  margin-top: 5px;
+  color: #C1C1C1;
+  font: 13px "Roboto-LightItalic";
+  text-transform: none; }
+
+.footer__instagram {
+  width: 23%; }
+
+.instagram-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 88px);
+  grid-template-rows: repeat(3, 88px);
+  grid-gap: 0.2rem; }
+  .instagram-gallery img {
+    max-width: 100%; }
+
+.link-inst {
+  color: #000; }
+
+.footer__copyright {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  padding-top: 3rem; }
+  .footer__copyright span {
+    color: #F4A3A3; }

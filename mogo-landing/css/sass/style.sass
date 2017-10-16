@@ -335,14 +335,6 @@ header
 
 /*#Section quote*/
 
-
-.s-quote
-	.wrapper
-		display: flex
-		justify-content: space-around
-		align-items: center
-	img[src*="ARROW"]
-		cursor: pointer
 .icon--speech
 	border: 3px solid rgb(150,226,212)
 	width: 144px
@@ -351,8 +343,12 @@ header
 	margin-left: 50px
 
 .quote__slider
-	margin-top: 0
-
+	display: flex
+	justify-content: space-around
+	align-items: center
+	blockquote
+		margin: 0
+		width: 75%
 	p
 		font: 24px "Roboto-LightItalic"
 		line-height: 1.5

@@ -350,18 +350,6 @@ header .wrapper {
   overflow-y: scroll; }
 
 /*#Section quote */
-.s-quote .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
-.s-quote img[src*="ARROW"] {
-  cursor: pointer; }
-
 .icon--speech {
   border: 3px solid #96e2d4;
   width: 144px;
@@ -370,7 +358,17 @@ header .wrapper {
   margin-left: 50px; }
 
 .quote__slider {
-  margin-top: 0; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .quote__slider blockquote {
+    margin: 0;
+    width: 75%; }
   .quote__slider p {
     font: 24px "Roboto-LightItalic";
     line-height: 1.5;

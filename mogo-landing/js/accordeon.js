@@ -23,10 +23,13 @@ $(document).ready(function() {
                     : "images/sservice-ARROW _ DOWN.png";
       $("#accord_arrow2").attr("src", src);
 		});
+		
 		$("ul.accordeon li.accord3").bind("click", function() {
       var src = ($("#accord_arrow3").attr("src") === "images/sservice-ARROW _ DOWN.png")
                     ? "images/ARROW_UP.png" 
                     : "images/sservice-ARROW _ DOWN.png";
       $("#accord_arrow3").attr("src", src);
 		});
+
+		$('.slick-1').slick();
 	});

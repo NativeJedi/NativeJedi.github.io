@@ -79,7 +79,8 @@ header {
   -webkit-transition: all 0.75s;
   transition: all 0.75s; }
   .media-item img {
-    max-width: 100%; }
+    max-width: 100%;
+    min-height: 100%; }
   .media-item:hover {
     -webkit-transform: translate(-5%, -5%);
             transform: translate(-5%, -5%);
@@ -456,7 +457,7 @@ header {
 .gallery {
   display: grid;
   grid-template-columns: repeat(4, 25%);
-  grid-template-rows: repeat(2, 274px); }
+  grid-template-rows: repeat(2, 50%); }
   .gallery .media-item:hover {
     -webkit-transform: none;
             transform: none;

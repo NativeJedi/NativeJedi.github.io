@@ -31,7 +31,7 @@ $(document).ready(function() {
       $("#accord_arrow3").attr("src", src);
 		});
 
-		$('.slick-1').slick();
+		$('.quote__slider').slick();
 
 		$('.header__slider').slick({
 			arrows: false,

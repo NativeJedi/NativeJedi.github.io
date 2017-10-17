@@ -158,22 +158,22 @@ header
 /*#Main section*/
 
 
-.main-section
+.s-main
 	padding-top: 100px
 	color: #fff
 	background: linear-gradient( 0deg, rgba(252,227,138,.9) 0%, rgba(243,129,129,.9) 100%), url("../images/header_eagle.png") no-repeat
 	background-size: cover
 	background-position: center
 
-.main-section__content
+.s-main__content
 	display: flex
 	align-items: center
 	flex-direction: column
 
-.top-title--big
+.top-title--main
 	font-size: 72px
 
-.main-title--big
+.main-title--main
 	position: relative
 	width: 60%
 	font-size: 118px
@@ -197,7 +197,7 @@ header
 	background-color: rgba(0, 0, 0, 0)
 	cursor: pointer
 
-.main-section__slider
+.s-main__slider-controlls
 	margin-top: 150px
 	color: #fff
 	font: 24px "Montserrat-bold"
@@ -233,7 +233,7 @@ header
 .s-facts
 	background-color: rgb(149, 225, 211)
 
-.fact-content
+.fact-item
 	text-align: center
 	color: rgb(255, 255, 255)
 	h2
@@ -262,7 +262,7 @@ header
 	position: relative
 	width: 30%
 	margin-bottom: 5em
-	padding-left: 40px
+	padding-left:  40px
 	img
 		position: absolute
 		top:   20px
@@ -294,11 +294,14 @@ header
 
 .center
 	justify-content: center
+
+.features__img-wrap
+	position: relative
 .features__img
 	&:last-child
 		position: absolute
-		top:   40%
-		right: 225px
+		right: -15%
+		bottom: -15%
 
 
 /* #Second service section */
@@ -347,7 +350,7 @@ header
 	padding: 35px
 	margin-left: 50px
 
-.quote__slider
+.quote__slider-item
 	display: flex
 	justify-content: space-around
 	align-items: center

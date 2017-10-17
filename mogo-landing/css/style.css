@@ -131,8 +131,16 @@ header {
 
 /*State rules */
 /*#Header */
-header .wrapper {
-  padding-top: 10px; }
+header {
+  height: 40px; }
+  header .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-top: 10px; }
 
 .logo-link {
   color: #fff;
@@ -141,20 +149,21 @@ header .wrapper {
 
 .header__nav {
   width: 50%;
+  height: 100%;
+  padding: 0.6em 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
 
 .nav-link {
-  height: 100%;
-  padding: 0.4em 0;
-  color: #fff; }
+  color: #fff;
+  padding-bottom: 0.3em; }
   .nav-link:hover:not([class*="icon"]) {
     border-bottom: 4px solid #fce38a;
     color: #fce38a; }

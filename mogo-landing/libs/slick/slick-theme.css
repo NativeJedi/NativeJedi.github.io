@@ -95,7 +95,7 @@
     left: 0;
     width: 12px;
     height: 21px;
-    background: url(../images/arrows/slider-ARROW_LEFT.png) center;
+    background: url(arrows/slider-ARROW_LEFT.png) center;
     -webkit-background-size: cover;
     background-size: cover;
 }
@@ -121,7 +121,7 @@
     top: 0;
     width: 12px;
     height: 21px;
-    background: url(../images/arrows/slider-ARROW_Right.png) center;
+    background: url(arrows/slider-ARROW_Right.png) center;
     -webkit-background-size: cover;
     background-size: cover;
 }

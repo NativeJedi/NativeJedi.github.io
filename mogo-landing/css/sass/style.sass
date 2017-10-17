@@ -120,9 +120,12 @@ header
 
 
 header
+	height: 40px
 	.wrapper
+		display: flex
+		justify-content: space-between
 		padding-top: 10px
-
+		
 .logo-link
 	color: #fff
 	font: 30px "Montserrat-Bold"
@@ -130,14 +133,15 @@ header
 
 .header__nav
 	width: 50%
+	height: 100%
+	padding: .6em 0
 	display: flex
 	justify-content: space-between
-	align-items: center
+	align-items: flex-start
 
 .nav-link
-	height: 100%
-	padding: .4em 0
-	color: #fff
+	color: #fff 
+	padding-bottom: .3em
 	&:hover:not([class*="icon"])
 		border-bottom: 4px solid rgb(252, 227, 138)
 		color: rgb(252, 227, 138)
@@ -148,7 +152,7 @@ header
 		background: url(../images/Header_shoping.png) no-repeat center 
 		&:last-of-type
 			height: 18px
-			background-image: url(../images/header_MAGNIFYING_GLASS.png)	
+			background-image: url(../images/header_MAGNIFYING_GLASS.png)
 
 
 /*#Main section*/
@@ -317,6 +321,7 @@ header
 		&:last-child
 			top:   20px
 			right: 5px
+
 .accordeon__p
 	padding: 1em 0 1em 3em
 	margin-top: 0

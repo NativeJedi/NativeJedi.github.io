@@ -77,11 +77,10 @@ header {
   position: relative;
   cursor: pointer;
   -webkit-transition: all 0.75s;
-  transition: all 0.75s;
-  overflow: hidden; }
+  transition: all 0.75s; }
   .media-item img {
-    max-width: 100%;
-    min-height: 100%; }
+    display: block;
+    max-width: 100%; }
   .media-item:hover {
     -webkit-transform: translate(-5%, -5%);
             transform: translate(-5%, -5%);

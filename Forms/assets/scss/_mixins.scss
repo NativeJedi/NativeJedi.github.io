@@ -1,0 +1,9 @@
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+@mixin one-btn($margin-btw) {
+	width: calc(50% - #{$margin-btw/2});
+}

@@ -1,0 +1,15 @@
+*{
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+}
+
+body {
+	@include Cabin(16px);
+}
+
+a {
+	text-decoration: none;
+}

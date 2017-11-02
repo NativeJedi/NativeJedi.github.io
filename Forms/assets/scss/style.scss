@@ -27,23 +27,31 @@
 		height: 4.5rem;
 		border-radius: 0.5rem;
 		border: 1px solid #C6CCD2;
+		padding-left: 1.5rem;
 
 		&[placeholder] {
 			color: $font-dark;
 			padding-left: 4.5rem;
-			font-size: 1em;
 		}
+
+		&:focus + .icon {
+			color: inherit;
+		}
+
+		&:focus {
+			&[placeholder] {
+				color: inherit;
+			}
+		}
+		
 	}
 
 	.icon {
 		position: absolute;
-		color: $font-dark;
-		top: 	50%;
+		@include centeredY;
 		left: 1.5em;
-		transform: translateY(-50%);
-		font-size: 1em;
+		color: $font-dark;
 	}
-
 }
 
 
@@ -78,6 +86,7 @@
 .row {
 	@extend %flex;
 	flex-wrap: wrap;
+	align-items: flex-start;
 	&:last-child {
 		margin-bottom: 2rem;
 	}
@@ -177,7 +186,7 @@
 			@include line;
 			right: 0;
 		}
-	
+
 		&:before{
 			@include line;
 			left: 0;
@@ -185,6 +194,7 @@
 	}
 
 	&__checkbox {
+		position: relative;
 		margin-bottom: 2rem;
 
 		input{
@@ -192,7 +202,7 @@
 
 			&:checked + label:before {
 				content: "\2713";
-				font-size: 10px;
+				font-size: 12px;
 				color: #fff;
 				text-align: center;
 			}
@@ -200,22 +210,19 @@
 		}
 
 		label {
-			display: inline-block;
-			cursor: pointer;
+			padding-left: 2.4rem;
 			font-size: 14px;
 			color: $font-dark;
-			vertical-align: middle;
 			
 			&:before {
 				content: "";
-				display: inline-block;
+				position: absolute;
+				left: 0;
+				@include centeredY;
 				width: 1.6rem;
-				height: 1.4rem;
-				vertical-align: top;
+				height: 1.6rem;
 				background-color: $green;
 				border-radius: 6px;
-				margin-right: 1rem;
-				padding-bottom: 2px;
 			}
 		}
 
@@ -316,7 +323,7 @@
 %form-select {
 	width: 100%;
 	margin-bottom: 2rem;
-	padding: 1.15rem 5rem;
+	padding: 1.15rem 2rem;
 	border-radius: .5rem;
 	background-color: $blue-light;
 	color: $white;
@@ -325,6 +332,7 @@
 .form-textarea {
 	width: 100%;
 	height: 14rem;
+	padding: 1rem 1.5rem;
 }
 
 .btn--send,
@@ -388,17 +396,17 @@
 .stuff-descr {
 	margin-left: 2rem;
 
-		p,
-		h4 {
-			margin: 0;
-		}
+	p,
+	h4 {
+		margin: 0;
+	}
 
-		p,
-		label{
-			display: inline-block;
-			font-size: 1.4rem;
-			color: $font-dark;
-		}
+	p,
+	label{
+		display: inline-block;
+		font-size: 1.4rem;
+		color: $font-dark;
+	}
 
 }
 
@@ -439,7 +447,6 @@
 		position: relative;
 
 		label {
-			cursor: pointer;
 
 			&:before {
 				content: "";
@@ -503,6 +510,7 @@
 
 .cart-link {
 	color: $blue-light;
+	align-self: center;
 	span {
 		margin-right: 1rem;
 	}
@@ -518,7 +526,6 @@
 }
 
 .form-select--loc {
-	padding-left: 2rem;
 	background-color: $sand;
 }
 

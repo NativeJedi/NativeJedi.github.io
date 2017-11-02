@@ -7,3 +7,12 @@
 @mixin one-btn($margin-btw) {
 	width: calc(50% - #{$margin-btw/2});
 }
+
+@mixin line {
+	content: "";
+	position: absolute;
+	top: 50%;
+	@include calc(width, '50% - 2rem');
+	height: 1px;
+	background-color: $font-dark;
+}

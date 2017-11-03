@@ -1,0 +1,395 @@
+@import 'icons/iconfont__variables';
+@import 'icons/iconfont__icons';
+@import 'normalize';
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
+@import 'placeholders';
+
+* {
+	box-sizing: border-box;
+}
+html {
+	font-size: 10px;
+}
+
+body {
+	@include Cabin(16px);
+}
+
+.wrap {
+	width: 940px;
+	margin: 20px auto;
+}
+
+.row {
+	@extend %flex;
+	margin-top: 30px;
+}
+.container {
+	@extend %flex;
+}
+
+.btn,
+%btn {
+	margin: 0;
+	border: none;
+	color: $font-light;
+	background-color: $btn-main;
+}
+
+.btn--lg {
+	width: 190px;
+	height: 60px;
+	font-size: 18px;
+}
+
+.btn--md {
+	width: 140px;
+	height: 48px;
+}
+
+.btn--sm {
+	width: 120px;
+	height: 36px;
+	font-size: 14px;
+}
+
+
+.btn-round {
+	@extend %btn;
+	border-radius: 2em;
+}
+
+.btn-transparent {
+	@extend .btn-round;
+	border: 2px solid $btn-main;
+	color: $btn-main;
+	background-color: transparent;
+}
+
+.btn-next,
+%btn-next {
+	position: relative;
+	border: none;
+	border-radius: 50%;
+	background-color: $btn-main;
+
+	&:after {
+		font-family: $global-font-icon;
+		content: $icon-forw;
+		@include center;
+		color: $font-light;
+	}
+}
+
+.btn-prev {
+	@extend %btn-next;
+
+	&:after {
+		transform: translate(-50%, -50%) rotate(180deg);
+	}
+}
+
+.btn-prev--square {
+	border-radius: 5px 0 0 5px;
+}
+
+.btn-next--square {
+	border-radius: 0 5px 5px 0;
+	border-left: 1px solid rgba(0, 0, 0, .2);
+}
+
+.btn-next--lg {
+	width: 60px;
+	height: 60px;
+}
+
+.btn-next--md,
+%btn-next--md {
+	width: 48px;
+	height: 48px;
+
+	&:after {
+		font-size: 15px;
+	}
+}
+
+.btn-next--sm,
+%btn-next--sm {
+	width: 36px;
+	height: 36px;
+
+	&:after {
+		font-size: 11px;
+	}
+}
+
+.btn-sandwitch {
+	@extend %btn;
+	border-radius: 10px;
+
+	span {
+		display: block;
+		width: 50%;
+		height: 2px;
+		margin: 10% auto;
+		background-color: $font-light;
+	}
+
+}
+
+.btn-sandwitch--md {
+	@extend %btn-next--md;
+}
+
+.btn-sandwitch--sm {
+	@extend %btn-next--sm;
+}
+
+
+%btn-pointer {
+	position: relative;
+	border: none;
+	border-radius: 5px 0 0 5px;
+	background-color: $btn-main;
+	color: $font-light;
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		transform: translateX(100%);
+		border-style: solid;
+		border-color: transparent transparent transparent $btn-main;
+	}
+}
+
+.btn-pointer {
+	@extend %btn-pointer;
+	width: $btn-pointer-w;
+	height: $btn-pointer-h;
+
+	&:after {
+		border-width: ($btn-pointer-h / 2) 0 ($btn-pointer-h / 2) ($btn-pointer-h / 2);
+	}
+}
+
+.btn-pointer--sm {
+	@extend %btn-pointer;
+	width: $btn-pointer--sm-w;
+	height: $btn-pointer--sm-h;
+	font-size: 14px;
+
+	&:after {
+		border-width: ($btn-pointer--sm-h / 2) 0 ($btn-pointer--sm-h / 2) ($btn-pointer--sm-h / 2);
+	}
+}
+
+.btn-toggle {
+
+	@extend %btn;
+	position: relative;
+	background-color: $btn-toggle;
+	
+	.sw-wrap {
+		width: 19px;
+		height: 19px;
+		@include center;
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+	}
+
+	%span {
+		width: 100%;
+		height: 2px;
+		background-color: $font-light;
+	}
+
+	.sw-topper{
+		@extend %span;
+		width: 80%;
+	}
+	.sw-middle{
+		@extend %span;
+	}
+	.sw-bottom{
+		@extend %span;
+		width: 50%;
+	}
+}
+
+.btn-toggle--cent {
+	.sw-wrap {
+		justify-content: center;
+	}
+}
+
+.btn-toggle--end {
+	.sw-wrap {
+		justify-content: flex-end;
+	}
+}
+
+.inp-form {
+	@extend %flex;
+	position: relative;
+
+	input {
+		width: 219px;
+		height: 48px;
+		padding-left: 20px;
+		border: 2px solid $inp-border;
+		border-right: none;
+		border-radius: 5px 0 0 5px;
+
+	}
+
+	&__btn {
+		background-color: $btn-toggle;
+		width: 76px;
+		height: 48px;
+		border: none;
+		border-radius: 0 5px 5px 0;
+		color: $font-light;
+	}
+
+	&__select {
+		width: 112px;
+		height: 48px;
+		padding-left: 18px;
+		background-color: $btn-toggle;
+		border-radius: 5px 0 0 5px;
+		border: none;
+		color: $font-light;
+
+		&--ok {
+			width: 60px;
+			padding-left: 10px;
+			border-radius: 6px;
+		}
+
+	}
+
+	&--2-btns {
+		input {
+			border-radius: 0;
+			border-left: none;
+		}
+	}
+
+}
+
+.inp-wrap {
+	@extend %flex;
+	position: relative;
+
+	input {
+		width: 220px;
+		height: 48px;
+		border: 2px solid $inp-border;
+	}
+
+	input {
+
+		&:focus + .icon--left {
+			color: #000;
+		}
+
+		&:focus ~ .icon--right {
+			opacity: 1;
+		}
+
+
+	}
+
+	span {
+		@include centY;
+		color: $font-inp;
+		font-size: 16px;
+	}
+
+	.icon--left {
+		left: 25px;
+	}
+
+	.icon--right {
+		right: 25px;
+		opacity: 0;
+	}
+
+}
+
+.inp--mail {
+	padding-left: 20px;
+	border-radius: 6px;
+}
+
+.inp--search {
+	padding-left: 40px;
+	border-radius: 30px;
+}
+
+.inp--suc {
+	
+	&:focus {
+		border-color: $btn-toggle;
+	}
+	&:focus + span {
+		right: 20px;
+		font-size: 12px;
+		color: $btn-toggle;
+	}
+
+}
+
+.inp--error {
+	&:focus {
+		border-color: red;
+	}
+	&:focus + span {
+		right: 20px;
+		font-size: 10px;
+		color: red;
+	}
+
+}
+
+.btn-search {
+	border: none;
+	border-radius: 5px;
+	background-color: $btn-toggle;
+	padding: .9em 1.6em;
+
+	&:before {
+		font-family: $global-font-icon;
+		content: $icon-search;
+		color: #fff;
+	}
+}
+
+.inp-search {
+	width: 160px;
+	height: 48px;
+	border: 2px solid $inp-border;
+	border-radius: 5px;
+	padding-left: 20px;
+}
+
+.src-wrap {
+	.btn-search {
+		position: absolute;
+		right: 0;
+		border-radius: 0 5px 5px 0;
+		background-color: $font-inp;
+	}
+
+	input:focus + .btn-search {
+		background-color: $btn-toggle;
+	}
+	
+}
+
+

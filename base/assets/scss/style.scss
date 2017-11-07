@@ -970,3 +970,101 @@ body {
 		padding-left: 16px;
 	}
 }
+
+.table-row-active{
+	td:not(:first-child) {
+		color: $btn-toggle;
+	}
+}
+
+.b-notify {
+	position: relative;
+	width: 100%;
+	padding: 2rem 4rem 2rem 2rem;
+	background-color: $btn-toggle;
+	border-radius: 6px;
+
+
+	&__content {
+		margin: 0;
+		color: #fff;
+		line-height: 2rem;
+	}
+	
+	@include close(#fff, 24px, 15px);
+
+	&__btn {
+		margin-top: 2rem;
+		width: 120px;
+		height: 40px;
+		border: none;
+		border-radius: 6px;
+		background-color: rgba(#fff, .4);
+		color: #fff;
+		cursor: pointer;
+	}
+
+	&--yellow {
+		background-color: $notify-middle;
+	}
+
+	&--red {
+		background-color: $error-color;
+	}
+}
+
+.b-popover {
+	position: relative;
+	@include calc(width, '50% - 1rem');
+	background-color: #fff;
+	padding: 2.5rem;
+	border: 2px solid #000;
+	border-radius: 6px;
+
+	@include close(#000, 24px, 14px);
+
+	&__header {
+		margin: 0 0 1rem 0;
+	}
+
+	&__content {
+		margin: 0;
+	}
+
+	&__btn {
+		width: 80px;
+		height: 40px;
+		margin-top: 2rem;
+		background-color: $btn-toggle;
+		border: none;
+		border-radius: 6px;
+		color: #fff;
+
+		&--right {
+			margin-left: 1rem;
+			background-color: $btn-main;
+		}
+
+		&--dark {
+			background-color: transparent;
+			border: 2px solid $btn-toggle;
+			color: $btn-toggle;
+
+			&:before {
+				color: #fff!important;
+			}
+
+			&-right {
+				background-color: transparent;
+				border: 2px solid $notify-btn--right;
+				color: $notify-btn--right;
+			}
+		}
+	}
+}
+
+.b-popover--dark {
+	background-color: rgba(#000, .8);
+	border: none;
+	color: #fff;
+}

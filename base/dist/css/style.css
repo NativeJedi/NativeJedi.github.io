@@ -1158,4 +1158,89 @@ body {
 .check--table label {
   padding-left: 16px; }
 
+.table-row-active td:not(:first-child) {
+  color: #24AA98; }
+
+.b-notify {
+  position: relative;
+  width: 100%;
+  padding: 2rem 4rem 2rem 2rem;
+  background-color: #24AA98;
+  border-radius: 6px; }
+  .b-notify__content {
+    margin: 0;
+    color: #fff;
+    line-height: 2rem; }
+  .b-notify:before {
+    font-family: "social";
+    content: "";
+    position: absolute;
+    top: 24px;
+    right: 15px;
+    padding: 0 10px;
+    font-size: 10px;
+    color: #fff;
+    cursor: pointer; }
+  .b-notify__btn {
+    margin-top: 2rem;
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #fff;
+    cursor: pointer; }
+  .b-notify--yellow {
+    background-color: #d9c26c; }
+  .b-notify--red {
+    background-color: #db7560; }
+
+.b-popover {
+  position: relative;
+  width: calc(50% - 1rem);
+  background-color: #fff;
+  padding: 2.5rem;
+  border: 2px solid #000;
+  border-radius: 6px; }
+  .b-popover:before {
+    font-family: "social";
+    content: "";
+    position: absolute;
+    top: 24px;
+    right: 14px;
+    padding: 0 10px;
+    font-size: 10px;
+    color: #000;
+    cursor: pointer; }
+  .b-popover__header {
+    margin: 0 0 1rem 0; }
+  .b-popover__content {
+    margin: 0; }
+  .b-popover__btn {
+    width: 80px;
+    height: 40px;
+    margin-top: 2rem;
+    background-color: #24AA98;
+    border: none;
+    border-radius: 6px;
+    color: #fff; }
+    .b-popover__btn--right {
+      margin-left: 1rem;
+      background-color: #65ABD0; }
+    .b-popover__btn--dark {
+      background-color: transparent;
+      border: 2px solid #24AA98;
+      color: #24AA98; }
+      .b-popover__btn--dark:before {
+        color: #fff !important; }
+      .b-popover__btn--dark-right {
+        background-color: transparent;
+        border: 2px solid #d9c26c;
+        color: #d9c26c; }
+
+.b-popover--dark {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: none;
+  color: #fff; }
+
 /*# sourceMappingURL=style.css.map */

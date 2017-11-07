@@ -38,6 +38,11 @@ $global-font-icon: 'social';
       content: $icon-forw;
     }
   }
+  &.icon--open {
+    &:before {
+      content: $icon-open;
+    }
+  }
   &.icon--search {
     &:before {
       content: $icon-search;

@@ -5,6 +5,7 @@
 @import 'variables';
 @import 'mixins';
 @import 'placeholders';
+@import 'foundation-custom';
 
 * {
 	box-sizing: border-box;
@@ -26,63 +27,59 @@ body {
 .row {
 	@extend %flex;
 	flex-wrap: wrap;
-	margin-top: 30px;
+	margin-bottom: 20px;
 }
 .container {
 	@extend %flex;
 }
 
+
+/* #Buttons section */
+
+
 .btn,
 %btn {
-	margin: 0;
-	border: none;
-	color: $font-light;
-	background-color: $btn-main;
+	@include btn($btn-main, #fff, null);
 }
 
 .btn--lg {
-	width: 190px;
-	height: 60px;
-	font-size: 18px;
+	@include size(190px, 60px, 18px);
 }
 
 .btn--md {
-	width: 140px;
-	height: 48px;
+	@include size(140px, 48px, 16px);
 }
 
 .btn--sm {
-	width: 120px;
-	height: 36px;
-	font-size: 14px;
+	@include size(120px, 36px, 14px);
 }
 
-
-.btn-round {
-	@extend %btn;
-	border-radius: 2em;
+.btn--rounded {
+	@include br(30px);
 }
 
 .btn-transparent {
-	@extend .btn-round;
-	border: 2px solid $btn-main;
-	color: $btn-main;
-	background-color: transparent;
+	@include btn(transparent, $btn-main, $btn-main);
 }
+
 
 .btn-next,
 %btn-next {
 	position: relative;
-	border: none;
-	border-radius: 50%;
-	background-color: $btn-main;
+	@extend %btn;
+	@include br(50%);
 
 	&:after {
 		font-family: $global-font-icon;
 		content: $icon-forw;
 		@include center;
-		color: $font-light;
-	}
+	}	
+}
+
+
+.btn-next--square {
+	@include br-r(6px);
+	border-left: 1px solid rgba(0, 0, 0, .2);
 }
 
 .btn-prev {
@@ -94,51 +91,40 @@ body {
 }
 
 .btn-prev--square {
-	border-radius: 5px 0 0 5px;
+	@include br-l(6px);
 }
 
-.btn-next--square {
-	border-radius: 0 5px 5px 0;
-	border-left: 1px solid rgba(0, 0, 0, .2);
-}
-
-.btn-next--lg {
-	width: 60px;
-	height: 60px;
+.btn-next--lg,
+%btn-next--lg {
+	@include size(60px, 60px, 18px);
 }
 
 .btn-next--md,
 %btn-next--md {
-	width: 48px;
-	height: 48px;
-
-	&:after {
-		font-size: 15px;
-	}
+	@include size(48px, 48px, 16px)
 }
 
 .btn-next--sm,
 %btn-next--sm {
-	width: 36px;
-	height: 36px;
-
-	&:after {
-		font-size: 11px;
-	}
+	@include size(36px, 36px, 11px);
 }
 
 .btn-sandwitch {
 	@extend %btn;
-	border-radius: 10px;
+	@include br(8px);
 
 	span {
 		display: block;
 		width: 50%;
 		height: 2px;
 		margin: 10% auto;
-		background-color: $font-light;
+		background-color: #fff;
 	}
 
+}
+
+.btn-sandwitch--lg {
+	@extend %btn-next--lg;
 }
 
 .btn-sandwitch--md {
@@ -150,12 +136,9 @@ body {
 }
 
 
-%btn-pointer {
+.btn-pointer {
 	position: relative;
-	border: none;
-	border-radius: 5px 0 0 5px;
-	background-color: $btn-main;
-	color: $font-light;
+	@extend %btn;
 
 	&:after {
 		content: "";
@@ -168,71 +151,78 @@ body {
 	}
 }
 
-.btn-pointer {
-	@extend %btn-pointer;
-	width: $btn-pointer-w;
-	height: $btn-pointer-h;
-
+.btn-pointer--md {
+	@include size($pointer-md-w, $pointer-md-h, 16px);
+	
 	&:after {
-		border-width: ($btn-pointer-h / 2) 0 ($btn-pointer-h / 2) ($btn-pointer-h / 2);
+		border-width: ($pointer-md-h / 2) 0 ($pointer-md-h / 2) ($pointer-md-h/ 2);
 	}
 }
 
 .btn-pointer--sm {
-	@extend %btn-pointer;
-	width: $btn-pointer--sm-w;
-	height: $btn-pointer--sm-h;
-	font-size: 14px;
-
+	@include size($pointer-sm-w, $pointer-sm-h, 16px);
+	
 	&:after {
-		border-width: ($btn-pointer--sm-h / 2) 0 ($btn-pointer--sm-h / 2) ($btn-pointer--sm-h / 2);
+		border-width: ($pointer-sm-h / 2) 0 ($pointer-sm-h / 2) ($pointer-sm-h/ 2);
 	}
 }
 
-.btn-toggle {
 
-	@extend %btn;
+/*#Buttons + input*/
+
+
+.btn-toggle,
+%btn-toggle {
+
+	@include btn($btn-toggle, #fff, null)
 	position: relative;
-	background-color: $btn-toggle;
-	
-	.sw-wrap {
-		width: 19px;
-		height: 19px;
-		@include center;
-		display: flex;
-		flex-flow: row wrap;
+
+	&--left {
+		@include br-l(6px);
+		border-right: 1px solid rgba(#000, .2);
+	}
+
+	&--right {
+		@include br-r(6px);
+		border-left: 1px solid rgba(#000, .2);
+	}
+
+}
+
+.sw-wrap {
+	@include center;
+	@extend %flex;
+	flex-direction: column;
+	width: 19px;
+	height: 14px;
+
+	&--right {
+		align-items: flex-end;
+	}
+
+	&--center {
 		align-items: center;
 	}
 
-	%span {
-		width: 100%;
-		height: 2px;
-		background-color: $font-light;
-	}
-
-	.sw-topper{
-		@extend %span;
-		width: 80%;
-	}
-	.sw-middle{
-		@extend %span;
-	}
-	.sw-bottom{
-		@extend %span;
-		width: 50%;
-	}
 }
 
-.btn-toggle--cent {
-	.sw-wrap {
-		justify-content: center;
-	}
+
+%span {
+	width: 100%;
+	height: 2px;
+	background-color: #fff;
 }
 
-.btn-toggle--end {
-	.sw-wrap {
-		justify-content: flex-end;
-	}
+.sw-topper{
+	@extend %span;
+	width: 80%;
+}
+.sw-middle{
+	@extend %span;
+}
+.sw-bottom{
+	@extend %span;
+	width: 50%;
 }
 
 .inp-form {
@@ -240,32 +230,22 @@ body {
 	position: relative;
 
 	input {
-		width: 219px;
-		height: 48px;
-		padding-left: 20px;
-		border: 2px solid $inp-border;
-		border-right: none;
-		border-radius: 5px 0 0 5px;
-
+		@include inp-size(219px, 48px, 20px);
+		@include border($inp-border);
+		@include br-l(6px);
 	}
 
 	&__btn {
-		background-color: $btn-toggle;
-		width: 76px;
-		height: 48px;
-		border: none;
-		border-radius: 0 5px 5px 0;
-		color: $font-light;
+		@extend %btn-toggle;
+		@include size(76px, 48px);
+		@include br-r(6px);
 	}
 
 	&__select {
-		width: 112px;
-		height: 48px;
+		@include size(112px, 48px, inherit);
+		@include btn($btn-toggle, #fff, null);
 		padding-left: 18px;
-		background-color: $btn-toggle;
-		border-radius: 5px 0 0 5px;
-		border: none;
-		color: $font-light;
+		@include br-l(6px);
 
 		&--ok {
 			width: 60px;
@@ -275,7 +255,7 @@ body {
 
 	}
 
-	&--2-btns {
+	&--squared {
 		input {
 			border-radius: 0;
 			border-left: none;
@@ -288,20 +268,20 @@ body {
 
 	@extend %flex;
 	position: relative;
-	width: 220px;
-	height: 48px;
+	@include size(220px, 48px, inherit);
 	
 	&--sm {
 		height: 36px;
 		font-size: 14px;
 	}
+
 	.icon--close {
 		font-size: 11px;
 	}
 
 	input {
 
-		border: 2px solid $inp-border;
+		@include border($inp-border);
 
 		&:focus + .icon--left {
 			color: #000;
@@ -333,7 +313,6 @@ body {
 	width: 100%;
 	padding: 0 25px;
 	border-radius: 6px;
-
 	@include focus($btn-main);
 }
 
@@ -357,9 +336,7 @@ body {
 }
 
 .inp--error {
-	&:focus {
-		border-color: $error-color;
-	}
+	@include focus($error-color);
 
 	&:focus + span {
 		color: $error-color;
@@ -367,16 +344,13 @@ body {
 }
 
 .btn-search {
-	border: none;
-	border-radius: 5px;
-	background-color: $font-inp;
-	width: 48px;
-	height: 100%;
+	@include size(48px, 100%, inherit);
+	@include btn($font-inp, #fff, null);
+	border-radius: 6px;
 
 	&:before {
 		font-family: $global-font-icon;
 		content: $icon-search;
-		color: #fff;
 	}
 
 	&--sm {
@@ -387,7 +361,7 @@ body {
 .inp-search {
 
 	@include calc(width, '100% - 58px');
-	@include br(5px);
+	@include br(6px);
 	padding-left: 20px;
 
 	&:focus + .btn-search {
@@ -414,32 +388,27 @@ body {
 	.btn-search {
 		@include br-r(5px);
 
-	}
-	
+	}	
 }
 
 .textarea {
 	@include calc(width, '50% - 1rem');
 	height: 140px;
-	@include br(5px);
+	border-radius: 6px;
 	padding: 15px;
-	border: 2px solid $inp-border;
+	@include border($inp-border);
 }
 
 .select {
 	position: relative;
-	width: 220px;
-	height: 48px;
-	@include br(5px);
-	background-color: $btn-toggle;
-	color: #fff;
+	@include btn($btn-toggle, #fff, null);
+	@include size(220px, 48px, inherit);
+	border-radius: 6px;
 	appearance: none;
 	padding: 0 20px;
-
 }
 
 .select-wrap {
-	display: block;
 	position: relative;
 	margin-bottom: 2rem;
 
@@ -458,7 +427,6 @@ body {
 }
 
 .radio-wrap {
-	margin-bottom: 20px;
 
 	input {
 		display: none;
@@ -534,7 +502,6 @@ body {
 	display: block;
 	width: 	68px;
 	height: 32px;
-	margin-bottom: 2rem;
 	cursor: pointer;
 	z-index: 3;
 
@@ -672,7 +639,7 @@ body {
 	display: inline-block;
 	width: 18px;
 	height: 18px;
-	margin: 0 0 35px 100px;
+	margin: 0 0 0 100px;
 	border: 2px solid #fff;
 	border-radius: 50%;
 	background-color: $btn-main;
@@ -1068,3 +1035,5 @@ body {
 	border: none;
 	color: #fff;
 }
+
+@include foundation-accordion;

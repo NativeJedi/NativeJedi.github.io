@@ -12,19 +12,23 @@
 	<section>
 		<div class="wrap">
 
+			<!--#LARGE buttons-->
+
 			<div class="row">
-				<button class="btn btn--lg">Loadmore</button>
+				<button class="btn btn--lg">Load more</button>
 				<button class="btn btn--lg">Sign Up</button>
-				<button class="btn-round btn--lg ">Sign In</button>
-				<button class="btn-transparent btn--lg">Logout</button>
+				<button class="btn btn--lg btn--rounded">Sign In</button>
+				<button class="btn-transparent btn--lg btn--rounded">Logout</button>
 				<button class="btn-next btn-next--lg"></button>
 			</div>
+			
+			<!--#MIDDLE buttons-->
 
 			<div class="row">
 				<button class="btn btn--md">Learn more</button>
 				<button class="btn btn--md">Buy now</button>
-				<button class="btn-round btn--md ">Order now</button>
-				<button class="btn-transparent btn--md">Install</button>
+				<button class="btn btn--rounded btn--md ">Order now</button>
+				<button class="btn-transparent btn--rounded btn--md">Install</button>
 				<button class="btn-sandwitch btn-sandwitch--md">
 					<span class="sw-topper"></span>
 					<span class="sw-middle"></span>
@@ -33,14 +37,16 @@
 
 				<button class="btn-prev btn-next--md"></button>
 
-				<button class="btn-pointer">Next</button>
+				<button class="btn-pointer btn-pointer--md">Next</button>
 			</div>
+
+			<!--#SMALL buttons-->
 
 			<div class="row">
 				<button class="btn btn--sm">Start</button>
 				<button class="btn btn--sm">Download</button>
-				<button class="btn-round btn--sm">Share</button>
-				<button class="btn-transparent btn--sm">Free Trial</button>
+				<button class="btn btn--rounded btn--sm">Share</button>
+				<button class="btn-transparent btn--rounded btn--sm">Free Trial</button>
 				<button class="btn-sandwitch btn-sandwitch--sm">
 					<span class="sw-topper"></span>
 					<span class="sw-middle"></span>
@@ -51,37 +57,43 @@
 					<button class="btn-prev btn-prev--square btn-next--sm"></button>
 					<button class="btn-next btn-next--square btn-next--sm"></button>
 				</div>
-				<button class="btn-pointer--sm">Forward</button>
+				<button class="btn-pointer btn-pointer--sm">Forward</button>
 			</div>
 		</div>
 	</section>
+
+	<!--#Buttons + input-->
 
 	<section>
 		<div class="wrap">
 			<div class="row">
 
 				<div class="container">
-					<button class="btn-toggle btn-sandwitch--md">
-						<span class="sw-wrap">
+
+					<button class="btn-toggle btn-toggle--left btn-sandwitch--md">
+						<span class="sw-wrap sw-wrap--left">
 							<span class="sw-topper"></span>
 							<span class="sw-middle"></span>
 							<span class="sw-bottom"></span>
 						</span>
 					</button>
+
 					<button class="btn-toggle btn-toggle--cent btn-sandwitch--md">
-						<span class="sw-wrap">
+						<span class="sw-wrap sw-wrap--center">
 							<span class="sw-topper"></span>
 							<span class="sw-middle"></span>
 							<span class="sw-bottom"></span>
 						</span>
 					</button>
-					<button class="btn-toggle  btn-sandwitch--md btn-toggle--end">
-						<span class="sw-wrap">
+
+					<button class="btn-toggle btn-toggle--right btn-sandwitch--md">
+						<span class="sw-wrap sw-wrap--right">
 							<span class="sw-topper"></span>
 							<span class="sw-middle"></span>
 							<span class="sw-bottom"></span>
 						</span>
 					</button>
+
 				</div>
 
 				<div class="inp-form">
@@ -89,7 +101,7 @@
 					<button class="inp-form__btn">Send</button>
 				</div>
 
-				<div class="inp-form inp-form--2-btns">
+				<div class="inp-form inp-form--squared">
 					<select class="inp-form__select" name="" id="">
 						<option default>To seller</option>
 						<option value=""></option>
@@ -249,35 +261,48 @@
 				<div>
 					<div class="row">
 						<div>
-							<div class="radio-wrap">
-								<input name="rb" class="rb" id="rb-1" type="radio">
-								<label for="rb-1">Radiobutton Off</label>
+							<div class="row">
+								<div class="radio-wrap">
+									<input name="rb" class="rb" id="rb-1" type="radio">
+									<label for="rb-1">Radiobutton Off</label>
+								</div>
 							</div>
 
-							<div class="radio-wrap">
-								<input name="rb" class="rb" id="rb-2" type="radio" checked>
-								<label for="rb-2">Radiobutton On</label>
+							<div class="row">
+								<div class="radio-wrap">
+									<input name="rb" class="rb" id="rb-2" type="radio" checked>
+									<label for="rb-2">Radiobutton On</label>
+								</div>
 							</div>
 
-							<div class="radio-wrap">
-								<input disabled name="rb" class="rb" id="rb-3" type="radio">
-								<label for="rb-3">Radiobutton Disabled</label>
+							<div class="row">
+								<div class="radio-wrap">
+									<input disabled name="rb" class="rb" id="rb-3" type="radio">
+									<label for="rb-3">Radiobutton Disabled</label>
+								</div>
 							</div>
 
-							<div class="check-wrap">
-								<input type="checkbox" id="check-1">
-								<label for="check-1">Checkbox off</label>
+							<div class="row">					
+								<div class="check-wrap">
+									<input type="checkbox" id="check-1">
+									<label for="check-1">Checkbox off</label>
+								</div>
 							</div>
 
-							<div class="radio-wrap">
-								<input type="checkbox" id="check-2" checked>
-								<label for="check-2">Checkbox On</label>
+							<div class="row">
+								<div class="check-wrap">
+									<input type="checkbox" id="check-2" checked>
+									<label for="check-2">Checkbox On</label>
+								</div>
 							</div>
 
-							<div class="radio-wrap">
-								<input type="checkbox" id="check-2" disabled>
-								<label for="check-2">Checkbox Dissabled</label>
+							<div class="row">
+								<div class="check-wrap">
+									<input type="checkbox" id="check-2" disabled>
+									<label for="check-2">Checkbox Dissabled</label>
+								</div>
 							</div>
+
 						</div>
 					</div>
 				</div>
@@ -293,34 +318,43 @@
 					<div class="row">
 
 						<div>
-							<label class="switch bord">
-								<input type="checkbox">
-								<span class="slider"></span>
-							</label>
 
-							<label class="switch bord">
-								<input type="checkbox">
-								<span class="slider"></span>
-							</label>
-
-							<label class="switch">
-								<input type="checkbox">
-								<span class="slider"></span>
-							</label>
-
-							<label class="switch">
-								<input type="checkbox">
-								<span class="slider"></span>
-							</label>
+							<div class="row">							
+								<label class="switch bord">
+									<input type="checkbox">
+									<span class="slider"></span>
+								</label>
+							</div>
+							<div class="row">
+								<label class="switch bord">
+									<input type="checkbox">
+									<span class="slider"></span>
+								</label>
+							</div>
+							<div class="row">
+								<label class="switch">
+									<input type="checkbox">
+									<span class="slider"></span>
+								</label>
+							</div>
+							<div class="row">
+								<label class="switch">
+									<input type="checkbox">
+									<span class="slider"></span>
+								</label>
+							</div>
 						</div>
 
 						<div>
-							<div class="slim-2">
-								<span class="sl"></span>
+							<div class="row">							
+								<div class="slim-2">
+									<span class="sl"></span>
+								</div>
 							</div>
-
-							<div class="slim-3">
-								<div class="sl-3"></div>
+							<div class="row">
+								<div class="slim-3">
+									<div class="sl-3"></div>
+								</div>
 							</div>
 
 							<div class="row">
@@ -596,5 +630,6 @@
 			</div>
 		</div>
 	</section>
+
 </body>
 </html>

@@ -69,7 +69,7 @@
 	#{$property}: calc(#{$expression});
 }
 
-@mixin close($close-color, $close-top, $close-right) {
+@mixin close($close-top, $close-right) {
 	&:before {
 		font-family: $global-font-icon;
 		content: $icon-close;
@@ -78,7 +78,6 @@
 		right: $close-right;
 		padding: 0 10px;
 		font-size: 10px;
-		color: $close-color;
 		cursor: pointer;
 	}
 }

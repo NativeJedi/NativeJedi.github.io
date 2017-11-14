@@ -1,0 +1,16 @@
+@font-face {
+	font-family: "Cabin";
+	font-style: normal;
+	font-weight: bold;
+	src: url('fonts/Cabin/Cabin-SemiBold.ttf') format("truetype");
+}
+
+@font-face {
+	font-family: "Cabin";
+	font-style: normal;
+	font-weight: normal;
+	src: url("fonts/Cabin/Cabin-Regular.ttf") format("truetype");
+}
+@mixin Cabin($size) {
+	font: $size "Cabin", sans-serif;
+}

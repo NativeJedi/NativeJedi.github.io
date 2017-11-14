@@ -397,6 +397,10 @@ body {
 	border-radius: 6px;
 	padding: 15px;
 	@include border($inp-border);
+
+	&:focus {
+		border-color: $btn-toggle;
+	}
 }
 
 .select {

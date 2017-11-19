@@ -859,8 +859,8 @@ a {
     cursor: pointer; }
   .b-accord-list__item-content {
     display: none;
-    height: 17.5rem;
     margin: 1.6rem 3rem 2rem 2rem;
+    height: 13.5rem;
     overflow-y: scroll;
     color: #999999;
     font-family: "Roboto", sans-serif;

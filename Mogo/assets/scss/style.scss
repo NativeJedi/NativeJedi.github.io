@@ -3,6 +3,7 @@
 @import 'icons/_iconfont__variables.scss';
 @import 'icons/_iconfont__icons.scss';
 @import 'variables';
+@import 'mixins';
 
 
 * {
@@ -40,8 +41,33 @@ a {
 		font-size: 30px;
 		font-weight: bold;
 	}
+
+	&--footer {
+		color: $secondary-font-color;
+	}
 }
 
+%description {
+	@include font("Roboto");
+	font-size: 15px;
+	color: $secondary-font-color;
+}
+
+%p-name {
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+%p-position {
+	margin-top: 10px;
+	@include font("Roboto");
+	font-size: 15px;
+	font-style: italic;
+}
+
+.img-rounded {
+	border-radius: 50%;
+}
 /*#Header start*/
 
 .b-header {
@@ -97,7 +123,7 @@ a {
 	background: linear-gradient( 0deg, rgba(252,227,138,.9) 0%, rgba(243,129,129,.9) 100%), url("../img/header-bg.jpg") no-repeat;
 	background-size: cover;
 	background-position: center;
-	padding: 150px 0 25px 0;
+	padding: 150px 0 23px 0;
 }
 
 .b-main {
@@ -151,10 +177,12 @@ a {
 
 	ul {
 		padding-left: 0;
+		margin: 0;
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
 	}
+
 	margin-top: 150px;
 	@include font("Montserrat");
 	color: #fff;
@@ -263,11 +291,7 @@ a {
 	}
 
 	&__grad {
-		position: absolute;
-		top:    0;
-		right:  0;
-		bottom: 0;
-		left:   0;
+		@include stretch;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -277,28 +301,51 @@ a {
 	}
 
 	&__info {
-
 		position: relative;
 		@include font("Montserrat");
 		font-weight: bold;
 		font-size: 18px;
 		text-transform: uppercase;
 		text-align: center;
+	}
 
-		&:before{
-			font-family: $global-font-icon;
-			content: $icon-users;
-			position: absolute;
-			top: -100%;
-			left: 50%;	
-			font-size: 20px;		
-			transform: translate(-50%, 0);
+	.icon {
+		position: absolute;
+		top: 0;
+		left: 50%;	
+		font-size: 20px;		
+		transform: translate(-50%, -135%);
+	}
+
+	&__social-wrap {
+		display: flex;
+	}
+
+	&__social-item {
+		position: relative;
+		display: block;
+		width: 55px;
+		height: 55px;
+		background-color: $social-bg;
+
+		&:not(:first-child) { border-left: 1px solid $social-icon-color; }
+
+		.icon {
+			@include cent;
+			color: $social-icon-color;
+			font-size: 25px;
+		}
+
+		&:hover {
+			background-color: $social-icon-color;
+			.icon { color: #fff; }
 		}
 	}
+
 }	
 
 
-/* #Favts section */
+/* # Facts section */
 
 
 .b-facts-section {
@@ -322,8 +369,18 @@ a {
 	}
 }
 
+
+/* #Services section */
+
+.b-section-services,
+%b-section-services {
+	padding: 110px 0 45px 0;
+}
+
 .b-services {
+
 	margin-top: -10px;
+
 	.icon {
 		position: absolute;
 		top: 45px;
@@ -361,3 +418,570 @@ a {
 	}
 }
 
+.b-section-design {
+	padding: 110px 0 0 0;
+	@include background (
+		linear-gradient( 0deg, rgba(255,255,255,.8)), 
+		url("../img/design-bg.jpg"));
+
+	&__img-wrap {
+		position: relative;
+		margin: -25px auto 0 auto;
+		transform: translateX(-5%);
+	}
+}
+
+.absolute-img {
+	position: absolute;
+	right: -20%;
+	bottom: -14%;	
+}
+
+
+/* #Service section*/
+
+
+.b-service {
+
+	&-section {
+		padding: 100px 0 120px 0;
+
+		.flex-wrap {
+			margin-top: -10px;
+		}
+	}
+
+	&__img-wrap {
+		width: 50%;
+
+		img {
+			display: block;
+			max-width: 100%;
+			margin-right: 0;
+		}
+	}
+
+	&__content {
+		width: 50%;
+	}
+}
+
+.b-accord-list {
+
+	margin: 0;
+	padding-left: 0;
+	list-style-type: none;
+
+	.icon {
+		@include centY;
+
+		&--main {
+			margin-right: 2rem;
+			color: $icon-main-color;
+			font-size: 30px;
+			left: 30px;
+		}
+
+		&--secondary {
+			color: #ccc;
+			font-size: 20px;
+			right: 30px;
+		}
+	}
+
+	&__item {
+
+		&:not(:first-child) {
+			margin-top: 10px;
+		}
+		
+		&-title {
+			position: relative;
+			margin: 0;
+			padding: 23px 6rem;
+			line-height: 100%;
+			font-size: 14px;
+			text-transform: uppercase;
+			border: 1px solid;
+			border-color: #ccc transparent;	
+			cursor: pointer;
+		}
+
+		&-content {
+			display: none;
+			height: 175px;
+			padding: 16px 20px 20px 20px;
+			overflow-y: scroll;
+			color: $descr-font-color;
+			@include font("Roboto");
+			line-height: 1.6;
+			font-style: italic;
+			font-size: 15px;
+		}
+	}
+}
+
+.b-quote {
+
+	&-section {
+		padding: 70px 0;
+		background-color: $quote-bg-color;
+	}
+
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		padding: 0 110px;
+	}
+	
+	&__img-default {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 15%;
+		border: 3px solid $icon-main-color;
+	}
+
+	&__person-img {
+		width: 25%;
+		margin-right: 30px;
+
+		img {
+			display: block;
+			max-width: 100%;
+			border-radius: 50%;
+		}
+	}
+
+	&-wrap {
+		width: 78.6%;
+		align-self: center;
+	}
+
+	&__heart {
+		margin: 0;
+		@include font("Roboto");
+		font-style: italic;
+		font-size: 24px;
+		color: $secondary-font-color;
+		line-height: 1.5;
+	}
+
+	&__autor { 
+		display: block;
+		margin: 15px 0 0 0;
+		@include font("KaushanScript");
+		font-style: normal;
+		font-size: 24px;
+		line-height: 1.2;
+
+
+		&:before {
+			content: "";
+			display: inline-block;
+			background-color: $streak-color;
+			margin-right: 1rem;
+			width: 60px;
+			height: 3px;
+			vertical-align: middle;
+		}
+	}
+
+}
+
+
+/* #Section team */
+
+
+.b-team-section {
+	padding: 90px 0 188px 0;
+}
+
+.team-wrap {
+	margin-top: -10px;
+}
+
+.b-team-person {
+	position: relative;
+	margin: 0;
+
+	&__info {
+		@include centX;
+		text-align: center;
+	}
+
+	&__name {
+		@extend %p-name;
+		margin-top: 25px;
+		color: #000;
+	}
+
+	&__position{ 
+		@extend %p-position;
+		color: $secondary-font-color;
+	}
+}
+
+
+/*#Section partners*/
+
+
+.b-partners {
+
+	&-section {
+		padding: 60px 0;
+		background-color: $quote-bg-color;	
+
+		img {
+			display: block;
+			max-width: 100%;
+		}
+	}
+
+}
+
+
+/*#Section gallery */
+
+
+.b-gallery {
+	display: grid;
+	grid-template-columns: repeat(4, 25%);
+	grid-template-rows: repeat(2, 50%);
+
+	&-section {
+		padding: 105px 0 110px 0;
+	}
+}
+
+.b-media--gallery {
+	&:hover {
+		transform: none;
+		box-shadow: none;
+	}
+}
+
+.b-media--stretch {
+	grid-row-start: span 2;
+}
+
+.b-gallery-info {
+	position: relative;
+	text-align: center;
+	transform: translateY(20%);
+	
+	&__title {
+		padding-top: 10px;
+		@extend %p-name;
+	}
+
+	&__description {
+		@extend %p-position;
+	}
+}
+
+
+/*#Review section*/
+
+
+.b-review {
+
+	&-section {
+		padding: 100px 0 70px 0;
+		@include background (
+			linear-gradient( 0deg, rgba(#fff,.8)), 
+			url("../img/review-bg.jpg"));
+	}
+
+	&-container {
+		margin-top: 90px;
+	}
+
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 50%;
+	padding: 0 3%;
+
+	&__person {
+
+		width: 72.5%;
+		padding-top: 10px;
+		padding-bottom: 75px;
+
+		&-name { 
+			@extend %p-name;
+		}
+
+		&-position {
+			@extend %p-position;
+		}
+
+		&-feedback {
+			@include font("Roboto");
+			font-size: 15px;
+			color: $secondary-font-color;
+			line-height: 1.6;
+
+			&:before {
+				display: block;
+				content: "";
+				margin-bottom: 15px;
+				background-color: rgb(243, 129, 129);
+				width: 60px;
+				height: 3px;
+			}
+		}
+
+	}
+
+}
+
+.b-blog {
+	
+	&-section {
+		padding: 10.5rem 0;
+	}
+
+	width: pxtopercent(380);
+	padding-top: 1.5rem;
+
+	&__img {
+		position: relative;
+	}
+	
+	&__calendar {
+		position: absolute;
+		left: -10px;
+		bottom: 15px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center; 
+		width: 60px;
+		height: 70px;
+		background-color: $icon-main-color;
+		color: #fff;
+
+		&-number {
+			font-size: 27px;
+		}
+
+		&-date {
+			@include font("Roboto");
+			font-size: 14px;
+		}
+	}
+
+	&__title {
+		font-weight: normal;
+		line-height: 1.2;
+		font-size: 12px;
+		text-transform: uppercase;
+	}
+
+	&__description {
+		padding-bottom: 20px;
+		@extend %description;
+		border-bottom: 1px solid $secondary-font-color;
+	}
+
+	&__counter {
+		padding-top: 5px;
+		padding-left: 5px;
+
+		i {
+			@extend %description;
+		}
+
+		&-item {
+			position: relative;
+			margin-right: 20px;
+			padding-left: 20px;
+		}
+
+		.icon {
+			@include centY;
+			left: 5px;
+			color: $icon-main-color;
+			font-size: 20px;
+		}
+	}
+}
+
+.b-map {
+
+	&-section {
+		display: flex;
+		@include background(linear-gradient(0deg, rgba(#fff, .8)), 
+			url("../img/map.jpg"));
+		padding: 6rem 0 7rem 0;
+	}
+
+	&-link {
+		position: relative;
+		margin: auto;
+		padding-top: 4rem;
+		display: inline-block;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 24px;
+		color: $link-map-color;
+
+		&:after {
+			content: "";
+			@include centX;
+			bottom: -1.8rem;
+			width: 60px;
+			height: 3px;
+			background-color: rgb(243, 129, 129);
+		}
+
+		.icon {
+			@include centX;
+			top: 0;
+		}
+	}
+}
+
+
+/*3Footer */
+
+
+.b-followers {
+
+	width: 33.33%;
+
+	&__content {
+		@extend %description;
+	}
+
+	&__counter {
+
+		font-size: 15px;
+
+		&-quantity {
+			font-size: 18px;
+			margin-right: .5rem;
+		}
+
+	}
+
+	&__social {
+		padding-left: 0;
+		list-style-type: none;
+
+		&-caption {
+			@include font("Roboto");
+			font-style: italic;
+			font-size: 15px;
+		}
+
+		li {
+			display: inline-block;
+		}
+
+		&-link {
+			display: inline-block;
+			vertical-align: middle;
+			padding: 0 1rem;
+		}
+
+	}
+
+	.icon {
+		color: $icon-main-color;
+	}
+
+	&__form {
+		display: flex;
+
+		input[type=email] {
+			@include calc(width, "100% - 15rem");
+			padding-left: 1.5rem;
+			@include font("Roboto");
+			font-style: italic;
+			font-size: 15px;
+			border: 1px solid rgb(231, 231, 231);
+		}
+
+		&-btn {
+			width: 15rem;
+			height: 4rem;
+			background-color: rgb(149, 225, 211);
+			border: none;
+			color: #fff;
+			text-transform: uppercase;
+		}
+	}
+}
+
+.b-footer {
+	position: relative;
+	padding: 8rem 0 13rem 0;
+}
+
+.b-footer__item-title {
+	margin-top: 0;
+	font-size: 14px;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+.b-footer__copyright {
+	@include centX;
+	bottom: 2rem;
+
+	span {
+		color: red;
+	}
+}
+.b-footer-blogs {
+
+	width: 33.33%;
+
+}
+
+.b-footer-blog {
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 3rem;
+
+	&__content {
+
+		margin-left: 2rem;
+
+		&-caption {
+			margin: 0 0 1rem 0;
+			font-weight: normal;
+			font-size: 12px;
+		}
+
+		&-date {
+			@include font("Roboto");
+			font-style: italic;
+			font-size: 13px;
+		}
+	}
+
+}
+
+.b-footer-instagram {
+
+	&__gallery {
+		display: grid;
+		grid-template-columns: repeat(3, 3fr);
+		grid-template-rows: repeat(3, 3fr);
+		grid-gap: .2rem;
+	}
+
+	&__link {
+		display: inline-block;
+		margin-top: 2rem;
+		@include font("Roboto");
+		font-style: italic;
+		font-size: 12px;
+	}
+}

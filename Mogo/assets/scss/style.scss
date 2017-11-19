@@ -44,6 +44,9 @@ a {
 
 	&--footer {
 		color: $secondary-font-color;
+		a {
+			font-size: 46px;
+		}
 	}
 }
 
@@ -848,16 +851,42 @@ a {
 /*3Footer */
 
 
+.b-footer {
+	position: relative;
+	padding: 6.5rem 0 13rem 0;
+}
+
+.b-footer__item-title {
+	margin: 1.5rem 0 3.5rem 0;
+	font-size: 14px;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+.b-footer__copyright {
+	@include centX;
+	bottom: 2rem;
+	font-size: 13px;
+
+	span {
+		color: red;
+	}
+}
+
 .b-followers {
 
-	width: 33.33%;
+	width: pxtopercent(480);
 
 	&__content {
+		margin: 2.5rem 0;
+		padding-right: 2rem;
 		@extend %description;
+		line-height: 1.6;
 	}
 
 	&__counter {
-
+		padding: 1.8rem 0 1.4rem 0;
+		border-bottom: 1px solid $secondary-font-color;
 		font-size: 15px;
 
 		&-quantity {
@@ -868,6 +897,7 @@ a {
 	}
 
 	&__social {
+		margin: 1.5rem 0 3.5rem 0;
 		padding-left: 0;
 		list-style-type: none;
 
@@ -894,10 +924,12 @@ a {
 	}
 
 	&__form {
+
 		display: flex;
 
 		input[type=email] {
-			@include calc(width, "100% - 15rem");
+			display: block;
+			width: pxtopercent(230, 480);
 			padding-left: 1.5rem;
 			@include font("Roboto");
 			font-style: italic;
@@ -916,30 +948,10 @@ a {
 	}
 }
 
-.b-footer {
-	position: relative;
-	padding: 8rem 0 13rem 0;
-}
 
-.b-footer__item-title {
-	margin-top: 0;
-	font-size: 14px;
-	font-weight: normal;
-	text-transform: uppercase;
-}
 
-.b-footer__copyright {
-	@include centX;
-	bottom: 2rem;
-
-	span {
-		color: red;
-	}
-}
 .b-footer-blogs {
-
-	width: 33.33%;
-
+	width: pxtopercent(390);
 }
 
 .b-footer-blog {
@@ -951,10 +963,11 @@ a {
 
 	&__content {
 
-		margin-left: 2rem;
+		margin: 1rem 0 0 2rem;
 
 		&-caption {
 			margin: 0 0 1rem 0;
+			text-transform: uppercase;
 			font-weight: normal;
 			font-size: 12px;
 		}
@@ -969,6 +982,8 @@ a {
 }
 
 .b-footer-instagram {
+
+	width: pxtopercent(270);
 
 	&__gallery {
 		display: grid;

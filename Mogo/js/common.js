@@ -24,7 +24,7 @@ $(document).ready(function() {
 
 		$('.b-quote__slider').slick();
 
-		$('.header__slider').slick({
+		$('#main-slider').slick({
 			arrows: false,
 			autoplay: true,
 			autoplaySpeed: 5000

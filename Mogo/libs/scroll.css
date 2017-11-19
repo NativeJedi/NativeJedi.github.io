@@ -1,10 +1,8 @@
-.s__descr.accord__descr {
-	margin-right: 10px;
-}
-.s__descr.accord__descr::-webkit-scrollbar {
+
+.b-accord-list__item-content::-webkit-scrollbar {
     width: 5px;
 }
-.s__descr.accord__descr::-webkit-scrollbar-thumb {
+.b-accord-list__item-content::-webkit-scrollbar-thumb {
     border-radius: 2px;
     -webkit-box-shadow: inset 10px 0 0 rgba(149,225,211,1);
 }

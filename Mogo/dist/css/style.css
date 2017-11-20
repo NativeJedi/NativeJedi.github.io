@@ -893,8 +893,7 @@ a {
     width: 15%;
     border: 3px solid #95E1D3; }
   .b-quote__person-img {
-    width: 25%;
-    margin-right: -5rem; }
+    width: 25%; }
     .b-quote__person-img img {
       display: block;
       max-width: 100%; }

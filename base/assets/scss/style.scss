@@ -40,6 +40,12 @@ body {
 .btn,
 %btn {
 	@include btn($btn-main, #fff, null);
+
+	&:hover {
+		transition: all .2s;
+		background: linear-gradient(to top right, #CCE4F7, $btn-main 30%, $btn-main 65%, #CCE4F7);
+		box-shadow: 4px 2px 20px rgba(0,0,0,0.4), -4px 2px 20px rgba(#000, .5);
+	}
 }
 
 .btn--lg {
@@ -73,6 +79,11 @@ body {
 		font-family: $global-font-icon;
 		content: $icon-forw;
 		@include center;
+	}
+
+	&:hover {
+		background: linear-gradient(to left, #CCE4F7 10%, $btn-main);
+		box-shadow: 2px 2px 15px rgba(#000, .6);
 	}	
 }
 
@@ -87,6 +98,11 @@ body {
 
 	&:after {
 		transform: translate(-50%, -50%) rotate(180deg);
+	}
+
+	&:hover {
+		background: linear-gradient(to right, #CCE4F7 10%, $btn-main);
+		box-shadow: -2px 2px 15px rgba(#000, .6);
 	}
 }
 
@@ -144,10 +160,15 @@ body {
 		content: "";
 		position: absolute;
 		top: 0;
-		right: 0;
+		right: 1px;
 		transform: translateX(100%);
 		border-style: solid;
 		border-color: transparent transparent transparent $btn-main;
+	}
+
+	&:hover {
+		background: linear-gradient(to right, #CCE4F7, $btn-main);
+		box-shadow: 20px 0 30px rgba(#000, .6);
 	}
 }
 
@@ -670,21 +691,17 @@ body {
 	height: 30px;
 	border-radius: 20px;
 
-	&__percent {
-		content: "";
-		position: absolute;
+	&:after {
+		box-sizing: border-box;
+		content: "64%";
+		@include centY;
+		padding: 4px 5px 0 0;
+		width: 64%;
+		height: 100%;
+		text-align: right;
+		color: #fff;
+		border-radius: 999999999px;
 		background-color: $btn-toggle;
-		width: 200px;
-		height: 30px;
-		border-radius: 20px;
-
-		&:after {
-			content: "64%";
-			@include centY;
-			right: 10px;
-			color: #fff;
-			font-size: 14px;
-		}
 	}
 }
 

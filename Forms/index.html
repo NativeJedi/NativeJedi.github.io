@@ -9,17 +9,17 @@
 
   <section>
     <div class="wrapper">
-      <div class="form-md-wrap">
+      <div class="form-wrap">
         <div class="form-header form-header--bg1">
           <h2 class="form-header__title" href="#">Sign Up</h2>
           <a class="form-header__link" href="#">Already Registred?</a>
         </div>
         <form action="#" class="form">
-          <div class="b-inp">
+          <div class="b-inp b-inp--iconed">
             <input id="mail" type="email" placeholder="E-mail or login">
             <span class="icon icon--email"></span>
           </div>
-          <div class="b-inp">
+          <div class="b-inp b-inp--iconed">
             <input id="pas" type="password" placeholder="Password">
             <span class="icon icon--lock"></span>
           </div>
@@ -33,25 +33,25 @@
         </form>
       </div>
       
-      <div class="form-md-wrap">
+      <div class="form-wrap">
         <div class="form-header form-header--bg2">
           <h2 class="form-header__title" href="#">Sign In</h2>
           <a class="form-header__link" href="#">Already Registred?</a>
         </div>
         <form action="#" class="form">
-          <div class="b-inp">
+          <div class="b-inp b-inp--iconed">
             <input id="mail" type="email" placeholder="E-mail or login">
             <span class="icon icon--email"></span>
           </div>
-          <div class="b-inp">
+          <div class="b-inp b-inp--iconed">
             <input id="pas" type="password" placeholder="Password">
             <span class="icon icon--lock"></span>
           </div>
           <div class="b-checkbox">
             <input id="check-1" type="checkbox">
-            <label for="check-1">Remember password?</label>
+            <label class="b-checkbox__label" for="check-1">Remember password?</label>
           </div>
-          <button class="b-btn">Sign Up</button>
+          <button class="b-btn b-btn--secondary">Sign In</button>
           <div class="form__separator">or</div>
           <div class="form__social">
             <a class="b-btn b-btn--md b-btn--fb" href="#">Login via Facebook</a>
@@ -62,77 +62,6 @@
     </div>
   </section>
 
-  <section>
-  	<div class="wrapper">
-
-  		<!--First form-1-->
-
-  		<div class="container--middle">
-
-  			<div class="form-sign-up">
-  				<div class="form-sign-up__header">
-  					<a class="header__link-sign" href="#">Sign Up</a>
-  					<a class="header__link-already" href="#">Already Registred?</a>
-  				</div>
-  				<form action="#" class="form-main">
-  					<div class="form-inp">
-  						<input id="mail" type="email" placeholder="E-mail or login">
-  						<span class="icon icon--email"></span>
-  					</div>
-  					<div class="form-inp">
-  						<input id="pas" type="password" placeholder="Password">
-  						<span class="icon icon--lock"></span>
-  					</div>
-  					<a class="form-main__forgot" href="#">Forgot password?</a>
-  					<a class="form-main__sign--up" href="#">Sign Up</a>
-  					<div class="form-main__or">or</div>
-  					<div class="form-main__log-wrap">
-  						<a class="form-main__log-fb" href="#">Login via Facebook</a>
-  						<a class="form-main__log-tw" href="#">Login via Twitter</a>
-  					</div>
-  				</form>
-  			</div>
-
-  		</div>
-
-  		<!--First form-2-->
-
-  		<div class="container--middle">
-
-  			<div class="form-sign-in">
-  				<div class="form-sign-in__header">
-  					<a class="header__link-sign" href="#">Sign in</a>
-  					<a class="header__link-already" href="#">Create an Account</a>
-  				</div>
-  				<form action="#" class="form-main">
-  					<div class="form-inp">
-  						<input id="mail" type="email" placeholder="E-mail or login">
-  						<span class="icon icon--email"></span>
-  					</div>
-  					<div class="form-inp">
-  						<input id="pas" type="password" placeholder="Password">
-  						<span class="icon icon--lock"></span>
-  					</div>
-
-  					<div class="form-main__checkbox">
-  						<input id="check-1" type="checkbox">
-  						<label for="check-1">Remember password?</label>
-  					</div>
-
-  					<a class="form-main__sign--in" href="#">Sign In</a>
-  					<div class="form-main__or">or</div>
-  					<div class="form-main__log-wrap">
-  						<a class="form-main__log-fb" href="#">Login via Facebook</a>
-  						<a class="form-main__log-tw" href="#">Login via Twitter</a>
-  					</div>
-  				</form>
-  			</div>
-
-  		</div>
-
-  	</div>
-  </section>
-
   <!--#Second Form-->
 
   <section>
@@ -140,492 +69,435 @@
 
   		<!--#Second Form-1-->
 
-  		<div class="container--small">
-  			<form action="#" class="form-main">
-  				<div class="form-title">
-  					<h2 class="form-title__main" href="#">Sign Up</h2>
-  					<a class="form-title__link" href="#">Already Registred?</a>
+  		<div class="form-wrap-sm">
+  			<form action="#" class="form">
+  				<div class="form__head">
+  					<h3 class="form__head-title" href="#">Sign Up</h3>
+  					<a class="form__head-link" href="#">Already Registred?</a>
   				</div>
-  				<div class="form-inp">
+  				<div class="b-inp b-inp--iconed">
   					<input id="mail" type="email" placeholder="E-mail or login">
   					<span class="icon icon--email"></span>
   				</div>
-  				<div class="form-inp">
+  				<div class="b-inp b-inp--iconed">
   					<input id="pas" type="password" placeholder="Password">
   					<span class="icon icon--lock"></span>
   				</div>
-  				<a class="form-main__forgot" href="#">Forgot password?</a>
-  				<a class="form-main__sign--up" href="#">Sign Up</a>
-  				<div class="form-main__or">or</div>
-  				<div class="form-main__log-wrap">
-  					<a class="form-main__log-fb log--icon" href="#"><span class="icon icon--facebook"></span>Facebook</a>
-  					<a class="form-main__log-tw log--icon" href="#"><span class="icon icon--twitter"></span>Twitter</a>
+  				<a class="form__forgot" href="#">Forgot password?</a>
+  				<button class="b-btn">Sign Up</button>
+  				<div class="form__separator">or</div>
+  				<div class="form__social">
+  					<a class="b-btn b-btn--sm b-btn--fb" href="#"><span class="icon icon--facebook"></span>Facebook</a>
+  					<a class="b-btn b-btn--sm" href="#"><span class="icon icon--twitter"></span>Twitter</a>
   				</div>
   			</form>
   		</div>
 
   		<!--#Second Form-2-->
 
-  		<div class="container--small">
-  			<form action="#" class="form-main form--sm">
-  				<div class="form-title">
-  					<h2 class="form-title__main" href="#">Sign In</h2>
-  					<a class="form-title__link" href="#">Create an Account</a>
+  		<div class="form-wrap-sm">
+  			<form action="#" class="form">
+  				<div class="form__head">
+  					<h2 class="form__head-title" href="#">Sign In</h2>
+  					<a class="form__head-link" href="#">Create an Account</a>
   				</div>
-  				<div class="form-inp">
+  				<div class="b-inp b-inp--iconed">
   					<input id="mail" type="email" placeholder="E-mail or login">
   					<span class="icon icon--email"></span>
   				</div>
-  				<div class="form-inp">
+  				<div class="b-inp b-inp--iconed">
   					<input id="pas" type="password" placeholder="Password">
   					<span class="icon icon--lock"></span>
   				</div>
 
-  				<div class="form-main__checkbox">
+  				<div class="b-checkbox">
   					<input id="check-2" type="checkbox">
-  					<label for="check-2">Remember password?</label>
+  					<label class="b-checkbox__label" for="check-2">Remember password?</label>
   				</div>
 
-  				<a class="form-main__sign--in" href="#">Sign In</a>
-  				<div class="form-main__or">or</div>
-  				<div class="form-main__log-wrap">
-  					<a class="form-main__log-fb log--icon" href="#"><span class="icon icon--facebook"></span>Facebook</a>
-  					<a class="form-main__log-tw log--icon" href="#"><span class="icon icon--twitter"></span>Twitter</a>
+  				<button class="b-btn b-btn--secondary">Sign In</button>
+  				<div class="form__separator">or</div>
+  				<div class="form__social">
+  					<a class="b-btn b-btn--sm b-btn--fb" href="#"><span class="icon icon--facebook"></span>Facebook</a>
+  					<a class="b-btn b-btn--sm" href="#"><span class="icon icon--twitter"></span>Twitter</a>
   				</div>
   			</form>
   		</div>
 
   		<!--#Second Form-3-->
 
-  		<div class="container--small">
-  			<div class="reset-wrap">
+  		<div class="form-wrap-sm">
 
-  				<form action="#" class="form-main">
-  					<div class="form-title">
-  						<h2 class="form-title__main" href="#">Resset password</h2>
-  						<a class="form-title__link" href="#">Sign In</a>
-  					</div>
-  					<div class="form-inp">
-  						<input id="mail" type="email" placeholder="E-mail">
-  						<span class="icon icon--email"></span>
-  					</div>
-  					<button class="btn--reset">Reset</button>
-  				</form>
-  			</div>
+        <form action="#" class="form">
+          <div class="form__head">
+            <h3 class="form__head-title" href="#">Resset password</h3>
+            <a class="form__head-link" href="#">Sign In</a>
+          </div>
+          <div class="b-inp b-inp--iconed">
+            <input id="mail" type="email" placeholder="E-mail">
+            <span class="icon icon--email"></span>
+          </div>
+          <button class="b-btn b-btn--reset">Reset</button>
+        </form>
 
-  			<form action="" class="form-main">
-  				<div class="form-title title--sm">
-  					<h2 class="form-title__main" href="#">Subscribing</h2>
-  				</div>
-  				<p class="form-main__message">We will never send you spam or some other trash</p>
-  				<div class="form-inp inp--next">
-  					<input id="mail" type="email" placeholder="E-mail">
-  					<span class="icon icon--email"></span>
-  					<button class="next-btn"><span class="icon icon--next"></span></button>
-  				</div>
-  			</form>
-  		</div>
+        <form action="" class="form form--bottom ">
+          <div class="form__head">
+            <legend class="form__head-title form__head-title--lined" href="#">Subscribing</legend>
+          </div>
+          <p class="form__message">We will never send you spam or some other trash</p>
+          <div class="b-inp b-inp--iconed b-inp--follow">
+            <input id="mail" type="email" placeholder="E-mail">
+            <span class="icon icon--email"></span>
+            <button class="b-btn-next"><span class="icon icon--next"></span></button>
+          </div>
+        </form>
 
-  	</div>
+      </div>
+
+    </div>
   </section>
-  
+
   <!--#Third Form-->
 
   <section>
-  	<div class="wrapper">
+    <div class="wrapper">
 
-  		<!--#Third form-1-->	
+      <!--#Third form-1-->	
 
-  		<div class="container--large">
+      <div class="form-wrap-lg">
 
-  			<form action="" class="form-main">
+        <form action="" class="form">
 
-  				<div class="form-title">
-  					<h2 class="form-title__main">Contact</h2>
-  				</div>
+          <div class="form__head">
+            <h3 class="form__head-title">Contact</h3>
+          </div>
 
-  				<div class="row">
-  					<div class="container--middle">
-  						<div class="form-inp">
-  							<label class="form-label" for="name">Name</label>
-  							<input type="name" id="name">
-  						</div>
-  					</div>
-  					<div class="container--middle">
-  						<div class="form-inp">
-  							<label class="form-label" for="sbj">Subject</label>
-  							<input type="text" id="sbj">
-  						</div>
-  					</div>
-  				</div>
+          <div class="row">
+            <div class="b-inp b-inp--multiple">
+              <label class="b-inp__label" for="name">Name</label>
+              <input type="name" id="name">
+            </div>
+            <div class="b-inp">
+              <label class="b-inp__label" for="contact-mail">E-mail</label>
+              <input type="email" id="contact-mail">
+            </div>
+          </div>
 
-  				<div class="row">
+          <div class="row">
+            <div class="b-inp b-inp--multiple">
+              <label class="b-inp__label" for="sbj">Subject</label>
+              <input type="text" id="sbj">
+            </div>
 
-  					<div class="container--middle">
-  						<div class="form-inp">
-  							<label class="form-label" for="mail">E-mail</label>
-  							<input type="email" id="mail">
-  						</div>
-  					</div>
+            <div class="b-inp">
+              <label class="b-inp__label" for="price">Select price</label>
+              <select class="b-inp__select" name="price" id="price">
+                <option default>$10.000 - $15.000</option>
+                <option value="">$9000 - $15.000</option>
+                <option value="">$5000 - $15.000</option>
+                <option value="">$8000 - $15.000</option>
+              </select>
+            </div>
+          </div>
 
-  					<div class="container--middle">
-  						<label class= "form-label" for="price">Select price</label>
-  						<select class="form-select" name="price" id="price">
-  							<option default>$10.000 - $15.000</option>
-  							<option value="">$9000 - $15.000</option>
-  							<option value="">$5000 - $15.000</option>
-  							<option value="">$8000 - $15.000</option>
-  						</select>
-  					</div>
+          <label class="b-inp__label" for="text-1" class="form-label">Message</label>
+          <textarea class="form__textarea" name="" id=""></textarea>
 
-  				</div>
+          <div class="row">
+            <div class="b-checkbox">
+              <input id="check-3" type="checkbox">
+              <label class="b-checkbox__label" for="check-3">Send me a copy</label>
+            </div>
+            <button class="b-btn b-btn--secondary b-btn--success">Send</button>
+          </div>
 
-  				<div class="form-inp">
-  					<label for="" class="form-label">Message</label>
-  					<textarea class="form-textarea"  id=""></textarea>
-  				</div>
+        </form>
+      </div>
 
-  				<div class="row">
-  					<div class="form-main__checkbox">
-  						<input id="check-3" type="checkbox">
-  						<label for="check-3">Send me a copy</label>
-  					</div>
-  					<button class="btn--send" >Send</button>
-  				</div>
+      <!--Third form-2-->
 
-  			</form>
+      <div class="form-wrap-sm">
 
-  		</div>
+        <form action="" class="form">
 
-  		<!--Third form-2-->
+          <div class="form__head">
+            <h2 class="form__head-title form__head-title--lined">Contact</h2>
+          </div>
 
-  		<div class="container--small">
+          <div class="b-inp">
+            <label class="b-inp__label" for="name">Name</label>
+            <input type="name" id="name">
+          </div>
 
-  			<form action="" class="form-main">
+          <div class="b-inp">
+            <label class="b-inp__label" for="mail">E-mail</label>
+            <input type="email" id="mail">
+          </div>
 
-  				<div class="form-title title--sm">
-  					<h2 class="form-title__main">Contact</h2>
-  				</div>
 
-  				<div class="form-inp">
-  					<label class="form-label" for="name">Name</label>
-  					<input type="name" id="name">
-  				</div>
+          <label for="" class="b-inp__label">Message</label>
+          <textarea class="form__textarea" id=""></textarea>
 
-  				<div class="form-inp">
-  					<label class="form-label" for="mail">E-mail</label>
-  					<input type="email" id="mail">
-  				</div>
+          <button class="b-btn b-btn--secondary b-btn--success">Send</button>
 
-  				<div class="form-inp">
-  					<label for="" class="form-label">Message</label>
-  					<textarea class="form-textarea" id=""></textarea>
-  				</div>
+        </form>
 
-  				<div class="row">
-  					<button class="btn--send">Send</button>
-  				</div>
-
-  			</form>
-
-  		</div>
-
-  	</div>
-  </section>
-  
-  <section>
-  	<div class="wrapper">
-  		<div class="container">
-
-  			<form class="form-main">
-  				<div class="form-title">
-  					<h2 class="form-title__main">Cart</h2>
-  				</div>
-
-  				<table class="cart-table container">
-  					<tr>
-  						<th>Item</th>
-  						<th>Price</th>
-  						<th>Quantity</th>
-  						<th>Total</th>
-  					</tr>
-  					<tr>
-  						<td class="cart-table__stuff">
-  							<img src="dist/assets/img/stuff-1.jpg" alt="">
-  							<div class="stuff-descr">
-  								<h4>Leather Bag</h4>
-  							</div>
-  						</td>
-  						<td>$199</td>
-  						<td>
-  							<button class="btn--minus">-</button>
-  							<span class="quol">1</span>
-  							<button class="btn--plus">+</button>
-  						</td>
-  						<td>$199</td>
-  					</tr>
-  					<tr>
-  						<td class="cart-table__stuff">
-  							<img src="dist/assets/img/stuff-2.jpg" alt="">
-  							<div class="stuff-descr">
-  								<h4>Leater belt</h4>
-  								<p>Color:
-  									<ul class="stuff-colors">
-  										<li><input id="check-1-1" type="checkbox"><label for="check-1-1"></label></li>
-  										<li><input id="check-1-2" type="checkbox"><label for="check-1-2"></label></li>
-  										<li><input id="check-1-3" type="checkbox"><label for="check-1-3"></label></li>
-  										<li><input id="check-1-4" type="checkbox"><label for="check-1-4"></label></li>
-  										<li><input id="check-1-5" type="checkbox"><label for="check-1-5"></label></li>
-  									</ul>
-  								</p>
-  							</div>
-  						</td>
-  						<td>$45</td>
-  						<td>
-  							<button class="btn--minus">-</button>
-  							<span class="quol">2</span>
-  							<button class="btn--plus">+</button>
-  						</td>
-  						<td>$98</td>
-  					</tr>
-  					<tr>
-  						<td class="cart-table__stuff">
-  							<img src="dist/assets/img/stuff-3.jpg" alt="">
-  							<div class="stuff-descr">
-  								<h4>Leather Shoes</h4>
-  								<p>Color:
-  									<ul class="stuff-colors">
-  										<li><input id="check-2-1" type="checkbox"><label for="check-2-1"></label></li>
-  										<li><input id="check-2-2" type="checkbox"><label for="check-2-2"></label></li>
-  									</ul>
-  								</p>
-  								<label for="size">Size</label>
-  								<input class="inp--size" id="size" type="text">
-  							</div>	
-  						</td>
-  						<td>$199</td>
-  						<td>
-  							<button class="btn--minus">-</button>
-  							<span class="quol">1</span>
-  							<button class="btn--plus">+</button>
-  						</td>
-  						<td>$199</td>
-  					</tr>
-  					<tr>
-  						<td class="total"><span>Subtotal:</span>$496</td>
-  					</tr>
-  				</table>
-
-  				<div class="row">
-  					<a class="cart-link" href=""><span><</span> Continue shoping</a>
-  					<button class="btn--order">Order <span>></span></button>
-  				</div>
-
-  			</form>
-
-  		</div>
-  	</div>
+      </div>
+    </div>
   </section>
 
   <section>
-  	<div class="wrapper">
-  		<div class="container">
-  			<form action="" class="form-main">
+    <div class="wrapper">
 
-  				<div class="form-title">
-  					<h2 class="form-title__main">Shipping adress
-  					</h2>
-  				</div>
+      <form class="form" style="width:100%">
+        <div class="form__head">
+          <h2 class="form__head-title">Cart</h2>
+        </div>
 
-  				<div class="row">
+        <table class="cart-table">
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+          <tr>
+            <td class="b-stuff">
+              <img src="dist/assets/img/stuff-1.jpg" alt="">
+              <div class="b-stuff__main">
+                <h4 class="b-stuff__main-title">Leather Bag</h4>
+              </div>
+            </td>
+            <td>$199</td>
+            <td>
+              <button class="cart-table__btn cart-table__btn--minus">-</button>
+              <span class="cart-table__quantity"">1</span>
+              <button class="cart-table__btn cart-table__btn--plus">+</button>
+            </td>
+            <td>$199</td>
+          </tr>
+          <tr>
+            <td class="b-stuff">
+              <img class="" src="dist/assets/img/stuff-2.jpg" alt="">
+              <div class="b-stuff__main">
+                <h4 class="b-stuff__main-title">Leater belt</h4>
+                <spun class="b-stuff__main-description">Color:</spun>
+                <ul class="b-stuff__main-list">
+                  <li><input id="check-1-1" type="checkbox"><label for="check-1-1"></label></li>
+                  <li><input id="check-1-2" type="checkbox"><label for="check-1-2"></label></li>
+                  <li><input id="check-1-3" type="checkbox"><label for="check-1-3"></label></li>
+                  <li><input id="check-1-4" type="checkbox"><label for="check-1-4"></label></li>
+                  <li><input id="check-1-5" type="checkbox"><label for="check-1-5"></label></li>
+                </ul>
+              </div>
+            </td>
+            <td>$45</td>
+            <td>
+              <button class="cart-table__btn cart-table__btn--minus">-</button>
+              <span class="cart-table__quantity">2</span>
+              <button class="cart-table__btn cart-table__btn--plus">+</button>
+            </td>
+            <td>$98</td>
+          </tr>
+          <tr>
+            <td class="b-stuff">
+              <img class="" src="dist/assets/img/stuff-3.jpg" alt="">
+              <div class="b-stuff__main">
+                <h4 class="b-stuff__main-title">Leather Shoes</h4>
+                <spun class="b-stuff__main-description">Color:</spun>
+                <ul class="b-stuff__main-list">
+                  <li><input id="check-2-1" type="checkbox"><label for="check-2-1"></label></li>
+                  <li><input id="check-2-2" type="checkbox"><label for="check-2-2"></label></li>
+                </ul>
+                <label class="b-stuff__main-description" for="size">Size</label>
+                <input class="b-stuff__main-input" id="size" type="text">
+              </div>  
+            </td>
+            <td>$199</td>
+            <td>
+              <button class="cart-table__btn cart-table__btn--minus">-</button>
+              <span class="cart-table__quantity">1</span>
+              <button class="cart-table__btn cart-table__btn--plus">+</button>
+            </td>
+            <td>$199</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cart-table__total"><span class="cart-table__total-caption">Subtotal:</span>$496</td>
+          </tr>
+        </table>
 
-  					<div class="container--small">
-  						<label class="form-label" for="">Select country</label>
-  						<select class="form-select form-select--loc" name="" id="">
-  							<option default>USA</option>
-  							<option value=""></option>
-  							<option value=""></option>
-  							<option value=""></option>
-  						</select>
-  					</div>
+        <div class="row">
+          <a class="form__return-link" href=""><span><</span> Continue shoping</a>
+          <button class="b-btn b-btn--secondary b-btn--success">Order &gt</button>
+        </div>
 
-  					<div class="container--small">
-  						<div class="form-inp">
-  							<label class="form-label" for="text">State, Region, Province</label>
-  							<input type="text" id="text">
-  						</div>
-  					</div>
+      </form>
 
-  					<div class="container--small">
-  						<div class="form-inp">
-  							<label class="form-label" for="adr">Address 1</label>
-  							<input type="text" id="adr1">
-  						</div>
-  					</div>
-
-  				</div>
-
-  				<div class="row">
-  					<div class="container--small">
-  						<label class="form-label" for="">Select city</label>
-  						<select class="form-select form-select--loc " name="" id="">
-  							<option default>California</option>
-  							<option value=""></option>
-  							<option value=""></option>
-  							<option value=""></option>
-  						</select>
-  					</div>
-
-  					<div class="container--small">
-  						<div class="form-inp">
-  							<label class="form-label" for="code">ZIP Code</label>
-  							<input type="tel" id="code">
-  						</div>
-  					</div>
-
-  					<div class="container--small">
-  						<div class="form-inp">
-  							<label class="form-label" for="adr2">Address 2</label>
-  							<input type="tel" id="adr2">
-  						</div>
-  					</div>
-  				</div>
-
-  			</form>
-
-  			<form action="" class="form-main">
-  				<div class="form-title">
-  					<h2 class="form-title__main">Contact Info</h2>
-  				</div>
-
-  				<div class="row">
-
-  					<div class="container--small">
-  						<div class="form-inp">
-  							<label for="" class="form-label">Full Name</label>
-  							<input type="name">
-  						</div>
-  					</div>
-
-  					<div class="container--small">
-  						<div class="form-inp">
-  							<label for="" class="form-label">E-mail</label>
-  							<input type="email">
-  						</div>
-  					</div>
-
-  					<div class="container--small">
-  						<div class="form-inp">
-  							<label for="" class="form-label">Phone</label>
-  							<input type="tel">
-  						</div>
-  					</div>
-
-  				</div>
-
-  				<div class="row">
-  					<a class="cart-link">
-  						<span><</span>Return to Cart
-  					</a>
-  					<div class="btn--pay">Payment method ></div>
-  				</div>
-  			</form>
-  		</div>
-  	</div>
+    </div>
   </section>
 
   <section>
+    <div class="wrapper">
+      <form action="" class="form">
 
-  	<div class="wrapper">
+        <div class="form__head">
+          <h2 class="form__head-title">Shipping adress</h2>
+        </div>
 
-  		<form action="" class="form-main">
+        <div class="row">
 
-  			<div class="row">
+          <div class="b-inp b-inp--multiple">
+            <label class="b-inp__label" for="">Select country</label>
+            <select class="b-inp__select b-inp__select--secondary" name="" id="">
+              <option default>USA</option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
+          </div>
 
-  				<div class="container--pay">
+          <div class="b-inp b-inp--multiple">
+            <label class="b-inp__label" for="text">State, Region, Province</label>
+            <input type="text" id="text">
+          </div>
 
-  					<div class="form-title">
-  						<h2 class="form-title__main">Payment Method</h2>
-  					</div>
+          <div class="b-inp">
+            <label class="b-inp__label" for="adr">Address 1</label>
+            <input type="text" id="adr1">
+          </div>
 
-  					<div class="form-inp form-inp--cart row">
-  						<div class="container">
-  							<label for="" class="form-label">Credit Card</label>
-  						</div>
-  						<input maxlength="4" type="tel" id="">
-  						<input maxlength="4" type="tel" id="">
-  						<input maxlength="4" type="tel" id="">
-  						<input maxlength="4" type="tel" id="">
-  					</div>
+        </div>
 
-  					<div class="form-inp">
-  						<label for="" class="form-label">Cardholder Name</label>
-  						<input type="name">
-  					</div>
+        <div class="row">
+          <div class="b-inp b-inp--multiple">
+            <label class="b-inp__label" for="">Select city</label>
+            <select class="b-inp__select b-inp__select--secondary" name="" id="">
+              <option default>California</option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
+          </div>
 
-  					<div class="row">
+          <div class="b-inp b-inp--multiple">
+            <label class="b-inp__label" for="code">ZIP Code</label>
+            <input type="tel" id="code">
+          </div>
 
-  						<div class="container">
-  							<label for="" class="form-label">Expire</label>
-  						</div>
-  						<div class="container--middle">	
-  							<select name="" id="" class="form-select form-select--loc">
-  								<option default>Month</option>
-  								<option value=""></option>
-  								<option value=""></option>
-  								<option value=""></option>
-  							</select>
-  						</div>
-  						<div class="container--middle">
-  							<select name="" id="" class="form-select form-select--loc">
-  								<option default>Year</option>
-  								<option value=""></option>
-  								<option value=""></option>
-  								<option value=""></option>
-  							</select>
-  						</div>
-  					</div>
+          <div class="b-inp">
+            <label class="b-inp__label" for="adr2">Address 2</label>
+            <input type="tel" id="adr2">
+          </div>
+        </div>
 
-  				</div>
+      </form>
 
-  				<div class="container--half">
+      <form action="" class="form">
+        <div class="form__head">
+          <h2 class="form__head-title">Contact Info</h2>
+        </div>
 
-  					<div class="form-title title--sm">
-  						<h2 class="form-title__main">Billing Adress</h2>
-  					</div>
+        <div class="row">
 
-  					<div class="form-main__checkbox">
-  						<input id="check-9" type="checkbox">
-  						<label class="label--bold" for="check-9">Same as shipping address?</label>
-  					</div>
+          <div class="b-inp b-inp--multiple">
+            <label for="" class="b-inp__label">Full Name</label>
+            <input type="name">
+          </div>
 
-  					<p class="form-main__general">
-  						A hundred thousand grateful loves to your dear papa and mamma. Is your poor brother recovered of his rack-punch? Oh, dear! Oh, dear! How men should beware of wicked punch!
-  					</p>
+          <div class="b-inp b-inp--multiple">
+            <label for="" class="b-inp__label">E-mail</label>
+            <input type="email">
+          </div>
 
-  				</div>
 
-  			</div>
+          <div class="b-inp">
+            <label for="" class="b-inp__label">Phone</label>
+            <input type="tel">
+          </div>
 
-  			<div class="row">
-  				<div class="container">
-  					<label for="" class="form-label">CVV</label>
-  				</div>
-  				<div class="form-inp inp--cvv">
-  					<input type="tel">
-  				</div>
+        </div>
 
-  				<span class="form__total">$496</span>
-  			</div>
+        <div class="row">
+          <a class="form__return-link" href="#">
+            <span>&lt</span>Return to Cart
+          </a>
+          <button class="b-btn b-btn--secondary b-btn--success b-btn--success--sm">Payment method &gt</button>
+        </div>
+      </form>
+    </div>
+  </section>
 
-  			<div class="row">
-  				<a href="" class="cart-link">< Edit Shipping Address</a>
-  				<button class="btn--pay">Place Order ></button>
-  			</div>
-  		</form>
+  <section>
+    <div class="wrapper">
 
-  	</div>
+      <form action="" class="form form--primary">
+        <fieldset class="form__field">
+          <div class="form__head">
+            <h2 class="form__head-title">Payment Method</h2>
+          </div>
 
+          <div class="b-inp b-inp--cart">
+            <label for="" class="b-inp__label">Credit Card</label>
+            <input maxlength="4" type="tel" id="">
+            <input maxlength="4" type="tel" id="">
+            <input maxlength="4" type="tel" id="">
+            <input maxlength="4" type="tel" id="">
+          </div>
+
+          <div class="b-inp">
+            <label for="" class="b-inp__label">Cardholder Name</label>
+            <input type="name">
+          </div>
+
+          <div class="b-inp">
+            <label for="" class="b-inp__label">Expire</label>
+            <select name="" id="" class="b-inp__select b-inp__select--secondary b-inp--multiple">
+              <option default>Month</option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
+            <select name="" id="" class="b-inp__select b-inp__select--secondary">
+              <option default>Year</option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
+          </div>
+
+          <div class="b-inp b-inp--cart">
+            <label class="b-inp__label" for="">CVV</label>
+            <input type="tel">
+          </div>
+        </fieldset>
+        <fieldset class="form__field form__field--total">
+          <div class="form__head">
+            <h2 class="form__head-title form__head-title--lined">Billing Adress</h2>
+          </div>
+
+          <div class="b-checkbox">
+            <input id="check-9" type="checkbox">
+            <label class="b-checkbox__label b-checkbox__label--bold" for="check-9">Same as shipping address?</label>
+          </div>
+
+          <p class="form__message">
+            A hundred thousand grateful loves to your dear papa and mamma. Is your poor brother recovered of his rack-punch? Oh, dear! Oh, dear! How men should beware of wicked punch!
+          </p>
+          
+          <span class="form__total">$496</span>
+        </fieldset>
+
+        <div class="row">
+          <a class="form__return-link" href="#">
+            <span>&lt</span>Edit Shopping address
+          </a>
+          <button class="b-btn b-btn--secondary b-btn--success b-btn--success--sm">Place order &gt</button>
+        </div>
+      </form>
+    </div>
   </section>
 </body>
 </html>

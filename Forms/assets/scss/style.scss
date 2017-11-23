@@ -18,45 +18,96 @@
 	margin: 2rem auto;
 }
 
-.b-inp {
+.row {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+}
 
+
+.b-inp {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 	position: relative;
 	margin-bottom: 2rem;
-	
+	flex: 1;
+
 	input {
-		width: 100%;
+		flex: 1;
 		height: 4.5rem;
+		padding: 1.5rem;
 		border-radius: 0.5rem;
 		border: 1px solid #C6CCD2;
-		padding-left: 4.5rem;
 
 		&::placeholder {
 			color: $font-dark;
 		}
-
-		&:focus + .icon {
-			color: inherit;
-		}
-
 		&:focus::placeholder {
 			color: #000;
 		}
-		
 	}
 
+	&--iconed {
+		input {
+			padding-left: 4.5rem;
+
+			&:focus + .icon {
+				color: inherit;
+			}
+		}
+
+	}
+
+	&__label {
+		width: 100%;
+		margin-bottom: 1rem;
+		color: $font-dark;
+	}
+
+	&__select {
+		flex: 1;
+		padding: 1.15rem 2rem;
+		border-radius: .5rem;
+		background-color: $btn-color;
+		color: $font;
+
+		&--secondary {
+			background-color: $select-secondary-color;
+		}
+	}
+	
 	.icon {
-		position: absolute;
-		@include centeredY;
+		@include centY;
 		left: 1.5em;
 		color: $font-dark;
 	}
+
+
+
+	&--multiple { margin-right: 2rem;}
+	
+	&--cart {
+		input {
+			@include calc(width, "25% - 3rem/4");
+			flex: 0 1 auto;
+			text-align: center;
+		}
+	}
+
+	&--follow {
+		input {
+			@include calc(width, "100% - 6.5rem");
+			margin-right: 2rem;
+		}
+	}
+
 }
 
-
-/* #Form-top*/
-
-
 .b-btn {
+	position: relative;
 	padding: 1.5rem;
 	border: none;
 	border-radius: 5px;
@@ -65,7 +116,11 @@
 	text-align: center;
 
 	&:hover {
-		box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.4);;
+		box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.4);
+	}
+
+	&--secondary {
+		background-color: $btn-secondary-color;
 	}
 
 	&--md {
@@ -75,6 +130,49 @@
 	&--fb {
 		background-color: $btn-fb-color;
 	}
+
+	&--sm {
+		@include calc(width, "50% - 1rem");
+		font-size: 14px;
+
+		.icon {
+			font-size: 1.3rem;
+			@include centY;
+			left: 2rem;
+
+			&--facebook {
+				left: 1.6rem;
+			}
+		}
+	}
+
+	&--reset {
+		background-color: $btn-reset-color;
+	}
+
+	&-next {
+		position: relative;
+		border: none;
+		width: 4.5rem;
+		height: 4.5rem;
+		border-radius: .5rem;
+		background-color: $btn-next-color;
+
+		.icon {
+			@include cent;
+			color: #fff;
+		}
+	}
+
+	&--success {
+		margin-left: auto;
+		padding: 1.5rem 5rem;
+
+		&--sm {
+			padding: 1.5rem 2.5rem;
+		}
+	}
+
 }
 
 .b-checkbox {
@@ -93,38 +191,54 @@
 
 	}
 
-	label {
+	&__label {
+		position: relative;
 		padding-left: 2.4rem;
 		font-size: 14px;
 		color: $font-dark;
 
 		&:before {
 			content: "";
-			position: absolute;
+			@include centY;
 			left: 0;
-			@include centeredY;
 			width: 1.6rem;
 			height: 1.6rem;
-			background-color: $green;
+			background-color: $checkbox-color;
 			border-radius: 6px;
+		}
+
+		&--bold {
+			color: #000;
 		}
 	}
 
-	.label--bold {
-		color: #000;
-		font-size: 16px;
-	}
 }
-.form-md-wrap {
+
+.form-wrap {
 	@include calc(width, "50% - 1rem");
+
+	&-sm {
+		@include calc(width, "33.33% - 4rem/3");
+	}
+
+	&-lg {
+		@include calc(width, "66.66% - .5rem");
+	}
+
 }
 
 .form {
 	display: flex;
 	flex-direction: column;
 	position: relative;
+	width: 100%;
 	background-color: $form-color;
 	padding: 3rem;
+
+	&--bottom {
+		margin-top: 2rem;
+		padding: 3rem 3rem 0 3rem;
+	}
 
 	&-header {
 		position: relative;
@@ -159,6 +273,26 @@
 		}
 	}
 
+	&__head {
+		display: flex;
+		justify-content: space-between;
+		margin: -1rem 0 3rem 0;
+
+		&-title {
+			margin: 0 0 0 -1rem;
+			text-transform: uppercase;
+			font-size: 1.6rem;
+
+			&--lined {
+				margin: 0;
+			}
+		}
+
+		&-link {
+			margin-right: -1rem;
+			color: $title-link-color;
+		}
+	}
 
 	&__forgot {
 		display: block;
@@ -166,9 +300,10 @@
 		text-align: center;
 		color: $font-dark;
 	}
-	
+
 	&__separator {
 		display: flex;
+		align-items: center;
 		position: relative;
 		color: $font-dark;
 		text-transform: uppercase;
@@ -190,124 +325,57 @@
 		justify-content: space-between;
 	}
 
-
-}
-
-/*
-.form-title {
-	@extend %flex;
-	margin: -1rem 0 2rem -1rem;
-	width: 100%;
-	position: relative;
-
-	&__main {
-		margin: 0;
-		text-transform: uppercase;
-		color: $title-color;
-		font-size: 1em;
+	&__message {
+		margin: 0 0 2rem 0;
+		color: $font-dark;
 	}
 
-	&__link {
-		margin-right: -2.5rem;
-		color: $blue-light;
+	&__textarea {
+		width: 100%;
+		height: 14rem;
+		padding: 1.5rem;
+		margin-bottom: 2rem;
+		overflow: hidden;
 	}
 
-}
-
-.log--icon {
-	position: relative;
-	font-size: 14px;
-	padding: 1rem;
-
-	.icon {
-		margin-right: 1.5rem;
+	&__return-link {
+		color: $title-link-color;
+		align-self: center;
+		span {
+			margin-right: 1rem;
+		}
 	}
 
-	.icon--twitter {
-		font-size: 1.3rem;
+	&__field {
+		flex: 1;
+		position: relative;
+		border: none;
+		padding: 0 8% 0 0;
+
+		&--total {
+			padding: 0 8% 6rem 0;
+		}
 	}
-}
 
-.reset-wrap {
-	margin-bottom: 2rem;
-}
-
-.title--sm {
-	margin: -1rem 0 2rem 0;
-}
-
-.btn--reset {
-	@extend %link;
-	border: none;
-	background-color: $red;
-}
-
-.form-main__message {
-	margin: 0 0 2rem 0;
-	color: $font-dark;
-}
-
-.inp--next {
-	@extend %flex;
-}
-
-.next-btn {
-
-	position: relative;
-	width: 5rem;
-	height: 4.5rem;
-	margin-left: 1rem;
-	border: none;
-	border-radius: 5px;
-	background-color: $sand;
-
-	.icon--next {
+	&__total {
 		position: absolute;
-		left: 50%;
-		color: #fff;
-		font-size: 14px;
+		right: 0;
+		bottom: 3rem;
+		font-size: 24px;
+		color: #000;
 	}
 
-}
-
-
-/* #Contact form */
-
-/*
-.form-label {
-	display: block;
-	margin-bottom: 1rem;
-	color: $font-dark;
-}
-
-.form-select,
-%form-select {
-	width: 100%;
-	margin-bottom: 2rem;
-	padding: 1.15rem 2rem;
-	border-radius: .5rem;
-	background-color: $blue-light;
-	color: $white;
-}
-
-.form-textarea {
-	width: 100%;
-	height: 14rem;
-	padding: 1rem 1.5rem;
-}
-
-.btn--send,
-%btn--send {
-	display: inline-block;
-	margin-left: auto;
-	padding: 1.5rem 5rem;
-	border: none;
-	border-radius: .5rem;
-	background-color: $green;
-	color: $font;
+	&--primary {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
 }
 
 .cart-table {
+	width: 100%;
+	margin-bottom: 2rem;
 
 	tr {
 		border-bottom: 1px solid $font-dark;
@@ -328,186 +396,134 @@
 
 	td {
 		padding: 1rem 0;
-
 		&:not(:first-child) {
 			text-align: center;
 		}
 	}
 
-	.total {
-		position: relative;
-		left: 87%;
-		padding: 2.5rem 0;
+	&__btn {
+		width: 2.5rem;
+		border: none;
+		border-radius: 0.5rem;
+		font-size: 2rem;
+		color: $font;
 
-		span {
+		&--minus {
+			background-color: $btn-reset-color;
+		}
+
+		&--plus {
+			background-color: $btn-secondary-color;			
+		}
+	}
+
+	&__quantity {
+		margin: 0 1rem;
+	}
+
+	&__total {
+		position: relative;
+
+		&-caption {
+			@include centY;
+			left: -5rem;
 			font-size: 14px;
 			color: $font-dark;
 			padding-right: 1rem;
 		}
 	}
-}	
+}
 
-.cart-table__stuff {
+.b-stuff {
 	display: flex;
 	align-items: center;
 	position: relative;
-	padding: 1rem 3rem;
-}
 
-.stuff-descr {
-	margin-left: 2rem;
+	&__main {
+		margin-left: 2rem;
 
-	p,
-	h4 {
-		margin: 0;
-	}
+		&-title {
+			margin: 0;
+		}
 
-	p,
-	label{
-		display: inline-block;
-		font-size: 1.4rem;
-		color: $font-dark;
-	}
+		&-description {
+			display: inline-block;
+			margin: 0;
+			font-size: 1.4rem;
+			color: $font-dark;
+		}
 
-}
-
-.inp--size {
-	width: 2.2rem;
-	height: 1.6rem;
-	border: none;
-	border-radius: .5rem;
-	background-color: $font-dark;
-	color: $font;
-	font-size: 12px;
-	text-align: center;
-}
-
-.stuff-colors {
-	display: inline-block;
-	padding-left: 1rem;
-	margin: 0;
-	margin-top: 1rem;
-
-	input {
-		display: none;
-		&:checked + label:before {
-			content: "\2713";
-			position: relative;
-			top: -3px;
-			font-size: 10px;
-			color: #fff;
+		&-input {
+			width: 2.2rem;
+			height: 1.6rem;
+			border: none;
+			border-radius: .5rem;
+			background-color: $font-dark;
+			color: $font;
+			font-size: 12px;
 			text-align: center;
 		}
-	}
 
-	li {
-		display: inline-block;
-		list-style-type: none;
-		vertical-align: middle;
-		padding: .2rem;
-		position: relative;
+		&-list {
+			display: inline-block;
+			padding-left: 1rem;
+			margin: 0;
+			margin-top: 1rem;
 
-		label {
+			input {
+				display: none;
+				&:checked + label:before {
+					content: "\2713";
+					position: relative;
+					top: -3px;
+					font-size: 10px;
+					color: #fff;
+					text-align: center;
+				}
+			}
 
-			&:before {
-				content: "";
+			li {
 				display: inline-block;
-				width: 1.6rem;
-				height: 1.4rem;
-				border-radius: 50%;
-			}
+				list-style-type: none;
+				vertical-align: middle;
+				padding: .2rem;
+				position: relative;
+				label {
+					&:before {
+						content: "";
+						display: inline-block;
+						width: 1.6rem;
+						height: 1.4rem;
+						border-radius: 50%;
+					}
+				}
 
-		}
-		
-		&:first-child {
-			label:before {
-				background-color: $sand;
+				&:first-child {
+					label:before {
+						background-color:$stuff-1-color;
+					}
+				}
+				&:nth-child(2) {
+					label:before {
+						background-color: $stuff-2-color;
+					}
+				}
+				&:nth-child(3) {
+					label:before {
+						background-color: $stuff-3-color;
+					}
+				}
+				&:nth-child(4) {
+					label:before {
+						background-color: $stuff-4-color;
+					}
+				}
+				&:nth-child(5) {
+					label:before {
+						background-color: #000;
+					}
+				}
 			}
 		}
-
-		&:nth-child(2) {
-			label:before {
-				background-color: $blue-light;
-			}
-		}
-		&:nth-child(3) {
-			label:before {
-				background-color: $green;
-			}
-		}
-		&:nth-child(4) {
-			label:before {
-				background-color: $red;
-			}
-		}
-		&:nth-child(5) {
-			label:before {
-				background-color: #000;
-			}
-		}
-
 	}
 }
-
-%cart-btn {
-	width: 2.5rem;
-	border: none;
-	border-radius: 0.5rem;
-	font-size: 2rem;
-	color: $white;
-}
-
-.btn--minus {
-	@extend %cart-btn;
-	background-color: $red;
-}
-.btn--plus {
-	@extend %cart-btn;
-	background-color: $green;
-}
-.quol {
-	margin: 0 1rem;
-}
-
-.cart-link {
-	color: $blue-light;
-	align-self: center;
-	span {
-		margin-right: 1rem;
-	}
-}
-
-.btn--order {
-	@extend %btn--send;
-}
-
-.btn--pay {
-	@extend %btn--send;
-	padding: 1.5rem 2.5rem;
-}
-
-.form-select--loc {
-	background-color: $sand;
-}
-
-.form-inp--cart {
-	input {
-		@include calc(width, '25% - (3rem / 4)')
-	}
-}
-
-.form-main__general {
-	margin: 0;
-	padding-right: 3rem;
-	color: $font-dark
-}
-
-.form__total {
-	font-size: 24px;
-}
-
-.inp--cvv {
-	width: 7.5rem;
-}
-
-*/

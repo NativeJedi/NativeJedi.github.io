@@ -15,7 +15,7 @@
 					<a href="#"><img src="dist/img/logo.png" alt="logo"></a>
 				</div>
 
-				<nav class="b-footer__nav">
+				<nav class="b-footer__nav b-footer__nav--top">
 					<a href="#">Products</a>
 					<a href="#">Prices</a>
 					<a href="#">About Us</a>
@@ -51,13 +51,12 @@
 						<span class="icon icon--link">13</span>
 					</div>
 
-					<div class="b-content__links">
-						<a href="">Terms and Conditions</a>
-						<a href="">Privacy Policy</a>
-					</div>
+						<a class="b-content__link" href="#">Terms and Conditions</a>
+						<a class="b-content__link" href="#">Privacy Policy</a>
+
 				</div>
 
-				<ul class="b-list b-list--light">
+				<ul class="b-list b-list--primary">
 					<li>Services</li>
 					<li><a href="#">Branding</a></li>
 					<li><a href="#">UX Design</a></li>
@@ -65,7 +64,7 @@
 					<li><a href="#">UI Design</a></li>
 					<li><a href="#">Development</a></li>
 				</ul>
-				<ul class="b-list b-list--light">
+				<ul class="b-list b-list--primary">
 					<li>About Us</li>
 					<li><a href="#">Company</a></li>
 					<li><a href="#">Out Team</a></li>
@@ -80,7 +79,7 @@
 		<div class="wrap">
 			<div class="row">
 
-				<ul class="b-list b-list--light">
+				<ul class="b-list b-list--primary">
 					<li class="b-list__title">Joseph Wood</li>
 					<li><a href="#">Timeline</a></li>
 					<li><a href="#">Messages</a></li>
@@ -89,7 +88,7 @@
 					<li><a href="#">Logout</a></li>
 				</ul>
 
-				<ul class="b-list b-list--light">
+				<ul class="b-list b-list--primary">
 					<li>Services</li>
 					<li><a href="#">Branding</a></li>
 					<li><a href="#">UX Design</a></li>
@@ -98,7 +97,7 @@
 					<li><a href="#">Development</a></li>
 				</ul>
 
-				<ul class="b-list b-list--light">
+				<ul class="b-list b-list--primary">
 					<li>About Us</li>
 					<li><a href="#">Company</a></li>
 					<li><a href="#">Out Team</a></li>
@@ -153,7 +152,7 @@
 	<footer class="b-footer">
 		<form action="" class="b-subscribe-form">
 			<label for="mail-1">Subscribe our news letters</label>
-			<div class="b-inp">
+			<div class="b-inp b-inp--iconed">
 				<span class="icon icon--mail"></span>
 				<input id="mail-1" type="email" placeholder="Your email here">
 			</div>
@@ -166,7 +165,7 @@
 					<a href="#"><img src="dist/img/logo.png" alt="logo"></a>
 				</div>
 
-				<ul class="b-list b-list--light">
+				<ul class="b-list b-list--primary">
 					<li>Services</li>
 					<li><a href="#">Branding</a></li>
 					<li><a href="#">UX Design</a></li>
@@ -190,30 +189,32 @@
 	</footer>
 
 	<footer class="b-footer-secondary">
-		<div class="flex-container">
+		<div class="wrap">
+			<div class="column">
 
-			<nav class="b-footer__nav">
-				<a href="#">Popular</a>
-				<a href="#">Recent</a>
-				<a href="#">Teams</a>
-				<a href="#">Debuts</a>
-				<a href="#">Playoffs</a>
-				<a href="#">Animated GIF's</a>
-			</nav>
+				<nav class="b-footer__nav">
+					<a href="#">Popular</a>
+					<a href="#">Recent</a>
+					<a href="#">Teams</a>
+					<a href="#">Debuts</a>
+					<a href="#">Playoffs</a>
+					<a href="#">Animated GIF's</a>
+				</nav>
 
-			<div class="b-social">
-				<a class="b-social__link b-social__link--fb b-social__link--rounded" href="#"><span class="icon icon--fb"></span></a>
-				<a class="b-social__link b-social__link--tw b-social__link--rounded" href="#"><span class="icon icon--tw"></span></a>
-				<a class="b-social__link b-social__link--logo b-social__link--rounded" href="#"><span class="icon icon--logo"></span></a>
-				<a class="b-social__link b-social__link--vimeo b-social__link--rounded" href="#"><span class="icon icon--vimeo"></span></a>
-				<a class="b-social__link b-social__link--gplus b-social__link--rounded" href="#"><span class="icon icon--gplus"></span></a>
+				<ul class="b-social b-social--rounded">
+					<li><a class="b-social__link b-social__link--fb" href="#"><span class="icon icon--fb"></span></a></li>
+					<li><a class="b-social__link b-social__link--tw" href="#"><span class="icon icon--tw"></span></a></li>
+					<li><a class="b-social__link b-social__link--logo" href="#"><span class="icon icon--logo"></span></a></li>
+					<li><a class="b-social__link b-social__link--vimeo" href="#"><span class="icon icon--vimeo"></span></a></li>
+					<li><a class="b-social__link b-social__link--gplus" href="#"><span class="icon icon--gplus"></span></a></li>
+				</ul>
+
+				<span class="b-footer__copy">&copy UI8 2014 – All Right Reserved</span>
 			</div>
-
-			<p class="b-footer__copy">&copy UI8 2014 – All Right Reserved</p>
 		</div>
 	</footer>
 
-	<footer class="b-footer--bg">
+	<footer class="b-footer-bg">
 		<div class="wrap">
 			<div class="row">
 
@@ -221,8 +222,8 @@
 					<a href="#"><img src="dist/img/logo.png" alt="logo"></a>
 				</div>
 
-				<ul class="b-list b-list--dark">
-					<li class="b-title-main">Women</li>
+				<ul class="b-list b-list--secondary">
+					<li class="b-list__main-title">Women</li>
 					<li><a href="#">Coats</a></li>
 					<li><a href="#">Outerwear</a></li>
 					<li><a href="#">Dresses</a></li>
@@ -236,8 +237,8 @@
 					<li><a href="#">Handbags</a></li>
 				</ul>
 
-				<ul class="b-list b-list--dark">
-					<li class="b-title-main">Men</li>
+				<ul class="b-list b-list--secondary">
+					<li class="b-list__main-title">Men</li>
 					<li><a href="#">Coats</a></li>
 					<li><a href="#">Jackets</a></li>
 					<li><a href="#">Blazers</a></li>
@@ -256,8 +257,8 @@
 				</ul>
 
 
-				<ul class="b-list b-list--dark">
-					<li class="b-title-main">Kids</li>
+				<ul class="b-list b-list--secondary">
+					<li class="b-list__main-title">Kids</li>
 					<li><a href="#">Girl</a></li>
 					<li><a href="#">Boy</a></li>
 					<li><a href="#">Baby girl</a></li>
@@ -265,28 +266,28 @@
 					<li><a href="#">MINI</a></li>
 				</ul>
 
-				<div>
-					<div class="b-social">
-						<h4 class="b-title-main">Follow us</h4>
-						<a class="b-social__link b-social__link--fb b-social__link--square" href="#"><span class="icon icon--fb"></span></a>
-						<a class="b-social__link b-social__link--tw b-social__link--square" href="#"><span class="icon icon--tw"></span></a>
-						<a class="b-social__link b-social__link--logo b-social__link--square" href="#"><span class="icon icon--logo"></span></a>
-						<a class="b-social__link b-social__link--vimeo b-social__link--square" href="#"><span class="icon icon--vimeo"></span></a>
-						<a class="b-social__link b-social__link--gplus b-social__link--square" href="#"><span class="icon icon--gplus"></span></a>
-					</div>
+				<div class="b-footer__section">
+					<h4 class="b-title-main">Follow us</h4>
+					<ul class="b-social b-social--squared">
+						<li><a class="b-social__link b-social__link--fb" href="#"><span class="icon icon--fb"></span></a></li>
+						<li><a class="b-social__link b-social__link--tw" href="#"><span class="icon icon--tw"></span></a></li>
+						<li><a class="b-social__link b-social__link--logo" href="#"><span class="icon icon--logo"></span></a></li>
+						<li><a class="b-social__link b-social__link--vimeo" href="#"><span class="icon icon--vimeo"></span></a></li>
+						<li><a class="b-social__link b-social__link--gplus" href="#"><span class="icon icon--gplus"></span></a></li>
+					</ul>
 
 					<div class="b-subscribe">
 
-						<h4 class="b-title-main">Subscribing</h4>
+						<h4 class="b-subscribe__title">Subscribing</h4>
 						<p class="b-subscribe__content">We will never send you spam or some other trash</p>
 
-						<div class="b-inp-wrap">
+						<div class="b-inp b-inp--multiple">
 							<input type="email">
 							<button class="b-btn b-btn--next"><span class="icon icon--next"></span></button>
 						</div>
 
-						<ul class="b-list b-list--dark">
-							<li class="b-title-main">Menu</li>
+						<ul class="b-list b-list--secondary">
+							<li class="b-list__main-title">Menu</li>
 							<li><a href="#">Company</a></li>
 							<li><a href="#">Our Team</a></li>
 							<li><a href="#">Testimonias</a></li>
@@ -294,13 +295,13 @@
 						</ul>
 					</div>
 
-					<p class="b-copy b-copy--lower">&copy UI8 2014 – All Right Reserved</p>
+					<span class="b-footer__copy">&copy UI8 2014 – All Right Reserved</span>
 				</div>
 			</div>
 		</div>
 	</footer>
 
-	<footer class="b-footer-dark">
+	<footer class="b-footer-secondary">
 		<div class="wrap">
 			<div class="row">
 
@@ -311,18 +312,19 @@
 					<a href="">See later</a>
 				</nav>
 
-				<div class="b-footer__social">
-					<p class="b-copy b-copy--m">&copy UI8 2014 – All Right Reserved</p>
-					<a href="#"><span class="icon icon--fb"></span></a>
-					<a href="#"><span class="icon icon--tw"></span></a>
-					<a href="#"><span class="icon icon--link"></span></a>
-				</div>
+				<span class="b-footer__copy b-footer__copy--right">&copy UI8 2014 – All Right Reserved</span>
+
+				<ul class="b-footer__social b-footer__social--secondary">
+					<li><a href="#"><span class="icon icon--fb"></span></a></li>
+					<li><a href="#"><span class="icon icon--tw"></span></a></li>
+					<li><a href="#"><span class="icon icon--link"></span></a></li>	
+				</ul>
 
 			</div>
 		</div>
 	</footer>
 
-	<footer class="b-footer-dark">
+	<footer class="b-footer-secondary">
 		<div class="wrap">
 			<div class="row">
 				
@@ -330,7 +332,7 @@
 					<a href="#"><img src="dist/img/logo.png" alt="logo"></a>
 				</div>
 
-				<ul class="b-list b-list--dark">
+				<ul class="b-list b-list--secondary">
 					<li>Joseph Wood</li>
 					<li><a href="#">Timeline</a></li>
 					<li><a href="#">Messages</a></li>
@@ -339,7 +341,7 @@
 					<li><a href="#">Logout</a></li>
 				</ul>
 
-				<ul class="b-list b-list--dark">
+				<ul class="b-list b-list--secondary">
 					<li>Services</li>
 					<li><a href="#">Branding</a></li>
 					<li><a href="#">UX Design</a></li>
@@ -348,7 +350,7 @@
 					<li><a href="#">Development</a></li>
 				</ul>
 
-				<ul class="b-list b-list--dark">
+				<ul class="b-list b-list--secondary">
 					<li>About Us</li>
 					<li><a href="#">Company</a></li>
 					<li><a href="#">Out Team</a></li>
@@ -358,47 +360,50 @@
 
 				<div>
 
-					<h4 class="b-title-main b-title--subscribe">Subscribing</h4>
+					<h4 class="b-title">Subscribing</h4>
 
-					<div class="b-inp-classic">
+					<div class="b-inp b-inp--multiple b-inp--multiple-classic">
 						<input type="email">
 						<button class="b-btn b-btn--next"><span class="icon icon--next"></span></button>
 					</div>
 
-					<div class="b-footer__social b-footer__social--m">
-						<h4 class="b-title">Follow Us</h4>
-						<a href="#"><span class="icon icon--fb"></span></a>
-						<a href="#"><span class="icon icon--tw"></span></a>
-						<a href="#"><span class="icon icon--logo"></span></a>
-						<a href="#"><span class="icon icon--vimeo"></span></a>
-						<a href="#"><span class="icon icon--gplus"></span></a>
-					</div>
+					<h4 class="b-title">Follow Us</h4>
+
+					<ul class="b-footer__social b-footer__social--secondary">
+						<li><a href="#"><span class="icon icon--fb"></span></a></li>
+						<li><a href="#"><span class="icon icon--tw"></span></a></li>
+						<li><a href="#"><span class="icon icon--logo"></span></a></li>
+						<li><a href="#"><span class="icon icon--vimeo"></span></a></li>
+						<li><a href="#"><span class="icon icon--gplus"></span></a></li>
+					</ul>
 					
 				</div>
 			</div>
 		</div>
 	</footer>
 
-	<footer class="b-footer--green">
-		<div class="flex-container">
-			<h2 class="b-footer__title">The best app ever</h2>
-			<h4 class="b-title--sign">Please sign up to get our app</h4>
+	<footer class="b-footer-special">
+		<div class="wrap">
+			<div class="column">
+				<h2 class="b-footer__title-primary">The best app ever</h2>
+				<h4 class="b-title--sign">Please sign up to get our app</h4>
 
-			<form class="b-footer__form" action="#">
-				<input class="b-input b-input--m" type="email" placeholder="E-mail">
-				<input class="b-input b-input--m" type="password" placeholder="Password">
-				<button class="b-btn b-btn--sign">Sign up</button>
-			</form>
+				<form class="b-footer__form" action="#">
+					<input class="input" type="email" placeholder="E-mail">
+					<input class="input" type="password" placeholder="Password">
+					<button class="b-btn b-btn--sign">Sign up</button>
+				</form>
 
-			<nav class="b-footer__main-nav">
-				<a href="#">Products</a>
-				<a href="#">Prices</a>
-				<a href="#">About us</a>
-				<a href="#">Contacts</a>
-			</nav>
+				<nav class="b-footer__nav-secondary">
+					<a href="#">Products</a>
+					<a href="#">Prices</a>
+					<a href="#">About us</a>
+					<a href="#">Contacts</a>
+				</nav>
 
-			<p class="b-footer-copy">&copy UI8 2014 – All Right</p>
+				<span class="b-footer__copyright">&copy UI8 2014 – All Right Reserved</span>
 
+			</div>
 		</div>
 	</footer>
 </body>

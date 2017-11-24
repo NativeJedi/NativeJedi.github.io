@@ -4,7 +4,7 @@
   #{$property}: calc(#{$expression});
 }
 
-@function pxtopercent($target, $parent: 940) {
+@function pxtopercent($target, $parent: 960) {
 	@return percentage($target / $parent);
 }
 

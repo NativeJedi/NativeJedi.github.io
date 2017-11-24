@@ -65,14 +65,29 @@ label {
 			&:not(:last-child) { margin-right: 6rem; }
 
 		}
-
 	}
+
+	&__social-icons {
+		display: flex;
+		justify-content: space-between;
+		align-self: center;
+		width: pxtopercent(100);
+		margin: 0 auto 0 pxtopercent(30);
+		padding-left: 0;
+		list-style-type: none;
+		color: #000;
+
+		.icon {
+			padding: 0 .7rem;
+		}
+	}
+
 }
 
 
 .wrap {
 	position: relative;
-	width: 940px;
+	max-width: 940px;
 	margin: 0 auto;
 	padding: 4.5rem 0;
 }
@@ -80,10 +95,6 @@ label {
 .row {
 	display: flex;
 	justify-content: space-between;
-
-	&--align {
-		align-items: center;
-	}
 }
 
 .logo {
@@ -93,18 +104,17 @@ label {
 }
 
 .b-footer__nav {
-
-	a:not(:first-child) {
-		margin-left: 3rem;
-	}
-
-	.icon {
-		font-size: 13px;
-		padding: 0 8px;
-	}
+	align-self: center;
+	display: flex;
+	justify-content: space-between;
+	width: pxtopercent(300);
+	margin-left: pxtopercent(60);
 }
 
 .b-contacts {
+	display: flex;
+	flex-direction: column;
+	width: pxtopercent(200);
 
 	&__title {
 		@extend %title;
@@ -119,7 +129,8 @@ label {
 }
 
 .b-content {
-	margin-right: 20rem;
+	width: pxtopercent(550);
+	padding-right: pxtopercent(70, 550);
 
 	&__title {
 		margin: 0 0 2rem 0;
@@ -128,7 +139,6 @@ label {
 	&__followers {
 
 		.icon {
-
 			margin-right: .7rem;
 			padding: .3rem .8rem .6rem 1.1rem;
 			border-radius: 5px;
@@ -172,7 +182,7 @@ label {
 
 		a {
 			color: $content-link-color;
-			margin-right: 2rem;
+			margin-right: pxtopercent(20);
 		}
 
 	}
@@ -204,19 +214,9 @@ label {
 	&__title {
 		color: $content-link-color;
 	}
-
-	&--right {
-		margin-right: 5rem;
-	}
-
-	&--left {
-		margin-right: 6rem;
-	}
 }
 
 .b-copyright {
-
-	margin-right: 6rem;
 
 	&__title {
 		margin: 1rem 0;
@@ -229,15 +229,17 @@ label {
 	}
 }
 
+
 .b-info {
 
-	width: 280px;
+	width: pxtopercent(280);
 
 	&__title {
 		@extend %title;
 	}
 
-	&__item {
+	&__content {
+		line-height: 1.375;
 		margin: 0;
 		color: $font-dark;
 	}
@@ -255,16 +257,21 @@ label {
 		text-align: center;
 	}
 
-	&--right {
-		margin-right: 6.3rem;
-	}
-
 }
 
 .b-btn {
 	border: none;
 	border-radius: 5px;
 	color: #fff;
+	transition: all .3s;
+
+	&:hover {
+		box-shadow: 15px 2px 20px rgba(#000, .6);
+	}
+
+	&:active {
+		box-shadow: 0 0 0 rgba(#000, .6);
+	}
 
 	&--app {
 		padding: 1.5rem 4rem;
@@ -291,12 +298,12 @@ label {
 
 
 .b-subscribe-form {
-	background-color: $subscribe-form-bg;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
 	padding: 3.5rem 0;
+	background-color: $subscribe-form-bg;
 	color: #fff;
 }
 
@@ -305,12 +312,18 @@ label {
 	margin: 0 2rem;
 
 	input {
-		width: 325px;
+		width: 32.5rem;
 		height: 50px;
 		padding-left: 40px;
 		border: none;
 		border-radius: 5px;
 		color: #000;
+
+		&:focus {
+			&::placeholder {
+				color: skyblue;
+			}
+		}
 	}
 
 	.icon {
@@ -322,24 +335,24 @@ label {
 }
 
 .b-map {
-	iframe { 
-		width: 300px; 
-		height: 190px;
-		border: 0;
-		border-radius: 5px;
-	}
+
+	width: 30rem; 
+	height: 19rem;
+	border: 0;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 .b-mail-link {
-	display: inline-block;
-	margin-top: 60px;
+	margin-top: auto;
+	align-self: flex-start;
 	padding: 1.3rem 2.3rem;
 	background-color: $content-link-color;
 	border-radius: 6px;
 	color: #fff;
 }
 
-.b-footer-dark {
+.b-footer-secondary {
 	margin-top: 2rem;
 	background-color: $footer-dark-bg;
 	color: #fff;

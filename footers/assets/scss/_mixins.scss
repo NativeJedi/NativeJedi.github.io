@@ -4,6 +4,10 @@
   #{$property}: calc(#{$expression});
 }
 
+@function pxtopercent($target, $parent: 940) {
+	@return percentage($target / $parent);
+}
+
 @mixin centY {
 	position: absolute;
 	top: 50%;

@@ -1,6 +1,20 @@
-@mixin bg-image($path) {
+@mixin bg-image($path...) {
 	background: url($path) no-repeat center;
 	background-size: cover;
+}
+
+@mixin stretch {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0
+}
+
+@mixin background($args...) {
+	background: $args no-repeat;
+	background-size: cover;
+	background-position: center;
 }
 
 @mixin calc($property, $expression) {
@@ -20,4 +34,8 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+}
+
+@function pxtopercent($target, $parent: 960) {
+	@return percentage($target / $parent);
 }

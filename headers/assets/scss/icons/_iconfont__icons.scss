@@ -23,9 +23,24 @@ $global-font-icon: 'social';
       content: $icon-Delete;
     }
   }
+  &.icon--brush {
+    &:before {
+      content: $icon-brush;
+    }
+  }
   &.icon--forw {
     &:before {
       content: $icon-forw;
+    }
+  }
+  &.icon--keyboard {
+    &:before {
+      content: $icon-keyboard;
+    }
+  }
+  &.icon--pencil {
+    &:before {
+      content: $icon-pencil;
     }
   }
   &.icon--search {

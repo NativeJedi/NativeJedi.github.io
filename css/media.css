@@ -7,66 +7,56 @@
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
 
-	.personal_last_block{
-		margin-top: 35px;
-	}
-
-	svg{
-		left: 0;
-	}
 }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-	.resume_container .left,
-	.section_content .resume_container h3,
-	.resume_container .resume_icon{
-		text-align: left;
-		margin-bottom: 10px;
-	}
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
-	.top_wrapper .top_text h1 {
-		font-size: 2em;
-		padding-left: 10px;
-		padding-right: 10px;
+	
+	.portfolio-content__title,
+	.portfolio-content__description,
+	.portfolio-content__link {
+		font-size: 3vh;
 	}
-	.main_footer{
+	.header__main-title {
+		font-size: 10vh;
+		padding: 0 .5em;
+	}
+	.resume-item {
 		text-align: left;
 	}
-	.main_footer .social_wrap{
-		float: left;
-		margin-top: 20px;
-		width: 100%;
+
+	.resume__title,
+	.resume__icon {
+		text-align: center;
+		margin-bottom: 10px;
 	}
-	.main_footer .social_wrap ul{
+
+	.resume__title {
+		margin-top: 20px;
+	}
+
+	.flex-wrap {
+		flex-wrap: wrap;
+	}
+
+	.main-footer__copy {
+		width: 100%;
+		text-align: center;
+	}
+
+	.social-list--secondary {
 		padding-left: 0;
+		margin: 20px auto;
 	}
 }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px) {
 
-	header .top_wrapper .top_descr .top_centered .top_text h1{
-		font-size: 2.2em;
-		margin-left: 10px;
-	}
-	header .top_wrapper .top_descr .top_centered .top_text p{
-		font-size: 10px;
-	}
-	.s_portfolio .container .row #portfolio_grid .mix .port_item_cont{
-		height: auto;
-		font-size: 10px;
-
-	}
-	.s_portfolio .container .row #portfolio_grid .mix .port_item_cont h3 {
-		margin-top: -6px;
-	}
-	.s_portfolio #portfolio_grid .mix img{
-		height: auto;
-	}
 }
 
 /*==========  Mobile First Method  ==========*/

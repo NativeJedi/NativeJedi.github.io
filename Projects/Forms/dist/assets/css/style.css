@@ -771,17 +771,9 @@ label {
   .cart-table__quantity {
     margin: 0 1rem; }
   .cart-table__total {
-    position: relative; }
-    .cart-table__total-caption {
-      position: absolute;
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-          -ms-transform: translateY(-50%);
-              transform: translateY(-50%);
-      left: -5rem;
-      font-size: 14px;
-      color: #B4BBC2;
-      padding-right: 1rem; }
+    text-align: right;
+    font-size: 14px;
+    color: #B4BBC2; }
 
 .b-stuff {
   display: -webkit-box;

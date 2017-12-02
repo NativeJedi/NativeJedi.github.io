@@ -385,10 +385,13 @@ body textarea:required:valid {
   background-color: #fff;
   max-width: 500px;
   margin: auto; }
-  .portfolio-description__title {
-    padding: 20px 0 0 0;
+  .portfolio-description__link {
+    display: block;
     text-align: center;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 20px 0; }
   .portfolio-description__heart {
     margin: 0;
     padding: 0 20px 20px 20px; }

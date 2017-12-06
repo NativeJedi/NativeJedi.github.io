@@ -378,23 +378,27 @@ body textarea:required:valid {
   .portfolio-content__link {
     color: #FF6347;
     border: 1px solid #FF6347;
-    padding: 5px; }
+    padding: 5px 10px; }
 
 .portfolio-description {
   position: relative;
   background-color: #fff;
   max-width: 500px;
-  margin: auto; }
+  margin: auto;
+  text-align: center; }
   .portfolio-description__link {
-    display: block;
+    display: inline-block;
     text-align: center;
     text-transform: uppercase;
     font-size: 20px;
     font-weight: 700;
-    padding: 20px 0; }
+    color: #FF6347;
+    margin: 20px 0;
+    border-bottom: 2px solid; }
   .portfolio-description__heart {
     margin: 0;
-    padding: 0 20px 20px 20px; }
+    padding: 0 20px 20px 20px;
+    text-align: left; }
   .portfolio-description img {
     width: 100%; }
   .portfolio-description__btn-close {

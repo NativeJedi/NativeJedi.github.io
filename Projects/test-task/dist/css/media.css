@@ -1,0 +1,39 @@
+@media only screen and (max-width: 1200px) {
+	.logo {
+		 text-align: center;
+		}
+
+	.header__tools {
+		text-align: center;
+	}
+	
+	.main-title {
+		display: block;
+		text-align: center;
+	}
+
+	.main-title:after {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.s-main__title {
+		text-align: center;
+	}
+
+	.view {
+		-webkit-flex-wrap: wrap;
+		-moz-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		-o-flex-wrap: wrap;
+		flex-wrap: wrap;
+		margin-bottom: 2rem;
+	}
+	.footer-nav { text-align: center; }
+	.social-wrap {text-align: center;}
+	.footer-secondary-nav {text-align: center;}
+	.footer-copy {
+		display: block;
+		margin: 2rem 0;
+		text-align: center;}
+}

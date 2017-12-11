@@ -408,6 +408,11 @@ ul {
   background-color: transparent;
   border: none;
   margin-left: 2%; }
+  .btn-icon--secondary {
+    color: #8F070F; }
+    .btn-icon--secondary:hover {
+      color: #fff;
+      border-bottom: 3px solid #fff; }
 
 .logo img {
   width: 20px; }
@@ -425,6 +430,9 @@ ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;

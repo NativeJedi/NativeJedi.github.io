@@ -50,6 +50,15 @@ ul {
 	background-color: transparent;
 	border: none;
 	margin-left: 2%;
+
+	&--secondary {
+		color: #8F070F;
+
+		&:hover {
+			color: #fff;
+			border-bottom: 3px solid #fff;
+		}
+	}
 }
 
 .logo {
@@ -70,6 +79,7 @@ ul {
 	
 	&__button-group {
 		display: flex;
+		align-items: center;
 		justify-content: space-between;
 		padding: 0 8.7% 0 0;
 		font-size: 20px;

@@ -6,6 +6,8 @@
 	.header__tools {
 		text-align: center;
 	}
+
+	.main-list { justify-content: center; }
 	
 	.main-title {
 		display: block;

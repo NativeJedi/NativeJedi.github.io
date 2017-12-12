@@ -68,23 +68,20 @@ ul {
 }
 
 .s-menu {
-	display: flex;
+
+	background: linear-gradient(to right, #fff 50%, red 50%);
 
 	&__title {
-		width: 50%;
-		padding-left: 8.7%;
 		text-transform: uppercase;
 		font-size: 16px;
 	}
 	
 	&__button-group {
 		display: flex;
+		height: 100%;
 		align-items: center;
 		justify-content: space-between;
-		padding: 0 8.7% 0 0;
 		font-size: 20px;
-		width: 50%;
-		background-color: red;
 	}
 }
 

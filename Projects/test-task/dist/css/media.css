@@ -1,7 +1,17 @@
 @media only screen and (max-width: 1200px) {
+
+	.s-menu {
+		background: linear-gradient(0deg, red 50%, #fff 50%);
+	}
+	.s-menu__title { text-align: center; }
+
 	.logo {
 		 text-align: center;
-		}
+	}
+
+	.header__nav {
+		padding: 2rem 0;
+	}
 
 	.header__tools {
 		text-align: center;

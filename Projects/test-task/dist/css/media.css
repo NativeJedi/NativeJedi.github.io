@@ -1,9 +1,12 @@
-@media only screen and (max-width: 1200px) {
 
+@media only screen and (max-width: 768px) {
 	.s-menu {
 		background: linear-gradient(0deg, red 50%, #fff 50%);
 	}
 	.s-menu__title { text-align: center; }
+}
+
+@media only screen and (max-width: 1200px) {
 
 	.logo {
 		 text-align: center;

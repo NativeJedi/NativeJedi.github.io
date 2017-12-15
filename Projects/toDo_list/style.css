@@ -17,7 +17,7 @@
 	font-size: 20px;
 }
 
-button {
+.btn {
 	height: 35px;
 	padding: 0 20px;
 	margin-left: 5px;
@@ -27,6 +27,16 @@ button {
 	background-color: blue;
 	cursor: pointer;
 	font-size: 20px;
+}
+
+.btn-del {
+	float: right;
+	margin-right: 20px;
+	background-color: transparent;
+	border: 2px solid blue;
+	border-radius: 50%;
+	color: blue;
+	cursor: pointer;
 }
 
 ul {
@@ -56,6 +66,7 @@ label {
 	padding-left: 30px;
 	font-size: 20px;
 	font-style: italic;
+	cursor: pointer;
 }
 label:before {
 	content: "";

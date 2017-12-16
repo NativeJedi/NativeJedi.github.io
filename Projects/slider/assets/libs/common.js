@@ -12,7 +12,6 @@ prev.onclick = function() {
 }
 
 
-
 function Slider(images) {
 	var i = 0;
 
@@ -30,7 +29,7 @@ function Slider(images) {
 	this.prev = function() {
 		this.images[i].classList.remove("active");
 		i--;
-		if (i === 0) {
+		if (i === -1) {
 			i = this.images.length - 1;
 		}
 		this.images[i].classList.add("active");

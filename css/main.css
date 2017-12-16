@@ -346,9 +346,12 @@ body textarea:required:valid {
 
 .portfolio .mix {
   display: none;
+  overflow: hidden;
+  height: 219px;
   padding: 0; }
   .portfolio .mix img {
-    width: 100%; }
+    display: block;
+    max-width: 100%; }
 
 .portfolio-content {
   position: absolute;

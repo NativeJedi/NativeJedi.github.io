@@ -1,0 +1,124 @@
+@font-face {
+    font-family: 'Shadows Into Light', cursive;
+    src : url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+}
+html, body, input, button {
+	font-family: 'Shadows Into Light', cursive;
+}
+
+$main-color: #40C2F3;
+
+.todo-list {
+	width: 30%;
+	margin: 30px auto;
+	$h: 40px;
+
+	&__input {
+		width: 70%;
+		height: $h;
+		padding: 0 10px;
+		font-size: 20px;
+		border-radius: 5px;
+		border: 2px solid;
+		border-color: #ccc;
+
+		&:focus {
+			border-color: $main-color;
+
+			&::placeholder {
+				color: $main-color;
+			}
+		}
+	}
+
+	&__btn {
+		box-sizing: border-box;
+		padding: 0 20px;
+		height: $h+ 5px;
+		border-radius: 5px;
+		margin-left: 20px;
+		border: none;
+		font-size: 20px;
+		background-color: $main-color;
+		color: #fff;
+		cursor: pointer;
+
+		&:active {
+			box-shadow: 2px 2px 10px #000;
+		}
+	}
+}
+
+.item {
+	display: flex;
+	width: 90%;
+	font-size: 20px;
+	margin-top: 20px;
+	flex-wrap: wrap;
+	&__checkbox { 
+		display: none;
+
+		&:checked {
+			&+.item__label:before {
+				content: "\2713";
+				font-size: 16px;	
+				color: #fff;
+				text-align: center;
+			}
+
+			& + .item__label {
+				color: #0AAF5D;
+				text-decoration: line-through;
+			}
+		} 
+	}
+
+	&__label {
+		display: inline-block;
+		position: relative;
+		padding-left: 30px;
+		word-wrap: break-word;
+		width: 75%;
+
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 5px;
+			width: 20px;
+			height: 20px;
+			background-color: $main-color;
+			border-radius: 99px;
+		}
+	}
+
+	&__btn {
+		position: relative;
+		width: 25px;
+		height: 25px;
+		border: none;
+		border-radius: 50%;
+		background-color: #F72727;
+		cursor: pointer;
+		margin-left: auto;
+
+		&:before, &:after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 2px;
+			height: 17px;
+			background-color: #FFF;
+		}
+
+		&:before {
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+		&:after {
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+	}
+
+
+}

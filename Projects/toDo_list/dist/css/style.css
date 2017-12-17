@@ -6,10 +6,17 @@ html, body, input, button {
   font-family: 'Shadows Into Light', cursive; }
 
 .todo-list {
-  margin: 30px auto;
-  width: 50%; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px; }
   .todo-list__input {
-    width: 70%;
+    width: 50%;
     height: 40px;
     padding: 0 10px;
     font-size: 20px;
@@ -46,7 +53,7 @@ html, body, input, button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 82%;
+  width: 57%;
   font-size: 20px;
   margin-top: 20px; }
   .item__checkbox {
@@ -63,7 +70,9 @@ html, body, input, button {
     display: inline-block;
     position: relative;
     padding-left: 30px;
-    word-wrap: break-word; }
+    word-wrap: break-word;
+    width: 87%;
+    cursor: pointer; }
     .item__label:before {
       content: "";
       position: absolute;

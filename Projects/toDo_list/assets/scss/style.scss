@@ -9,12 +9,14 @@ html, body, input, button {
 $main-color: #40C2F3;
 
 .todo-list {
-	margin: 30px auto;
-	width: 50%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 20px;
 	$h: 40px;
 
 	&__input {
-		width: 70%;
+		width: 50%;
 		height: $h;
 		padding: 0 10px;
 		font-size: 20px;
@@ -51,7 +53,7 @@ $main-color: #40C2F3;
 
 .item {
 	display: flex;
-	width: 82%;
+	width: 57%;
 	font-size: 20px;
 	margin-top: 20px;
 	&__checkbox { 
@@ -77,6 +79,8 @@ $main-color: #40C2F3;
 		position: relative;
 		padding-left: 30px;
 		word-wrap: break-word;
+		width: 87%;
+		cursor: pointer;
 
 		&:before {
 			content: "";

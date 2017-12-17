@@ -1,9 +1,10 @@
 var form = document.querySelector(".todo-list");
 var btn = document.querySelector(".todo-list__btn");
 
+
 var list = new makeTodo();
 
-btn.onclick = function () {
+form.onsubmit = function() {
 	list.add();
 }
 
@@ -46,8 +47,7 @@ function makeTodo() {
 			var id = this.id.substr(-1);
 			var div = document.querySelector("#item-" + id);
 			console.log(div);
-			form.removeChild(div);
-			
+			form.removeChild(div);	
 		}
 
 		i++;

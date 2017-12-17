@@ -46,8 +46,8 @@ function makeTodo() {
 		btn.onclick = function() {
 			var id = this.id.substr(-1);
 			var div = document.querySelector("#item-" + id);
-			console.log(div);
 			form.removeChild(div);	
+			i--;
 		}
 
 		i++;

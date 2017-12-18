@@ -4,7 +4,8 @@ var btn = document.querySelector(".todo-list__btn");
 
 var list = new makeTodo();
 
-form.onsubmit = function() {
+form.onsubmit = function(e) {
+	e.preventDefault();
 	list.add();
 }
 

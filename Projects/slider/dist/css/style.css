@@ -5,7 +5,8 @@
 
 .slider__gallery {
   position: relative;
-  height: 500px; }
+  height: 500px;
+  cursor: pointer; }
   .slider__gallery img {
     max-width: 100%;
     position: absolute;
@@ -25,7 +26,8 @@
   margin: auto;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between; }
+          justify-content: space-between;
+  cursor: pointer; }
   .slider__controlls .btn {
     position: relative;
     width: 60px;

@@ -7,6 +7,7 @@
 .slider__gallery {
 	position: relative;
 	height: 500px;
+	cursor: pointer;
 
 	img {
 		max-width: 100%;
@@ -26,6 +27,7 @@
 	width: 20%;
 	margin: auto;
 	justify-content: space-between;
+	cursor: pointer;
 
 	.btn {
 		position: relative;

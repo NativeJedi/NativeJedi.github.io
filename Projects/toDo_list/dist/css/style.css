@@ -68,7 +68,9 @@ body {
     background-color: transparent;
     cursor: pointer; }
   .todo-list .tab-active {
-    border: 1px solid #ccc; }
+    border: 1px solid #0AAF5D;
+    color: #0AAF5D;
+    outline: transparent; }
 
 .item {
   display: -webkit-box;
@@ -79,8 +81,8 @@ body {
   padding: 10px 0;
   border: 1px solid;
   border-color: transparent transparent #ccc transparent; }
-  .item:first-child {
-    margin-top: 20px; }
+  .item-unactive {
+    display: none; }
   .item__checkbox {
     display: none; }
     .item__checkbox:checked + .item__label:before {

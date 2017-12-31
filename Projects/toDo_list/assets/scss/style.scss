@@ -84,7 +84,9 @@ $h: 50px;
 	}
 
 	.tab-active {
-		border: 1px solid #ccc;
+		border: 1px solid #0AAF5D;
+		color: #0AAF5D;
+		outline: transparent;
 	}
 
 }
@@ -97,8 +99,8 @@ $h: 50px;
 	border: 1px solid;
 	border-color: transparent transparent #ccc transparent;
 
-	&:first-child {
-		margin-top: 20px;
+	&-unactive {
+		display: none;
 	}
 
 	&__checkbox { 

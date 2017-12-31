@@ -69,7 +69,6 @@ function makeTodo(set) {
 		self.dealList.push(deal);
 		self.input.value = '';
 	}
-
 	
 	self.idRender = function() {
 		for (var i = 0; i < self.dealList.length; i++) {
@@ -84,42 +83,54 @@ function makeTodo(set) {
 		for (var i = 0; i < self.dealList.length; i++) {
 		}
 
-		self.itemsLeft.innerText = 'Items left: ' + i;
+		self.itemsLeft.innerText = 'Items: ' + i;
 	};
 
 	self.tabDone.addEventListener('click', function(e) {
 		e.preventDefault();
+
+		self.tabActive.classList.remove('tab-active');
+		self.tabAll.classList.remove('tab-active');
+		this.classList.add('tab-active');
+
 		for (var i = 0; i < self.dealList.length; i++) {
-
 			if (!self.dealList[i].checkbox.checked) {
-				self.dealList[i].div.style.display = 'none';
-			}else {
-				self.dealList[i].div.style.display = 'block';
-			}
-
+				self.dealList[i].div.classList.add('item-unactive');
+			} else {
+				self.dealList[i].div.classList.remove('item-unactive');
+			};
 		}
 	});
 
+
 	self.tabActive.addEventListener('click', function(e) {
 		e.preventDefault();
+
+		self.tabDone.classList.remove('tab-active');
+		self.tabAll.classList.remove('tab-active');
+		this.classList.add('tab-active');
+
 		for (var i = 0; i < self.dealList.length; i++) {
-
 			if (self.dealList[i].checkbox.checked) {
-				self.dealList[i].div.style.display = 'none';
-			}else {
-				self.dealList[i].div.style.display = 'block';
-			}
-
-
+				self.dealList[i].div.classList.add('item-unactive');
+			} else {
+				self.dealList[i].div.classList.remove('item-unactive');
+			};
 		}
 	});
 
 	self.tabAll.addEventListener('click', function(e) {
 		e.preventDefault();
+
+		self.tabActive.classList.remove('tab-active');
+		self.tabDone.classList.remove('tab-active');
+		this.classList.add('tab-active');
+
 		for (var i = 0; i < self.dealList.length; i++) {
-				self.dealList[i].div.style.display = 'block';
+				self.dealList[i].div.classList.remove('item-unactive');
 		}
 	});
+
 
 	self.form.addEventListener('submit', function(e){
 		e.preventDefault();

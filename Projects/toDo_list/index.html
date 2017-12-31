@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Todo list</title>
 	<link rel="stylesheet" href="dist/css/style.css">
 </head>
@@ -9,6 +10,13 @@
 	<form action="#" class="todo-list" id="form">
 		<input class="todo-list__input" type="text" placeholder="What I need to do?"> 
 		<button id="button" class="todo-list__btn" type="submit">Add</button>
+		<div class="todo-list__deals"></div>
+		<span class="todo-list__counter">Items left:</span>
+		<div class="todo-list__tab-wrap">
+			<button class="todo-list__tab tab-active" id="tab-all">All</button>
+			<button class="todo-list__tab" id="tab-done">Done</button>
+			<button class="todo-list__tab" id="tab-active">Not yet</button>
+		</div>
 	</form>
 
 	<script src="assets/libs/common.js"></script>

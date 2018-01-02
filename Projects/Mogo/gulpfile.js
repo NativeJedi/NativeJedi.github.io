@@ -10,7 +10,7 @@ consolidate  = require('gulp-consolidate'),
 svgstore     = require('gulp-svgstore'),
 svgmin       = require('gulp-svgmin'),
 rename       = require('gulp-rename'),
-inject       = require('gulp-inject')ж
+inject       = require('gulp-inject');
 
 var svgWatch            = './web/webroot/WEB-INF/_svg-src/*.svg';
 var svgIconsSource      = './web/webroot/WEB-INF/tags/responsive/template/svg.html';

@@ -403,7 +403,8 @@ body {
   width: 100%; }
   .table-data th {
     border: 1px solid #ccc;
-    padding: 1rem 2rem; }
+    padding: 1rem 2rem;
+    cursor: pointer; }
     .table-data th:first-child {
       width: 5%; }
     .table-data th:nth-child(2) {
@@ -416,6 +417,8 @@ body {
     text-align: center; }
   .table-data .active {
     background-color: #8DD35F; }
+  .table-data .hide {
+    display: none; }
 
 .b-search {
   display: inline-block;

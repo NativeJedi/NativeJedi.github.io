@@ -1,49 +1,5 @@
-@mixin stretch {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0
-}
-
-@mixin cent {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-
-@mixin centX {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-}
-
 @mixin centY {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-}
-
-@mixin background($args...) {
-	background: $args no-repeat;
-	background-size: cover;
-	background-position: center;
-}
-
-@function pxtopercent($target, $parent: 1200) {
-	@return percentage($target / $parent);
-}
-
-@mixin calc($property, $expression) {
-	#{$property}: -moz-calc(#{$expression});
-	#{$property}: -webkit-calc(#{$expression});
-	#{$property}: calc(#{$expression});
-}
-
-@mixin line {
-	content: "";
-	width: 60px;
-	height: 3px;
-	background-color: $streak-color;
 }

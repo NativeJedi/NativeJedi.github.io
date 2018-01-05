@@ -74,4 +74,5 @@ gulp.task('serve', ['sass'], function(){
 gulp.task('default', ['serve'], function() {
   gulp.watch(['assets/scss/**/*.scss'], ['sass']);
   gulp.watch('./**/*.html').on('change', browser.reload);
+  gulp.watch('assets/libs/common.js').on('change', browser.reload);
   });

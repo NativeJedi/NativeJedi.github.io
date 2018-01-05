@@ -18,54 +18,9 @@ $global-font-icon: 'social';
     /* Some common icon stuff */
   }
 
-  &.icon--Minus {
+  &.icon--search {
     &:before {
-      content: $icon-Minus;
-    }
-  }
-  &.icon--Plus {
-    &:before {
-      content: $icon-Plus;
-    }
-  }
-  &.icon--Star {
-    &:before {
-      content: $icon-Star;
-    }
-  }
-  &.icon--facebook {
-    &:before {
-      content: $icon-facebook;
-    }
-  }
-  &.icon--fish {
-    &:before {
-      content: $icon-fish;
-    }
-  }
-  &.icon--google {
-    &:before {
-      content: $icon-google;
-    }
-  }
-  &.icon--instagram {
-    &:before {
-      content: $icon-instagram;
-    }
-  }
-  &.icon--pinterest {
-    &:before {
-      content: $icon-pinterest;
-    }
-  }
-  &.icon--twitter {
-    &:before {
-      content: $icon-twitter;
-    }
-  }
-  &.icon--youtube {
-    &:before {
-      content: $icon-youtube;
+      content: $icon-search;
     }
   }
 

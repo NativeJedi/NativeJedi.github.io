@@ -405,9 +405,9 @@ body {
   display: none;
   padding: 20px 40px;
   background-color: #FFF;
-  -webkit-box-shadow: 0 0 100px rgba(255, 255, 255, 0.8);
-          box-shadow: 0 0 100px rgba(255, 255, 255, 0.8);
   border-radius: 10px;
+  -webkit-box-shadow: 0 0 100px #fff;
+          box-shadow: 0 0 100px #fff;
   z-index: 20; }
   .popup__close {
     position: absolute;

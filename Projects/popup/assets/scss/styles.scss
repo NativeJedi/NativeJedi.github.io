@@ -5,7 +5,9 @@
 
 body {
 	text-align: center;
+
 }
+
 
 .btn-popup {
 	display: inline-block;
@@ -24,7 +26,6 @@ body {
 	display: none;
 	background-color: rgba(#000, .8);
 	cursor: pointer;
-	
 }
 
 .popup {
@@ -32,10 +33,10 @@ body {
 	display: none;
 	padding: 20px 40px;
 	background-color: #FFF;
-	box-shadow: 0 0 100px rgba(#fff, .8);
 	border-radius: 10px;
+	box-shadow: 0 0 100px #fff;
 	z-index: 20;
-
+	
 	&__close {
 		position: absolute;
 		right: 5px;
@@ -67,7 +68,6 @@ body {
 			transform: rotate(-45deg);			
 		}
 	}
-
 }
 
 .active {

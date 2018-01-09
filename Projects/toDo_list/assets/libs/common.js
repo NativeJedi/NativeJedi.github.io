@@ -26,10 +26,10 @@ function makeTodo(set) {
 	self.add = function() {
 		var deal = {};
 		var inputText = self.input.value;
-		var div 		 = document.createElement("div");
-		var checkbox = document.createElement("input");
-		var label 	 = document.createElement("label");
-		var btn 	   = document.createElement("button");
+		var div 		 	= document.createElement("div");
+		var checkbox 	= document.createElement("input");
+		var label 	 	= document.createElement("label");
+		var btn 	   	= document.createElement("button");
 
 		if (!inputText) { 
 			alert("Enter some deal, pls!");
@@ -80,10 +80,15 @@ function makeTodo(set) {
 	}
 
 	self.left = function () {
+		var count = 0;
+
 		for (var i = 0; i < self.dealList.length; i++) {
+			if (!self.dealList[i].div.classList.contains('item-unactive')) {
+				count++;
+			}
 		}
 
-		self.itemsLeft.innerText = 'Items: ' + i;
+		self.itemsLeft.innerText = 'Items: ' + count;
 	};
 
 	self.tabDone.addEventListener('click', function(e) {
@@ -100,6 +105,8 @@ function makeTodo(set) {
 				self.dealList[i].div.classList.remove('item-unactive');
 			};
 		}
+
+		self.left();
 	});
 
 
@@ -117,6 +124,8 @@ function makeTodo(set) {
 				self.dealList[i].div.classList.remove('item-unactive');
 			};
 		}
+
+		self.left();
 	});
 
 	self.tabAll.addEventListener('click', function(e) {
@@ -129,6 +138,8 @@ function makeTodo(set) {
 		for (var i = 0; i < self.dealList.length; i++) {
 				self.dealList[i].div.classList.remove('item-unactive');
 		}
+
+		self.left();
 	});
 
 

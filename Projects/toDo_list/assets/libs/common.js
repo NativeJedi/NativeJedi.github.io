@@ -109,7 +109,6 @@ function makeTodo(set) {
 		self.left();
 	});
 
-
 	self.tabActive.addEventListener('click', function(e) {
 		e.preventDefault();
 
@@ -141,7 +140,6 @@ function makeTodo(set) {
 
 		self.left();
 	});
-
 
 	self.form.addEventListener('submit', function(e){
 		e.preventDefault();

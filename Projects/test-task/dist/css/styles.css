@@ -402,7 +402,8 @@ a {
           box-sizing: border-box; }
 
 .wrapper {
-  max-width: 97rem;
+  min-width: 97rem;
+  max-width: 140rem;
   margin: 0 auto;
   padding: 0 1.5rem; }
 
@@ -565,7 +566,8 @@ a {
     font-size: 14px; }
 
 .b-service {
-  padding: 0 1.5rem; }
+  padding: 0 1.5rem;
+  width: 100%; }
   .b-service__top {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -594,29 +596,29 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  padding: .8rem;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 1.5rem;
   border: 1px solid #ccc;
   border-radius: 5px; }
   .b-content-item {
-    display: inline-block; }
-    .b-content-item svg {
+    display: inline-block;
+    margin: .8rem;
+    max-width: 14rem; }
+    .b-content-item img {
+      display: block;
       width: 14rem;
       height: 14rem;
+      padding: 1rem;
       border: 1px solid #ccc;
       border-radius: 5px;
-      padding: 3.5rem;
       -webkit-transition: background-color .3s;
       -o-transition: background-color .3s;
       transition: background-color .3s;
       cursor: pointer; }
-      .b-content-item svg:hover {
+      .b-content-item img:hover {
         background-color: #F4F7FB; }
-        .b-content-item svg:hover + h3 {
+        .b-content-item img:hover + h3 {
           color: #87B448; }
     .b-content-item__name {
       min-height: 60px;

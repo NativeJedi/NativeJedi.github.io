@@ -573,7 +573,7 @@ th {
   font-weight: normal; }
 
 @font-face {
-  font-family: 'GothamPro', serif;
+  font-family: 'GothamPro', sans-serif;
   src: url("../fonts/GothamPro/GothamProBold/GothamProBold.woff"), url("../fonts/GothamPro/GothamProBold/GothamProBold.eot"), url("../fonts/GothamPro/GothamProBold/GothamProBold.ttf");
   font-weight: bold; }
 
@@ -643,7 +643,7 @@ th {
           box-sizing: border-box; }
 
 html, body {
-  font-family: serif; }
+  font-family: "GothamPro", sans-serif; }
 
 a {
   text-decoration: none; }

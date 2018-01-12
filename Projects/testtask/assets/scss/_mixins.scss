@@ -1,0 +1,62 @@
+@mixin centY {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@mixin cent {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin centX {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+@mixin stretch {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+@function pxtopercent($target, $parent: 1200) {
+	@return percentage($target / $parent);
+}
+
+@mixin close-icon {
+	position: absolute;
+	right: 5px;
+	top: 10px;
+	width: 32px;
+	height: 32px;
+	opacity: 0.3;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 1;
+	}
+
+	&:before,
+	&:after {
+		position: absolute;
+		left: 10px;
+		content: ' ';
+		height: 28px;
+		width: 2px;
+		background-color: #333;
+	}
+
+	&:before {
+		transform: rotate(45deg);
+	}
+
+	&:after {
+		transform: rotate(-45deg);			
+	}
+}

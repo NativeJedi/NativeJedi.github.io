@@ -79,6 +79,18 @@ function Slider(set) {
 			i = 0;
 		}
 		that.images[i].classList.add("active");
+
+		var locDot = document.querySelectorAll('.s-main-slider__dots span');
+
+
+		if(locDot !== null) {
+			for (var j = 0; j < locDot.length; j++) {
+				locDot[j].classList.remove("dot-active");
+			}
+
+			locDot[i].classList.add("dot-active");
+		}
+		
 	};
 
 	that.prev = function() {		

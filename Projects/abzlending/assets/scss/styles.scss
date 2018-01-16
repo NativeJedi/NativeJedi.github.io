@@ -3,6 +3,7 @@
 @import 'icons/_iconfont__variables.scss';
 @import 'icons/_iconfont__icons.scss';
 
+$main-color: #87B448;
 
 html {
 	font-size: 10px;
@@ -39,11 +40,11 @@ a {
 
 .b-header {
 	padding: 1.1rem 1.5rem;
-	background-color: green;
+	background-color: $main-color;
 
 	.wrapper {
 		display: flex;
-		align-items: center;
+		align-items: flex-end;
 	}
 
 	&__search {
@@ -72,7 +73,7 @@ a {
 		.icon {
 			@include centY;
 			left: 1rem;
-			color: green;
+			color: $main-color;
 		}
 	}
 
@@ -264,26 +265,33 @@ a {
 	font-size: 14px;
 	border: none;
 	border-radius: 6px;
-	background-color: green;
+	background-color: $main-color;
 	color: #fff;
 }
 
 .b-content {
 	display: flex;
-	padding: .8rem;
 	flex-wrap: wrap;
+	min-height: 50rem;
 	border: 1px solid #ccc;
+	justify-content: space-between;
 	border-radius: 5px;
+	padding: 15px;
+
+	&:after {
+		content: "";
+		flex: auto;
+	}
 
 	&-item {
 		display: inline-block;
-		margin: .8rem;
-		max-width: 14rem;
+		max-width: 140px;
+		margin: 0 15px;
 
 		img {
 			display: block;
-			width: 14rem;
-			height: 14rem;
+			width: 140px;
+			height: 140px;
 			padding: 1rem;
 			border: 1px solid #ccc;
 			border-radius: 5px;
@@ -294,7 +302,7 @@ a {
 				background-color: #F4F7FB;
 
 				& + h3 {
-					color: green;
+					color: $main-color;
 				}
 			}
 		}
@@ -303,7 +311,7 @@ a {
 		&__name {
 			min-height: 60px;
 			margin: 0;
-			line-height: 100%;
+			line-height: 1.2;
 			text-align: center;
 			padding-top: 1.5rem;
 			font-size: 1.36rem;
@@ -311,4 +319,95 @@ a {
 			transition: color .3s;
 		}
 	}
+}
+
+
+.overlay {
+	@include stretch;
+	display: none;
+	background-color: rgba(#000, .8);
+	cursor: pointer;
+}
+
+
+/*#Popup */
+
+
+.popup {
+
+	$popup-color: #DE342C;
+
+	@include cent;
+	display: none;
+	min-width: 300px;
+	min-height: 100px;
+	border: 4px solid #fff;
+	background-color: #FFF;
+	border-radius: 10px;
+	box-shadow: 0 0 100px $popup-color;
+	z-index: 20;
+	
+	&__close {
+		position: absolute;
+		right: -13px;
+		top: -15px;
+		width: 32px;
+		height: 32px;
+		cursor: pointer;
+		border: 4px solid #fff;
+		border-radius: 50%;
+		background-color: $popup-color;
+		transition: all .3s;
+
+		&:hover {
+			border: 4px solid $popup-color;
+			background-color: #fff;
+
+			&:before,
+			&:after {
+				background-color: $popup-color;
+			}
+		}
+
+		&:before,
+		&:after {
+			position: absolute;
+			top:50%;
+			left: 50%;
+			content: ' ';
+			height: 20px;
+			width: 4px;
+			background-color: #fff;
+		}
+
+		&:before {
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+
+		&:after {
+			transform: translate(-50%, -50%) rotate(-45deg);			
+		}
+	}
+
+	&__content {
+		h2 {
+			margin: 0;
+			border-radius: 10px 10px 0 0;
+			background-color: $popup-color;
+			color: #fff;
+			text-align: center;
+			padding: 10px ;
+		}
+
+		p {
+			padding: 10px;
+			font-size: 20px;
+			color: $popup-color;
+		}
+		
+	}
+}
+
+.active {
+	display: block;
 }

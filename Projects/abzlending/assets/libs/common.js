@@ -58,8 +58,12 @@ function ajaxGet(url, callback) {
 				popup.open('<h2>Error: 500</h2><p>Server error. Try to add service later, please!</p>');
 				break;
 
-				default:
+				case 200:
 				f(request.responseText);
+				break;
+
+				default:
+				popup.open('<h2>Error!</h2><p>Try to add service later, please!</p>');
 				break;
 			}
 		}

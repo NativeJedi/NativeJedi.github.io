@@ -858,16 +858,30 @@ a {
     border: 1px solid;
     border-color: #ccc transparent;
     cursor: pointer; }
+    .b-accord-list__item-title.active + .b-accord-list__item-content {
+      margin-top: 1.6rem;
+      margin-bottom: 2rem;
+      height: 13.5rem; }
+    .b-accord-list__item-title.active > .icon--arrow-down {
+      -webkit-transform: translateY(-50%) rotate(180deg);
+          -ms-transform: translateY(-50%) rotate(180deg);
+              transform: translateY(-50%) rotate(180deg); }
   .b-accord-list__item-content {
-    display: none;
-    margin: 1.6rem 3rem 2rem 2rem;
-    height: 13.5rem;
+    height: 0;
+    margin: 0 3rem 0 2rem;
     overflow-y: scroll;
     color: #999999;
     font-family: "Roboto", sans-serif;
     line-height: 1.6;
     font-style: italic;
-    font-size: 15px; }
+    font-size: 15px;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s; }
+  .b-accord-list__item .icon--arrow-down {
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s; }
 
 /*#Quote section*/
 .b-quote {

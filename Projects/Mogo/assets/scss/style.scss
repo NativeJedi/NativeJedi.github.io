@@ -514,18 +514,34 @@ a {
 			border: 1px solid;
 			border-color: #ccc transparent;	
 			cursor: pointer;
+
+			&.active {
+				& + .b-accord-list__item-content {
+					margin-top: 1.6rem;
+					margin-bottom: 2rem;
+					height: 13.5rem;
+				}
+
+				& > .icon--arrow-down {
+					transform: translateY(-50%) rotate(180deg);
+				}
+			}
 		}
 
 		&-content {
-			display: none;
-			margin: 1.6rem 3rem 2rem 2rem;
-			height: 13.5rem;
+			height: 0;
+			margin: 0 3rem 0 2rem;
 			overflow-y: scroll;
 			color: $descr-font-color;
 			@include font("Roboto");
 			line-height: 1.6;
 			font-style: italic;
 			font-size: 15px;
+			transition: all .3s;
+		}
+
+		.icon--arrow-down {
+			transition: all .3s;
 		}
 	}
 }

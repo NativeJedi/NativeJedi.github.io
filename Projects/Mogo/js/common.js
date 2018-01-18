@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 		$('.b-accord-list__item-title').on('click', function(e) {
-			$('.b-accord-list__item-title').removeClass('active');
+			$('.b-accord-list__item-title').not($(this)).removeClass('active');
 			$(this).toggleClass('active');
 		});
 

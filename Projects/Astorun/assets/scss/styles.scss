@@ -46,7 +46,7 @@ a {
 	background-color: transparent;
 	border: none;
 	color: #fff;
-	font-size: 2.3rem;
+	font-size: 2rem;
 	font-weight: 900;
 	font-style: italic;
 
@@ -59,7 +59,7 @@ a {
 	background: linear-gradient(0deg, rgba(#000, .8)), 
 	url('../img/bg1.jpg') center no-repeat;
 	background-size: cover;
-	padding: 4rem;
+	padding: 3rem;
 
 	.wrapper {
 		text-align: center;
@@ -69,8 +69,8 @@ a {
 		display: inline-block;
 
 		svg {
-			width: 40rem;
-			height: 40rem;
+			width: 33rem;
+			height: 33rem;
 			fill: #fff;
 			transition: all .4s;
 
@@ -82,7 +82,7 @@ a {
 
 	&__nav {
 		margin: 0 auto;
-		font-size: 30px;
+		font-size: 2.5rem;
 
 		li {
 			&:not(:last-child) {

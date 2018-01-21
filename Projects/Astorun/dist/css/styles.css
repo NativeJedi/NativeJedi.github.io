@@ -405,7 +405,7 @@ a {
   background-color: transparent;
   border: none;
   color: #fff;
-  font-size: 2.3rem;
+  font-size: 2rem;
   font-weight: 900;
   font-style: italic; }
   .btn-main:hover {
@@ -416,14 +416,14 @@ a {
   background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.8)), url("../img/bg1.jpg") center no-repeat;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.8)), url("../img/bg1.jpg") center no-repeat;
   background-size: cover;
-  padding: 4rem; }
+  padding: 3rem; }
   .s-main .wrapper {
     text-align: center; }
   .s-main__logo {
     display: inline-block; }
     .s-main__logo svg {
-      width: 40rem;
-      height: 40rem;
+      width: 33rem;
+      height: 33rem;
       fill: #fff;
       -webkit-transition: all .4s;
       -o-transition: all .4s;
@@ -432,7 +432,7 @@ a {
         fill: rgba(255, 255, 255, 0.8); }
   .s-main__nav {
     margin: 0 auto;
-    font-size: 30px; }
+    font-size: 2.5rem; }
     .s-main__nav li:not(:last-child) {
       margin-bottom: 1rem; }
     .s-main__nav-link {

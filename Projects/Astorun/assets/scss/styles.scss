@@ -120,23 +120,27 @@ a {
 /*#News*/
 
 .b-news {
+
 	&-wrapper {
 		min-height: 100vh;
 		background-color: #F9F9F9;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding: 2rem;
+		padding: 1rem;
 	}
 
 	&__logo {
-		@extend %logo;
+		svg {
+			width: 25rem;
+			height: 25rem;
+		}
 	}
 
 	display: flex;
 	justify-content: space-between;
 	width: 80%;
-	padding: 4rem;
+	padding: 2rem;
 	background-color: #FFF;
 
 	$slider-padding: 4rem;
@@ -154,8 +158,10 @@ a {
 
 	&-info {
 		width: calc(100% - #{$slider-width} - 4rem);
+		height: 45rem;
 		font-family: Comic Sans MS;
 		color: #000;
+		overflow-y: scroll;
 
 		&__title {
 			margin-top: 0;

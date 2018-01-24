@@ -21,6 +21,16 @@ $( document ).ready(function() {
 		var img = $('.slick-active img');
 		div.html(img.data('count') + ' of ' + lengthImg);
 	}
+
+	var a = $('.b-news__logo');
+	console.log(a);
+
+	a.on('click', function(e) {
+		e.preventDefault();
+		location.href = 'index.html';
+		$(location.href).ready(function() {
+			alert('Hi');
+		});
+	});
+
 });
-
-

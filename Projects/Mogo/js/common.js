@@ -19,6 +19,20 @@ $(document).ready(function() {
 			midClick: true
 		});
 
+		/*$(".b-header__nav a").on("click", function(e){
+
+			e.preventDefault();
+
+			var id = $(this).attr('href');
+			var h = $(id).offset().top;
+			console.log(h);
+
+			$('html, body').animate({
+				scrollTop: h,
+				easing: 'swing'
+			}, 1000);
+		});*/
+
 		$("a[href*='#']").mPageScroll2id();
 
 	});

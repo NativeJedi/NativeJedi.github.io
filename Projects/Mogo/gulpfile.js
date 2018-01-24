@@ -1,16 +1,16 @@
 var $            = require('gulp-load-plugins')();
 var gulp 				 = require('gulp'),
-browser      = require('browser-sync').create(),
-autoprefixer = require('autoprefixer'),
-postcss 		 = require('gulp-postcss'),
-combiner     = require('stream-combiner2').obj,
-pngquant		 = require('imagemin-pngquant'),
-iconfont     = require('gulp-iconfont'),
-consolidate  = require('gulp-consolidate'),
-svgstore     = require('gulp-svgstore'),
-svgmin       = require('gulp-svgmin'),
-rename       = require('gulp-rename'),
-inject       = require('gulp-inject');
+browser          = require('browser-sync').create(),
+autoprefixer     = require('autoprefixer'),
+postcss 		     = require('gulp-postcss'),
+combiner         = require('stream-combiner2').obj,
+pngquant		     = require('imagemin-pngquant'),
+iconfont         = require('gulp-iconfont'),
+consolidate      = require('gulp-consolidate'),
+svgstore         = require('gulp-svgstore'),
+svgmin           = require('gulp-svgmin'),
+rename           = require('gulp-rename'),
+inject           = require('gulp-inject');
 
 var svgWatch            = './web/webroot/WEB-INF/_svg-src/*.svg';
 var svgIconsSource      = './web/webroot/WEB-INF/tags/responsive/template/svg.html';

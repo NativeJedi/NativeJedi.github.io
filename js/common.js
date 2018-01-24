@@ -16,7 +16,7 @@ $(document).ready(function() {
 	$(".header__main-description, .section__header").animated("fadeInUp", "fadeOutDown");
 
 
-	function heightDetect(){
+	/*function heightDetect(){
 
 		$(".header").css("height", $(window).height());
 		$(".header-main").css("height", $(window).height()); 
@@ -27,7 +27,7 @@ $(document).ready(function() {
 
 	$(window).resize(function() {
 		heightDetect();
-	});
+	});*/
 
 	$(".btn-menu").click(function() {
 		$(".btn-menu").toggleClass("active");

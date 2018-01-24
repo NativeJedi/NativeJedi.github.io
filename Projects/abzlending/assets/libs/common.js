@@ -29,8 +29,7 @@ window.onload = function() {
 			h3.innerHTML = json.data[i].title;
 
 			i++;
-
-
+			
 		});
 	});
 };

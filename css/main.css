@@ -225,7 +225,12 @@ body textarea:required:valid {
         background-color: rgba(255, 255, 255, 0.08); }
 
 .header {
-  position: relative; }
+  position: relative;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5))), fixed url("../img/bg.jpg") center no-repeat;
+  background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.5)), fixed url("../img/bg.jpg") center no-repeat;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5)), fixed url("../img/bg.jpg") center no-repeat;
+  background-size: cover;
+  height: 100vh; }
   .header__main {
     position: absolute;
     top: 50%;

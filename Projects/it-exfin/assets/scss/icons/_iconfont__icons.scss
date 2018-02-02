@@ -1,0 +1,82 @@
+// _iconfont__icons.scss
+$global-font-icon: 'social';
+@font-face {
+  font-family: $global-font-icon;
+  src:url("../fonts/myicons.eot");
+  src:url("../fonts/myicons.?#iefix") format("embedded-opentype"),
+    url("../fonts/myicons.woff") format("woff"),
+    url("../fonts/myicons.ttf") format("truetype"),
+    url("../fonts/myicons.#myicons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  font-family: $global-font-icon;
+
+  &:before {
+    /* Some common icon stuff */
+  }
+
+  &.icon--arrow {
+    &:before {
+      content: $icon-arrow;
+    }
+  }
+  &.icon--avatar {
+    &:before {
+      content: $icon-avatar;
+    }
+  }
+  &.icon--cash {
+    &:before {
+      content: $icon-cash;
+    }
+  }
+  &.icon--check-mark {
+    &:before {
+      content: $icon-check-mark;
+    }
+  }
+  &.icon--facebook {
+    &:before {
+      content: $icon-facebook;
+    }
+  }
+  &.icon--kyivstar {
+    &:before {
+      content: $icon-kyivstar;
+    }
+  }
+  &.icon--login {
+    &:before {
+      content: $icon-login;
+    }
+  }
+  &.icon--phone-call {
+    &:before {
+      content: $icon-phone-call;
+    }
+  }
+  &.icon--stick-man {
+    &:before {
+      content: $icon-stick-man;
+    }
+  }
+  &.icon--sticker {
+    &:before {
+      content: $icon-sticker;
+    }
+  }
+  &.icon--telegram {
+    &:before {
+      content: $icon-telegram;
+    }
+  }
+  &.icon--vodafone {
+    &:before {
+      content: $icon-vodafone;
+    }
+  }
+
+}

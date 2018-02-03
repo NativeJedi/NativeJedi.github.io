@@ -58,7 +58,7 @@ fieldset {
 
 %personal-info {
 	font-size: 1.4rem;
-	line-height: 1.3;
+	line-height: 1.27;
 	letter-spacing: 1px;
 }
 
@@ -109,7 +109,7 @@ fieldset {
 	.wrapper {
 		display: flex;
 		align-items: center;
-		padding: 2.5rem 0;
+		padding: 2rem 0;
 	}
 
 	&__phone {
@@ -263,20 +263,22 @@ fieldset {
 
 		&__item {
 			position: relative;
-			max-width: 27rem;
+			max-width: 30rem;
+			margin-right: 3rem;
 			border-radius: 2rem;
 			overflow: hidden;
 
+
 			&-img {
-				height: 40rem;
+				height: 42rem;
 				background-repeat: no-repeat;
 				background-size: cover;
 			}
 
 			&-wrap {
-				min-height: 39.5rem;
+				min-height: 40rem;
 				margin-top: -1rem;
-				padding: 2.5rem 2.5rem 7rem 2.5rem;
+				padding: 2.5rem 2.5rem 6rem 2.5rem;
 				font-size: 1.4rem;
 				background-image: $default-gradient;
 				border-radius: 10px 10px 0 0;
@@ -314,7 +316,7 @@ fieldset {
 					display: inline-block;
 					text-align: left;
 					margin-left: auto;
-					width: 62%;
+					width: 65%;
 				}
 			}
 		}
@@ -545,19 +547,19 @@ fieldset {
 			margin: 0 0 .5rem 0;
 			text-transform: uppercase;
 			font-size: 1.2rem;
-			letter-spacing: 1px;
+			letter-spacing: .5px;		
 
 			span {
 				padding-right: 2rem;
-				letter-spacing: 2px;
 				font-size: 2rem;
 				font-weight: bold;
+				letter-spacing: 1px;
 				color: #fff;
 			}
 		}
 
 		&-message {
-			margin: 0 0 2.5rem 0;
+			margin: 0 0 1rem 0;
 			letter-spacing: 1px;
 			font-size: 1.2rem;
 			font-weight: normal;
@@ -566,7 +568,7 @@ fieldset {
 
 	&__total {
 		flex: 1;
-		padding: 3rem 0 3rem pxtopercent(67);
+		padding: 3rem 3rem .9rem  pxtopercent(67);
 		position: relative;
 		color: $unactive-color;
 		background-image: linear-gradient( -85deg, rgb(253,251,251) 0%, rgb(235,237,238) 100%);
@@ -626,7 +628,7 @@ fieldset {
 	align-items: center;
 
 	&:not(:last-child) {
-		margin-bottom: 5rem;
+		margin-bottom: 3rem;
 	}
 
 	&__label {
@@ -640,6 +642,7 @@ fieldset {
 	&__input {
 		@extend %main-input;
 		margin: 0 1rem 0 1.7rem;
+		font-size: 2.2rem;
 
 		&--first { width: 8.5rem; }
 
@@ -693,6 +696,7 @@ fieldset {
 
 	&__info {
 		@extend %personal-info;
+		margin-bottom: 1rem;
 	}
 }
 
@@ -881,29 +885,25 @@ fieldset {
 .b-section-cards {
 	position: relative;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	margin-top: 14rem;
 
 	&__item {
+		position: relative;
 		display: flex;
-		align-items: center;
+		align-content: flex-start;
 		flex-wrap: wrap;
+		width: 45%;
 
-		&:first-child {
-			width: 44%;
-		}
-
-		&:nth-child(2) {
-			position: relative;
-			width: 52%;
-		}
+		&:firts-child { padding-bottom: 12rem; }
+		
 
 		&-square {
 			width: 17rem;
 			height: 6rem;
+			margin-top: 3rem;
 			background-color: #ccc;
 			border-radius: 1rem;
-			align-self: flex-start;
 			
 			&:first-of-type {
 				margin-left: pxtopercent(100, 1170/2);
@@ -923,16 +923,18 @@ fieldset {
 			max-width: 10rem;
 		}
 
-		svg {
+		.svg-bank {
 			width: 100%;
-			height: 60rem;
+			height: 48rem;
 		}
 	}
 
 	&__icons {
+		position: absolute;
+		bottom: 0;
 		display: flex;
-		justify-content: space-between;
 		width: 100%;
+		justify-content: space-between;
 		color: #fff;
 
 		.icon {
@@ -1321,8 +1323,7 @@ fieldset {
 
 	input {
 		width: 100%;
-		height: 4rem;
-		padding: 0 2rem 0 5.5rem;
+		padding: 1rem 2rem 1rem 5.5rem;
 		border-radius: $bdrz;
 		border: none;
 		background-color: rgba(#fff, .15);
@@ -1395,7 +1396,7 @@ fieldset {
 .ui {
 	&-slider {
 		position: relative;
-		width: 280px;
+		width: 32rem;
 		margin: 1rem 0;
 
 		&-handle {
@@ -1452,7 +1453,7 @@ fieldset {
 
 		&-helper {
 			position: relative;
-			width: 170px;
+			width: 20rem;
 			margin: 0 auto;
 		}
 	}

@@ -24,7 +24,7 @@ window.onload = function() {
 
 	$("#ui-slider-2").slider({
 		min: 56,
-		max: 112,
+		max: 99,
 		range: "min",
 		animate: "slow",
 		slide: function( event, ui ) {

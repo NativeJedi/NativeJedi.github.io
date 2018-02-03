@@ -945,8 +945,8 @@ fieldset {
 .s-howto {
   padding: 8rem 0;
   background-color: #fff;
-  background-image: -o-radial-gradient(120% 75% at top, #fff 100%, rgba(248, 174, 6, 0.9) 90%);
-  background-image: radial-gradient(120% 75% at top, #fff 100%, rgba(248, 174, 6, 0.9) 90%); }
+  background-image: -o-radial-gradient(120% 80% at top, #fff 100%, rgba(248, 174, 6, 0.9) 90%);
+  background-image: radial-gradient(120% 80% at top, #fff 100%, rgba(248, 174, 6, 0.9) 90%); }
 
 .s-review {
   position: relative;
@@ -1420,6 +1420,9 @@ fieldset {
     display: flex;
     -ms-flex-line-pack: start;
         align-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     width: 45%; }

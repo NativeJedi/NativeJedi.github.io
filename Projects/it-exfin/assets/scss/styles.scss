@@ -62,6 +62,13 @@ fieldset {
 	letter-spacing: 1px;
 }
 
+%gradient-title {
+	margin: 0;
+	padding: 1.5rem 0;
+	font-size: 2.4rem;
+	background-image: $main-gradient;
+}
+
 .wrapper {
 	max-width: 117rem;
 	margin: 0 auto;
@@ -103,9 +110,10 @@ fieldset {
 /*#Sections*/
 
 .s-header {
+	position: relative;
 	font-size: 1.2rem;
-	background-color: #FFF;
-
+	z-index: 3;
+	box-shadow: 0 0 60px rgba(#000, .5);
 	.wrapper {
 		display: flex;
 		align-items: center;
@@ -527,6 +535,132 @@ fieldset {
 
 /*#Forms*/
 
+.b-form {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 52rem;	
+	margin: 10rem auto;
+	padding: 4rem 3.5rem;
+	background-color: rgb(247, 247, 247);
+	border-radius: 0 0 2rem 2rem;
+
+	&__title {
+		@extend %gradient-title;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		font-size: 1.8rem;
+		text-transform: uppercase;
+		border-radius: 2rem 2rem 0 0;
+	}
+
+	&__message {
+		margin: 2.5rem 0 2rem 0;
+		font-size: 1.4rem;
+		text-align: center;
+		color: rgb(54, 54, 54);
+		line-height: 1.2;
+	}
+
+	&__input {
+		padding: 1.2rem 2rem;
+		border: none;
+		border-radius: 1rem;
+		background-color: rgb(235, 235, 235);
+		width: 27rem;
+		transition: all .3s;
+
+		&:not(:last-child) {
+			margin-bottom: 1.2rem;
+		}
+
+		&:focus {
+			outline: none;
+			background-color: rgb(243, 243, 243);
+		}
+
+		&--serial {
+			width: 8.3rem;
+			margin: 0 1.2rem 0 0;
+		}
+
+		&--number {
+			width: 17.3rem;
+		}
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 1.5rem;
+		background-color: $first-color;
+		border-radius: 0 0 2rem 2rem;
+	}
+
+	&__btn { margin-top: 1.5rem; }
+
+	&-success {
+		&__message {
+			margin: 5rem 0;
+			text-align: center;
+			font-size: 18px;
+			color: rgb(54, 54, 54);
+			line-height: 1.444;
+
+			img {
+				display: block;
+				margin: 0 auto 1.5rem auto;
+				max-width: 8.5rem;		
+			}
+		}
+
+		&__content {
+			margin: 0;
+			font-size: 14px;
+			color: rgb(54, 54, 54);
+			line-height: 1.2;
+
+			&:first-child {
+				width: 52%;
+			}
+
+			&:last-child {
+				width: 42%;
+			}
+
+			&-wrap {
+				display: flex;
+				justify-content: space-between;
+				margin: 0 0 3.5rem 0;
+			}
+			
+			&-info { font-family: "Myriad Pro"; }
+
+		}
+
+		&__counter {
+			text-transform: uppercase;
+			font-size: 1.8rem;
+			color: $first-color;
+			letter-spacing: .5px;
+			font-weight: bold;
+
+			span {
+				font-size: 3rem;
+			}
+		}
+
+		&:after { height: 4rem; }
+	}
+}
+
 .b-main-form {
 	display: flex;
 	width: 100%;
@@ -866,10 +1000,8 @@ fieldset {
 		}
 		
 		&-title {
-			margin: 0;
+			@extend %gradient-title;
 			padding: 1.5rem $p;
-			font-size: 2.4rem;
-			background-image: $main-gradient;
 		}
 
 		&-content {
@@ -1304,6 +1436,36 @@ fieldset {
 			color: $first-color;
 		}
 	}
+
+	&-close {
+		position: absolute;
+		top: -4rem;
+		right: -8rem;
+		width: 3rem;
+		height: 3rem;
+		border: 1px solid #ccc;
+		background-color: transparent;
+
+		&:after,
+		&:before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			height: 50%;
+			width: 1px;
+			background-color: #ccc;
+		}
+
+		&:after {
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+
+		&:before {
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+
+	}
 }
 
 /*#Inputs*/
@@ -1476,3 +1638,4 @@ fieldset {
 } 
 
 .hidden { display: none; }
+

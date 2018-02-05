@@ -54,13 +54,21 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'Myriad Pro';
+	src: url('../fonts/MyriadPro/MyriadPro-Regular.woff2') format('woff2'),
+	url('../fonts/MyriadPro/MyriadPro-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
 /*----
-	font-family: 'PF Bague Sans Pro'
-	font-family: 'Minion Pro'
-	#bold: bold
-	#standart: normal
-	#Light: 300
-	#Medium: 500
-	#Semibold: 600
-	#Black: 900
+font-family: 'PF Bague Sans Pro'
+font-family: 'Minion Pro'
+#bold: bold
+#standart: normal
+#Light: 300
+#Medium: 500
+#Semibold: 600
+#Black: 900
 ----- */

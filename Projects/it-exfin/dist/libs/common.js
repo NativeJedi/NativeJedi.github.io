@@ -34,11 +34,10 @@ window.onload = function() {
 		}
 	});
 
-	$( "#value-2" ).val($( "#ui-slider-2" ).slider( "value" ));
+	$("#value-2").val($( "#ui-slider-2" ).slider( "value" ));
 
 	$("#value-2").change(function(){
 		var value2 = $(this).val();
-
 		$("#ui-slider-2").slider("value", value2);
 		$('#slider-2 .ui-slider-val').html(value2 + ' дней');
 		$('#termin-value').html(value2 + ' дней');
@@ -68,13 +67,37 @@ window.onload = function() {
 	$('.b-section-message__item').on('click', function(e) {
 		$('.b-section-message__item').removeClass('active')
 		$(this).addClass('active');
-	})
+	});
+
 
 	$('.b-region-list__btn').on('click', function(e) {
-		console.log(1);
-		$('.b-region-list__btn').removeClass('btn-active');
+
+		var dataCity = $(this).data('city');
+
+		$.ajax({
+			url: "data-city.json",
+			cache: false,
+			success: function(data){
+				for(key in data) {
+					if (key === dataCity) {	
+						$('#data-map').attr('src', data[key].link);			
+						$('#data-adress').html(data[key].adress);
+						$('#data-city').html(data[key].name);
+						$('#data-localAdress').html(data[key].localAdress);
+						$('#data-schedule').html(data[key].schedule);
+						$('#data-mail').html(data[key].mail).attr('href',
+							'mailto:'+ data[key].mail);
+						$('#data-phone').html(data[key].phone).attr('href',
+							'tel:' + data[key].phone);
+					}
+				}
+			}
+		});
+
 		$(this).addClass('btn-active');
+
 		var listItems = $(this).parent().parent().html();
+
 		$('.popup-list').html(listItems);
 		
 		$('.b-region-list').animate({
@@ -82,7 +105,6 @@ window.onload = function() {
 		}, 500, function(){
 			$('.b-region-list').css('z-index', '-1');
 		});
-
 
 		$('.popup').css('z-index', '100').animate({opacity: '1'}, 500);
 
@@ -96,69 +118,32 @@ window.onload = function() {
 		});
 	});
 
-	$('.popup-list').on('click', function(e) {
+	$('.popup-list').on('click',  function(e) {
 		if(e.target.type == 'submit') {
 			$('.popup-list li button').removeClass('btn-active');
+			var dataCity = e.target.attributes['data-city'].value;
+
+			$.ajax({
+				url: "data-city.json",
+				cache: false,
+				success: function(data){
+					for(key in data) {
+						if (key === dataCity) {	
+							$('#data-map').attr('src', data[key].link);			
+							$('#data-adress').html(data[key].adress);
+							$('#data-city').html(data[key].name);
+							$('#data-localAdress').html(data[key].localAdress);
+							$('#data-schedule').html(data[key].schedule);
+							$('#data-mail').html(data[key].mail).attr('href',
+								'mailto:'+ data[key].mail);
+							$('#data-phone').html(data[key].phone).attr('href',
+								'tel:' + data[key].phone);
+						}
+					}
+				}
+			});
 		};	
 	});
-
-
 };
 
 
-function Popup(config) {
-	var body = document.querySelector('body');
-
-	var self = this;
-	self.btn = config.btn;
-	self.content = config.content;
-
-
-	if (document.querySelector('.overlay') == null) {
-		var overlay = document.createElement('div');
-		overlay.classList.add('overlay');
-		body.appendChild(overlay);
-	} else {
-		var overlay = document.querySelector('.overlay');
-	}
-
-	var popup = document.createElement('div');
-
-	var closeBtn = document.createElement('span');
-	closeBtn.className = 'popup__close';
-
-	body.appendChild(popup);
-	popup.classList.add('popup');
-	popup.appendChild(closeBtn);
-
-	var popupContent = document.createElement('div');
-	popupContent.className = 'popup__content';
-	popup.appendChild(popupContent);
-
-	popupContent.innerHTML = self.content;
-
-	self.open = function() {
-		overlay.classList.add('active');
-		popup.classList.add('active');
-	}
-
-	self.close = function(e) {
-		overlay.classList.remove('active');
-		popup.classList.remove('active');
-	}
-
-	self.btn.addEventListener('click', function(e) {
-		e.preventDefault();
-		self.open();
-	});
-
-	overlay.addEventListener('click', function(e) {
-		self.close();
-	});
-
-	closeBtn.addEventListener('click', function(e) {
-		console.log(1);
-		self.close();
-	});
-	
-}

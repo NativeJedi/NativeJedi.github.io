@@ -111,6 +111,7 @@ fieldset {
 
 .s-header {
 	position: relative;
+	background: #fff;
 	font-size: 1.2rem;
 	z-index: 3;
 	box-shadow: 0 0 30px rgba(#000, .4);
@@ -140,6 +141,71 @@ fieldset {
 }
 
 .s-main {
+	position: relative;
+	background: linear-gradient(0deg, rgba(#000, .2)), url("../img/main-bg.jpg") no-repeat;
+	background-size: cover;
+	border-bottom-left-radius: $section-border-radius;
+	border-bottom-right-radius: $section-border-radius;
+	box-shadow: 0 1px 100px rgba(#000, .5);
+	z-index: 2;
+	overflow: hidden;
+
+	.wrapper { 
+		display: flex; 
+		align-items: center;
+	}
+
+	&__list {
+		position: relative;
+		padding-left: 0;
+		margin: 3rem 4.5rem 0 0;
+		align-self: flex-start;
+		z-index: 3;
+
+		li {
+			display: block;
+
+			&:not(:last-child) {
+				margin-bottom: 1rem;
+			}
+		}
+
+		&-title { font-weight: bold; }
+	}
+
+	&-title {
+		padding: 5rem 0 0 pxtopercent(90);
+		margin: 9rem 0 0 0;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+
+		span {
+			display: block;
+		}
+
+		&__top {
+			color: rgba(#fff, .7);
+			font-size: 2.6rem;
+			font-weight: normal;
+		}
+
+		&__middle {
+			font-size: 5.4rem;
+			color: $first-color;
+		}
+
+		&__bottom {
+			padding-top: 1rem;
+			font-size: 1.8rem;
+			text-align: right;
+			letter-spacing: 2px;
+			color: #fff;
+			text-shadow: 1px 1px 10px #fff;
+		}
+	}
+}
+
+.s-credits {
 	position: relative;
 	background: linear-gradient(0deg, rgba(#000, .7)),
 	url("../img/david-angel.jpg") center no-repeat;
@@ -653,6 +719,7 @@ fieldset {
 
 .b-main-form {
 	display: flex;
+	flex-wrap: wrap;
 	width: 100%;
 	font-size: 14px;
 	font-weight: bold;
@@ -752,6 +819,79 @@ fieldset {
 			span:last-child {
 				font-size: 18px;
 				color: $first-color;
+			}
+		}
+	}
+
+	&--prime {
+		position: relative;
+		max-width: 35rem;
+		flex-direction: column;
+		overflow: visible;
+		z-index: 2;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 2rem;
+			transform: translateX(-100%);
+			width: 9000rem;
+			height: 100%;
+			background-color: rgb(235, 235, 235);
+			z-index: 1;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 10rem;
+			width: 0; 
+			height: 0; 
+			transform: translateX(-100%);
+			border-top: 3rem solid transparent;
+			border-bottom: 3rem solid transparent; 
+			border-right: 2rem solid #F9C825;
+			z-index: 3;
+		}
+
+		.b-main-form__content {
+			position: relative;
+			padding: 5rem 3rem 6rem 3rem;
+			width: 100%;
+			border-bottom-left-radius: 50% 4rem ;
+			border-bottom-right-radius: 50% 4rem ;
+			overflow: hidden;
+			z-index: 2;
+		}
+
+		.b-main-form__total {
+			position: relative;
+			background: #fff;
+			$m: 8rem;
+			margin-top: -$m;
+			padding: $m 4rem 4rem 4rem;
+			z-index: 1;
+		}
+
+		.b-form-item:not(:last-child) {
+			margin-bottom: 3.4rem;
+		}
+		.b-form-item__input {
+			margin: 0 1rem 0 auto;
+		}
+
+		.ui-slider {
+			width: 100%;
+			margin: 2rem 0;
+		}
+
+		.ui-slider-helper {
+			width: 60%;
+
+			&--sm {
+				width: 69%;
 			}
 		}
 	}
@@ -1495,6 +1635,32 @@ fieldset {
 		}
 
 	}
+
+	&--secondary {
+		display: block;
+		position: relative;
+		width: 11.3rem;
+		height: 11.3rem;
+		border-radius: 1rem;
+		box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+		font-size: 10px;
+		text-align: center;
+		color: $unactive-color;
+
+		&:hover,
+		&.active {
+			outline: none;
+			background-image: linear-gradient( -85deg, rgb(252,196,0) 0%, rgb(246,164,15) 100%);
+			color: #000;
+		}
+
+		.icon {
+			display: block;
+			margin-bottom: 1.2rem;
+			text-align: center;
+			font-size: 4rem;
+		}
+	}
 }
 
 /*#Inputs*/
@@ -1708,6 +1874,7 @@ fieldset {
 		position: relative;
 		display: flex;
 		justify-content: space-between;
+		flex-wrap: wrap;
 		margin-top: 10rem;
 	}
 
@@ -1747,9 +1914,9 @@ fieldset {
 	&-list {
 		@extend %region-list;
 		margin-right: 2rem;
-
+		z-index: 1000;
 		button {
-			z-index: 100;
+			z-index: 1001;
 		}
 	}
 

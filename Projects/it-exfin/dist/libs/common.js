@@ -1,4 +1,7 @@
 window.onload = function() {
+
+	/*#Credit-slider*/
+
 	$("#ui-slider-1").slider({
 		min: 750,
 		max: 15000,
@@ -22,6 +25,8 @@ window.onload = function() {
 	});
 
 
+	/*#Days-slider*/
+
 	$("#ui-slider-2").slider({
 		min: 56,
 		max: 99,
@@ -43,12 +48,18 @@ window.onload = function() {
 		$('#termin-value').html(value2 + ' дней');
 	});
 
+
+	/*#Slick slider*/
+
 	$('.s-packages-content').slick({
 		dots: true,
 		infinite: false,
 		speed: 300,
 		slidesToShow: 4
 	});
+
+
+	/*#Review change*/
 
 	$('.b-review__person').on('click', function(e) {
 		$('.b-review__person').not($(this)).removeClass('active');
@@ -64,35 +75,22 @@ window.onload = function() {
 
 	});
 
+
+	/*#Choose plan*/
+
 	$('.b-section-message__item').on('click', function(e) {
 		$('.b-section-message__item').removeClass('active')
 		$(this).addClass('active');
 	});
 
 
+	/*#Cities list func*/
+	
 	$('.b-region-list__btn').on('click', function(e) {
 
 		var dataCity = $(this).data('city');
 
-		$.ajax({
-			url: "data-city.json",
-			cache: false,
-			success: function(data){
-				for(key in data) {
-					if (key === dataCity) {	
-						$('#data-map').attr('src', data[key].link);			
-						$('#data-adress').html(data[key].adress);
-						$('#data-city').html(data[key].name);
-						$('#data-localAdress').html(data[key].localAdress);
-						$('#data-schedule').html(data[key].schedule);
-						$('#data-mail').html(data[key].mail).attr('href',
-							'mailto:'+ data[key].mail);
-						$('#data-phone').html(data[key].phone).attr('href',
-							'tel:' + data[key].phone);
-					}
-				}
-			}
-		});
+		fieldFiller(dataCity, "data-city.json", "json");
 
 		$(this).addClass('btn-active');
 
@@ -123,27 +121,37 @@ window.onload = function() {
 			$('.popup-list li button').removeClass('btn-active');
 			var dataCity = e.target.attributes['data-city'].value;
 
-			$.ajax({
-				url: "data-city.json",
-				cache: false,
-				success: function(data){
-					for(key in data) {
-						if (key === dataCity) {	
-							$('#data-map').attr('src', data[key].link);			
-							$('#data-adress').html(data[key].adress);
-							$('#data-city').html(data[key].name);
-							$('#data-localAdress').html(data[key].localAdress);
-							$('#data-schedule').html(data[key].schedule);
-							$('#data-mail').html(data[key].mail).attr('href',
-								'mailto:'+ data[key].mail);
-							$('#data-phone').html(data[key].phone).attr('href',
-								'tel:' + data[key].phone);
-						}
-					}
-				}
-			});
+			fieldFiller(dataCity, "data-city.json", "json");
 		};	
+	});
+
+	$('.b-btn--secondary').on('click', function() {
+		$('.b-btn--secondary').removeClass('active');
+		$(this).addClass('active');
 	});
 };
 
 
+function fieldFiller (datacity, url, type) {
+
+	$.ajax({
+		url: url,
+		dataType: type,
+		success: function(data) {
+			for(key in data) {
+				if (key === datacity) {	
+					$('#data-map').attr('src', data[key].link);			
+					$('#data-adress').html(data[key].adress);
+					$('#data-city').html(data[key].name);
+					$('#data-localAdress').html(data[key].localAdress);
+					$('#data-schedule').html(data[key].schedule);
+					$('#data-mail').html(data[key].mail).attr('href',
+						'mailto:'+ data[key].mail);
+					$('#data-phone').html(data[key].phone).attr('href',
+						'tel:' + data[key].phone);
+				}
+			}
+		}
+	});
+	
+}

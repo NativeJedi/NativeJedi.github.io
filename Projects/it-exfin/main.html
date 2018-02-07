@@ -13,6 +13,11 @@
 				<svg><use href="#svg-logo">
 				</svg>
 			</a>
+			
+			<div class="s-header__phone">
+				<span>Телефон горячей линии</span>
+				<a href="tel:+0800211112">0 800 211 112</a>
+			</div>
 
 			<div class="b-nav">
 				<a href="#" class="b-nav__link">О нас</a>
@@ -33,16 +38,32 @@
 		</div>
 	</header>
 	
-	<section class="s-credits">
+	<section class="s-main">
 		<div class="wrapper">
+			<ul class="s-main__list">
+				<li class="s-main__list-title">Выберите Ваш<br>кредний тариф</li>
+				<li>
+					<button class="b-btn b-btn--secondary active"><span class="icon icon--cash"></span>Кредит на карту</button> 
+				</li>
+				<li>
+					<button class="b-btn b-btn--secondary"><span class="icon icon--stick-man"></span>Пенсионный</button>
+				</li>
+				<li>
+					<button class="b-btn b-btn--secondary"><span class="icon icon--sticker"></span>Все кредиты</button>
+				</li>
+			</ul>
 
-			<form action="#" class="b-main-form">
+			<form action="#" class="b-main-form b-main-form--prime">
 
 				<fieldset class="b-main-form__content">
-					<h3 class="b-main-form__content-title"><span>"Экспресс-финанс"</span>Мгновенные кредиты онлайн</h3>
-					<p class="b-main-form__content-message">Выберите суму и срок необходимого Вам кредита в форме ниже</p>
+
 					<div class="b-form-item">
-						<label class="b-form-item__label" for="value-1">Сумма кредита:</label>
+						<label class="b-form-item__label" for="value-1">Сумма кредита:
+						</label>
+
+						<input class="b-form-item__input b-form-item__input--first" type="text" id="value-1">
+
+						<span>грн</span>
 
 						<div class="b-form-item__slider" id="ui-slider-1">
 							<div class="ui-slider-helper">
@@ -53,16 +74,14 @@
 								</a>
 							</div>
 						</div>
-
-						<input class="b-form-item__input b-form-item__input--first" value="750" type="tel" id="value-1">
-						<span>грн</span>
-
 					</div>
 
 					<div class="b-form-item">
-						<label class="b-form-item__label" for="value-2">Срок займа:
-						</label>
-						
+						<label class="b-form-item__label" for="value-2">Срок займа:</label>
+
+						<input class="b-form-item__input b-form-item__input--second" type="text" id="value-2">
+						<span>дней</span>
+
 						<div class="b-form-item__slider" id="ui-slider-2">
 							<div class="ui-slider-helper ui-slider-helper--sm">
 								<a id="slider-2" class='ui-slider-handle ui-slider-handle--sm'>
@@ -72,69 +91,25 @@
 								</a>
 							</div>
 						</div>
-
-						<input class="b-form-item__input b-form-item__input--second" value="56" type="tel" id="value-2">
-						<span>дней</span>	
 					</div>
 				</fieldset>
 
 				<fieldset class="b-main-form__total">
-					<div class="b-main-form__total-number">
-						<span>3495</span>
-						<span>3495</span>
-						<span>Заявок</span>
-					</div>
-
-					<div class="b-main-form__total-info">
-						<p class="b-main-form__info-item">Более <span>3495 заявок</span></p>
-						<p class="b-main-form__info-item">были <span>одобрены сегодня!</span></p>
-					</div>
-
 					<div class="b-main-form__total-content">
 						<p><span>Вы берете:</span><span id="credit-value">10000 грн</span></p>
 						<p><span>На срок:</span> <span id="termin-value">14 дней</span></p>
 						<p class="b-main-form__total-cost"><span>Платеж по кредиту:</span> <span>550 грн/нед.</span></p>
 					</div>
 
-					<button class="b-btn-main" type="submit"><span class="icon icon--check-mark"></span></button>
+					<button class="b-btn-primary b-btn-primary--main">Оформить кредит</button>
 				</fieldset>
 			</form>
-
-			<div class="b-form-group">
-
-				<div class="b-personal">
-					<p class="b-personal__alert">Небольшой текст о том, куда и зачем отправляются эти данные пользователем сервиса, а так же небольшая инструкция по алгоритму дальнейших действий.</p>
-
-					<form action="#" class="b-personal-form">
-						<h4 class="b-personal-form__title">Укажите Ваши <br> личные данные</h4>
-
-						<div class="b-input">
-							<input type="text" placeholder="Ввведите свое имя">
-							<span class="icon icon--avatar"></span>
-						</div>
-
-						<div class="b-input">
-							<input type="tel" placeholder="+38 (0__) ___ __ __">
-							<span class="icon icon--phone-call"></span>
-						</div>
-
-						<button class="b-btn-primary" type="submit">Отправить данные</button>
-					</form>
-				</div>
-
-				<div class="b-callback">
-					<h4 class="b-callback__title">Получить решение онлайн</h4>
-					<p class="b-callback__info">Небольшой текст о том, куда и зачем отправляются эти данные пользователем сервиса, а так же небольшая инструкция по алгоритму дальнейших действий.</p>
-					<form action="#" class="b-callback-form">
-						<div class="b-input b-input--secondary">
-							<input placeholder="+38 (0__) ___ __ __" type="tel">
-							<span class="icon icon--phone-call"></span>
-						</div>
-
-						<button class="b-btn-primary b-btn-primary--dark">Получить решение</button>
-					</form>
-				</div>
-			</div>
+			
+			<h1 class="s-main-title">
+				<span class="s-main-title__top">Деньги на</span>
+				<span class="s-main-title__middle">То, что вам нужно</span>
+				<span class="s-main-title__bottom">Мгновенные онлайн-кредиты</span>
+			</h1>
 		</div>
 	</section>
 
@@ -557,8 +532,7 @@
 					</div>
 				</div>
 				<div class="b-section-cards__item">
-					<svg class="svg-bank"><use href="#svg-credit-card">
-					</svg>
+					<img src="dist/img/svgstore/credit-card.svg" alt="credit-card">
 				</div>
 			</div>
 		</div>

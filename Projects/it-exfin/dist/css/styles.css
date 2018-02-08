@@ -1382,11 +1382,15 @@ fieldset {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex; }
-    .b-main-form--prime[data-form="2"]:after {
-      top: 21.9rem; }
-    .b-main-form--prime[data-form="3"]:after {
-      top: 35rem;
-      border-right-color: #fff; }
+    .b-main-form--prime[data-form="2"] {
+      opacity: 0; }
+      .b-main-form--prime[data-form="2"]:after {
+        top: 21.9rem; }
+    .b-main-form--prime[data-form="3"] {
+      opacity: 0; }
+      .b-main-form--prime[data-form="3"]:after {
+        top: 35rem;
+        border-right-color: #fff; }
     .b-main-form--prime:after {
       content: "";
       position: absolute;

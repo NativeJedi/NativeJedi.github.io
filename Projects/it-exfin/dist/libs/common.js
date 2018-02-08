@@ -233,11 +233,11 @@ window.onload = function() {
 
 		currentForm.animate({
 			opacity: '0'
-		}, 1000, function() {
+		}, 500, function() {
 			$(this).removeClass('active');
 			dataForm.addClass('active').animate({
 				opacity: 1
-			}, 1000);
+			}, 500);
 		});
 		
 	});

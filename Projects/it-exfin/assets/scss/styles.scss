@@ -852,12 +852,14 @@ fieldset {
 		}
 
 		&[data-form="2"] {
+			opacity: 0;
 			&:after {
 				top: 21.9rem;
 			}
 		}
 
 		&[data-form="3"] {
+			opacity: 0;
 			&:after {
 				top: 35rem;
 				border-right-color: #fff;

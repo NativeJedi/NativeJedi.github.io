@@ -726,6 +726,25 @@ fieldset {
 	border-radius: 0 0 $form-border-radius $form-border-radius;
 	overflow: hidden;
 
+	&-container {
+		position: relative;
+		min-width: 35rem;
+		min-height: 51.8rem;
+		z-index: 2;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform: translateX(-100%);
+			width: 9000rem;
+			height: 100%;
+			background-color: rgb(235, 235, 235);
+			z-index: 1;
+		}
+	}
+
 	&__content {
 		position: relative;
 		width: pxtopercent(735);
@@ -824,22 +843,25 @@ fieldset {
 	}
 
 	&--prime {
-		position: relative;
-		max-width: 35rem;
+		display: none;
 		flex-direction: column;
 		overflow: visible;
-		z-index: 2;
 
-		&:before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 2rem;
-			transform: translateX(-100%);
-			width: 9000rem;
-			height: 100%;
-			background-color: rgb(235, 235, 235);
-			z-index: 1;
+		&.active {
+			display: flex;
+		}
+
+		&[data-form="2"] {
+			&:after {
+				top: 21.9rem;
+			}
+		}
+
+		&[data-form="3"] {
+			&:after {
+				top: 35rem;
+				border-right-color: #fff;
+			}
 		}
 
 		&:after {
@@ -858,8 +880,8 @@ fieldset {
 
 		.b-main-form__content {
 			position: relative;
-			padding: 5rem 3rem 6rem 3rem;
 			width: 100%;
+			padding: 5rem 3rem 6rem 3rem;
 			border-bottom-left-radius: 50% 4rem ;
 			border-bottom-right-radius: 50% 4rem ;
 			overflow: hidden;

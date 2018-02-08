@@ -25,6 +25,55 @@ window.onload = function() {
 	});
 
 
+	/*#Credit-slider-2*/
+
+
+	$("#ui-slider-3").slider({
+		min: 750,
+		max: 15000,
+		range: "min",
+		animate: "slow",
+		slide: function( event, ui ) {
+			$( "#value-3" ).val(ui.value );
+			$('#ui-slider-3 .ui-slider-val').html(ui.value + ' грн');
+			$('#credit-value-2').html(ui.value + ' грн');
+		}
+	});
+
+	$( "#value-3" ).val($( "#ui-slider-3" ).slider( "value" ));
+
+	$("#value-3").change(function(){
+		var value1 = $(this).val();
+
+		$("#ui-slider-3").slider("value", value1);
+		$('#ui-slider-3 .ui-slider-val').html(value1 + ' грн');
+		$('#credit-value').html(value1 + ' грн');
+	});
+
+	/*#Credit-slider-3*/
+
+	$("#ui-slider-5").slider({
+		min: 750,
+		max: 15000,
+		range: "min",
+		animate: "slow",
+		slide: function( event, ui ) {
+			$( "#value-5" ).val(ui.value );
+			$('#ui-slider-5 .ui-slider-val').html(ui.value + ' грн');
+			$('#credit-value-3').html(ui.value + ' грн');
+		}
+	});
+
+	$( "#value-5" ).val($( "#ui-slider-5" ).slider( "value" ));
+
+	$("#value-5").change(function(){
+		var value1 = $(this).val();
+
+		$("#ui-slider-5").slider("value", value1);
+		$('#ui-slider-5 .ui-slider-val').html(value1 + ' грн');
+		$('#credit-value-3').html(value1 + ' грн');
+	});
+
 	/*#Days-slider*/
 
 	$("#ui-slider-2").slider({
@@ -48,6 +97,51 @@ window.onload = function() {
 		$('#termin-value').html(value2 + ' дней');
 	});
 
+	/*#Days-slider-2*/
+
+	$("#ui-slider-4").slider({
+		min: 1,
+		max: 12,
+		range: "min",
+		animate: "slow",
+		slide: function( event, ui ) {
+			$( "#value-4" ).val(ui.value);
+			$('#ui-slider-4 .ui-slider-val').html(ui.value + ' месяц');
+			$('#termin-value-2').html(ui.value + ' месяц(ев)');
+		}
+	});
+
+	$("#value-4").val($( "#ui-slider-4" ).slider( "value" ));
+
+	$("#value-4").change(function(){
+		var value2 = $(this).val();
+		$("#ui-slider-4").slider("value", value2);
+		$('#ui-slider-4 .ui-slider-val').html(value2 + ' месяц');
+		$('#termin-value-2').html(value2 + ' месяц(ев)');
+	});
+
+	/*#Days-slider-3*/
+
+	$("#ui-slider-6").slider({
+		min: 1,
+		max: 12,
+		range: "min",
+		animate: "slow",
+		slide: function( event, ui ) {
+			$( "#value-6" ).val(ui.value);
+			$('#ui-slider-6 .ui-slider-val').html(ui.value + ' месяц');
+			$('#termin-value-3').html(ui.value + ' месяц(ев)');
+		}
+	});
+
+	$("#value-6").val($( "#ui-slider-6" ).slider( "value" ));
+
+	$("#value-6").change(function(){
+		var value2 = $(this).val();
+		$("#ui-slider-6").slider("value", value2);
+		$('#ui-slider-6 .ui-slider-val').html(value2 + ' месяц');
+		$('#termin-value-3').html(value2 + ' месяц(ев)');
+	});
 
 	/*#Slick slider*/
 
@@ -128,6 +222,24 @@ window.onload = function() {
 	$('.b-btn--secondary').on('click', function() {
 		$('.b-btn--secondary').removeClass('active');
 		$(this).addClass('active');
+		var dataBtn = $(this).data('btn');
+		var dataForm = $('[data-form='+dataBtn+']');
+
+		var currentForm = $('form.active');
+
+		if (dataForm.hasClass('active')) {
+			return;
+		}
+
+		currentForm.animate({
+			opacity: '0'
+		}, 1000, function() {
+			$(this).removeClass('active');
+			dataForm.addClass('active').animate({
+				opacity: 1
+			}, 1000);
+		});
+		
 	});
 };
 

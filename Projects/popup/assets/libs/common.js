@@ -44,7 +44,8 @@ function Popup(config) {
 		self.content.classList.remove('active');
 	}
 
-	self.btn.addEventListener('click', function() {
+	self.btn.addEventListener('click', function(e) {
+		e.preventDefault();
 		self.open();
 	});
 

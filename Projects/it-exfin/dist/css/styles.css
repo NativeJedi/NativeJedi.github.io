@@ -1282,6 +1282,23 @@ fieldset {
   font-weight: bold;
   border-radius: 0 0 3rem 3rem;
   overflow: hidden; }
+  .b-main-form-container {
+    position: relative;
+    min-width: 35rem;
+    min-height: 51.8rem;
+    z-index: 2; }
+    .b-main-form-container:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-transform: translateX(-100%);
+          -ms-transform: translateX(-100%);
+              transform: translateX(-100%);
+      width: 9000rem;
+      height: 100%;
+      background-color: #ebebeb;
+      z-index: 1; }
   .b-main-form__content {
     position: relative;
     width: 62.82051%;
@@ -1355,26 +1372,21 @@ fieldset {
         font-size: 18px;
         color: #FCC504; }
   .b-main-form--prime {
-    position: relative;
-    max-width: 35rem;
+    display: none;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    overflow: visible;
-    z-index: 2; }
-    .b-main-form--prime:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 2rem;
-      -webkit-transform: translateX(-100%);
-          -ms-transform: translateX(-100%);
-              transform: translateX(-100%);
-      width: 9000rem;
-      height: 100%;
-      background-color: #ebebeb;
-      z-index: 1; }
+    overflow: visible; }
+    .b-main-form--prime.active {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+    .b-main-form--prime[data-form="2"]:after {
+      top: 21.9rem; }
+    .b-main-form--prime[data-form="3"]:after {
+      top: 35rem;
+      border-right-color: #fff; }
     .b-main-form--prime:after {
       content: "";
       position: absolute;
@@ -1391,8 +1403,8 @@ fieldset {
       z-index: 3; }
     .b-main-form--prime .b-main-form__content {
       position: relative;
-      padding: 5rem 3rem 6rem 3rem;
       width: 100%;
+      padding: 5rem 3rem 6rem 3rem;
       border-bottom-left-radius: 50% 4rem;
       border-bottom-right-radius: 50% 4rem;
       overflow: hidden;

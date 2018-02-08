@@ -43,67 +43,172 @@
 			<ul class="s-main__list">
 				<li class="s-main__list-title">Выберите Ваш<br>кредний тариф</li>
 				<li>
-					<button class="b-btn b-btn--secondary active"><span class="icon icon--cash"></span>Кредит на карту</button> 
+					<button data-btn="1" class="b-btn b-btn--secondary active"><span class="icon icon--cash"></span>Кредит на карту</button> 
 				</li>
 				<li>
-					<button class="b-btn b-btn--secondary"><span class="icon icon--stick-man"></span>Пенсионный</button>
+					<button data-btn="2" class="b-btn b-btn--secondary"><span class="icon icon--stick-man"></span>Пенсионный</button>
 				</li>
 				<li>
-					<button class="b-btn b-btn--secondary"><span class="icon icon--sticker"></span>Все кредиты</button>
+					<button data-btn="3" class="b-btn b-btn--secondary"><span class="icon icon--sticker"></span>Все кредиты</button>
 				</li>
 			</ul>
+			
+			<div class="b-main-form-container">
+				<form data-form="1" action="#" class="b-main-form b-main-form--prime active">
+					<fieldset class="b-main-form__content">
+						<div class="b-form-item">
+							<label class="b-form-item__label" for="value-1">Сумма кредита:
+							</label>
 
-			<form action="#" class="b-main-form b-main-form--prime">
+							<input class="b-form-item__input b-form-item__input--first" type="text" id="value-1">
 
-				<fieldset class="b-main-form__content">
+							<span>грн</span>
 
-					<div class="b-form-item">
-						<label class="b-form-item__label" for="value-1">Сумма кредита:
-						</label>
-
-						<input class="b-form-item__input b-form-item__input--first" type="text" id="value-1">
-
-						<span>грн</span>
-
-						<div class="b-form-item__slider" id="ui-slider-1">
-							<div class="ui-slider-helper">
-								<a id="slider-1" class='ui-slider-handle'>
-									<span class="icon icon--arrow icon--left"></span>
-									<span class="ui-slider-val">750 грн</span>
-									<span class="icon icon--arrow icon--right"></span>
-								</a>
+							<div class="b-form-item__slider" id="ui-slider-1">
+								<div class="ui-slider-helper">
+									<a id="slider-1" class='ui-slider-handle'>
+										<span class="icon icon--arrow icon--left"></span>
+										<span class="ui-slider-val">750 грн</span>
+										<span class="icon icon--arrow icon--right"></span>
+									</a>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="b-form-item">
-						<label class="b-form-item__label" for="value-2">Срок займа:</label>
+						<div class="b-form-item">
+							<label class="b-form-item__label" for="value-2">Срок займа:</label>
 
-						<input class="b-form-item__input b-form-item__input--second" type="text" id="value-2">
-						<span>дней</span>
+							<input class="b-form-item__input b-form-item__input--second" type="text" id="value-2">
+							<span>дней</span>
 
-						<div class="b-form-item__slider" id="ui-slider-2">
-							<div class="ui-slider-helper ui-slider-helper--sm">
-								<a id="slider-2" class='ui-slider-handle ui-slider-handle--sm'>
-									<span class="icon icon--arrow icon--left"></span>
-									<span class="ui-slider-val">56 дней</span>
-									<span class="icon icon--arrow icon--right"></span>
-								</a>
+							<div class="b-form-item__slider" id="ui-slider-2">
+								<div class="ui-slider-helper ui-slider-helper--sm">
+									<a id="slider-2" class='ui-slider-handle ui-slider-handle--sm'>
+										<span class="icon icon--arrow icon--left"></span>
+										<span class="ui-slider-val">56 дней</span>
+										<span class="icon icon--arrow icon--right"></span>
+									</a>
+								</div>
 							</div>
 						</div>
-					</div>
-				</fieldset>
+					</fieldset>
 
-				<fieldset class="b-main-form__total">
-					<div class="b-main-form__total-content">
-						<p><span>Вы берете:</span><span id="credit-value">10000 грн</span></p>
-						<p><span>На срок:</span> <span id="termin-value">14 дней</span></p>
-						<p class="b-main-form__total-cost"><span>Платеж по кредиту:</span> <span>550 грн/нед.</span></p>
-					</div>
+					<fieldset class="b-main-form__total">
+						<div class="b-main-form__total-content">
+							<p><span>Вы берете:</span><span id="credit-value">10000 грн</span></p>
+							<p><span>На срок:</span> <span id="termin-value">14 дней</span></p>
+							<p class="b-main-form__total-cost"><span>Платеж по кредиту:</span> <span>550 грн/нед.</span></p>
+						</div>
 
-					<button class="b-btn-primary b-btn-primary--main">Оформить кредит</button>
-				</fieldset>
-			</form>
+						<button class="b-btn-primary b-btn-primary--main">Оформить кредит</button>
+					</fieldset>
+				</form>
+
+				<form data-form="2" action="#" class="b-main-form b-main-form--prime ">
+
+					<fieldset class="b-main-form__content">
+
+						<div class="b-form-item">
+							<label class="b-form-item__label" for="value-3">Сумма кредита:
+							</label>
+
+							<input class="b-form-item__input b-form-item__input--first" type="text" id="value-3">
+
+							<span>грн</span>
+
+							<div class="b-form-item__slider" id="ui-slider-3">
+								<div class="ui-slider-helper">
+									<a id="slider-1" class='ui-slider-handle'>
+										<span class="icon icon--arrow icon--left"></span>
+										<span class="ui-slider-val">750 грн</span>
+										<span class="icon icon--arrow icon--right"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="b-form-item">
+							<label class="b-form-item__label" for="value-4">Срок займа:</label>
+
+							<input class="b-form-item__input b-form-item__input--second" type="text" id="value-4">
+							<span>месяц(ев)</span>
+
+							<div class="b-form-item__slider" id="ui-slider-4">
+								<div class="ui-slider-helper ui-slider-helper--sm">
+									<a class='ui-slider-handle ui-slider-handle--sm'>
+										<span class="icon icon--arrow icon--left"></span>
+										<span class="ui-slider-val">1 месяц</span>
+										<span class="icon icon--arrow icon--right"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+
+					<fieldset class="b-main-form__total">
+						<div class="b-main-form__total-content">
+							<p><span>Вы берете:</span><span id="credit-value-2">750 грн</span></p>
+							<p><span>На срок:</span> <span id="termin-value-2">1 месяц</span></p>
+							<p class="b-main-form__total-cost"><span>Платеж по кредиту:</span> <span>550 грн/мес.</span></p>
+						</div>
+
+						<button class="b-btn-primary b-btn-primary--main">Оформить кредит</button>
+					</fieldset>
+				</form>
+
+				<form data-form="3" action="#" class="b-main-form b-main-form--prime">
+
+					<fieldset class="b-main-form__content">
+
+						<div class="b-form-item">
+							<label class="b-form-item__label" for="value-5">Сумма кредита:
+							</label>
+
+							<input class="b-form-item__input b-form-item__input--first" type="text" id="value-5">
+
+							<span>грн</span>
+
+							<div class="b-form-item__slider" id="ui-slider-5">
+								<div class="ui-slider-helper">
+									<a id="slider-1" class='ui-slider-handle'>
+										<span class="icon icon--arrow icon--left"></span>
+										<span class="ui-slider-val">750 грн</span>
+										<span class="icon icon--arrow icon--right"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="b-form-item">
+							<label class="b-form-item__label" for="value-6">Срок займа:</label>
+
+							<input class="b-form-item__input b-form-item__input--second" type="text" id="value-6">
+							<span>месяц(ев)</span>
+
+							<div class="b-form-item__slider" id="ui-slider-6">
+								<div class="ui-slider-helper ui-slider-helper--sm">
+									<a class='ui-slider-handle ui-slider-handle--sm'>
+										<span class="icon icon--arrow icon--left"></span>
+										<span class="ui-slider-val">1 месяц</span>
+										<span class="icon icon--arrow icon--right"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+
+					<fieldset class="b-main-form__total">
+						<div class="b-main-form__total-content">
+							<p><span>Вы берете:</span><span id="credit-value-3">750 грн</span></p>
+							<p><span>На срок:</span> <span id="termin-value-3">1 месяц</span></p>
+							<p class="b-main-form__total-cost"><span>Платеж по кредиту:</span> <span>550 грн/мес.</span></p>
+						</div>
+
+						<button class="b-btn-primary b-btn-primary--main">Оформить кредит</button>
+					</fieldset>
+				</form>
+			</div>
+			
 			
 			<h1 class="s-main-title">
 				<span class="s-main-title__top">Деньги на</span>

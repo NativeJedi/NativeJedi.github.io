@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Callback</title>
+	<link rel="stylesheet" href="dist/css/styles.css">
+</head>
+<body>
+	<header class="s-header">
+		<div class="wrapper">
+			<a href="#" class="b-logo">
+				<svg><use href="#svg-logo">
+				</svg>
+			</a>
+			
+			<div class="s-header__phone">
+				<span>Телефон горячей линии</span>
+				<a href="tel:+0800211112">0 800 211 112</a>
+			</div>
+
+			<div class="b-nav">
+				<a href="#" class="b-nav__link">О нас</a>
+				<a href="#" class="b-nav__link">Кредиты</a>
+				<a href="#" class="b-nav__link">Акции</a>
+				<a href="#" class="b-nav__link">Справка</a>
+				<a href="#" class="b-nav__link">Блог</a>
+				<a href="#" class="b-nav__link">Студентам</a>
+			</div>
+
+			<div class="s-header__lang">
+				<button class="b-btn b-btn--lang">Рус</button>
+				<button class="b-btn b-btn--lang">Укр</button>
+			</div>
+
+			<button class="b-btn-login">Мой кабинет <span class="icon icon--login"></span></button>
+
+		</div>
+	</header>
+
+	<div class="wrapper">
+		<div action="#" class="b-form-group">
+			<form action="#" class="f-callback-left">
+				<img class="f-callback__img" src="dist/img/callback-person.jpg" alt="operator">
+				<div class="f-callback__info">
+					<h2 class="f-callback__info-title">Заказать звонок менеджера</h2>
+					<p class="f-callback__info-text">Заказать звонок менеджера бесплатно без регистрации и смс и тому подобный сопроводительный текст для пользователей до 20:00, после чего форма будет не доступна </p>
+				</div>
+				
+				<div class="b-input b-input--main">
+					<input type="text" placeholder="Введите свое имя">
+					<span class="icon icon--avatar"></span>
+				</div>
+				<div class="b-input b-input--main">
+					<input type="tel" placeholder="+38 (0__) ___ __ __">
+					<span class="icon icon--phone-call"></span>
+				</div>
+				<button class="b-btn-primary b-btn-primary--main" type="submit">Заказать звонок</button>
+			</form>
+
+			<form action="#" class="f-callback-right">
+				<h3 class="f-callback__caption">Сегодня одобрено</h3>
+
+				<div class="b-total-number">
+					<span class="b-total-number__count">3495</span>
+					<span class="b-total-number__caption">Заявок</span>
+				</div>
+
+				<div class="f-callback__info f-callback__info--secondary">
+					<h2 class="f-callback__info-title">Получить решение онлайн</h2>
+					<p class="f-callback__info-text">Заказать звонок менеджера бесплатно без регистрации и смс и тому подобный сопроводительный текст для пользователей до 20:00, после чего форма будет не доступна </p>
+				</div>
+				<div class="b-input b-input--secondary">
+					<input placeholder="+38 (0__) ___ __ __" type="tel">
+					<span class="icon icon--phone-call"></span>
+				</div>
+
+				<button class="b-btn-primary b-btn-primary--light" type="submit">Получить решение</button>
+
+				<a href="#" class="already-link">Уже есть аккаунт Экспресс финанс? <b>Войти</b></a>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

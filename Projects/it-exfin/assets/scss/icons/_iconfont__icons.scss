@@ -53,6 +53,11 @@ $global-font-icon: 'social';
       content: $icon-login;
     }
   }
+  &.icon--padlock {
+    &:before {
+      content: $icon-padlock;
+    }
+  }
   &.icon--phone-call {
     &:before {
       content: $icon-phone-call;

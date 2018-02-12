@@ -1,147 +1,16 @@
 window.onload = function() {
 
-	/*#Credit-slider*/
+	new Slider('#credit-slider-1', 750, 10000);
 
-	$("#ui-slider-1").slider({
-		min: 750,
-		max: 15000,
-		range: "min",
-		animate: "slow",
-		slide: function( event, ui ) {
-			$( "#value-1" ).val(ui.value );
-			$('#slider-1 .ui-slider-val').html(ui.value + ' грн');
-			$('#credit-value').html(ui.value + ' грн');
-		}
-	});
+	new Slider('#termin-slider-1', 56, 99);
 
-	$( "#value-1" ).val($( "#ui-slider-1" ).slider( "value" ));
+	new Slider('#credit-slider-2', 750, 10000);
 
-	$("#value-1").change(function(){
-		var value1 = $(this).val();
+	new Slider('#termin-slider-2', 1, 12);
 
-		$("#ui-slider-1").slider("value", value1);
-		$('#slider-1 .ui-slider-val').html(value1 + ' грн');
-		$('#credit-value').html(value1 + ' грн');
-	});
+	new Slider('#credit-slider-3', 750, 10000);
 
-
-	/*#Credit-slider-2*/
-
-
-	$("#ui-slider-3").slider({
-		min: 750,
-		max: 15000,
-		range: "min",
-		animate: "slow",
-		slide: function( event, ui ) {
-			$( "#value-3" ).val(ui.value );
-			$('#ui-slider-3 .ui-slider-val').html(ui.value + ' грн');
-			$('#credit-value-2').html(ui.value + ' грн');
-		}
-	});
-
-	$( "#value-3" ).val($( "#ui-slider-3" ).slider( "value" ));
-
-	$("#value-3").change(function(){
-		var value1 = $(this).val();
-
-		$("#ui-slider-3").slider("value", value1);
-		$('#ui-slider-3 .ui-slider-val').html(value1 + ' грн');
-		$('#credit-value').html(value1 + ' грн');
-	});
-
-	/*#Credit-slider-3*/
-
-	$("#ui-slider-5").slider({
-		min: 750,
-		max: 15000,
-		range: "min",
-		animate: "slow",
-		slide: function( event, ui ) {
-			$( "#value-5" ).val(ui.value );
-			$('#ui-slider-5 .ui-slider-val').html(ui.value + ' грн');
-			$('#credit-value-3').html(ui.value + ' грн');
-		}
-	});
-
-	$( "#value-5" ).val($( "#ui-slider-5" ).slider( "value" ));
-
-	$("#value-5").change(function(){
-		var value1 = $(this).val();
-
-		$("#ui-slider-5").slider("value", value1);
-		$('#ui-slider-5 .ui-slider-val').html(value1 + ' грн');
-		$('#credit-value-3').html(value1 + ' грн');
-	});
-
-	/*#Days-slider*/
-
-	$("#ui-slider-2").slider({
-		min: 56,
-		max: 99,
-		range: "min",
-		animate: "slow",
-		slide: function( event, ui ) {
-			$( "#value-2" ).val(ui.value);
-			$('#slider-2 .ui-slider-val').html(ui.value + ' дней');
-			$('#termin-value').html(ui.value + ' дней');
-		}
-	});
-
-	$("#value-2").val($( "#ui-slider-2" ).slider( "value" ));
-
-	$("#value-2").change(function(){
-		var value2 = $(this).val();
-		$("#ui-slider-2").slider("value", value2);
-		$('#slider-2 .ui-slider-val').html(value2 + ' дней');
-		$('#termin-value').html(value2 + ' дней');
-	});
-
-	/*#Days-slider-2*/
-
-	$("#ui-slider-4").slider({
-		min: 1,
-		max: 12,
-		range: "min",
-		animate: "slow",
-		slide: function( event, ui ) {
-			$( "#value-4" ).val(ui.value);
-			$('#ui-slider-4 .ui-slider-val').html(ui.value + ' месяц');
-			$('#termin-value-2').html(ui.value + ' месяц(ев)');
-		}
-	});
-
-	$("#value-4").val($( "#ui-slider-4" ).slider( "value" ));
-
-	$("#value-4").change(function(){
-		var value2 = $(this).val();
-		$("#ui-slider-4").slider("value", value2);
-		$('#ui-slider-4 .ui-slider-val').html(value2 + ' месяц');
-		$('#termin-value-2').html(value2 + ' месяц(ев)');
-	});
-
-	/*#Days-slider-3*/
-
-	$("#ui-slider-6").slider({
-		min: 1,
-		max: 12,
-		range: "min",
-		animate: "slow",
-		slide: function( event, ui ) {
-			$( "#value-6" ).val(ui.value);
-			$('#ui-slider-6 .ui-slider-val').html(ui.value + ' месяц');
-			$('#termin-value-3').html(ui.value + ' месяц(ев)');
-		}
-	});
-
-	$("#value-6").val($( "#ui-slider-6" ).slider( "value" ));
-
-	$("#value-6").change(function(){
-		var value2 = $(this).val();
-		$("#ui-slider-6").slider("value", value2);
-		$('#ui-slider-6 .ui-slider-val').html(value2 + ' месяц');
-		$('#termin-value-3').html(value2 + ' месяц(ев)');
-	});
+	new Slider('#termin-slider-3', 1, 12);
 
 	/*#Slick slider*/
 
@@ -152,6 +21,12 @@ window.onload = function() {
 		slidesToShow: 4
 	});
 
+	$('.b-response-wrap').slick({
+		dots: true,
+		speed: 300,
+		slidesToScroll: 1,
+		slidesToShow: 3
+	});
 
 	/*#Review change*/
 
@@ -184,7 +59,7 @@ window.onload = function() {
 
 		var dataCity = $(this).data('city');
 
-		fieldFiller(dataCity, "data-city.json", "json");
+		fieldFiller(dataCity, "data-city.json");
 
 		$(this).addClass('btn-active');
 
@@ -215,7 +90,7 @@ window.onload = function() {
 			$('.popup-list li button').removeClass('btn-active');
 			var dataCity = e.target.attributes['data-city'].value;
 
-			fieldFiller(dataCity, "data-city.json", "json");
+			fieldFiller(dataCity, "data-city.json");
 		};	
 	});
 
@@ -243,12 +118,47 @@ window.onload = function() {
 	});
 };
 
+function Slider(initialId, min, max) {
 
-function fieldFiller (datacity, url, type) {
+	if (document.querySelector(initialId) == null) return;
+
+	var arr = initialId.split("-");
+	var id = arr[2];
+	var kind = arr[0];
+
+	var sliderValue = $(kind + "-value-" + id);
+	var sliderTotal = $(kind + "-total-" + id);
+	var sliderHandle = $(initialId + ' .ui-slider-val');
+	var quantity = sliderHandle.html().split(" ")[1];
+
+
+
+	$(initialId).slider({
+		min: min,
+		max: max,
+		range: "min",
+		animate: "slow",
+		slide: function( event, ui) {
+			sliderValue.val(ui.value);
+			sliderHandle.html(ui.value + ' ' + quantity);
+			sliderTotal.html(ui.value + ' ' + quantity);
+		}
+	});
+
+	sliderValue.val( $(initialId).slider("value") );
+
+	sliderValue.change(function(){
+		var value = $(this).val();
+		$(initialId).slider("value", value);
+		sliderHandle.html(value + ' ' + quantity);
+		sliderTotal.html(value + ' ' + quantity);
+	});
+}
+
+function fieldFiller (datacity, url) {
 
 	$.ajax({
 		url: url,
-		dataType: type,
 		success: function(data) {
 			for(key in data) {
 				if (key === datacity) {	

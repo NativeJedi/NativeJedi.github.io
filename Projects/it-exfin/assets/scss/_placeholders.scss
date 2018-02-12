@@ -1,0 +1,86 @@
+%main-input {
+	border-radius: 1rem;
+	border: none;
+	background-color: rgba(#fff, .4);
+	padding: .3rem 1rem;
+	text-align: center;
+}
+
+%main {
+	flex: 1;
+	background-color: rgb(43, 59, 78);
+}
+
+%square {
+	width: 3rem;
+	height: 3rem;
+	border: 2px solid $first-color;
+	border-color: $first-color $first-color transparent transparent;
+}
+
+%b-footer-column {
+	display: flex;
+	flex-direction: column;
+	width: 24%;
+}
+
+%personal-info {
+	font-size: 1.4rem;
+	line-height: 1.27;
+	letter-spacing: 1px;
+}
+
+%gradient-title {
+	margin: 0;
+	padding: 1.5rem 0;
+	font-size: 2.4rem;
+	background-image: $main-gradient;
+}
+
+%svg-item {
+	text-align: center;
+
+	&-caption {
+		margin: 2rem 0 0 0;
+		font-size: 14px;
+	}
+
+	svg {
+		width: 50%;
+		height: 50%;
+	}
+}
+
+%review {
+	$bdrz: 2rem;
+	position: relative;
+	z-index: 2;
+	border-radius: $bdrz;
+
+	&:after {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		top: 2rem;
+		left: -2rem;
+		width: calc(100% + 4rem);
+		height: 100%;
+		background-color: rgba(#fff, .4);
+		border-radius: $bdrz;
+	}
+}
+
+%review-icon {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	display: inline-block;
+	font-family: 'Minion Pro';
+	font-size: 15rem;
+	transform: translateX(-50%) rotate(180deg);
+	color: rgba(248,174,6, .9);
+
+	&:after {
+		content: ",,";
+	}
+}

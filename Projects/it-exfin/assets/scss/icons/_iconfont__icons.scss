@@ -43,6 +43,11 @@ $global-font-icon: 'social';
       content: $icon-facebook;
     }
   }
+  &.icon--interview {
+    &:before {
+      content: $icon-interview;
+    }
+  }
   &.icon--kyivstar {
     &:before {
       content: $icon-kyivstar;

@@ -30,44 +30,7 @@ fieldset {
 	box-sizing: border-box;
 }
 
-%main-input {
-	border-radius: 1rem;
-	border: none;
-	background-color: rgba(#fff, .4);
-	padding: .3rem 1rem;
-	text-align: center;
-}
-
-%main {
-	flex: 1;
-	background-color: rgb(43, 59, 78);
-}
-
-%square {
-	width: 3rem;
-	height: 3rem;
-	border: 2px solid $first-color;
-	border-color: $first-color $first-color transparent transparent;
-}
-
-%b-footer-column {
-	display: flex;
-	flex-direction: column;
-	width: 24%;
-}
-
-%personal-info {
-	font-size: 1.4rem;
-	line-height: 1.27;
-	letter-spacing: 1px;
-}
-
-%gradient-title {
-	margin: 0;
-	padding: 1.5rem 0;
-	font-size: 2.4rem;
-	background-image: $main-gradient;
-}
+@import 'placeholders';
 
 .wrapper {
 	max-width: 117rem;
@@ -249,18 +212,8 @@ fieldset {
 		width: 35%;
 
 		&__item {
+			@extend %svg-item;
 			width: calc(50% - 1rem);
-			text-align: center;
-
-			&-caption {
-				margin: 2rem 0 0 0;
-				font-size: 14px;
-			}
-
-			svg {
-				width: 50%;
-				height: 50%;
-			}
 		}
 	}
 
@@ -521,9 +474,8 @@ fieldset {
 		}
 
 		button {
-			display: block;
-			width: 80%;
-			margin: 0 auto;
+			width: 85%;
+			margin: 0;
 		}
 	}
 
@@ -558,6 +510,238 @@ fieldset {
 	}
 }
 
+/*#About page*/
+
+.s-about {
+	position: relative;
+	z-index: 2;
+	background: url("../img/s-about-bg.jpg") center no-repeat;
+	background-position: 100% 0;
+	background-size: cover;
+	border-bottom-left-radius: $section-border-radius;
+	border-bottom-right-radius: $section-border-radius;
+	overflow: hidden;
+
+	&__wrap {
+		position: relative;
+		padding: 5.5rem pxtopercent(30) 5.5rem 0;
+		width: pxtopercent(800);
+		background-color: #fff;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform: translateX(-100%);
+			width: 9000rem;
+			height: 100%;
+			background-color: #fff;
+		}
+	}
+
+	&-head {
+		padding: 4.5rem 0 2.5rem 0;
+		background-color: #FFF9E5;
+
+		&__nav {
+			display: flex;
+			width: pxtopercent(985);
+			justify-content: space-between;
+			text-transform: uppercase;
+			font-size: 1.2rem;
+			font-weight: bold;
+
+			button {
+				padding: 0;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	&__nav {
+		&-item {
+			font-size: 1.4rem;
+			position: relative;
+			padding: 0 2rem 0 0;
+
+			&:not(:last-child) {
+				&:after {
+					content: $icon-arrow;
+					font-family: $global-font-icon;
+					@include centY;
+					right: 1rem;
+					font-size: 1rem;
+				}
+			}
+
+			&.active {
+				color: $first-color;
+			}
+		}
+	}
+	
+	&-title {
+		text-transform: uppercase;
+		margin: 5.5rem 0 3rem 0;
+	}
+
+	&-info {
+
+		padding-right: pxtopercent(230);
+
+		&__title {
+			margin: 0 0 2rem 0;
+			text-transform: uppercase;
+			font-size: 18px;
+			color: rgb(54, 54, 54);
+			line-height: 1.333;
+			letter-spacing: 1px;
+		}
+
+		&__text {
+			margin: 0 0 5rem 0;
+			color: rgb(54, 54, 54);
+			line-height: 1.25;
+		}
+	}
+
+	&-content {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 0 4rem 0;
+
+		&__item {
+			@extend %svg-item;
+
+			svg {
+				width: 7.5rem;
+				height: 7.5rem;
+			}
+		}
+	}
+	
+}
+
+.s-response {
+	$h: 13rem;
+	margin-top: -$h;
+	padding: $h+4rem 0 6rem 0;
+	background-image: $main-gradient;
+
+	h2 {
+		color: #fff;
+	}
+
+	&__info {
+		margin: 2.5rem 0 4.5rem 0;
+		line-height: 1.25;
+		text-align: center;
+		color: rgba(#fff, .9);
+	}
+
+}
+
+.b-response {
+	position: relative;
+	padding: 8rem 4rem 4rem 4rem;
+	background-color: #fff;
+	background-image: linear-gradient( -90deg, rgb(253,251,251) 0%, rgb(235,237,238) 100%);
+	border-radius: 1rem;
+	max-width: 35rem;
+	margin: 0 auto;
+
+	&-wrap {
+		$h: 3rem;
+		padding-bottom: $h;
+		@extend %review;
+
+		&:after {
+			top: 3rem;
+			height: calc(100% - #{$h});
+		}
+	}
+
+	&__icon { @extend %review-icon; }
+
+	&__info {
+		margin: 4rem 0;
+		font-family: "Myriad Pro";
+		color: rgba(17, 17, 17, 0.702);
+		line-height: 1.5;
+		text-align: center;
+	}
+
+	&__person {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&-img {
+			border-radius: 50%;	
+		}
+
+		&-info {
+			margin-left: 2rem;
+
+			p { margin: .5rem 0; }
+		}
+	}
+}
+
+.s-values {
+	padding: 8.5rem 0 4.5rem 0;
+}
+
+.b-value {
+	width: calc(50% - 2rem);
+	display: flex;
+	padding: 3rem 2.5rem;
+	margin-bottom: 4rem;
+	justify-content: space-between;
+	align-items: flex-start;
+	background-color: rgb(255, 249, 229);
+	border-radius: 1rem;
+
+	&-wrap {
+		display: flex;
+		margin-top: 8rem;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	&__info {
+		width: 72%;
+
+		&-title {
+			margin: 0 0 1.5rem 0;
+			font-size: 1.8rem;
+			text-transform: uppercase;
+		}
+
+		&-text {
+			margin: 0;
+			font-size: 14px;
+			line-height: 1.571;
+		}
+	}
+
+	.icon {
+		position: relative;
+		top: -5rem;
+		display: block;
+		width: 12rem;
+		height: 12rem;
+		background: $main-gradient;
+		border-radius: 1rem;
+
+		&:before {
+			@include cent;
+			font-size: 8rem;
+			color: #fff;
+		}
+	}
+}
 
 /*#Blocks */
 
@@ -674,7 +858,6 @@ fieldset {
 
 		&--stretch {
 			padding: 2rem 3.5rem;
-
 		}
 
 		&-multiple {
@@ -754,9 +937,8 @@ fieldset {
 		width: 27rem;
 		transition: all .3s;
 
-		&:not(:last-child) {
-			margin-bottom: 1.2rem;
-		}
+		margin-bottom: 1.2rem;
+
 
 		&:focus {
 			outline: none;
@@ -770,6 +952,7 @@ fieldset {
 
 		&--number {
 			width: 17.3rem;
+			margin: 0;
 		}
 	}
 	
@@ -1427,47 +1610,18 @@ fieldset {
 }
 
 .b-review {
-	$bdrz: 2rem;
-	position: relative;
-	z-index: 2;
-	margin-top: 7rem;
-	padding: 10rem 10rem 3.5rem 10rem;
+	@extend %review;
+	background-color: #fff;
 	background-image: linear-gradient( -90deg, rgb(253,251,251) 0%, rgb(235,237,238) 100%);
-	border-radius: $bdrz;
-
-	&:after {
-		content: "";
-		position: absolute;
-		z-index: -1;
-		top: 2rem;
-		left: -2rem;
-		width: calc(100% + 4rem);
-		height: 100%;
-		background-color: rgba(#fff, .4);
-		border-radius: $bdrz;
-	}
-
-	&__icon {
-		position: absolute;
-		top: 0;
-		left: 50%;
-		display: inline-block;
-		font-family: 'Minion Pro';
-		font-size: 15rem;
-		transform: translateX(-50%) rotate(180deg);
-		color: rgba(248,174,6, .9);
-
-		&:after {
-			content: ",,";
-		}
-	}
+	margin-top: 7rem;
+	padding: 10rem pxtopercent(100) 3.5rem pxtopercent(100);
 
 	&__info {
 		position: relative;
 		min-height: 14rem;
 		margin-bottom: 2rem;
+		line-height: 1.5;		
 		color: rgba(17, 17, 17, 0.702);
-		line-height: 1.5;
 		font-size: 18px;
 
 		p {
@@ -1481,6 +1635,10 @@ fieldset {
 				opacity: 1;
 			}
 		}
+	}
+
+	&__icon {
+		@extend %review-icon;
 	}
 
 	&__person {
@@ -1750,7 +1908,8 @@ fieldset {
 	}
 
 	&-primary {
-		display: inline-block;
+		display: block;
+		margin: 0 auto;
 		text-align: center;
 		border: none;
 		padding: 1rem;

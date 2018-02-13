@@ -131,8 +131,6 @@ function Slider(initialId, min, max) {
 	var sliderHandle = $(initialId + ' .ui-slider-val');
 	var quantity = sliderHandle.html().split(" ")[1];
 
-
-
 	$(initialId).slider({
 		min: min,
 		max: max,

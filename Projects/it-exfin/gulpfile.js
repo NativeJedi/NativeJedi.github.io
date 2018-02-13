@@ -12,12 +12,13 @@ rename       		 = require('gulp-rename'),
 svgmin       		 = require('gulp-svgmin'),
 inject       		 = require('gulp-inject');
 
+var svgWatch            = './dist/img/svgstore/temp/*.svg';
+var svgIconsSource      = './contacts.html';
+var svgIconsDestination = './';
 
 gulp.task('svgstore', function () {
-
 	var svgs = gulp
-
-	.src('assets/img/svgstore/*.svg')
+	.src(svgWatch)  
 	.pipe(rename({prefix: 'svg-'}))
 	.pipe(svgmin())
 	.pipe(svgstore({ inlineSvg: true }));
@@ -27,11 +28,9 @@ gulp.task('svgstore', function () {
 	}
 
 	return gulp
-
-	.src('./index.html')
+	.src(svgIconsSource)
 	.pipe(inject(svgs, { transform: fileContents }))
-	.pipe(gulp.dest('./'));
-
+	.pipe(gulp.dest(svgIconsDestination));
 });
 
 

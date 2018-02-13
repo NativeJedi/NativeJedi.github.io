@@ -756,6 +756,13 @@ fieldset {
 .wrapper {
   max-width: 117rem;
   margin: 0 auto; }
+  .wrapper--flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
 
 .b-section-header {
   position: relative;
@@ -837,9 +844,6 @@ fieldset {
   z-index: 2;
   overflow: hidden; }
   .s-main .wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
@@ -898,12 +902,6 @@ fieldset {
   background-position: 100% 800px;
   z-index: 1; }
   .s-advanteges .wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
@@ -1081,12 +1079,6 @@ fieldset {
   overflow: hidden;
   background-color: #EBEBEB; }
   .s-info .wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
 
@@ -1098,12 +1090,6 @@ fieldset {
   z-index: 1;
   overflow-x: hidden; }
   .s-footer .wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -webkit-box-align: start;
@@ -1385,8 +1371,9 @@ fieldset {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between; }
-  .s-contacts main {
-    width: 74.35897%; }
+
+.b-main-container {
+  width: 74.35897%; }
 
 .b-sidebar {
   width: 27rem;
@@ -1537,6 +1524,15 @@ fieldset {
         color: #FCC504; }
   .f-contact-textarea {
     height: 14rem; }
+
+.s-agreement {
+  padding-bottom: 8rem; }
+  .s-agreement__img {
+    max-width: 100%; }
+  .s-agreement__text {
+    margin: 3rem 0;
+    font-size: 14px;
+    line-height: 1.429; }
 
 /*#Blocks */
 .b-logo {
@@ -2496,9 +2492,10 @@ fieldset {
       .b-btn-login .icon:before {
         position: absolute;
         top: 50%;
-        -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-                transform: translateY(-50%); }
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%); }
   .b-btn-primary {
     display: block;
     margin: 0 auto;

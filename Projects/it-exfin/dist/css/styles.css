@@ -1179,7 +1179,12 @@ fieldset {
     font-weight: bold; }
     .s-head__nav a {
       padding: 0;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      -webkit-transition: color .2s;
+      -o-transition: color .2s;
+      transition: color .2s; }
+      .s-head__nav a:hover {
+        color: #FCC504; }
 
 .b-top-nav {
   padding: 5.5rem 0; }
@@ -1531,8 +1536,16 @@ fieldset {
     max-width: 100%; }
   .s-agreement__text {
     margin: 3rem 0;
+    padding-right: 3rem;
     font-size: 14px;
-    line-height: 1.429; }
+    line-height: 1.429;
+    height: 50rem;
+    overflow-y: scroll; }
+    .s-agreement__text::-webkit-scrollbar {
+      width: 5px; }
+    .s-agreement__text::-webkit-scrollbar-thumb {
+      border-radius: 2px;
+      -webkit-box-shadow: inset 10px 0 0 #FCC504; }
 
 /*#Blocks */
 .b-logo {

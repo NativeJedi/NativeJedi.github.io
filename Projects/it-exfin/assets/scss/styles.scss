@@ -756,7 +756,9 @@ fieldset {
 .b-sidebar {
 	width: 27rem;
 	padding: 4rem 0;
+
 	&-banner {
+		max-width: 27rem;
 		position: relative;
 		padding: 2rem 0;
 		margin-bottom: 3rem;
@@ -949,6 +951,128 @@ fieldset {
 	}
 }
 
+.s-help {
+	.wrapper {
+		flex-wrap: wrap;
+	}
+}
+
+.b-help {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	justify-content: space-between;
+
+	&__head {
+		width: 100%;
+		padding: 2rem 0;
+		margin: 0 0 3rem 0;
+		background-color: #FFF9E5;
+
+		&-title {
+			margin: 0;
+			font-size: 22px;
+			line-height: 0.818;
+		}
+
+		&-info {
+			font-size: 14px;
+			line-height: 1.286;
+		}
+	}
+
+	&-item {
+		width: pxtopercent(370);
+		margin-bottom: 3rem;
+		padding: 3.5rem 0;
+		border-radius: 1.5rem;
+		border: 1px solid $first-color;
+		background-color: #F9F9F9;
+		transition: all .3s;
+
+		&__caption {
+			margin: 2rem 0 0 0;
+			text-transform: uppercase;
+		}
+
+		svg { width: 9.5rem; }
+
+		&:hover {
+			background-color: $first-color;
+
+			h4 { color: #fff; }
+
+			svg .tr1{ fill: #fff; }
+		}
+
+	}
+}
+
+.b-category {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin: 5rem 0;
+
+	&__title {
+		width: 100%;
+		font-weight: normal;
+		font-size: 24px;
+		color: rgb(54, 54, 54);
+		line-height: 1.5;
+	}
+
+	&__column {
+		width: pxtopercent(270);
+	}
+
+	&__item {
+		margin-bottom: 4rem;
+
+		&-title {
+			margin: 0 0 3rem 0;
+			font-size: 20px;
+			line-height: 1.8;
+			border-bottom: 1px solid rgba(#000, .2);
+		}
+
+		&-link {
+			$link-color: rgb(105, 191, 241); 
+			display: block;
+			position: relative;
+			padding-left: 2.5rem;
+			font-size: 16px;
+			color: $link-color;
+			line-height: 1.25;
+			font-weight: bold;
+
+			&:not(:last-child) {
+				margin-bottom: 1.5rem;
+			}
+
+			&:after {
+				font-family: $global-font-icon;
+				content: $icon-arrow $icon-arrow;
+				position: absolute;
+				top: 2.5px;
+				left: 0;
+				font-size: 1.2rem;
+				color: #ccc;
+				transition: all .2s;
+			}	
+
+			&:hover {
+				color: rgba($link-color, .8);
+				&:after {
+					color: $link-color;
+					transform: translateY(-12%) scale(1.05);
+					font-size: 1.5rem;
+				}
+			}
+		}
+	}
+}
 
 /*#Blocks */
 

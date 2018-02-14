@@ -13,7 +13,7 @@ svgmin       		 = require('gulp-svgmin'),
 inject       		 = require('gulp-inject');
 
 var svgWatch            = './dist/img/svgstore/temp/*.svg';
-var svgIconsSource      = './default.html';
+var svgIconsSource      = './faq.html';
 var svgIconsDestination = './';
 
 gulp.task('svgstore', function () {

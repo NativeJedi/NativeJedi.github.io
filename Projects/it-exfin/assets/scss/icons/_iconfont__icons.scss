@@ -28,6 +28,11 @@ $global-font-icon: 'social';
       content: $icon-avatar;
     }
   }
+  &.icon--candidate {
+    &:before {
+      content: $icon-candidate;
+    }
+  }
   &.icon--cash {
     &:before {
       content: $icon-cash;

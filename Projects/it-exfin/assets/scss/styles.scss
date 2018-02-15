@@ -506,7 +506,7 @@ fieldset {
 
 .s-head {
 	padding: 3.5rem 0 3rem 0;
-	background-color: #FFF9E5;
+	background-color: $second-color;
 
 	&__nav {
 		display: flex;
@@ -968,7 +968,7 @@ fieldset {
 		width: 100%;
 		padding: 2rem 0;
 		margin: 0 0 3rem 0;
-		background-color: #FFF9E5;
+		background-color: $second-color;
 
 		&-title {
 			margin: 0;
@@ -1074,6 +1074,198 @@ fieldset {
 	}
 }
 
+
+.b-job {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-right: pxtopercent(45);
+
+	&-info {
+		width: pxtopercent(370);
+
+		&__img {
+			max-width: 100%;
+		}
+
+		&__text {
+			margin: 2rem 0 4rem 0;
+			font-size: 14px;
+			line-height: 1.429;
+		}
+
+		&__link {
+			position: relative;
+			display: block;
+			margin-bottom: 1.5rem;
+			padding-left: 5rem;
+			transition: color .25s;
+
+			&-title {
+				display: block;
+				font-size: 1.2rem;
+				font-weight: bold;
+				color: rgb(204, 204, 204);
+				text-transform: uppercase;
+			}
+
+			&-adress {
+				font-size: 18px;
+				font-weight: bold;
+				color: rgb(252, 196, 0);
+			}
+
+			.icon {
+				position: absolute;
+				left: 1.5rem;
+				transition: color .25s;
+
+				&--candidate {
+					bottom: 0;
+					font-size: 4rem;
+				}
+				
+				&--phone-call {
+					top: 0;
+					font-size: 3rem;
+				}
+			}
+
+			&:hover {
+				.icon {
+					color: $first-color;
+				}
+			}
+		}
+	}
+}
+
+.b-vacancies {
+	width: pxtopercent(750);
+	min-height: 94rem;
+
+	&__tab {
+		margin-bottom: 2rem;
+		padding: 1rem 5rem;
+		border-radius: 10px;
+		border: 1px solid transparent;
+		background-color: rgb(251, 251, 251);
+		font-weight: bold;
+		text-transform: uppercase;
+
+		&.active {
+			background-color: $first-color;
+			color: #fff;
+		}
+
+		&:hover {
+			border-color: $first-color;
+		}
+
+		&-container {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			margin-bottom: 2.5rem;
+			font-size: 14.583px;
+			line-height: 1.2;
+		}
+
+		&-title {
+			width: 100%;
+			margin: 0 0 1.5rem 0;
+			text-transform: uppercase;
+		}
+	}
+
+}
+
+.b-vacancy {
+	border-top: 1px solid #EBEBEB;
+
+	&:last-child {
+		border-bottom: 1px solid #EBEBEB ;
+	}
+
+	&-container {
+		display: none;
+
+		&:not(.active){
+			opacity: 0;
+		}
+
+		&.active {
+			display: block;
+		}
+	}
+
+	&__content {
+		padding: 0 7rem;
+		background-color: $second-color;
+		@include clearfix;
+		transition: height .5s;
+		height: 0;
+		overflow: hidden;
+	}
+
+	&__title {
+		position: relative;
+		margin: 0;
+		padding: 2rem 2rem 2rem 7rem;
+		font-size: 21px;
+		text-transform: uppercase;
+		color: $first-color;
+		cursor: pointer;
+		transition: color .3s;
+
+		&:after {
+			font-family: $global-font-icon;
+			content: $icon-arrow;
+			@include centY;
+			left: 3rem;
+			font-size: 1.5rem;
+			transition: transform .3s;
+		}
+
+		&.active {
+			color: #000;
+
+			&:after {
+				transform: translateY(-50%) rotate(90deg);
+			}
+			& + .b-vacancy__content {
+				height: 45rem;
+			}
+		}
+	}
+
+	&__info {
+		margin: 0 0 3.5rem 0;
+		list-style: none;
+
+		&-title {
+			margin: 4rem 0 2.5rem 0;
+			font-size: 18.75px;
+			text-transform: uppercase;
+			line-height: 1.067;
+		}
+
+		&-item {
+			position: relative;
+			font-size: 18.75px;
+			&:before {
+				@include centY;
+				content: "-";
+				left: -1rem;
+			}
+		}
+	}
+
+	&__apply {
+		margin: 0 0 4rem 0;
+		float: right;
+	}
+}
 /*#Blocks */
 
 
@@ -1117,7 +1309,7 @@ fieldset {
 
 	&-checkbox {
 		$h: 10px;
-		
+
 		input {
 			display: none;
 
@@ -1135,7 +1327,7 @@ fieldset {
 				color: $first-color;
 			}
 		}
-		
+
 		label {
 			position: relative;
 			padding-left: 2rem;
@@ -1156,7 +1348,7 @@ fieldset {
 		line-height: 1.5;
 		border-bottom: 1px solid currentcolor;
 		&:hover {
-			
+
 			color: $first-color;
 		}
 	}
@@ -1180,7 +1372,7 @@ fieldset {
 		text-transform: uppercase;
 		border-radius: 2rem 2rem 0 0;
 	}
-	
+
 	&__content {
 		display: flex;
 		flex-direction: column;
@@ -1286,7 +1478,7 @@ fieldset {
 			margin: 0;
 		}
 	}
-	
+
 	&__footer {
 		padding: 2rem 0;
 		margin-top: 2rem;
@@ -1317,7 +1509,7 @@ fieldset {
 			padding: .75rem 0;
 		}
 	}
-	
+
 }
 
 %flex-form {
@@ -2630,7 +2822,7 @@ fieldset {
 		&:hover,
 		&:focus {
 			outline: none;
-			background-color: #FFF9E5;
+			background-color: $second-color;
 			font-weight: bold;
 		}
 	}
@@ -2638,7 +2830,7 @@ fieldset {
 
 .btn-active {
 	outline: none;
-	background-color: #FFF9E5;
+	background-color: $second-color;
 	font-weight: bold;
 }
 

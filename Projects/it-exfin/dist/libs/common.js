@@ -116,6 +116,39 @@ window.onload = function() {
 		});
 		
 	});
+
+	/*#Accordion*/
+
+	$('.b-vacancy__title').on('click', function(e) {
+		$('.b-vacancy__title').not($(this)).removeClass('active');
+		$(this).toggleClass('active');
+	});
+
+	$('.b-vacancies__tab').on('click', function(e) {
+		$('.b-vacancies__tab').removeClass('active');
+		$(this).addClass('active');
+
+		var dataBtn = $(this).data('job');
+		var dataVacancy = $('[data-vacancy=' + dataBtn + ']');
+		var vacancy = $('.b-vacancy-container.active');
+
+		if (dataVacancy.hasClass('active')) return;
+
+		vacancy.animate({
+			opacity: 0
+		}, 300 , function() {
+			vacancy.removeClass('active');
+
+			dataVacancy.addClass('active').animate({
+				opacity: 1
+			}, 300);
+		});
+
+		/*dataVacancy.addClass('active').animate({
+			opacity: 1
+		}, 500);*/
+	});
+	
 };
 
 function Slider(initialId, min, max) {

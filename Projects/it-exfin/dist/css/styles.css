@@ -372,32 +372,34 @@ th {
     content: ""; }
   .icon.icon--avatar:before {
     content: ""; }
-  .icon.icon--cash:before {
+  .icon.icon--candidate:before {
     content: ""; }
-  .icon.icon--check-mark:before {
+  .icon.icon--cash:before {
     content: ""; }
-  .icon.icon--envelope:before {
+  .icon.icon--check-mark:before {
     content: ""; }
-  .icon.icon--facebook:before {
+  .icon.icon--envelope:before {
     content: ""; }
-  .icon.icon--interview:before {
+  .icon.icon--facebook:before {
     content: ""; }
-  .icon.icon--kyivstar:before {
+  .icon.icon--interview:before {
     content: ""; }
-  .icon.icon--login:before {
+  .icon.icon--kyivstar:before {
     content: ""; }
-  .icon.icon--padlock:before {
+  .icon.icon--login:before {
     content: ""; }
-  .icon.icon--phone-call:before {
+  .icon.icon--padlock:before {
     content: ""; }
-  .icon.icon--stick-man:before {
+  .icon.icon--phone-call:before {
     content: ""; }
-  .icon.icon--sticker:before {
+  .icon.icon--stick-man:before {
     content: ""; }
-  .icon.icon--telegram:before {
+  .icon.icon--sticker:before {
     content: ""; }
-  .icon.icon--vodafone:before {
+  .icon.icon--telegram:before {
     content: ""; }
+  .icon.icon--vodafone:before {
+    content: ""; }
 
 /* Slider */
 .slick-slider {
@@ -1650,6 +1652,169 @@ fieldset {
               -ms-transform: translateY(-12%) scale(1.05);
                   transform: translateY(-12%) scale(1.05);
           font-size: 1.5rem; }
+
+.b-job {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-right: 3.84615%; }
+  .b-job-info {
+    width: 31.62393%; }
+    .b-job-info__img {
+      max-width: 100%; }
+    .b-job-info__text {
+      margin: 2rem 0 4rem 0;
+      font-size: 14px;
+      line-height: 1.429; }
+    .b-job-info__link {
+      position: relative;
+      display: block;
+      margin-bottom: 1.5rem;
+      padding-left: 5rem;
+      -webkit-transition: color .25s;
+      -o-transition: color .25s;
+      transition: color .25s; }
+      .b-job-info__link-title {
+        display: block;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #cccccc;
+        text-transform: uppercase; }
+      .b-job-info__link-adress {
+        font-size: 18px;
+        font-weight: bold;
+        color: #fcc400; }
+      .b-job-info__link .icon {
+        position: absolute;
+        left: 1.5rem;
+        -webkit-transition: color .25s;
+        -o-transition: color .25s;
+        transition: color .25s; }
+        .b-job-info__link .icon--candidate {
+          bottom: 0;
+          font-size: 4rem; }
+        .b-job-info__link .icon--phone-call {
+          top: 0;
+          font-size: 3rem; }
+      .b-job-info__link:hover .icon {
+        color: #FCC504; }
+
+.b-vacancies {
+  width: 64.10256%;
+  min-height: 94rem; }
+  .b-vacancies__tab {
+    margin-bottom: 2rem;
+    padding: 1rem 5rem;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background-color: #fbfbfb;
+    font-weight: bold;
+    text-transform: uppercase; }
+    .b-vacancies__tab.active {
+      background-color: #FCC504;
+      color: #fff; }
+    .b-vacancies__tab:hover {
+      border-color: #FCC504; }
+    .b-vacancies__tab-container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+      font-size: 14.583px;
+      line-height: 1.2; }
+    .b-vacancies__tab-title {
+      width: 100%;
+      margin: 0 0 1.5rem 0;
+      text-transform: uppercase; }
+
+.b-vacancy {
+  border-top: 1px solid #EBEBEB; }
+  .b-vacancy:last-child {
+    border-bottom: 1px solid #EBEBEB; }
+  .b-vacancy-container {
+    display: none; }
+    .b-vacancy-container:not(.active) {
+      opacity: 0; }
+    .b-vacancy-container.active {
+      display: block; }
+  .b-vacancy__content {
+    padding: 0 7rem;
+    background-color: #FFF9E5;
+    -webkit-transition: height .5s;
+    -o-transition: height .5s;
+    transition: height .5s;
+    height: 0;
+    overflow: hidden; }
+    .b-vacancy__content:after {
+      content: "";
+      display: block;
+      clear: both; }
+  .b-vacancy__title {
+    position: relative;
+    margin: 0;
+    padding: 2rem 2rem 2rem 7rem;
+    font-size: 21px;
+    text-transform: uppercase;
+    color: #FCC504;
+    cursor: pointer;
+    -webkit-transition: color .3s;
+    -o-transition: color .3s;
+    transition: color .3s; }
+    .b-vacancy__title:after {
+      font-family: "social";
+      content: "";
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
+      left: 3rem;
+      font-size: 1.5rem;
+      -webkit-transition: -webkit-transform .3s;
+      transition: -webkit-transform .3s;
+      -o-transition: transform .3s;
+      transition: transform .3s;
+      transition: transform .3s, -webkit-transform .3s; }
+    .b-vacancy__title.active {
+      color: #000; }
+      .b-vacancy__title.active:after {
+        -webkit-transform: translateY(-50%) rotate(90deg);
+            -ms-transform: translateY(-50%) rotate(90deg);
+                transform: translateY(-50%) rotate(90deg); }
+      .b-vacancy__title.active + .b-vacancy__content {
+        height: 45rem; }
+  .b-vacancy__info {
+    margin: 0 0 3.5rem 0;
+    list-style: none; }
+    .b-vacancy__info-title {
+      margin: 4rem 0 2.5rem 0;
+      font-size: 18.75px;
+      text-transform: uppercase;
+      line-height: 1.067; }
+    .b-vacancy__info-item {
+      position: relative;
+      font-size: 18.75px; }
+      .b-vacancy__info-item:before {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        content: "-";
+        left: -1rem; }
+  .b-vacancy__apply {
+    margin: 0 0 4rem 0;
+    float: right; }
 
 /*#Blocks */
 .b-logo {

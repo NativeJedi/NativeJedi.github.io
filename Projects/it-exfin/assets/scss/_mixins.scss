@@ -55,6 +55,14 @@
 	}
 }
 
+@mixin clearfix {
+	&:after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
 @mixin scrollbar($width, $color) {
 	&::-webkit-scrollbar {
 		width: $width;

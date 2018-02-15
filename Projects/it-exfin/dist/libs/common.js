@@ -119,8 +119,8 @@ window.onload = function() {
 
 	/*#Accordion*/
 
-	$('.b-vacancy__title').on('click', function(e) {
-		$('.b-vacancy__title').not($(this)).removeClass('active');
+	$('.b-spoiler-title').on('click', function(e) {
+		$('.b-spoiler-title').not($(this)).removeClass('active');
 		$(this).toggleClass('active');
 	});
 

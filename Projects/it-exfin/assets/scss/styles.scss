@@ -957,6 +957,10 @@ fieldset {
 	}
 }
 
+.s-spoiler {
+	padding: 0 0 14rem 0;
+}
+
 .b-help {
 	width: 100%;
 	display: flex;
@@ -1197,46 +1201,6 @@ fieldset {
 		}
 	}
 
-	&__content {
-		padding: 0 7rem;
-		background-color: $second-color;
-		@include clearfix;
-		transition: height .5s;
-		height: 0;
-		overflow: hidden;
-	}
-
-	&__title {
-		position: relative;
-		margin: 0;
-		padding: 2rem 2rem 2rem 7rem;
-		font-size: 21px;
-		text-transform: uppercase;
-		color: $first-color;
-		cursor: pointer;
-		transition: color .3s;
-
-		&:after {
-			font-family: $global-font-icon;
-			content: $icon-arrow;
-			@include centY;
-			left: 3rem;
-			font-size: 1.5rem;
-			transition: transform .3s;
-		}
-
-		&.active {
-			color: #000;
-
-			&:after {
-				transform: translateY(-50%) rotate(90deg);
-			}
-			& + .b-vacancy__content {
-				height: 45rem;
-			}
-		}
-	}
-
 	&__info {
 		margin: 0 0 3.5rem 0;
 		list-style: none;
@@ -1264,6 +1228,77 @@ fieldset {
 		float: right;
 	}
 }
+
+.b-spoiler {
+
+	&-title {
+		position: relative;
+		margin: 0;
+		padding: 2rem 2rem 2rem 7rem;
+		font-size: 21px;
+		text-transform: uppercase;
+		color: $first-color;
+		cursor: pointer;
+		transition: color .3s;
+
+		&:after {
+			font-family: $global-font-icon;
+			content: $icon-arrow;
+			@include centY;
+			left: 3rem;
+			font-size: 1.5rem;
+			transition: transform .3s;
+		}
+
+		&.active {
+			color: #000;
+
+			&:after {
+				transform: translateY(-50%) rotate(90deg);
+			}
+			& + .b-spoiler-content {
+				height: 45rem;
+			}
+		}
+	}
+
+	&-content {
+		padding: 0 7rem;
+		background-color: $second-color;
+		@include clearfix;
+		transition: height .5s;
+		height: 0;
+		overflow: hidden;
+
+		&--flex {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+	}
+
+	&__column {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		max-width: 47rem;
+		margin: 7rem 0 4rem 0;
+
+		&:not(:last-child) { margin-right: 4rem;}
+	}
+
+	&__link {
+		align-self: flex-end;
+		margin-left: auto;
+	}
+
+	&-text {
+		font-size: 18.75px;
+		line-height: 1.333;
+	}
+}
+
+
 /*#Blocks */
 
 
@@ -2578,6 +2613,24 @@ fieldset {
 			margin-bottom: 1.2rem;
 			text-align: center;
 			font-size: 4rem;
+		}
+	}
+
+	&-linked {
+		padding: 1rem 5rem;
+		background: #fff linear-gradient( 180deg, rgb(253,251,251) 0%, rgb(244,244,245) 70%, rgb(235,237,238) 100%);
+		border-radius: 2rem;
+		font-size: 18px;
+		font-weight: bold;
+		transition: box-shadow .3s;
+
+		&--secondary {
+			background: $first-color $main-gradient;
+			color: #fff;
+		}
+
+		&:hover {
+			box-shadow: 2px 2px 8px rgba(#000, .8);
 		}
 	}
 }

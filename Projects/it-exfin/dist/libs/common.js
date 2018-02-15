@@ -130,7 +130,7 @@ window.onload = function() {
 
 		var dataBtn = $(this).data('job');
 		var dataVacancy = $('[data-vacancy=' + dataBtn + ']');
-		var vacancy = $('.b-vacancy-container.active');
+		var vacancy = $('.b-vacancy-container');
 
 		if (dataVacancy.hasClass('active')) return;
 
@@ -143,12 +143,8 @@ window.onload = function() {
 				opacity: 1
 			}, 300);
 		});
-
-		/*dataVacancy.addClass('active').animate({
-			opacity: 1
-		}, 500);*/
 	});
-	
+
 };
 
 function Slider(initialId, min, max) {

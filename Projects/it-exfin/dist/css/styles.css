@@ -1742,11 +1742,11 @@ fieldset {
   .b-vacancy:last-child {
     border-bottom: 1px solid #EBEBEB; }
   .b-vacancy-container {
-    display: none; }
-    .b-vacancy-container:not(.active) {
-      opacity: 0; }
+    display: none;
+    opacity: 0; }
     .b-vacancy-container.active {
-      display: block; }
+      display: block;
+      opacity: 1; }
   .b-vacancy__content {
     padding: 0 7rem;
     background-color: #FFF9E5;

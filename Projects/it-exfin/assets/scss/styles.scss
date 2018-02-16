@@ -1078,7 +1078,6 @@ fieldset {
 	}
 }
 
-
 .b-job {
 	display: flex;
 	justify-content: space-between;
@@ -1206,7 +1205,7 @@ fieldset {
 		list-style: none;
 
 		&-title {
-			margin: 4rem 0 2.5rem 0;
+			margin: 0 0 2.5rem 0;
 			font-size: 18.75px;
 			text-transform: uppercase;
 			line-height: 1.067;
@@ -1257,6 +1256,7 @@ fieldset {
 				transform: translateY(-50%) rotate(90deg);
 			}
 			& + .b-spoiler-content {
+				padding: 4rem 7rem;
 				height: 45rem;
 			}
 		}
@@ -1266,15 +1266,17 @@ fieldset {
 		padding: 0 7rem;
 		background-color: $second-color;
 		@include clearfix;
-		transition: height .5s;
+		transition: all .5s;
 		height: 0;
-		overflow: hidden;
+		overflow-y: scroll;
+		@include scrollbar(5px, $first-color);
 
 		&--flex {
 			display: flex;
 			justify-content: space-between;
 			flex-wrap: wrap;
 		}
+
 	}
 
 	&__column {
@@ -1282,7 +1284,6 @@ fieldset {
 		flex-wrap: wrap;
 		align-items: flex-start;
 		max-width: 47rem;
-		margin: 7rem 0 4rem 0;
 
 		&:not(:last-child) { margin-right: 4rem;}
 	}
@@ -1293,8 +1294,9 @@ fieldset {
 	}
 
 	&-text {
+		text-indent: 1.5em;
 		font-size: 18.75px;
-		line-height: 1.333;
+		line-height: 1.333;		
 	}
 }
 

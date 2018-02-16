@@ -1548,7 +1548,8 @@ fieldset {
       width: 5px; }
     .s-agreement__text::-webkit-scrollbar-thumb {
       border-radius: 2px;
-      -webkit-box-shadow: inset 10px 0 0 #FCC504; }
+      -webkit-box-shadow: inset 10px 0 0 #FCC504;
+              box-shadow: inset 10px 0 0 #FCC504; }
 
 .s-help .wrapper {
   -ms-flex-wrap: wrap;
@@ -1754,7 +1755,7 @@ fieldset {
     margin: 0 0 3.5rem 0;
     list-style: none; }
     .b-vacancy__info-title {
-      margin: 4rem 0 2.5rem 0;
+      margin: 0 0 2.5rem 0;
       font-size: 18.75px;
       text-transform: uppercase;
       line-height: 1.067; }
@@ -1806,20 +1807,27 @@ fieldset {
           -ms-transform: translateY(-50%) rotate(90deg);
               transform: translateY(-50%) rotate(90deg); }
     .b-spoiler-title.active + .b-spoiler-content {
+      padding: 4rem 7rem;
       height: 45rem; }
 
 .b-spoiler-content {
   padding: 0 7rem;
   background-color: #FFF9E5;
-  -webkit-transition: height .5s;
-  -o-transition: height .5s;
-  transition: height .5s;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
   height: 0;
-  overflow: hidden; }
+  overflow-y: scroll; }
   .b-spoiler-content:after {
     content: "";
     display: block;
     clear: both; }
+  .b-spoiler-content::-webkit-scrollbar {
+    width: 5px; }
+  .b-spoiler-content::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    -webkit-box-shadow: inset 10px 0 0 #FCC504;
+            box-shadow: inset 10px 0 0 #FCC504; }
   .b-spoiler-content--flex {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1839,8 +1847,7 @@ fieldset {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  max-width: 47rem;
-  margin: 7rem 0 4rem 0; }
+  max-width: 47rem; }
   .b-spoiler__column:not(:last-child) {
     margin-right: 4rem; }
 
@@ -1850,6 +1857,7 @@ fieldset {
   margin-left: auto; }
 
 .b-spoiler-text {
+  text-indent: 1.5em;
   font-size: 18.75px;
   line-height: 1.333; }
 
@@ -2720,7 +2728,8 @@ fieldset {
       width: 5px; }
     .b-info-wrapper::-webkit-scrollbar-thumb {
       border-radius: 2px;
-      -webkit-box-shadow: inset 10px 0 0 #FCC504; }
+      -webkit-box-shadow: inset 10px 0 0 #FCC504;
+              box-shadow: inset 10px 0 0 #FCC504; }
   .b-info__title {
     margin: 0 0 1rem 0;
     font-size: 1.8rem; }

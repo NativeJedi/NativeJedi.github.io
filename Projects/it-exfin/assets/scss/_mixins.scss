@@ -70,7 +70,7 @@
 
 	&::-webkit-scrollbar-thumb {
 		border-radius: 2px;
-		-webkit-box-shadow: inset $width*2 0 0  $color;
+		box-shadow: inset $width*2 0 0  $color;
 	}
 }
 

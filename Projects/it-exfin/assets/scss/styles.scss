@@ -818,14 +818,14 @@ fieldset {
 	&-item {
 		max-width: 37rem;
 		margin: 0 1.5rem;
-		&:not(:last-child) {
-			margin-bottom: 4rem;
-		}
+
+		&:not(:last-child) { margin-bottom: 4rem; }
 
 		&__img {
 			width: 100%;
 			display: block;
 		}
+
 		&__title {
 			margin: 1.5rem 0;
 			text-transform: uppercase;
@@ -854,6 +854,13 @@ fieldset {
 			letter-spacing: .5px;
 			font-weight: bold;
 			text-transform: uppercase;
+
+			&--bg {
+				display: inline-block;
+				margin: 2rem 0;
+				font-size: 1.4rem;
+				float: none;
+			}
 		}
 	}
 
@@ -1015,7 +1022,8 @@ fieldset {
 	&-textarea { height: 14rem; }
 }
 
-.s-agreement {
+.s-agreement,
+.s-blog-item {
 	padding-bottom: 8rem;
 
 	&__img { max-width: 100%; }
@@ -1030,6 +1038,12 @@ fieldset {
 
 		@include scrollbar(5px, $first-color);
 	}
+}
+
+.s-blog-item__text {
+	margin: 0;
+	height: auto;
+	overflow: auto;
 }
 
 .s-help {

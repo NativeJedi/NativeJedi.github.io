@@ -1464,6 +1464,11 @@ fieldset {
     letter-spacing: .5px;
     font-weight: bold;
     text-transform: uppercase; }
+    .b-blog-item__date--bg {
+      display: inline-block;
+      margin: 2rem 0;
+      font-size: 1.4rem;
+      float: none; }
 
 .b-blog-nav {
   display: -webkit-box;
@@ -1614,23 +1619,33 @@ fieldset {
   .f-contact-textarea {
     height: 14rem; }
 
-.s-agreement {
+.s-agreement,
+.s-blog-item {
   padding-bottom: 8rem; }
-  .s-agreement__img {
+  .s-agreement__img,
+  .s-blog-item__img {
     max-width: 100%; }
-  .s-agreement__text {
+  .s-agreement__text,
+  .s-blog-item__text {
     margin: 3rem 0;
     padding-right: 3rem;
     font-size: 14px;
     line-height: 1.429;
     height: 50rem;
     overflow-y: scroll; }
-    .s-agreement__text::-webkit-scrollbar {
+    .s-agreement__text::-webkit-scrollbar,
+    .s-blog-item__text::-webkit-scrollbar {
       width: 5px; }
-    .s-agreement__text::-webkit-scrollbar-thumb {
+    .s-agreement__text::-webkit-scrollbar-thumb,
+    .s-blog-item__text::-webkit-scrollbar-thumb {
       border-radius: 2px;
       -webkit-box-shadow: inset 10px 0 0 #FCC504;
               box-shadow: inset 10px 0 0 #FCC504; }
+
+.s-blog-item__text {
+  margin: 0;
+  height: auto;
+  overflow: auto; }
 
 .s-help .wrapper {
   -ms-flex-wrap: wrap;

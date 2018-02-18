@@ -83,6 +83,7 @@ window.onload = function() {
 		});
 	});
 
+	/*#Form change*/
 
 	$('.b-btn--secondary').on('click', function() {
 		$('.b-btn--secondary').removeClass('active');
@@ -92,11 +93,10 @@ window.onload = function() {
 
 		var currentForm = $('form.active');
 
-		if (dataForm.hasClass('active')) {
-			return;
-		}
+		if (dataForm.hasClass('active')) return;
 
-		currentForm.animate({
+
+		currentForm.stop(true, true).animate({
 			opacity: '0'
 		}, 500, function() {
 			$(this).removeClass('active');

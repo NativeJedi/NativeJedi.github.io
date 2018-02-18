@@ -56,12 +56,11 @@ window.onload = function() {
 
 	/*#Cities list func*/
 	
-	$('.b-region-list__btn').on('click', function(e) {
-
+	$('.b-region-list__wrapper').on('click', '.b-region-list__btn', function(e) {
 		var dataCity = $(this).data('city');
 
 		fieldFiller(dataCity, "data-city.json");
-
+		$('.b-region-list__btn').removeClass('btn-active');
 		$(this).addClass('btn-active');
 
 		var listItems = $(this).parent().parent().html();
@@ -72,10 +71,8 @@ window.onload = function() {
 			opacity: "0"
 		}, 500, function(){
 			$('.b-region-list').css('z-index', '-1');
+			$('.popup').css('z-index', '100').animate({opacity: '1'}, 500);
 		});
-
-		$('.popup').css('z-index', '100').animate({opacity: '1'}, 500);
-
 	});
 
 	$('.btn-show').on('click', function() {
@@ -86,14 +83,6 @@ window.onload = function() {
 		});
 	});
 
-	$('.popup-list').on('click',  function(e) {
-		if(e.target.type == 'submit') {
-			$('.popup-list li button').removeClass('btn-active');
-			var dataCity = e.target.attributes['data-city'].value;
-
-			fieldFiller(dataCity, "data-city.json");
-		};	
-	});
 
 	$('.b-btn--secondary').on('click', function() {
 		$('.b-btn--secondary').removeClass('active');
@@ -135,7 +124,7 @@ window.onload = function() {
 
 		if (dataVacancy.hasClass('active')) return;
 
-		vacancy.animate({
+		vacancy.stop(true, true).animate({
 			opacity: 0
 		}, 300 , function() {
 			vacancy.removeClass('active');
@@ -190,7 +179,7 @@ function pagination() {
 	var currentContent = $('.b-blog-container');
 	var dataContent = $('[data-container=' + dataCount + ']');
 
-	currentContent.animate({
+	currentContent.stop(true, true).animate({
 		opacity: 0
 	},300, function() {
 

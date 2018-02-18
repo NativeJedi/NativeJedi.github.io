@@ -1855,6 +1855,16 @@ fieldset {
     margin: 0 0 4rem 0;
     float: right; }
 
+.b-spoiler__text {
+  height: calc(100% - 4rem);
+  overflow-y: scroll; }
+  .b-spoiler__text::-webkit-scrollbar {
+    width: 5px; }
+  .b-spoiler__text::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    -webkit-box-shadow: inset 10px 0 0 #FCC504;
+            box-shadow: inset 10px 0 0 #FCC504; }
+
 .b-spoiler-title {
   position: relative;
   margin: 0;
@@ -1898,17 +1908,11 @@ fieldset {
   -o-transition: all .5s;
   transition: all .5s;
   height: 0;
-  overflow-y: scroll; }
+  overflow: hidden; }
   .b-spoiler-content:after {
     content: "";
     display: block;
     clear: both; }
-  .b-spoiler-content::-webkit-scrollbar {
-    width: 5px; }
-  .b-spoiler-content::-webkit-scrollbar-thumb {
-    border-radius: 2px;
-    -webkit-box-shadow: inset 10px 0 0 #FCC504;
-            box-shadow: inset 10px 0 0 #FCC504; }
   .b-spoiler-content--flex {
     display: -webkit-box;
     display: -ms-flexbox;

@@ -1311,6 +1311,11 @@ fieldset {
 
 .b-spoiler {
 
+	&__text {
+		height: calc(100% - 4rem);
+		overflow-y: scroll;
+		@include scrollbar(5px, $first-color);
+	}
 	&-title {
 		position: relative;
 		margin: 0;
@@ -1336,6 +1341,7 @@ fieldset {
 			&:after {
 				transform: translateY(-50%) rotate(90deg);
 			}
+
 			& + .b-spoiler-content {
 				padding: 4rem 7rem;
 				height: 45rem;
@@ -1349,8 +1355,7 @@ fieldset {
 		@include clearfix;
 		transition: all .5s;
 		height: 0;
-		overflow-y: scroll;
-		@include scrollbar(5px, $first-color);
+		overflow: hidden;
 
 		&--flex {
 			display: flex;

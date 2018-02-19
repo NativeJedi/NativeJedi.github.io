@@ -1501,7 +1501,6 @@ fieldset {
       position: relative;
       width: 5rem;
       height: 5rem;
-      margin: 0 2rem;
       border: none;
       border-radius: 50%;
       background-image: -o-linear-gradient(175deg, #fdfbfb 0%, #ebedee 100%);
@@ -1521,10 +1520,14 @@ fieldset {
         .b-blog-nav__btn-next:hover:before, .b-blog-nav__btn-prev:hover:before {
           color: #FCC504;
           font-weight: bold; }
-    .b-blog-nav__btn-prev:before {
-      -webkit-transform: translate(-50%, -50%) rotate(180deg);
-          -ms-transform: translate(-50%, -50%) rotate(180deg);
-              transform: translate(-50%, -50%) rotate(180deg); }
+    .b-blog-nav__btn-prev {
+      margin: 0 5rem 0 0; }
+      .b-blog-nav__btn-prev:before {
+        -webkit-transform: translate(-50%, -50%) rotate(180deg);
+            -ms-transform: translate(-50%, -50%) rotate(180deg);
+                transform: translate(-50%, -50%) rotate(180deg); }
+    .b-blog-nav__btn-next {
+      margin: 0 0 0 5rem; }
 
 .b-contact {
   width: 27rem;

@@ -884,12 +884,12 @@ fieldset {
 				background: $first-color;
 				color: #fff;
 			}
+
 			&-next,
 			&-prev {
 				position: relative;
 				width: 5rem;
 				height: 5rem;
-				margin:  0 2rem;
 				border: none;
 				border-radius: 50%;
 				background-image: linear-gradient( -85deg, rgb(253,251,251) 0%, rgb(235,237,238) 100%);
@@ -912,9 +912,14 @@ fieldset {
 			}
 
 			&-prev {
+				margin: 0 5rem 0 0;
 				&:before {
 					transform: translate(-50%, -50%) rotate(180deg);
 				}
+			}
+
+			&-next {
+				margin:  0 0 0 5rem;
 			}
 		}
 	}

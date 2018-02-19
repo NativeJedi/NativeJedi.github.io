@@ -4,12 +4,13 @@
 	<meta charset="UTF-8">
 	<title>Express Finance</title>
 	<link rel="stylesheet" href="dist/css/styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
 	<header class="s-header">
 		<div class="wrapper">
-			<a href="#" class="b-logo">
+			<a href="main.html" class="b-logo">
 				<svg><use href="#svg-logo">
 				</svg>
 			</a>
@@ -29,7 +30,6 @@
 			</div>
 
 			<button class="b-btn-login">Мой кабинет <span class="icon icon--login"></span></button>
-
 		</div>
 	</header>
 	
@@ -96,7 +96,7 @@
 						<p class="b-main-form__total-cost"><span>Платеж по кредиту:</span> <span>550 грн/нед.</span></p>
 					</div>
 
-					<button class="b-btn-main" type="submit"><span class="icon icon--check-mark"></span></button>
+					<button class="b-btn-main" name="submit" type="submit"><span class="icon icon--check-mark"></span></button>
 				</fieldset>
 			</form>
 
@@ -556,8 +556,9 @@
 						<span class="icon icon--sticker"><b>О параметрах защиты</b><br>Экспресс Финанс</span>
 					</div>
 				</div>
+
 				<div class="b-section-cards__item">
-					<img src="dist/img/svgstore/credit-card.svg" alt="credit-card">
+					<img class="bank-card" src="dist/img/svgstore/credit-card.svg" alt="credit-card">
 				</div>
 			</div>
 		</div>
@@ -675,11 +676,14 @@
 				</ul>
 
 				<div class="popup">
-					<ul class="popup-list"></ul>
+					
+					<div class="popup-cities">
+						<ul class="popup-list">	</ul>
+						<button class="b-btn-primary b-btn-primary--main btn-show">Показать все города</button>
+					</div>
+					
 
-					<button class="b-btn-primary b-btn-primary--main btn-show">Показать все города</button>
-
-					<iframe id="data-map" src="" width="600" height="460" frameborder="0" style="border:0" allowfullscreen></iframe>
+					<iframe id="data-map" src="" class="popup-map" frameborder="0" style="border:0" allowfullscreen></iframe>
 					
 					<div class="popup-info">
 						<h3 class="popup-info__adress">

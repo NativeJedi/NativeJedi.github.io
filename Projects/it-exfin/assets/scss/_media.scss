@@ -1,0 +1,266 @@
+@media only screen and (max-device-width : 1024px) {
+
+	.wrapper {
+		padding: 0 1rem;
+	}
+
+	.s-header {
+		.wrapper {
+			padding: 2rem;
+			flex-wrap: wrap;
+		}
+
+		&__lang { margin-left: auto; }
+	}
+
+	.b-nav {
+		width: 100%;
+		order: 1;
+		margin: 1rem auto 0 auto;
+		justify-content: space-between;
+	}
+
+	.s-credits,
+	.s-advanteges-header,
+	.s-info {
+		border-bottom-left-radius: 50% 8rem;
+		border-bottom-right-radius: 50% 8rem;
+	}
+
+	.b-main-form {
+		&__content {
+			width: 100%;
+			padding: 3rem pxtopercent(70) 6rem pxtopercent(70);
+
+			&-message {
+				margin: 0 0 3rem 0;
+			}
+		}
+
+		&__total {
+			padding: 6rem pxtopercent(70) 3rem pxtopercent(70);
+		}
+	}
+
+	.b-form-group { flex-wrap: wrap; }
+
+	.b-personal,
+	.b-callback { width: 100%; }
+
+	.b-callback {
+		text-align: center;
+
+		.b-input { margin: 2rem auto; }
+	}
+
+	.b-btn-main {
+		left: 50%;
+		top: 0;
+		transform: translate(-50%, -50%);
+	}
+
+	.s-advanteges {
+		background-position: 100% 1200px;
+
+		.wrapper {
+			flex-wrap: wrap;
+		}
+
+		&-content {
+			width: 100%;
+			justify-content: center;
+			&__item {
+				width: 33%;
+			}
+		}
+
+		&-message {
+			width: 100%;
+		}
+	}
+
+	.s-packages {
+		background-image: radial-gradient(130% 68% at top, #fff 100%, 
+			rgba(248, 174, 6, 0.9) 90%);
+		&-content {
+			&__item {
+				margin: 0 auto;
+			}
+		}
+	}
+
+	.s-howto {
+		background-image: radial-gradient(180% 68% at top, #fff 100%, 
+			rgba(248, 174, 6, 0.9) 90%);
+		padding-bottom: 2rem;
+	}
+
+	.b-step {
+		width: 70%;
+	}
+
+	.b-section-message {
+		flex-wrap: wrap;
+
+		&__item {
+			width: 80%;
+			margin-bottom: 2rem;
+		}
+	}
+
+	.b-section-cards {
+		margin-top: 8rem;
+		flex-wrap: wrap;
+
+		&__item {
+			width: 100%;
+
+			&:first-child {
+				padding-bottom: 15rem;
+				justify-content: space-between;
+				margin-bottom: 4rem;
+			}
+
+			.bank-card {
+				margin: 0 auto;
+			}
+
+			.visa-img {
+				width: 24%;
+				margin: 0;
+			}
+			.master-card {
+				width: 24%;
+				margin: 0;
+			}
+			&-square {
+				width: 24%;
+				&:first-of-type {
+					margin: 0;
+				}
+
+				&:nth-of-type(2) {
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	.b-review {
+		width: 96%;
+		margin: 4rem auto;
+		padding: 10rem 3rem 3.5rem 3rem;
+	}
+
+	.s-region { 
+		padding: 5rem 0 0 0; 
+		background-size: 140rem 80rem;
+	}
+
+	.b-region-list{
+		width: 45%;
+		&__wrapper {
+			justify-content: space-around;
+		}
+	}
+
+	.popup {
+		width: 100%;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		&-list {
+			width: 100%;
+			height: auto;
+			margin: 0;
+			flex-flow: row wrap;
+			align-items: flex-start;
+			align-content: flex-start;
+			justify-content: space-between;
+
+			li {
+				display: inline-block;
+				width: 45%;
+			}
+		}
+
+		&-map {
+			width: 60%;
+			height: 36rem;
+		}
+
+		&-info {
+			width: 40%;
+			height: 36rem;
+
+			&__item {
+				justify-content: space-between;
+				&-title {
+					display: inline-block;
+					width: auto;
+					line-height: 1.5;
+				}
+				&-main {
+					display: inline-block;
+					width: 65%;
+					text-align: right;
+				}
+			}
+
+			&__link--mail {
+				width: 100%;
+				word-wrap: break-word;
+			}
+		}
+
+		&-cities {
+			padding-bottom: 0;
+		}
+
+		.btn-show {
+			left: 100%;
+			bottom: 0;
+			transform: translate(-100%, -50%);
+		}
+	}
+
+	.b-media {
+		flex-direction: column;
+		align-items: center;
+
+		&-item {
+			width: 50%;
+
+			&:not(:last-child) {
+				margin-bottom: 4rem;
+			}
+		}
+	}
+
+	.s-footer {
+		.wrapper {
+			justify-content: space-around;
+		}
+		&-contacts,
+		&-about,
+		&-faq,
+		&-referal-wrap {
+			justify-content: center;
+			margin-top: 4rem;
+			width: 40%;
+		}
+
+		&-base {
+			flex-wrap: wrap;
+			justify-content: center;
+
+			&__info {
+				margin: 0 0 2rem 0;
+			}
+			.b-logo {
+				margin: 0 2rem 2rem 0;
+			}
+		}
+	}
+
+}

@@ -84,3 +84,29 @@
 		content: ",,";
 	}
 }
+
+%flex-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+%region-list {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 27rem;
+	height: 41rem;
+	padding-left: 0;
+	margin: 0;
+	list-style: none;
+
+	li {
+		position: relative;
+		display: block;
+		height: 4rem;
+		margin-bottom: 2rem;
+		border: 2px solid #FAFAFA;
+		@include border-radius(1rem);
+	}
+}

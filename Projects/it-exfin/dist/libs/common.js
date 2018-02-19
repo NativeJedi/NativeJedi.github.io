@@ -18,7 +18,15 @@ window.onload = function() {
 		dots: true,
 		infinite: false,
 		speed: 300,
-		slidesToShow: 4
+		slidesToShow: 4,
+		responsive: [
+		{
+			breakpoint: 1024,
+			settings: {
+				slidesToShow: 2,
+				slidesToScroll: 2
+			}
+		}]
 	});
 
 	$('.b-response-wrap').slick({
@@ -172,6 +180,8 @@ window.onload = function() {
 		nextBtn.addClass('active');
 		pagination();
 	});
+
+
 }
 
 function pagination() {

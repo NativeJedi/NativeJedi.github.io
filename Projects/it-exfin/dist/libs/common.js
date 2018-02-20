@@ -21,7 +21,7 @@ window.onload = function() {
 		slidesToShow: 4,
 		responsive: [
 		{
-			breakpoint: 1024,
+			breakpoint: 1025,
 			settings: {
 				slidesToShow: 2,
 				slidesToScroll: 2
@@ -33,7 +33,15 @@ window.onload = function() {
 		dots: true,
 		speed: 300,
 		slidesToScroll: 1,
-		slidesToShow: 3
+		slidesToShow: 3,
+		responsive: [
+		{
+			breakpoint: 1025,
+			settings: {
+				slidesToShow: 2,
+				slidesToScroll: 2
+			}
+		}]
 	});
 
 	

@@ -1,11 +1,9 @@
-@media only screen and (max-device-width : 1024px) {
-
-	.wrapper {
-		padding: 0 1rem;
-	}
+@media only screen and (max-device-width : 1025px) {
+	.wrapper { padding: 0 1rem; }
 
 	.s-header {
 		.wrapper {
+			width: 90%;
 			padding: 2rem;
 			flex-wrap: wrap;
 		}
@@ -17,7 +15,7 @@
 		width: 100%;
 		order: 1;
 		margin: 1rem auto 0 auto;
-		justify-content: space-between;
+		justify-content: space-around;
 	}
 
 	.s-credits,
@@ -38,7 +36,7 @@
 		}
 
 		&__total {
-			padding: 6rem pxtopercent(70) 3rem pxtopercent(70);
+			padding: 6rem pxtopercent(370) 3rem pxtopercent(370);
 		}
 	}
 
@@ -95,15 +93,13 @@
 		padding-bottom: 2rem;
 	}
 
-	.b-step {
-		width: 70%;
-	}
+	.b-step { width: 70%; }
 
 	.b-section-message {
 		flex-wrap: wrap;
 
 		&__item {
-			width: 80%;
+			width: 60%;
 			margin-bottom: 2rem;
 		}
 	}
@@ -169,6 +165,10 @@
 		flex-wrap: wrap;
 		justify-content: center;
 
+		&-cities {
+			width: 100%;
+		}
+
 		&-list {
 			width: 100%;
 			height: auto;
@@ -218,7 +218,7 @@
 		}
 
 		.btn-show {
-			left: 100%;
+			left: 95%;
 			bottom: 0;
 			transform: translate(-100%, -50%);
 		}
@@ -263,4 +263,133 @@
 		}
 	}
 
+	.s-main-title {
+		&__middle {
+			font-size: 5rem;
+		}
+	}
+
+	.s-head__nav {
+		width: 100%;
+		justify-content: space-around;
+	}
+	
+	.b-top-nav{
+		padding: 3rem 0;
+	}
+
+	.b-top-title{
+		margin-bottom: 2rem;
+	}
+
+	.s-about{
+		&-info__text {
+			margin-bottom: 3rem;
+		}
+		.wrapper {
+			padding: 0;
+		}
+		
+		&__wrap {
+			width: 55%;
+			padding: 0 3rem 4rem 3rem;
+			&:before {
+				display: none;
+			}
+		}
+		
+
+		&-content {
+			margin-bottom: 1rem;
+			flex-wrap: wrap;
+			&__item {
+				width: 50%;
+			}
+		}
+	}
+
+	.b-response-wrap {
+		width: 95%;
+		margin: 0 auto;
+	}
+
+	.b-value {
+		width: 70%;
+
+		&-wrap {
+			justify-content: center;
+		}
+	}
+
+	.s-blog-item, 
+	.s-contacts,
+	.s-agreement,
+	.s-help {
+		overflow-x: hidden;
+	}
+
+	.b-main-container {
+		flex: 1;
+	}
+
+	.s-contacts {
+		padding-bottom: 4rem;
+	}
+
+	.b-sidebar {
+		padding: 3rem 0;
+	}
+
+	.b-blog-container {
+		width: 100%;
+		justify-content: space-around;
+	}
+
+	.b-contact{
+		margin-bottom: 2rem;
+
+		&-wrap {
+			justify-content: space-around;
+		}
+
+		&-info {
+			flex: auto;
+		}
+	}
+
+	.b-help-item__caption {
+		padding: 0 1rem;
+	}
+
+	.b-category__column {
+		width: 30%;
+	}
+	
+	.b-form-group {
+		justify-content: center;
+		border-radius: 0;
+		padding-bottom: 2rem;
+	}
+
+	.f-callback-left {
+		border-radius: 2rem 2rem 0 0;
+	}
+
+	.f-callback-right {
+		border-radius: 0 0 2rem 2rem;
+	}
+
+	.b-job {
+		padding: 0 4rem;
+		justify-content: center;
+
+		&-info {
+			width: 100%;
+			margin-bottom: 2rem;
+		}
+	}
+
+	.b-vacancies {
+		width: 100%;
+	}
 }

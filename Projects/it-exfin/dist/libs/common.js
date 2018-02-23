@@ -151,6 +151,48 @@ window.onload = function() {
 		});
 	});
 
+	$('.s-head__nav-btn').on('click', function(e) {
+		var dataBtn = $(this).data('btn');
+		var content = $('[data-content=' + dataBtn + ']');
+		var currentContent = $('.s-profile__container');
+
+		$('.s-head__nav-btn').removeClass('active');
+		$(this).addClass('active');
+
+		if (content.hasClass('active')) return;
+
+		currentContent.stop(true, true).animate({
+			opacity: 0
+		}, 300 , function() {
+			currentContent.removeClass('active');
+
+			content.addClass('active').animate({
+				opacity: 1
+			}, 300);
+		});
+	});
+
+	$('.messages .b-btn-app').on('click', function(e) {
+		var dataBtn = $(this).data('btn');
+		var content = $('[data-content=' + dataBtn + ']');
+		var currentContent = $('.s-profile__container');
+
+		$('.s-head__nav-btn').removeClass('active');
+		$(this).addClass('active');
+
+		if (content.hasClass('active')) return;
+
+		currentContent.stop(true, true).animate({
+			opacity: 0
+		}, 300 , function() {
+			currentContent.removeClass('active');
+
+			content.addClass('active').animate({
+				opacity: 1
+			}, 300);
+		});
+	});
+
 	/*#Pagination*/
 
 	$('.b-blog-nav__btn').on('click', function(){
@@ -189,7 +231,72 @@ window.onload = function() {
 		pagination();
 	});
 
+	/*#Redacting*/
+	var inp = $('.profile__input input');
+	$('.profile__input label').on('click', function(e) {
+		inp.attr('disabled', false);
+	});
 
+	inp.focusout(function(){
+		$(this).attr('disabled', true);
+	});
+
+	/*#Add files*/
+
+	$('input[type=file]').on('change', function(e) {
+		var reader = new FileReader();
+
+		for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
+			var file = e.originalEvent.srcElement.files[i];
+			var img = document.createElement("img");
+			var div = document.createElement('div');
+			div.classList.add('profile__doc');
+			var title = document.createElement('h3');
+			title.classList.add('profile__doc-title');
+			title.innerHTML = fileName;
+
+			var _tempArr = $(this).val().split('\\').pop()
+			.split('.');
+			var fileName = _tempArr[0];
+
+			title.innerHTML = fileName;
+
+			var reader = new FileReader();
+
+			reader.onloadend = function() {
+				img.src = reader.result;
+			}
+
+			reader.readAsDataURL(file);
+			$(this).parent().parent().before(div);
+			div.append(img);
+			div.append(title);
+			
+		}
+	});
+
+	/*#Form popup*/
+
+	$('.application-add').on('click', function(e) {
+		$('.overlay').addClass('active');
+		$('.b-main-form--popup').css('opacity', '0').animate({
+			opacity: 1
+		}, 300);
+		$('.blur').addClass('active');
+	});
+
+	$('.overlay').on('click', function(e){
+		formFadeOut(e, $('.b-main-form--popup'), $('.overlay'), $('.blur'));
+	});
+}
+
+function formFadeOut(e, form, overlay, blur) {
+	if (!e.target.classList.contains('active')) return;
+
+	form.animate({opacity: 0}, 300, function(e) {
+		overlay.removeClass('active');
+		blur.removeClass('active');
+	});
 }
 
 function pagination() {

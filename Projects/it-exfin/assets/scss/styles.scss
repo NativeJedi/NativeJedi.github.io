@@ -1657,6 +1657,10 @@ fieldset {
 	width: 27rem;
 	height: 27rem;
 	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	background-color: #F9F9F9;
 	border-radius: 2rem;
 	text-align: center;
@@ -1671,7 +1675,7 @@ fieldset {
 	svg {
 		width: 40%;
 		height: 40%;
-		margin: 2rem 0;
+		margin: 0 0 2rem 0;
 	}
 
 	&__title {
@@ -2106,15 +2110,6 @@ fieldset {
 		border-bottom: 1px solid #EBEBEB ;
 	}
 
-	&-container {
-		display: none;
-		opacity: 0;
-
-		&.active {
-			display: block;
-			opacity: 1;
-		}
-	}
 
 	&__info {
 		margin: 0 0 3.5rem 0;
@@ -2224,14 +2219,16 @@ fieldset {
 		align-self: flex-end;
 	}
 
-	&__container {
-		display: none;
-		opacity: 0;
 
-		&.active {
-			display: block;
-			opacity: 1;
-		}
+}
+
+.tab-content {
+	display: none;
+	opacity: 0;
+
+	&.is-showed {
+		display: block;
+		opacity: 1;
 	}
 }
 
@@ -2817,7 +2814,7 @@ fieldset {
 
 			span:first-child {
 				display: inline-block;
-				width: 16rem;
+				width: 59%;
 			}
 
 			span:last-child {
@@ -2836,23 +2833,18 @@ fieldset {
 	}
 
 	&--prime {
-		display: none;
+		display: flex;
 		flex-direction: column;
 		overflow: visible;
 
-		&.active {
-			display: flex;
-		}
 
-		&[data-form="2"] {
-			opacity: 0;
+		&.arrow-mid {
 			&:after {
 				top: 21.9rem;
 			}
 		}
 
-		&[data-form="3"] {
-			opacity: 0;
+		&.arrow-bot {
 			&:after {
 				top: 35rem;
 				border-right-color: #fff;
@@ -2888,7 +2880,7 @@ fieldset {
 			background: #fff;
 			$m: 8rem;
 			margin-top: -$m;
-			padding: $m 4rem 4rem 4rem;
+			padding: $m 10% 4rem 10%;
 			z-index: 1;
 		}
 
@@ -2991,7 +2983,7 @@ fieldset {
 
 	&__label {
 		display: inline-block;
-		min-width: 16rem;
+		margin-right: 2rem;
 		font-weight: bold;
 		text-transform: uppercase;
 		cursor: pointer;
@@ -3496,7 +3488,6 @@ fieldset {
 		text-align: center;
 		color: $unactive-color;
 
-		&:hover,
 		&.active {
 			outline: none;
 			background-image: linear-gradient( -85deg, rgb(252,196,0) 0%, rgb(246,164,15) 100%);

@@ -21,7 +21,7 @@ window.onload = function() {
 		slidesToShow: 4,
 		responsive: [
 		{
-			breakpoint: 1025,
+			breakpoint: 1041,
 			settings: {
 				slidesToShow: 2,
 				slidesToScroll: 2
@@ -36,7 +36,7 @@ window.onload = function() {
 		slidesToShow: 3,
 		responsive: [
 		{
-			breakpoint: 1025,
+			breakpoint: 1041,
 			settings: {
 				slidesToShow: 2,
 				slidesToScroll: 2
@@ -99,30 +99,6 @@ window.onload = function() {
 		});
 	});
 
-	/*#Form change*/
-
-	$('.b-btn--secondary').on('click', function() {
-		$('.b-btn--secondary').removeClass('active');
-		$(this).addClass('active');
-		var dataBtn = $(this).data('btn');
-		var dataForm = $('[data-form='+dataBtn+']');
-
-		var currentForm = $('form.active');
-
-		if (dataForm.hasClass('active')) return;
-
-
-		currentForm.stop(true, true).animate({
-			opacity: '0'
-		}, 500, function() {
-			$(this).removeClass('active');
-			dataForm.addClass('active').animate({
-				opacity: 1
-			}, 500);
-		});
-		
-	});
-
 	/*#Accordion*/
 
 	$('.b-spoiler-title').on('click', function(e) {
@@ -130,68 +106,14 @@ window.onload = function() {
 		$(this).toggleClass('active');
 	});
 
-	$('.b-vacancies__tab').on('click', function(e) {
-		$('.b-vacancies__tab').removeClass('active');
-		$(this).addClass('active');
+	$('.b-btn--secondary').on('click', tabs);
 
-		var dataBtn = $(this).data('job');
-		var dataVacancy = $('[data-vacancy=' + dataBtn + ']');
-		var vacancy = $('.b-vacancy-container');
+	$('.b-vacancies__tab').on('click', tabs);
 
-		if (dataVacancy.hasClass('active')) return;
+	$('.s-head__nav-btn').on('click', tabs);
 
-		vacancy.stop(true, true).animate({
-			opacity: 0
-		}, 300 , function() {
-			vacancy.removeClass('active');
+	$('.messages .b-btn-app').on('click', tabs);
 
-			dataVacancy.addClass('active').animate({
-				opacity: 1
-			}, 300);
-		});
-	});
-
-	$('.s-head__nav-btn').on('click', function(e) {
-		var dataBtn = $(this).data('btn');
-		var content = $('[data-content=' + dataBtn + ']');
-		var currentContent = $('.s-profile__container');
-
-		$('.s-head__nav-btn').removeClass('active');
-		$(this).addClass('active');
-
-		if (content.hasClass('active')) return;
-
-		currentContent.stop(true, true).animate({
-			opacity: 0
-		}, 300 , function() {
-			currentContent.removeClass('active');
-
-			content.addClass('active').animate({
-				opacity: 1
-			}, 300);
-		});
-	});
-
-	$('.messages .b-btn-app').on('click', function(e) {
-		var dataBtn = $(this).data('btn');
-		var content = $('[data-content=' + dataBtn + ']');
-		var currentContent = $('.s-profile__container');
-
-		$('.s-head__nav-btn').removeClass('active');
-		$(this).addClass('active');
-
-		if (content.hasClass('active')) return;
-
-		currentContent.stop(true, true).animate({
-			opacity: 0
-		}, 300 , function() {
-			currentContent.removeClass('active');
-
-			content.addClass('active').animate({
-				opacity: 1
-			}, 300);
-		});
-	});
 
 	/*#Pagination*/
 
@@ -232,12 +154,14 @@ window.onload = function() {
 	});
 
 	/*#Redacting*/
+
 	var inp = $('.profile__input input');
+
 	$('.profile__input label').on('click', function(e) {
 		inp.attr('disabled', false);
 	});
 
-	inp.focusout(function(){
+	inp.focusout(function() {
 		$(this).attr('disabled', true);
 	});
 
@@ -270,8 +194,7 @@ window.onload = function() {
 			reader.readAsDataURL(file);
 			$(this).parent().parent().before(div);
 			div.append(img);
-			div.append(title);
-			
+			div.append(title);	
 		}
 	});
 
@@ -375,4 +298,26 @@ function fieldFiller (datacity, url) {
 		}
 	});
 
+}
+
+function tabs() {
+	var dataBtn = $(this).data('btn');
+	var content = $('[data-content=' + dataBtn + ']');
+	var currentContent = $('.tab-content');
+	var clName = '.' + this.className.split(' ')[0];
+
+	if ($(content).hasClass('is-showed')) return;
+
+	$(clName).removeClass('active');
+	$(this).addClass('active');
+
+	currentContent.stop(true, true).animate({
+		opacity: 0
+	}, 300 , function() {
+		currentContent.removeClass('is-showed');
+
+		content.addClass('is-showed').animate({
+			opacity: 1
+		}, 300);
+	});
 }

@@ -262,6 +262,13 @@
 			}
 		}
 	}
+	.s-about {
+		background-position: 80% 0;
+	}
+
+	.s-about-info {
+		padding-right: 1rem;
+	}
 
 	.s-main {
 		background-position: 50% 100%;
@@ -361,21 +368,15 @@
 	}
 	
 	.b-contact {
-		width: calc(50% - 1rem);
-		height: auto;
-		
-		svg { margin: 0;}
-
+		width: 23rem;
+		height: 23rem;
 		&-wrap {
 			align-content: flex-start;
 			align-items: flex-start;
 		}
 
-		&__title {
-
-		}
-
-		&__link {
+		&__link,
+		a {
 			font-size: 1.4rem;
 			word-wrap: break-word;
 		}

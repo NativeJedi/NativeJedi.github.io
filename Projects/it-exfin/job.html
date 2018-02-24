@@ -62,17 +62,15 @@
 				</div>
 
 				<div class="b-vacancies">
-
-					<!--data-jobBtn and data-vacancy must be the same!-->
-
+					<!--data-btn and data-content must be the same!-->
 					<div class="b-vacancies__tab-container">
 						<h3 class="b-vacancies__tab-title">Выберите категорию</h3>
-						<button data-job="management" class="b-vacancies__tab active">Менеджеры</button>
-						<button data-job="it" class="b-vacancies__tab">IT-специалисты</button>
-						<button data-job="top-management" class="b-vacancies__tab">Топ-менеджмент</button>
+						<button data-btn="management" class="b-vacancies__tab active">Менеджеры</button>
+						<button data-btn="it" class="b-vacancies__tab">IT-специалисты</button>
+						<button data-btn="top-management" class="b-vacancies__tab">Топ-менеджмент</button>
 					</div>
 
-					<div class="b-vacancy-container active" data-vacancy="management" >
+					<div class="tab-content is-showed" data-content="management" >
 						<div class="b-vacancy">
 							<h4 class="b-spoiler-title">Менеджер по работе с клиентами</h4>
 							<div class="b-spoiler-content">
@@ -216,7 +214,7 @@
 						</div>
 					</div>
 
-					<div class="b-vacancy-container" data-vacancy="it" >
+					<div class="tab-content" data-content="it" >
 						<div class="b-vacancy">
 							<h4 class="b-spoiler-title">Front-end developer</h4>
 							<div class="b-spoiler-content">
@@ -374,7 +372,7 @@
 						</div>
 					</div>
 
-					<div class="b-vacancy-container" data-vacancy="top-management">
+					<div class="tab-content" data-content="top-management">
 						<div class="b-vacancy">
 							<h4 class="b-spoiler-title">Менеджер по работе с клиентами</h4>
 							<div class="b-spoiler-content">

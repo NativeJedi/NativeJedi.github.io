@@ -211,14 +211,8 @@ window.onload = function() {
 		formFadeOut(e, $('.b-main-form--popup'), $('.overlay'), $('.blur'));
 	});
 
-	$('.b-btn-primary[type="submit"]').on('click', function() {
-		/*var parent = $(this).parent();
-		while(parent && parent.nodeType !== 9) {
-			if (parent.tagName == "FORM") {
-				break;
-			}
-			parent = parent.parent();
-		}*/
+	$('.b-main-form--popup .b-btn-primary').on('click', function(e) {
+		e.preventDefault();
 
 		$('.b-main-form--popup').fadeOut(function() {
 			$('.f-form').css({

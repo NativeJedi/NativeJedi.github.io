@@ -1218,7 +1218,8 @@ fieldset {
 			}
 		}
 
-		&-btn {
+		&-btn,
+		&-link {
 			border: none;
 			background-color: transparent;
 			text-transform: uppercase;
@@ -1232,6 +1233,15 @@ fieldset {
 		&--primary {
 			width: 100%;
 			justify-content: center;
+
+			a {
+				padding: 3rem 2rem;
+				
+				&:hover {
+					color: #000;
+					background: $main-gradient;
+				}
+			}
 		}
 	}
 }
@@ -2638,10 +2648,13 @@ fieldset {
 	}
 }
 
-.messages {
+.messages,
+.chat {
 	width: 85%;
 	margin: 0 auto;
-	
+}
+
+.messages {	
 	&__container {
 		margin: 4rem auto;
 	}
@@ -2665,6 +2678,7 @@ fieldset {
 
 	&__nav {
 		text-align: center;
+
 		&-btn {
 			border: 2px solid transparent;
 			background-color: transparent;
@@ -2677,10 +2691,6 @@ fieldset {
 			}
 		}
 	}
-
-	.b-btn-app {
-		float: right;
-	}
 }
 
 .message {
@@ -2690,7 +2700,7 @@ fieldset {
 	align-items: center;
 	height: 5rem;
 	border-bottom: 5px solid #fff;
-	
+	cursor: pointer;
 
 	&__text,
 	&__date {
@@ -2731,6 +2741,125 @@ fieldset {
 	}
 	
 }
+
+/*#Chat */
+
+.support-btn {
+	float: right;
+}
+
+.chat {
+	$padding: 6.5rem;
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem $padding;
+		background-color: $second-color;
+	}
+
+	&__from {
+		margin: 0;
+		font-size: 16px;
+		line-height: 1.2;
+		color: $first-color;
+	}
+
+	&__date {
+		font-weight: bold;
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		max-height: 57.5rem;
+		overflow-y: scroll;
+		padding: 0 $padding;
+		margin: 2rem 0;
+		@include scrollbar(5px, $first-color);
+	}
+
+	&__message {
+		position: relative;
+		max-width: 80%;
+		margin: 2rem 0 0 0;
+		padding: 3rem 6rem 3rem 3rem;
+
+		p {
+			margin: 0 0 2rem 0;
+			font-size: 14px;
+			line-height: 1.286;
+
+			&::not(b) {
+				color: rgb(134, 134, 134);
+			}
+		}
+		
+		&-date {
+			font-size: 12px;
+			color: rgb(164, 164, 164);
+			line-height: 1.2;
+		}
+
+		&:before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			width: 2.5rem;
+			height: 6.5rem;
+		}
+
+		&--received {
+			$color: #fafafa;
+			background-color: $color;
+			border-radius: 1rem 1rem 1rem 0;
+
+			&:before {
+				left: 0;
+				transform: translateX(-100%);
+				background: radial-gradient(4rem 7rem at top left,
+					transparent 90%, $color 90%);
+			}
+		}
+
+		&--sended {
+			$color: $second-color;
+			align-self: flex-end;
+			background-color: $color;
+			border-radius: 1rem 1rem 0 1rem;
+
+			&:before {
+				right: 0;
+				transform: translateX(100%);
+				background: radial-gradient(4rem 7rem at top right,
+					transparent 90%, $color 90%);
+			}
+		}
+	}
+
+	&__send {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-right: $padding;
+
+		&-input {
+			border: none;
+			background-color: #fafafa;
+			padding: 2rem 2rem 2rem $padding;
+			width: calc(100% - 6rem);
+			font-size: 14px;
+			border-radius: 1rem;
+		}
+
+		&-btn {
+			color: $first-color;
+			vertical-align: middle;
+			font-size: 3rem;
+		}
+	}
+}
+
 /*#Forms*/
 
 .b-main-form {
@@ -2925,28 +3054,6 @@ fieldset {
 		}
 
 		.b-form-item__slider { margin-top: 3rem;}
-
-		.b-btn-close {
-			border-radius: 50%;
-			border-width: 3px;
-			transition: all .3s;
-
-			&:before,
-			&:after {
-				height: 60%;
-				width: 3px;
-				transition: all .3s;
-			}
-
-			&:hover {
-				border-color: $first-color;
-				transform: scale(1.2);
-				&:before,
-				&:after {
-					background-color: $first-color;
-				}
-			}
-		}
 	}
 }
 
@@ -3474,7 +3581,28 @@ fieldset {
 		&:before {
 			transform: translate(-50%, -50%) rotate(-45deg);
 		}
+		
+		&--bolder {
+			border-radius: 50%;
+			border-width: 3px;
+			transition: all .3s;
 
+			&:before,
+			&:after {
+				height: 60%;
+				width: 3px;
+				transition: all .3s;
+			}
+
+			&:hover {
+				border-color: $first-color;
+				transform: scale(1.2);
+				&:before,
+				&:after {
+					background-color: $first-color;
+				}
+			}
+		}
 	}
 
 	&--secondary {

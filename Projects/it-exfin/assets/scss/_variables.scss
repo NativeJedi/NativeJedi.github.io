@@ -3,15 +3,13 @@ $unactive-color: #959595;
 $gradient-color:  #f6a40f;
 $second-color: #FFF9E5;
 $default-bg: rgb(235, 235, 235);
-
 $main-gradient: linear-gradient( -85deg, rgb(246,164,15)  0%, rgb(252,196,0)100%);
 $main-opacity-gradient: linear-gradient( -60deg, 
 		rgba(245,152,9, .85) 0%, rgba(248,174,6, .85) 15%, 
 		rgba(251,196,3, .85) 100%);
-
 $secondary-gradient: linear-gradient( -90deg,rgb(0,0,0) 0%, rgb(67,67,67) 100%);
-
 $default-gradient: linear-gradient( -85deg, rgb(253,251,251) 0%, rgb(235,237,238) 100%);
 $radial-gradient: radial-gradient( 100% 70% at top, #fff 80%, rgba(248,174,6, .9) 80%);
+
 $form-border-radius: 3rem;
 $section-border-radius: 50% 12rem;

@@ -2160,43 +2160,6 @@ fieldset {
 	color: #b7b7b7;
 	line-height: 1.7;
 
-	&-checkbox {
-		$h: 10px;
-
-		input {
-			display: none;
-
-			&:checked + label:before {
-				content: "\2713";
-				font-size: 16px;
-				font-weight: bold;
-				color: $first-color;
-				text-align: center;
-				line-height: $h;
-				border-color: $first-color;
-			}
-
-			&:checked + label {
-				color: $first-color;
-			}
-		}
-
-		label {
-			position: relative;
-			padding-left: 2rem;
-			cursor: pointer;
-
-			&:before {
-				content: "";
-				@include centY;
-				left: 0;
-				width:  $h;
-				height: $h;
-				border: 2px solid #ccc;
-			}
-		}	
-	}
-
 	&-link {
 		line-height: 1.5;
 		border-bottom: 1px solid currentcolor;
@@ -2857,6 +2820,253 @@ fieldset {
 			vertical-align: middle;
 			font-size: 3rem;
 		}
+	}
+}
+
+.s-question {
+	overflow: hidden;
+	&__head {
+		text-align: center;
+	}
+}
+
+.questionnaire {
+	position: relative;
+	width: pxtopercent(545);
+	margin: 0 auto;
+
+	&__step {
+		&:not(:first-of-type) {
+			display: none;
+		}
+	}
+	
+	&__step-title {
+		text-align: center;
+		font-size: 18px;
+		color: rgb(48, 48, 48);
+		text-transform: uppercase;
+		line-height: 1.2;
+	}
+
+	&-progress {
+		position: relative;
+		height: 3px;
+		margin: 2rem auto 7rem auto;
+		background-color: #E8E8E8;
+
+		&__line {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: inline-block;
+			width: 16.66%;
+			height: 100%;
+			background-color: $first-color;
+			
+			&:before {
+				content:"Шаг 1";
+				@include centX;
+				bottom: -1.8rem;
+				font-size: 12px;
+				color: rgb(196, 196, 196);
+				font-weight: 500;
+			}
+
+			@for $i from 2 to 7 {
+				$steps: 'Шаг 1' 'Шаг 2' 'Шаг 3' 
+				'Шаг 4' 'Шаг 5' 'Шаг 6';
+				
+				&.step-#{$i} {
+					transform: translateX(#{($i - 1)*10}0%);
+
+					&:before {
+						content: nth($steps, $i);
+					}
+				}
+			}
+		}
+	}
+
+	&__field {
+		padding: 0;
+
+		&:last-of-type {
+			margin-bottom: 5rem;
+		}
+	}
+
+	&__caption {
+		position: relative;
+		margin: 3rem 0;
+		padding: 1rem 0;
+		font-size: 18px;
+		color: rgb(48, 48, 48);
+		line-height: 1.2;
+		background-color: $second-color;
+		text-align: center;
+
+		&:before,
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			height: 100%;
+			width: 9000rem;
+			background-color: $second-color;
+		}
+
+		&:before {
+			left: 0;
+			transform: translateX(-100%);
+		}
+
+		&:after {
+			right: 0;
+			transform: translateX(100%);
+		}
+	}
+
+	&__item {
+		margin-bottom: 3rem;
+
+		&-notification {
+			display: inline-block;
+			margin: 1rem 0 0 1rem;
+			font-size: 12px;
+			color: rgb(185, 185, 185);
+			line-height: 1.2;
+			font-weight: 500;
+		}
+
+		&--column {
+			div {
+				margin-bottom: 1.5rem;
+			}
+		}
+	}
+
+	&__label {
+		display: block;
+		margin-bottom: 1.5rem;
+		padding-left: 1rem;
+		color: rgb(83, 83, 83);
+		line-height: 1.2;
+		font-weight: bold;
+
+		&[for] {
+			cursor: pointer;
+		}
+	}
+
+	&__input {
+		width: 100%;
+		padding:  1rem 2rem;
+		border-radius: 10px;
+		background-color: rgb(249, 249, 249);
+		border: none;
+
+		&[disabled] {
+			&::placeholder {
+				color: #ccc;
+			}
+			background-color: #fafafa;
+		}
+
+		&-telholder {
+			display: inline-block;
+			width: 8%;
+			text-align: center;
+		}
+
+		&--phone {
+			width: 91%;
+		}
+
+		%inp-mod {
+			text-align: center;
+			letter-spacing: 3px;
+			text-transform: uppercase;
+		}
+		&--serial,
+		&--serial-numb {
+			@extend %inp-mod;
+		}
+
+		&--serial {
+			padding: inherit 0;
+			width: 6.5rem;
+			margin-right: 4rem;
+			&-numb {
+				width: 17rem;	
+			}
+		}
+
+		&--payment {
+			@extend %inp-mod;
+		}
+	}
+
+	&__multiple {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+
+		&-item {
+			margin-right: 2rem;
+		}
+
+		&--flexs {
+			justify-content: flex-start;
+		}
+	}
+
+	&__list {
+		padding-left: 0;
+		list-style-position: inside;
+
+		&-item {
+			font-weight: bold;
+
+			.questionnaire__item {
+				font-weight: normal;
+			}
+		}
+
+		&-caption {
+			display: inline-block;
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+.b-select {
+	padding: .5rem 0 .5rem 1rem;
+	border-radius: 10px;
+	background-color: rgb(249, 249, 249);
+	border: none;
+
+	&[disabled] {
+		color: #ccc;
+		background-color: #fafafa;
+	}
+
+	&--days {
+		margin-right: 1rem;
+	}
+
+	&--years {
+		margin-left: 1rem;
+	}
+
+	&-label {
+		margin: 0 3rem 0 1rem;
+	}
+
+	&--stretch {
+		width: 100%;
+		font-weight: 500;
 	}
 }
 
@@ -3581,7 +3791,7 @@ fieldset {
 		&:before {
 			transform: translate(-50%, -50%) rotate(-45deg);
 		}
-		
+
 		&--bolder {
 			border-radius: 50%;
 			border-width: 3px;
@@ -3691,6 +3901,43 @@ fieldset {
 }
 
 /*#Inputs*/
+
+.b-checkbox {
+	$h: 10px;
+
+	input {
+		display: none;
+
+		&:checked + label:before {
+			content: "\2713";
+			font-size: 16px;
+			font-weight: bold;
+			color: $first-color;
+			text-align: center;
+			line-height: $h;
+			border-color: $first-color;
+		}
+
+		&:checked + label {
+			color: $first-color;
+		}
+	}
+
+	label {
+		position: relative;
+		padding-left: 2rem;
+		cursor: pointer;
+
+		&:before {
+			content: "";
+			@include centY;
+			left: 0;
+			width:  $h;
+			height: $h;
+			border: 2px solid #ccc;
+		}
+	}	
+}
 
 .b-input {
 	position: relative;

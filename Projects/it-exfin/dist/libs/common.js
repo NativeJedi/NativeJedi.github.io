@@ -169,8 +169,10 @@ window.onload = function() {
 	$('input[type=file]').on('change', function(e) {
 		var reader = new FileReader();
 
-		for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
-			var file = e.originalEvent.srcElement.files[i];
+		var targ = getTarget(e);
+
+		for (var i = 0; i < targ.files.length; i++) {
+			var file = targ.files[i];
 			var img = document.createElement("img");
 			var div = document.createElement('div');
 			div.classList.add('profile__doc');
@@ -233,6 +235,80 @@ window.onload = function() {
 			},400)
 		})
 	});
+
+	styleSelect($('.b-select--days'), 'numb' , 1, 31);
+	styleSelect($('.b-select--years'), 'year' , 1920, 2000);
+
+	
+
+	$('input[name=switchCitizen]').on('click', function(e) {
+		disableSelect($(this), $('#citizen'));
+	});
+
+	$('input[name=switchRegistration]').on('click', function(e) {
+		disableSelect($(this), $('#selectRegistration'));
+	});
+
+	$('#the-same').on('click', function(e){
+		var data = $(this).data('disable');
+		var field = '[data-field=' + data + ']';
+		var inputs = $(field + ' input');
+		var nextField = $(field);
+
+		if(this.checked) {
+			inputs.attr('disabled', true);
+      nextField.fadeOut(400); 
+    } else { 
+    	inputs.attr('disabled', false); 
+    	nextField.fadeIn(400);
+    }
+  });
+
+  $('input[name=switchDeal]').on('click', function() {
+  	var field = $('#hideDeal');
+
+  	if ($(this).val() === 'on') {
+  		field.fadeIn();
+  	} else {
+  		field.fadeOut();
+  	}
+  });
+
+  $('.questionnaire .b-btn-primary').not('[type=submit]').on('click', function(e) {
+  	e.preventDefault();
+  	var currentStep = $(this).parent();
+  	var nextStep = $(this).parent().next('.questionnaire__step');
+
+  	console.log(currentStep)
+  	currentStep.fadeOut(400, function() {
+  		nextStep.fadeIn(400);
+  	})
+  });
+}
+
+function disableSelect(context, select) {
+	if(context.val() === 'on') {
+		select.attr('disabled', false);
+	} else {
+		select.attr('disabled', true);
+	}
+}
+
+function styleSelect(el, type, from, to) {
+
+	if(type === 'numb') {
+		for(var i = from; i <= to; i++) {
+			var option = $('<option>').val(i).html(i);
+			el.append(option);
+		}
+	}
+
+	if(type === 'year') {
+		for(var i = to; i >= from; i--) {
+			var option = $('<option>').val(i).html(i);
+			el.append(option);
+		}
+	}
 }
 
 function formFadeOut(e, form, overlay, blur) {
@@ -300,7 +376,6 @@ function Slider(initialId, min, max) {
 }
 
 function fieldFiller (datacity, url) {
-
 	$.ajax({
 		url: url,
 		success: function(data) {
@@ -342,4 +417,14 @@ function tabs() {
 			opacity: 1
 		}, 300);
 	});
+}
+
+function getTarget(obj) {
+	var targ;
+	var e=obj;
+	if (e.target) targ = e.target;
+	else if (e.srcElement) targ = e.srcElement;
+  if (targ.nodeType == 3) // defeat Safari bug
+  	targ = targ.parentNode;
+  return targ;
 }

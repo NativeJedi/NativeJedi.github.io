@@ -2652,33 +2652,6 @@ fieldset {
   font-size: 1.2rem;
   color: #b7b7b7;
   line-height: 1.7; }
-  .b-remind-checkbox input {
-    display: none; }
-    .b-remind-checkbox input:checked + label:before {
-      content: "\2713";
-      font-size: 16px;
-      font-weight: bold;
-      color: #FCC504;
-      text-align: center;
-      line-height: 10px;
-      border-color: #FCC504; }
-    .b-remind-checkbox input:checked + label {
-      color: #FCC504; }
-  .b-remind-checkbox label {
-    position: relative;
-    padding-left: 2rem;
-    cursor: pointer; }
-    .b-remind-checkbox label:before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-          -ms-transform: translateY(-50%);
-              transform: translateY(-50%);
-      left: 0;
-      width: 10px;
-      height: 10px;
-      border: 2px solid #ccc; }
   .b-remind-link {
     line-height: 1.5;
     border-bottom: 1px solid currentcolor; }
@@ -3214,6 +3187,205 @@ fieldset {
     color: #FCC504;
     vertical-align: middle;
     font-size: 3rem; }
+
+.s-question {
+  overflow: hidden; }
+  .s-question__head {
+    text-align: center; }
+
+.questionnaire {
+  position: relative;
+  width: 46.5812%;
+  margin: 0 auto; }
+  .questionnaire__step:not(:first-of-type) {
+    display: none; }
+  .questionnaire__step-title {
+    text-align: center;
+    font-size: 18px;
+    color: #303030;
+    text-transform: uppercase;
+    line-height: 1.2; }
+  .questionnaire-progress {
+    position: relative;
+    height: 3px;
+    margin: 2rem auto 7rem auto;
+    background-color: #E8E8E8; }
+    .questionnaire-progress__line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: 16.66%;
+      height: 100%;
+      background-color: #FCC504; }
+      .questionnaire-progress__line:before {
+        content: "Шаг 1";
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+                transform: translateX(-50%);
+        bottom: -1.8rem;
+        font-size: 12px;
+        color: #c4c4c4;
+        font-weight: 500; }
+      .questionnaire-progress__line.step-2 {
+        -webkit-transform: translateX(100%);
+            -ms-transform: translateX(100%);
+                transform: translateX(100%); }
+        .questionnaire-progress__line.step-2:before {
+          content: "Шаг 2"; }
+      .questionnaire-progress__line.step-3 {
+        -webkit-transform: translateX(200%);
+            -ms-transform: translateX(200%);
+                transform: translateX(200%); }
+        .questionnaire-progress__line.step-3:before {
+          content: "Шаг 3"; }
+      .questionnaire-progress__line.step-4 {
+        -webkit-transform: translateX(300%);
+            -ms-transform: translateX(300%);
+                transform: translateX(300%); }
+        .questionnaire-progress__line.step-4:before {
+          content: "Шаг 4"; }
+      .questionnaire-progress__line.step-5 {
+        -webkit-transform: translateX(400%);
+            -ms-transform: translateX(400%);
+                transform: translateX(400%); }
+        .questionnaire-progress__line.step-5:before {
+          content: "Шаг 5"; }
+      .questionnaire-progress__line.step-6 {
+        -webkit-transform: translateX(500%);
+            -ms-transform: translateX(500%);
+                transform: translateX(500%); }
+        .questionnaire-progress__line.step-6:before {
+          content: "Шаг 6"; }
+  .questionnaire__field {
+    padding: 0; }
+    .questionnaire__field:last-of-type {
+      margin-bottom: 5rem; }
+  .questionnaire__caption {
+    position: relative;
+    margin: 3rem 0;
+    padding: 1rem 0;
+    font-size: 18px;
+    color: #303030;
+    line-height: 1.2;
+    background-color: #FFF9E5;
+    text-align: center; }
+    .questionnaire__caption:before, .questionnaire__caption:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 9000rem;
+      background-color: #FFF9E5; }
+    .questionnaire__caption:before {
+      left: 0;
+      -webkit-transform: translateX(-100%);
+          -ms-transform: translateX(-100%);
+              transform: translateX(-100%); }
+    .questionnaire__caption:after {
+      right: 0;
+      -webkit-transform: translateX(100%);
+          -ms-transform: translateX(100%);
+              transform: translateX(100%); }
+  .questionnaire__item {
+    margin-bottom: 3rem; }
+    .questionnaire__item-notification {
+      display: inline-block;
+      margin: 1rem 0 0 1rem;
+      font-size: 12px;
+      color: #b9b9b9;
+      line-height: 1.2;
+      font-weight: 500; }
+    .questionnaire__item--column div {
+      margin-bottom: 1.5rem; }
+  .questionnaire__label {
+    display: block;
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    color: #535353;
+    line-height: 1.2;
+    font-weight: bold; }
+    .questionnaire__label[for] {
+      cursor: pointer; }
+  .questionnaire__input {
+    width: 100%;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    border: none; }
+    .questionnaire__input[disabled] {
+      background-color: #fafafa; }
+      .questionnaire__input[disabled]::-webkit-input-placeholder {
+        color: #ccc; }
+      .questionnaire__input[disabled]:-ms-input-placeholder {
+        color: #ccc; }
+      .questionnaire__input[disabled]::-ms-input-placeholder {
+        color: #ccc; }
+      .questionnaire__input[disabled]::placeholder {
+        color: #ccc; }
+    .questionnaire__input-telholder {
+      display: inline-block;
+      width: 8%;
+      text-align: center; }
+    .questionnaire__input--phone {
+      width: 91%; }
+    .questionnaire__input .questionnaire__input--serial, .questionnaire__input .questionnaire__input--serial-numb, .questionnaire__input .questionnaire__input--payment {
+      text-align: center;
+      letter-spacing: 3px;
+      text-transform: uppercase; }
+    .questionnaire__input--serial {
+      padding: inherit 0;
+      width: 6.5rem;
+      margin-right: 4rem; }
+      .questionnaire__input--serial-numb {
+        width: 17rem; }
+  .questionnaire__multiple {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .questionnaire__multiple-item {
+      margin-right: 2rem; }
+    .questionnaire__multiple--flexs {
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start; }
+  .questionnaire__list {
+    padding-left: 0;
+    list-style-position: inside; }
+    .questionnaire__list-item {
+      font-weight: bold; }
+      .questionnaire__list-item .questionnaire__item {
+        font-weight: normal; }
+    .questionnaire__list-caption {
+      display: inline-block;
+      margin-bottom: 1rem; }
+
+.b-select {
+  padding: .5rem 0 .5rem 1rem;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  border: none; }
+  .b-select[disabled] {
+    color: #ccc;
+    background-color: #fafafa; }
+  .b-select--days {
+    margin-right: 1rem; }
+  .b-select--years {
+    margin-left: 1rem; }
+  .b-select-label {
+    margin: 0 3rem 0 1rem; }
+  .b-select--stretch {
+    width: 100%;
+    font-weight: 500; }
 
 /*#Forms*/
 .b-main-form {
@@ -3911,6 +4083,35 @@ fieldset {
               box-shadow: 0 0 10px #ccc; }
 
 /*#Inputs*/
+.b-checkbox input {
+  display: none; }
+  .b-checkbox input:checked + label:before {
+    content: "\2713";
+    font-size: 16px;
+    font-weight: bold;
+    color: #FCC504;
+    text-align: center;
+    line-height: 10px;
+    border-color: #FCC504; }
+  .b-checkbox input:checked + label {
+    color: #FCC504; }
+
+.b-checkbox label {
+  position: relative;
+  padding-left: 2rem;
+  cursor: pointer; }
+  .b-checkbox label:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #ccc; }
+
 .b-input {
   position: relative;
   width: 27rem; }

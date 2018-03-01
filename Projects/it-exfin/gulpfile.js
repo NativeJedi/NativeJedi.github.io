@@ -12,7 +12,7 @@ rename       		 = require('gulp-rename'),
 svgmin       		 = require('gulp-svgmin'),
 inject       		 = require('gulp-inject');
 
-var svgWatch            = './dist/img/svgstore/temp/*.svg';
+var svgWatch            = './dist/img/svgstore/icons/*.svg';
 var svgIconsSource      = './sprite.svg';
 var svgIconsDestination = './';
 

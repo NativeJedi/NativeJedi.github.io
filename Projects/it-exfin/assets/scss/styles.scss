@@ -624,23 +624,10 @@ fieldset {
 
 	&__info {
 		position: relative;
-		min-height: 14rem;
 		margin-bottom: 2rem;
 		line-height: 1.5;		
 		color: rgba(17, 17, 17, 0.702);
 		font-size: 18px;
-
-		p {
-			@include centY;
-			margin: 0;
-			width: 100%;
-			opacity: 0;
-			transition: 1s;
-
-			&.active {
-				opacity: 1;
-			}
-		}
 	}
 
 	&__icon {
@@ -648,46 +635,66 @@ fieldset {
 	}
 
 	&__person {
-		display: flex;
-		align-items: center;
 		cursor: pointer;
-
-		&-wrapper {
-			display: flex;
-			justify-content: space-around;
-		}
+		text-align: center;
+		transform: translateX(2%);
 
 		&-img {
 			position: relative;
+			display: inline-block;
 			width: 8rem;
 			height: 8rem;
 			border-radius: 50%;
+			vertical-align: middle;
 			overflow: hidden;
 
-			@include img-gradient($first-color, .4);
+			&:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				border-radius: 50%;
+			}
 		}
 
 		&-info {
+			display: inline-block;
+			vertical-align: middle;
 			padding: 0 2rem;
 			transition: opacity .4s;
 			opacity: .5;
+			text-align: left;
 
 			p {
 				margin: 0;
 				line-height: 1.3;
 			}
 		}
+	}
 
-		&.active {
-			.b-review__person-img {
-				&:after {
-					transition: all .4s;
-					opacity: 0;
-				}
-			}
+	.slick-arrow {
+		@include centY;
 
-			.b-review__person-info {
-				opacity: 1;
+		&:before {
+			color: $first-color;
+		}
+	}
+
+	.slick-prev {
+		left: 0;
+	}
+
+	.slick-next {
+		right: 0;
+	}
+
+	.slick-center {
+		.b-review__person-img {
+			&:before {
+				background-image: linear-gradient(0deg, 
+					rgba($first-color, .5));
 			}
 		}
 	}
@@ -1044,7 +1051,7 @@ fieldset {
 				background-color: #fff;
 			}
 		}
-		
+
 		padding: 1rem;
 		max-width: 27rem;
 
@@ -1236,7 +1243,7 @@ fieldset {
 
 			a {
 				padding: 3rem 2rem;
-				
+
 				&:hover {
 					color: #000;
 					background: $main-gradient;
@@ -1343,7 +1350,7 @@ fieldset {
 			}
 		}
 	}
-	
+
 }
 
 /*#Response section*/
@@ -1491,7 +1498,7 @@ fieldset {
 .b-sidebar {
 	width: 27rem;
 	padding: 4rem 0;
-	
+
 	.b-blog-item {
 		margin: 0;
 	}
@@ -1538,7 +1545,7 @@ fieldset {
 	&-slider {
 		min-height: 90rem;
 	}
-	
+
 	&-container {
 		display: none;
 		flex-wrap: wrap;
@@ -2057,7 +2064,7 @@ fieldset {
 					bottom: 0;
 					font-size: 4rem;
 				}
-				
+
 				&--phone-call {
 					top: 0;
 					font-size: 3rem;
@@ -2180,7 +2187,7 @@ fieldset {
 	border-bottom-left-radius: $section-border-radius;
 	border-bottom-right-radius: $section-border-radius;
 	overflow: hidden;
-	
+
 	.wrapper {
 		min-height: 49rem;
 	}
@@ -2230,7 +2237,7 @@ fieldset {
 		margin: 0 0 .5rem 0;
 		font-size: 16px;
 		color: rgb(139, 139, 139);
-		
+
 		&--upper {
 			text-transform: uppercase;
 		}
@@ -2319,7 +2326,7 @@ fieldset {
 	&__doc {
 		width: 145px;
 		margin: 1rem 1rem 0 0;
-		
+
 		&--default {
 			height: 96px;
 		}
@@ -2472,7 +2479,7 @@ fieldset {
 
 .program {
 	margin: 2rem 0 2rem 0;
-	
+
 	&s{
 		display: flex;
 		justify-content: space-between;
@@ -2702,7 +2709,7 @@ fieldset {
 			background-color: $first-color;
 		}
 	}
-	
+
 }
 
 /*#Chat */
@@ -2757,7 +2764,7 @@ fieldset {
 				color: rgb(134, 134, 134);
 			}
 		}
-		
+
 		&-date {
 			font-size: 12px;
 			color: rgb(164, 164, 164);
@@ -2840,7 +2847,7 @@ fieldset {
 			display: none;
 		}
 	}
-	
+
 	&__step-title {
 		text-align: center;
 		font-size: 18px;
@@ -2863,7 +2870,7 @@ fieldset {
 			width: 16.66%;
 			height: 100%;
 			background-color: $first-color;
-			
+
 			&:before {
 				content:"Шаг 1";
 				@include centX;
@@ -2876,7 +2883,7 @@ fieldset {
 			@for $i from 2 to 7 {
 				$steps: 'Шаг 1' 'Шаг 2' 'Шаг 3' 
 				'Шаг 4' 'Шаг 5' 'Шаг 6';
-				
+
 				&.step-#{$i} {
 					transform: translateX(#{($i - 1)*10}0%);
 
@@ -3300,7 +3307,7 @@ fieldset {
 
 	&__label {
 		display: inline-block;
-		margin-right: 2rem;
+		width: 20%;
 		font-weight: bold;
 		text-transform: uppercase;
 		cursor: pointer;
@@ -3636,8 +3643,7 @@ fieldset {
 	&-login {
 		$bd-radius: 5px;
 		position: relative;
-		height: 2.5rem;
-		padding: 0 4rem 0 1.7rem ;
+		padding: .6rem 4rem .6rem 1.7rem ;
 		border: none;
 		border-radius: $bd-radius;
 		background-color: #E4E4E4;

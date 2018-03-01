@@ -1324,72 +1324,60 @@ fieldset {
   padding: 10rem 8.54701% 3.5rem 8.54701%; }
   .b-review__info {
     position: relative;
-    min-height: 14rem;
     margin-bottom: 2rem;
     line-height: 1.5;
     color: rgba(17, 17, 17, 0.702);
     font-size: 18px; }
-    .b-review__info p {
-      position: absolute;
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-          -ms-transform: translateY(-50%);
-              transform: translateY(-50%);
-      margin: 0;
-      width: 100%;
-      opacity: 0;
-      -webkit-transition: 1s;
-      -o-transition: 1s;
-      transition: 1s; }
-      .b-review__info p.active {
-        opacity: 1; }
   .b-review__person {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    cursor: pointer; }
-    .b-review__person-wrapper {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-pack: distribute;
-          justify-content: space-around; }
+    cursor: pointer;
+    text-align: center;
+    -webkit-transform: translateX(2%);
+        -ms-transform: translateX(2%);
+            transform: translateX(2%); }
     .b-review__person-img {
       position: relative;
+      display: inline-block;
       width: 8rem;
       height: 8rem;
       border-radius: 50%;
+      vertical-align: middle;
       overflow: hidden; }
-      .b-review__person-img:after {
+      .b-review__person-img:before {
         content: "";
         position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-        border-radius: 50%;
-        background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(252, 197, 4, 0.4)));
-        background-image: -o-linear-gradient(bottom, rgba(252, 197, 4, 0.4));
-        background-image: linear-gradient(0deg, rgba(252, 197, 4, 0.4)); }
+        border-radius: 50%; }
     .b-review__person-info {
+      display: inline-block;
+      vertical-align: middle;
       padding: 0 2rem;
       -webkit-transition: opacity .4s;
       -o-transition: opacity .4s;
       transition: opacity .4s;
-      opacity: .5; }
+      opacity: .5;
+      text-align: left; }
       .b-review__person-info p {
         margin: 0;
         line-height: 1.3; }
-    .b-review__person.active .b-review__person-img:after {
-      -webkit-transition: all .4s;
-      -o-transition: all .4s;
-      transition: all .4s;
-      opacity: 0; }
-    .b-review__person.active .b-review__person-info {
-      opacity: 1; }
+  .b-review .slick-arrow {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%); }
+    .b-review .slick-arrow:before {
+      color: #FCC504; }
+  .b-review .slick-prev {
+    left: 0; }
+  .b-review .slick-next {
+    right: 0; }
+  .b-review .slick-center .b-review__person-img:before {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(252, 197, 4, 0.5)));
+    background-image: -o-linear-gradient(bottom, rgba(252, 197, 4, 0.5));
+    background-image: linear-gradient(0deg, rgba(252, 197, 4, 0.5)); }
 
 .arrow {
   position: absolute;
@@ -3574,7 +3562,7 @@ fieldset {
     margin-bottom: 3rem; }
   .b-form-item__label {
     display: inline-block;
-    margin-right: 2rem;
+    width: 20%;
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer; }
@@ -3822,8 +3810,7 @@ fieldset {
       color: #FCC504; }
   .b-btn-login {
     position: relative;
-    height: 2.5rem;
-    padding: 0 4rem 0 1.7rem;
+    padding: .6rem 4rem .6rem 1.7rem;
     border: none;
     border-radius: 5px;
     background-color: #E4E4E4;
@@ -4353,6 +4340,8 @@ fieldset {
     -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
+  .b-btn-stretch {
+    text-align: center; }
   .s-advanteges {
     background-position: 100% 1200px; }
     .s-advanteges .wrapper {
@@ -4388,6 +4377,9 @@ fieldset {
     margin-top: 8rem;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
+    .b-section-cards__icons {
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
     .b-section-cards__item {
       width: 100%; }
       .b-section-cards__item:first-child {
@@ -4641,5 +4633,20 @@ fieldset {
       margin-bottom: 2rem; }
   .b-vacancies {
     width: 100%; } }
+
+@media only screen and (max-device-width: 640px) {
+  .b-section-message__item {
+    width: 90%; }
+  .popup .btn-show {
+    left: 100%; }
+  .popup-info__item-main {
+    width: auto;
+    text-align: left; }
+  .popup-info__title {
+    margin: 1rem 0; }
+  .popup-info__item {
+    margin-bottom: 1rem; }
+  .s-advanteges-message {
+    padding-right: 1rem; } }
 
 /*# sourceMappingURL=styles.css.map */

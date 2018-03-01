@@ -57,6 +57,10 @@
 		transform: translate(-50%, -50%);
 	}
 
+	.b-btn-stretch {
+		text-align: center;
+	}
+
 	.s-advanteges {
 		background-position: 100% 1200px;
 
@@ -107,6 +111,8 @@
 	.b-section-cards {
 		margin-top: 8rem;
 		flex-wrap: wrap;
+
+		&__icons { justify-content: space-around; }
 
 		&__item {
 			width: 100%;
@@ -461,3 +467,30 @@
 		width: 100%;
 	}
 }
+
+@media only screen and (max-device-width : 640px) {
+	.b-section-message__item {
+		width: 90%;
+	}
+
+	.popup .btn-show {
+		left: 100%;
+	}
+
+	.popup-info__item-main {
+		width: auto;
+		text-align: left;
+	}
+
+	.popup-info__title {
+		margin: 1rem 0;
+	}
+	.popup-info__item {
+		margin-bottom: 1rem;
+	}
+
+	.s-advanteges-message {
+		padding-right: 1rem;
+	}
+}
+

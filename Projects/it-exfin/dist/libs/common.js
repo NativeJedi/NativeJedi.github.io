@@ -44,22 +44,21 @@ window.onload = function() {
 		}]
 	});
 
-	/*#Review change*/
 
-	$('.b-review__person').on('click', function(e) {
-		$('.b-review__person').not($(this)).removeClass('active');
-		$(this).addClass('active');
-
-		var personId = $(this).attr('id');
-
-		var arr = personId.split("-");
-
-		$('.b-review__info p').removeClass('active');
-
-		$('#review-' + arr[1]).addClass('active');
-
+	$('.b-review__info').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		asNavFor: '.b-review__person-wrapper'
 	});
-
+	$('.b-review__person-wrapper').slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		asNavFor: '.b-review__info',
+		centerMode: true,
+		focusOnSelect: true
+	});
 
 	/*#Choose plan*/
 
@@ -257,33 +256,32 @@ window.onload = function() {
 
 		if(this.checked) {
 			inputs.attr('disabled', true);
-      nextField.fadeOut(400); 
-    } else { 
-    	inputs.attr('disabled', false); 
-    	nextField.fadeIn(400);
-    }
-  });
+			nextField.fadeOut(400); 
+		} else { 
+			inputs.attr('disabled', false); 
+			nextField.fadeIn(400);
+		}
+	});
 
-  $('input[name=switchDeal]').on('click', function() {
-  	var field = $('#hideDeal');
+	$('input[name=switchDeal]').on('click', function() {
+		var field = $('#hideDeal');
 
-  	if ($(this).val() === 'on') {
-  		field.fadeIn();
-  	} else {
-  		field.fadeOut();
-  	}
-  });
+		if ($(this).val() === 'on') {
+			field.fadeIn();
+		} else {
+			field.fadeOut();
+		}
+	});
 
-  $('.questionnaire .b-btn-primary').not('[type=submit]').on('click', function(e) {
-  	e.preventDefault();
-  	var currentStep = $(this).parent();
-  	var nextStep = $(this).parent().next('.questionnaire__step');
+	$('.questionnaire .b-btn-primary').not('[type=submit]').on('click', function(e) {
+		e.preventDefault();
+		var currentStep = $(this).parent();
+		var nextStep = $(this).parent().next('.questionnaire__step');
 
-  	console.log(currentStep)
-  	currentStep.fadeOut(400, function() {
-  		nextStep.fadeIn(400);
-  	})
-  });
+		currentStep.fadeOut(400, function() {
+			nextStep.fadeIn(400);
+		})
+	});
 }
 
 function disableSelect(context, select) {

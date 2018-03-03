@@ -4854,9 +4854,7 @@ fieldset {
   .b-review__person {
     -webkit-transform: translateX(4%);
         -ms-transform: translateX(4%);
-            transform: translateX(4%); } }
-
-@media only screen and (max-device-width: 375px) {
+            transform: translateX(4%); }
   .s-credits .wrapper,
   .s-review .wrapper {
     padding: 0; }
@@ -4869,14 +4867,6 @@ fieldset {
   .s-credits,
   .b-review {
     border-radius: 0; }
-  .b-section-title {
-    font-size: 2.8rem; }
-  .s-advanteges-content__item svg {
-    width: 40%;
-    height: 40%; }
-  .s-advanteges-content__item-caption {
-    margin: 0;
-    font-size: 1.3rem; }
   .b-step-title {
     font-size: 1.8rem; }
   .b-step__content {
@@ -4891,7 +4881,17 @@ fieldset {
     .b-review:after {
       display: none; }
     .b-review__person-info {
-      padding: 0 0 0 1rem; }
+      padding: 0 0 0 1rem; } }
+
+@media only screen and (max-device-width: 375px) {
+  .b-section-title {
+    font-size: 2.8rem; }
+  .s-advanteges-content__item svg {
+    width: 40%;
+    height: 40%; }
+  .s-advanteges-content__item-caption {
+    margin: 0;
+    font-size: 1.3rem; }
   .s-review {
     padding: 2rem 0 0 0; }
   .s-media {

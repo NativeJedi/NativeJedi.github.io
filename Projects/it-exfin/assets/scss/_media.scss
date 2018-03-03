@@ -688,9 +688,7 @@
 	.b-review__person {
 		transform: translateX(4%);
 	}
-}
 
-@media only screen and (max-device-width: 375px) {
 	.s-credits,
 	.s-review {
 		.wrapper{
@@ -709,22 +707,6 @@
 	.s-credits,
 	.b-review {
 		border-radius: 0;
-	}
-
-	.b-section-title {
-		font-size: 2.8rem;
-	}
-
-	.s-advanteges-content__item {
-		svg {
-			width: 40%;
-			height: 40%;
-		}
-
-		&-caption {
-			margin: 0;
-			font-size: 1.3rem;
-		}
 	}
 
 	.b-step {
@@ -756,6 +738,25 @@
 			padding: 0 0 0 1rem;
 		}
 	}
+}
+
+@media only screen and (max-device-width: 375px) {
+	
+	.b-section-title {
+		font-size: 2.8rem;
+	}
+
+	.s-advanteges-content__item {
+		svg {
+			width: 40%;
+			height: 40%;
+		}
+
+		&-caption {
+			margin: 0;
+			font-size: 1.3rem;
+		}
+	}
 
 	.s-review {
 		padding: 2rem 0 0 0;
@@ -772,16 +773,16 @@
 	}
 
 	.s-footer .s-footer__social {
-			margin-top: 1rem;
-			a:not(:last-child) {
-				margin-right: 1rem;
-			}
-			.icon {
-				padding: 0 1rem;
-				font-size: 2.8rem;
-			}
-			
+		margin-top: 1rem;
+		a:not(:last-child) {
+			margin-right: 1rem;
 		}
+		.icon {
+			padding: 0 1rem;
+			font-size: 2.8rem;
+		}
+
+	}
 
 	.b-tel,
 	.b-tel span {
@@ -794,7 +795,7 @@
 	.b-section-title {
 		font-size: 2.3rem;
 	}
-	
+
 	.s-advanteges-content {
 		align-items: flex-start;
 

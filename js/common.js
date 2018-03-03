@@ -29,7 +29,8 @@ $(document).ready(function() {
 		heightDetect();
 	});*/
 
-	$(".btn-menu").click(function() {
+	$(".btn-menu").click(function(e) {
+		e.stopPropagation();
 		$(".btn-menu").toggleClass("active");
 	});
 

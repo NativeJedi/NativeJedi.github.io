@@ -20,13 +20,19 @@ window.onload = function() {
 		speed: 300,
 		slidesToShow: 4,
 		responsive: [
-		{
-			breakpoint: 1041,
-			settings: {
-				slidesToShow: 2,
-				slidesToScroll: 2
+			{
+				breakpoint: 1041,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2}
+			},
+			{
+				breakpoint: 668,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1}
 			}
-		}]
+		]
 	});
 
 	$('.b-response-wrap').slick({
@@ -57,8 +63,23 @@ window.onload = function() {
 		slidesToScroll: 1,
 		asNavFor: '.b-review__info',
 		centerMode: true,
-		focusOnSelect: true
-	});
+		focusOnSelect: true,
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1}
+			},
+			{
+				breakpoint: 641,
+				settings: {
+					slidesToShow: 1,
+					centerMode: false,
+					slidesToScroll: 1}
+				}
+			]
+		});
 
 	/*#Choose plan*/
 
@@ -281,6 +302,11 @@ window.onload = function() {
 		currentStep.fadeOut(400, function() {
 			nextStep.fadeIn(400);
 		})
+	});
+
+	$('.mobile-menu').on('click', function(e) {
+		$(this).toggleClass('active');
+		$('.wrapper').toggleClass('active');
 	});
 }
 

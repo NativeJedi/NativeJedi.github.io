@@ -88,16 +88,27 @@ fieldset {
 		display: flex;
 		align-items: center;
 		padding: 2rem 0;
+		transition: max-height .4s;
+		overflow: hidden;
+		
+		&.active {
+			max-height: 60rem;
+		}
 	}
 
 	&__phone {
 		padding-top: .2rem;
 		margin: 0 auto 0 0;
+		font-weight: bold;
 
 		a {
 			display: block;
 			font-size: 2.3rem;
 			color: $first-color;
+		}
+
+		&--nodisp {
+			display: none;
 		}
 	}
 
@@ -1032,6 +1043,8 @@ fieldset {
 	}
 
 	&-referal {
+		padding: 1rem;
+		max-width: 27rem;
 
 		&-wrap {
 			position: relative;
@@ -1052,9 +1065,6 @@ fieldset {
 			}
 		}
 
-		padding: 1rem;
-		max-width: 27rem;
-
 		&__title {
 			margin: 0;
 			color: $first-color;
@@ -1072,6 +1082,28 @@ fieldset {
 			margin: 0;
 		}
 	}
+	
+	%social {
+		a {
+			transition: color .3s;
+
+			&:not(:last-child) {
+				margin-right: 2rem;
+			}
+
+			&:hover {
+				color: #fff;
+			}
+		}
+		.icon {
+			padding: 0 2rem;
+			font-size: 3rem;
+		}
+	}
+
+	&__social {
+		@extend %social;
+	}
 
 	&-base {
 		display: flex;
@@ -1085,21 +1117,7 @@ fieldset {
 		}
 
 		&__social {
-			a {
-				transition: color .3s;
-
-				&:not(:last-child) {
-					margin-right: 2rem;
-				}
-
-				&:hover {
-					color: #fff;
-				}
-			}
-			.icon {
-				padding: 0 2rem;
-				font-size: 3rem;
-			}
+			@extend %social;
 		}
 	}
 }
@@ -3580,10 +3598,11 @@ fieldset {
 
 	&-form {
 		position: relative;
-
+		padding-top: 7.5rem;
 		&__title {
 			position: absolute;
-			top: -9.3rem;
+			top: 1rem;
+			margin: 0;
 			font-size: 2rem;
 			line-height: 1.2;
 		}
@@ -4137,7 +4156,69 @@ fieldset {
 	}
 } 
 
-.hidden { display: none; }
+/*#Mobile features*/
+
+.mobile {
+
+	&-menu {
+		position: relative;
+		display: none;
+		align-items: center;
+		border: none;
+		background-color: transparent;
+		font-size: 18px;
+		color: rgb(154, 154, 154);
+		line-height: 1;
+
+		&__sandwich {
+			display: inline-block;
+			margin-right: 1rem;
+			span {
+				display: block;
+				width: 35px;
+				height: 5px;
+				background-color: $first-color;
+				border-radius: 9000rem;
+				margin: 6px 0;
+				transition: 0.4s;
+			}
+		}
+		\
+		&__middle {
+			margin: 4px 0;
+			transition-delay: 0.1s; 
+		}
+
+
+		&.active {
+			.mobile-menu__topper {
+				transform: rotate(-45deg) translate(-9px, 6px);
+			}
+			.mobile-menu__middle {
+				transform: rotate(180deg);
+				opacity: 0;
+			}
+			.mobile-menu__footer {
+				transform: rotate(45deg) translate(-8px, -8px);
+			}
+		}
+	}
+
+	&-icons {
+		margin-left: auto;
+	}
+
+	&-link {
+		display: none;
+		font-size: 2rem;
+		color: $first-color;
+
+		&:not(:last-child) {
+			margin-right: 1.5rem;
+		}
+	}
+}
+
 
 @import 'media';
 

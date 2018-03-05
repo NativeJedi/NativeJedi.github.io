@@ -537,6 +537,14 @@
 	%w-100 {
 		width: 100%;
 	}
+
+	.b-help {
+		padding: 0 1rem;
+	}
+	
+	.b-help-item {
+		width: 100%;
+	}
 	
 	.s-more-information,
 	.s-header__phone,
@@ -799,10 +807,6 @@
 		.b-category__column {
 			padding: 0 1rem;
 		}
-	}
-	
-	.b-help {
-		justify-content: space-around;
 	}
 	
 	.b-category__title {

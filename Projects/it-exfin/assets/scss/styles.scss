@@ -1866,6 +1866,7 @@ fieldset {
 /*#help section*/
 
 .s-help {
+	overflow: hidden;
 	.wrapper {
 		flex-wrap: wrap;
 	}
@@ -1876,7 +1877,7 @@ fieldset {
 	display: flex;
 	flex-wrap: wrap;
 	text-align: center;
-	justify-content: space-between;
+	justify-content: space-around;
 
 	&__head {
 		width: 100%;
@@ -1897,8 +1898,9 @@ fieldset {
 	}
 
 	&-item {
-		width: 24rem;
-		margin-bottom: 3rem;
+		width: 30%;
+		max-width: 35rem;
+		margin: 0 0 3rem 0;
 		padding: 3.5rem 0;
 		border-radius: 1.5rem;
 		border: 1px solid $first-color;

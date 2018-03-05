@@ -2369,9 +2369,11 @@ fieldset {
 
 /*#FAQ page*/
 /*#help section*/
-.s-help .wrapper {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+.s-help {
+  overflow: hidden; }
+  .s-help .wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
 
 .b-help {
   width: 100%;
@@ -2381,9 +2383,8 @@ fieldset {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   text-align: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
   .b-help__head {
     width: 100%;
     padding: 2rem 1rem;
@@ -2397,8 +2398,9 @@ fieldset {
       font-size: 14px;
       line-height: 1.286; }
   .b-help-item {
-    width: 24rem;
-    margin-bottom: 3rem;
+    width: 30%;
+    max-width: 35rem;
+    margin: 0 0 3rem 0;
     padding: 3.5rem 0;
     border-radius: 1.5rem;
     border: 1px solid #FCC504;
@@ -4855,6 +4857,10 @@ fieldset {
   .b-blog-item, .b-category__column, .b-vacancies__tab, .questionnaire, .program, .s-profile__info,
   .messages, .f-support fieldset {
     width: 100%; }
+  .b-help {
+    padding: 0 1rem; }
+  .b-help-item {
+    width: 100%; }
   .s-more-information,
   .s-header__phone,
   .mobile-or,
@@ -5034,9 +5040,6 @@ fieldset {
   .s-help .b-main-container,
   .s-help .b-category__column {
     padding: 0 1rem; }
-  .b-help {
-    -ms-flex-pack: distribute;
-        justify-content: space-around; }
   .b-category__title {
     text-align: center; }
   .wrapper-mob {

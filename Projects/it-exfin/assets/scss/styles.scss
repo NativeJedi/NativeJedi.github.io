@@ -1102,6 +1102,7 @@ fieldset {
 	}
 
 	&__social {
+		display: none;
 		@extend %social;
 	}
 
@@ -1255,6 +1256,13 @@ fieldset {
 			}
 		}	
 
+		&-more {
+			display: none;
+			margin-bottom: 4rem;
+			font-size: 1.8rem;
+			transition: color .3s;
+		}
+
 		&--primary {
 			width: 100%;
 			justify-content: center;
@@ -1269,8 +1277,38 @@ fieldset {
 			}
 		}
 	}
-}
 
+	&__more-btn {
+		display: none;
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		width: 5rem;
+		height: 3rem;
+		border-radius: 1rem;
+		color: $first-color;
+		border: 3px solid $first-color;
+		font-size: 2rem;
+		transition: all .3s;
+		background-color: $second-color;
+		z-index: 4;
+		transform: translate(-50%, 50%);
+		transition: all .3s;
+
+		.icon {
+			position: absolute;
+			left: 50%;
+			bottom: 50%;
+			font-weight: bold;
+			transform: translate(-50%, 50%) rotate(90deg);
+			transition: transform .3s;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+}
 .b-top-nav {
 	padding: 5.5rem 0;
 
@@ -1484,11 +1522,11 @@ fieldset {
 		height: 12rem;
 		background: $main-gradient;
 		border-radius: 1rem;
+		font-size: 8rem;
+		color: #fff;
 
 		&:before {
-			@include cent;
-			font-size: 8rem;
-			color: #fff;
+			@include cent;	
 		}
 	}
 }
@@ -3174,7 +3212,7 @@ fieldset {
 		}
 
 		&-content {
-			margin-top: 2rem;
+			margin: 3rem 0 4rem 0;
 
 			span:first-child {
 				display: inline-block;
@@ -3200,7 +3238,6 @@ fieldset {
 		display: flex;
 		flex-direction: column;
 		overflow: visible;
-
 
 		&.arrow-mid {
 			&:after {
@@ -3232,7 +3269,7 @@ fieldset {
 		.b-main-form__content {
 			position: relative;
 			width: 100%;
-			padding: 5rem 3rem 6rem 3rem;
+			padding: 5rem 3rem 10rem 3rem;
 			border-bottom-left-radius: 50% 4rem ;
 			border-bottom-right-radius: 50% 4rem ;
 			overflow: hidden;
@@ -3256,15 +3293,15 @@ fieldset {
 		}
 
 		.ui-slider {
+			margin: 2rem 0 0 0;
 			width: 100%;
-			margin: 2rem 0;
 		}
 
 		.ui-slider-helper {
-			width: 60%;
+			width: calc(100% - 12rem);
 
 			&--sm {
-				width: 69%;
+				width: calc(100% - 9rem);
 			}
 		}
 	}
@@ -3329,6 +3366,10 @@ fieldset {
 		font-weight: bold;
 		text-transform: uppercase;
 		cursor: pointer;
+
+		&--wide {
+			width: 50%;
+		}
 	}
 
 	&__input {
@@ -4158,7 +4199,67 @@ fieldset {
 
 /*#Mobile features*/
 
+.s-more-information {
+	display: none;
+	background: $default-gradient;
+	padding: 2.5rem 0;
+	p {
+		margin: 0 0 2rem 0;
+		font-size: 18px;
+		font-weight: bold;
+		font-variant: small-caps;
+		line-height: 1.2;
+		text-align: center;
+	}
+}
+
 .mobile {
+	&-title {
+		display: none;
+		margin: 0 0 6rem 0;
+		text-transform: uppercase;
+
+		&__top,
+		&__middle,
+		&__bottom{
+			display: block;
+		}
+
+		&__top {
+			font-size: 20px;
+			font-weight: 500;
+		}
+
+		&__middle {
+			font-size: 4.6rem;
+			color: #fff;
+		}
+
+		&__bottom {
+			text-align: right;
+			font-size: 1.5rem;
+		}
+	}
+
+	&-or {
+		display: none;
+		text-align: center;
+
+		&__text {
+			margin: 2rem 0;
+			font-size: 16.268px;
+			color: rgb(0, 0, 0);
+			text-transform: uppercase;
+			text-shadow: 0px 2px 6px rgba(178, 178, 160, 0.004);
+		}
+
+		&__social {
+			display: flex;
+			justify-content: space-around;
+			color: #2CA5E0;
+			font-size: 4rem;
+		}
+	}
 
 	&-menu {
 		position: relative;
@@ -4173,6 +4274,7 @@ fieldset {
 		&__sandwich {
 			display: inline-block;
 			margin-right: 1rem;
+
 			span {
 				display: block;
 				width: 35px;
@@ -4183,7 +4285,7 @@ fieldset {
 				transition: 0.4s;
 			}
 		}
-		\
+
 		&__middle {
 			margin: 4px 0;
 			transition-delay: 0.1s; 
@@ -4199,7 +4301,7 @@ fieldset {
 				opacity: 0;
 			}
 			.mobile-menu__footer {
-				transform: rotate(45deg) translate(-8px, -8px);
+				transform: rotate(45deg) translate(-9px, -7px);
 			}
 		}
 	}

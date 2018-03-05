@@ -20,20 +20,20 @@ window.onload = function() {
 		speed: 300,
 		slidesToShow: 4,
 		responsive: [
-			{
-				breakpoint: 1041,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 2}
+		{
+			breakpoint: 1041,
+			settings: {
+				slidesToShow: 2,
+				slidesToScroll: 2}
 			},
 			{
-				breakpoint: 668,
+				breakpoint: 768,
 				settings: {
 					slidesToShow: 1,
 					slidesToScroll: 1}
-			}
-		]
-	});
+				}
+				]
+			});
 
 	$('.b-response-wrap').slick({
 		dots: true,
@@ -47,7 +47,15 @@ window.onload = function() {
 				slidesToShow: 2,
 				slidesToScroll: 2
 			}
-		}]
+		},
+		{
+			breakpoint: 768,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+			}
+		}
+		]
 	});
 
 
@@ -58,6 +66,7 @@ window.onload = function() {
 		fade: true,
 		asNavFor: '.b-review__person-wrapper'
 	});
+
 	$('.b-review__person-wrapper').slick({
 		slidesToShow: 3,
 		slidesToScroll: 1,
@@ -65,23 +74,23 @@ window.onload = function() {
 		centerMode: true,
 		focusOnSelect: true,
 		responsive: [
-			{
-				breakpoint: 1024,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1}
+		{
+			breakpoint: 1024,
+			settings: {
+				slidesToShow: 2,
+				slidesToScroll: 1}
 			},
 			{
-				breakpoint: 641,
+				breakpoint: 768,
 				settings: {
 					slidesToShow: 1,
 					centerMode: false,
 					slidesToScroll: 1}
 				}
-			]
-		});
+				]
+			});
 
-	/*#Choose plan*/
+	/*#Choose plan at main page*/
 
 	$('.b-section-message__item').on('click', function(e) {
 		$('.b-section-message__item').removeClass('active')
@@ -89,7 +98,7 @@ window.onload = function() {
 	});
 
 
-	/*#Cities list func*/
+	/*#Cities list*/
 	
 	$('.b-region-list__wrapper').on('click', '.b-region-list__btn', function(e) {
 		var dataCity = $(this).data('city');
@@ -172,7 +181,7 @@ window.onload = function() {
 		pagination();
 	});
 
-	/*#Redacting*/
+	/*#Redacting at private profile*/
 
 	var inp = $('.profile__input input');
 
@@ -184,7 +193,7 @@ window.onload = function() {
 		$(this).attr('disabled', true);
 	});
 
-	/*#Add files*/
+	/*#Add files at private profile*/
 
 	$('input[type=file]').on('change', function(e) {
 		var reader = new FileReader();
@@ -219,7 +228,7 @@ window.onload = function() {
 		}
 	});
 
-	/*#Form popup*/
+	/*#Form popup at private profile*/
 
 	$('.application-add').on('click', function(e) {
 		$('.overlay').addClass('active');
@@ -256,10 +265,11 @@ window.onload = function() {
 		})
 	});
 
+
+	/*#select options generate at questionnaire*/
+
 	styleSelect($('.b-select--days'), 'numb' , 1, 31);
 	styleSelect($('.b-select--years'), 'year' , 1920, 2000);
-
-	
 
 	$('input[name=switchCitizen]').on('click', function(e) {
 		disableSelect($(this), $('#citizen'));
@@ -304,9 +314,39 @@ window.onload = function() {
 		})
 	});
 
+	/*Mobile features*/
+
 	$('.mobile-menu').on('click', function(e) {
 		$(this).toggleClass('active');
 		$('.wrapper').toggleClass('active');
+	});
+
+	(function($) {
+		var defaultDist = $('.s-head__nav').offset().top;
+		var start = 0;
+		var startTop = 0;
+
+		$('.s-head__nav').on('touchstart', function(e) {
+			start = e.changedTouches[0].clientY;
+			startTop = e.changedTouches[0].pageY;
+		});
+
+		$('.s-head__nav').on('touchmove', function(e) {
+			var touchobj = e.changedTouches[0];
+
+			if (touchobj.clientY > start && startTop > defaultDist + 20) {
+				e.preventDefault();
+				$(this).addClass('active');
+			}else if(touchobj.clientY < start && startTop > $(this).height()
+				+ defaultDist - 10) {
+				e.preventDefault();
+				$(this).removeClass('active');
+			}
+		});
+	})($);
+	
+	$('.s-head__more-btn').on('click', function(e) {
+		$('.s-head__nav').toggleClass('active');
 	});
 }
 

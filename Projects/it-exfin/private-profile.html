@@ -9,43 +9,70 @@
 <body>
 	<div class="blur">
 		<header class="s-header">
-			<div class="wrapper">
-				<a href="main.html" class="b-logo">
-					<img src="dist/img/svgstore/logo.svg" alt="logo">
+		<div class="wrapper">
+			<button class="mobile-menu">
+				<div class="mobile-menu__sandwich">
+					<span class="mobile-menu__topper"></span>
+					<span class="mobile-menu__middle"></span>
+					<span class="mobile-menu__footer"></span>
+				</div>
+				<span>Меню</span>
+			</button>
+
+			<a href="main.html" class="b-logo">
+				<svg><use xlink:href="sprite.svg#svg-logo">
+				</svg>
+			</a>
+
+			<div class="s-header__phone">
+				<span>Телефон горячей линии</span>
+				<a href="tel:+0800211112">0 800 211 112</a>
+			</div>
+			
+			<div class="mobile-icons">
+				<a href="#" class="mobile-link">
+					<i class="fas fa-phone"></i>
 				</a>
 
-				<div class="s-header__phone">
-					<span>Телефон горячей линии</span>
-					<a href="tel:+0800211112">0 800 211 112</a>
-				</div>
-
-				<div class="b-nav">
-					<a href="about.html" class="b-nav__link">О нас</a>
-					<a href="#" class="b-nav__link">Кредиты</a>
-					<a href="spoiler-page.html" class="b-nav__link">Акции</a>
-					<a href="faq.html" class="b-nav__link">Справка</a>
-					<a href="blog.html" class="b-nav__link">Блог</a>
-					<a href="#" class="b-nav__link">Студентам</a>
-				</div>
-
-				<div class="s-header__lang">
-					<button class="b-btn b-btn--lang">Рус</button>
-					<button class="b-btn b-btn--lang">Укр</button>
-				</div>
-
-				<button class="b-btn-login">Мой кабинет<span class="icon icon--login"></span></button>
+				<a href="private-profile.html" class="mobile-link">
+					<i class="fas fa-sign-in-alt"></i>
+				</a>
 			</div>
-		</header>
+
+			<div class="b-nav">
+				<a href="about.html" class="b-nav__link">О нас</a>
+				<a href="#" class="b-nav__link">Кредиты</a>
+				<a href="spoiler-page.html" class="b-nav__link">Акции</a>
+				<a href="faq.html" class="b-nav__link">Справка</a>
+				<a href="blog.html" class="b-nav__link">Блог</a>
+				<a href="#" class="b-nav__link">Студентам</a>
+			</div>
+
+			<div class="s-header__lang">
+				<button class="b-btn b-btn--lang">Рус</button>
+				<button class="b-btn b-btn--lang">Укр</button>
+			</div>
+
+			<a href="private-profile.html" class="b-btn-login">Мой кабинет <span class="icon icon--login"></span></a>
+		</div>
+	</header>
+
 
 		<section class="s-head">
 			<div class="wrapper">
 				<!--data-btn and data-content must be the same!-->
 				<nav class="s-head__nav s-head__nav--primary">
+					<div class="s-head__nav-more">Больше информации</div>
+					
 					<button data-btn="program" class="s-head__nav-btn">Программа лояльности</button>
 					<button data-btn="application" class="s-head__nav-btn">Мои заявки</button>
 					<button data-btn="condition" class="s-head__nav-btn">Состояние кредита</button>
 					<button data-btn="profile" class="s-head__nav-btn active">Профиль</button>
 					<button data-btn="message" class="s-head__nav-btn">Сообщения</button>
+
+					<button class="s-head__more-btn">
+						<span class="icon icon--arrow"></span>
+					</button>
 				</nav>
 			</div>
 		</section>
@@ -451,12 +478,24 @@
 			</div>
 		</section>
 
+		<section class="s-more-information">
+			<div class="wrapper">
+				<p>Больше информации на полной версии сайта</p>
+				<a href="#" class="b-btn-primary b-btn-primary--main">Перейти</a>
+			</div>
+		</section>
+
 		<footer class="s-footer">
 			<div class="wrapper wrapper--flex">
 				<div class="s-footer-contacts">
 					<a class="b-tel b-tel--primary" href="tel:0800211119">0 800 211 112 <span>Бесплатные звонки по Украине</span></a>
 					<a class="b-tel b-tel--secondary" href="tel:0673694111"><span class="icon icon--kyivstar"></span>067 369 41 11</a>
 					<a class="b-tel b-tel--secondary" href="tel:0503694111"><span class="icon icon--vodafone"></span>050 369 41 11</a>
+				</div>
+
+				<div class="s-footer__social">
+					<a href="#"><span class="icon icon--telegram"></span></a>
+					<a href="#"><span class="icon icon--facebook"></span></a>	
 				</div>
 
 				<div class="s-footer-about">
@@ -497,23 +536,24 @@
 						</p>
 
 						<button class="b-btn-primary b-btn-primary--main">Пригласить друга</button>
-
 					</div>
 				</div>
 
 				<div class="s-footer-base">
 					<a href="#" class="b-logo">
-						<svg><use href="#svg-logo">
+						<svg><use href="sprite.svg#svg-logo">
 						</svg>
 					</a>
 
 					<p class="s-footer-base__info">
-						Первый в Украине сервис кредитования через интернет. <br>
-						Мы предоставляем быстрые и удобные кредиты для всех граждан Украины. <br>
-						&copy 2015 - 2017 MyCredit - Кредит онлайн на банковскую карту за 20 минут
+						<span class="mob-hidden">
+							Первый в Украине сервис кредитования через интернет. <br>
+							Мы предоставляем быстрые и удобные кредиты для всех граждан Украины. <br>
+						</span>
+						&copy 2015 - 2017 MyCredit <span class="mob-hidden">- Кредит онлайн на банковскую карту за 20 минут</span>
 					</p>
 
-					<div class="s-footer-base__social">
+					<div class="s-footer-base__social mob-hidden">
 						<a href="#"><span class="icon icon--telegram"></span></a>
 						<a href="#"><span class="icon icon--facebook"></span></a>	
 					</div>
@@ -598,6 +638,7 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
 	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 	<script src="dist/libs/slick.js"></script>
 	<script src="dist/libs/common.js"></script>

@@ -1225,6 +1225,7 @@ fieldset {
 
 .s-head {
 	background-color: $second-color;
+	position: relative;
 
 	&__nav {
 		display: flex;
@@ -1233,6 +1234,7 @@ fieldset {
 		text-transform: uppercase;
 		font-size: 1.2rem;
 		font-weight: bold;
+		overflow: hidden;
 
 		a {
 			padding: 3.5rem 0;
@@ -1291,7 +1293,7 @@ fieldset {
 		font-size: 2rem;
 		transition: all .3s;
 		background-color: $second-color;
-		z-index: 4;
+		z-index: 100;
 		transform: translate(-50%, 50%);
 		transition: all .3s;
 
@@ -1478,8 +1480,8 @@ fieldset {
 }
 
 /*#Values section*/
-.s-values { padding: 8.5rem 0 4.5rem 0; }
 
+.s-values { padding: 8.5rem 0 4.5rem 0; }
 
 .b-value {
 	width: calc(50% - 2rem);
@@ -1535,7 +1537,6 @@ fieldset {
 /*#Blog section*/
 
 .s-blog { padding: 0 0 14rem 0; }
-
 
 .s-contacts {
 	padding: 0 0 11rem 0;
@@ -1745,7 +1746,7 @@ fieldset {
 		padding: 0 0 3rem 0;
 	}
 
-	svg {
+	img {
 		width: 40%;
 		height: 40%;
 		margin: 0 0 2rem 0;
@@ -1879,7 +1880,7 @@ fieldset {
 
 	&__head {
 		width: 100%;
-		padding: 2rem 0;
+		padding: 2rem 1rem;
 		margin: 0 0 3rem 0;
 		background-color: $second-color;
 
@@ -1896,7 +1897,7 @@ fieldset {
 	}
 
 	&-item {
-		width: pxtopercent(370);
+		width: 24rem;
 		margin-bottom: 3rem;
 		padding: 3.5rem 0;
 		border-radius: 1.5rem;
@@ -1979,6 +1980,8 @@ fieldset {
 		&--flex {
 			display: flex;
 			justify-content: space-between;
+			overflow-y: scroll;
+			@include scrollbar(5px, $first-color);
 		}
 
 	}
@@ -2199,7 +2202,8 @@ fieldset {
 			position: relative;
 			font-size: 18.75px;
 			&:before {
-				@include centY;
+				position: absolute;
+				top: 0;
 				content: "-";
 				left: -1rem;
 			}
@@ -2272,8 +2276,10 @@ fieldset {
 	width: 100%;
 	font-size: 16px;
 	line-height: 1.2;
-
+	
 	&--mid {
+		margin: 0;
+		padding: 2rem 0;
 		text-align: center;
 		clear: both;
 	}
@@ -2687,7 +2693,6 @@ fieldset {
 
 	%title {
 		margin: 0 0 2rem 0;
-		padding: 0 0 0 2rem;
 		display: inline-block;
 		font-size: 16px;
 		color: rgb(139, 139, 139);
@@ -2695,10 +2700,12 @@ fieldset {
 
 	&__subject-title {
 		width: 80%;
+		padding: 0 0 0 2rem;
 		@extend %title;
 	}
 
 	&__date-title {
+		padding: 0 2rem 0 0;
 		@extend %title;
 	}
 
@@ -2897,6 +2904,8 @@ fieldset {
 	position: relative;
 	width: pxtopercent(545);
 	margin: 0 auto;
+	
+	fieldset { padding: 0; }
 
 	&__step {
 		&:not(:first-of-type) {
@@ -2934,6 +2943,7 @@ fieldset {
 				font-size: 12px;
 				color: rgb(196, 196, 196);
 				font-weight: 500;
+				white-space: nowrap;
 			}
 
 			@for $i from 2 to 7 {
@@ -3057,7 +3067,6 @@ fieldset {
 		}
 
 		&--serial {
-			padding: inherit 0;
 			width: 6.5rem;
 			margin-right: 4rem;
 			&-numb {
@@ -3128,7 +3137,8 @@ fieldset {
 	}
 
 	&--stretch {
-		width: 100%;
+		width: 95%;
+		max-width: 48rem;
 		font-weight: 500;
 	}
 }
@@ -3990,6 +4000,7 @@ fieldset {
 	}
 
 	label {
+		display: inline-block;
 		position: relative;
 		padding-left: 2rem;
 		cursor: pointer;
@@ -3997,6 +4008,7 @@ fieldset {
 		&:before {
 			content: "";
 			@include centY;
+			text-align: center;
 			left: 0;
 			width:  $h;
 			height: $h;

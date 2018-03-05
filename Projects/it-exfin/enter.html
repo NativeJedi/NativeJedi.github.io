@@ -9,13 +9,33 @@
 <body>
 	<header class="s-header">
 		<div class="wrapper">
+			<button class="mobile-menu">
+				<div class="mobile-menu__sandwich">
+					<span class="mobile-menu__topper"></span>
+					<span class="mobile-menu__middle"></span>
+					<span class="mobile-menu__footer"></span>
+				</div>
+				<span>Меню</span>
+			</button>
+
 			<a href="main.html" class="b-logo">
-				<img src="dist/img/svgstore/logo.svg" alt="logo">
+				<svg><use xlink:href="sprite.svg#svg-logo">
+				</svg>
 			</a>
 
 			<div class="s-header__phone">
 				<span>Телефон горячей линии</span>
 				<a href="tel:+0800211112">0 800 211 112</a>
+			</div>
+			
+			<div class="mobile-icons">
+				<a href="#" class="mobile-link">
+					<i class="fas fa-phone"></i>
+				</a>
+
+				<a href="private-profile.html" class="mobile-link">
+					<i class="fas fa-sign-in-alt"></i>
+				</a>
 			</div>
 
 			<div class="b-nav">
@@ -32,11 +52,12 @@
 				<button class="b-btn b-btn--lang">Укр</button>
 			</div>
 
-			<button class="b-btn-login">Мой кабинет<span class="icon icon--login"></span></button>
+			<a href="private-profile.html" class="b-btn-login">Мой кабинет <span class="icon icon--login"></span></a>
 		</div>
 	</header>
 
-	<div class="wrapper"> 
+
+	<div class="wrapper wrapper-mob"> 
 		<form action="#" class="f-form">
 			<h2 class="f-form__title">Вход в личный кабинет</h2>
 			<div class="f-form__content">
@@ -69,5 +90,11 @@
 			<a href="main.html" class="b-btn-close"></a>
 		</form>
 	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="dist/libs/slick.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	<script src="dist/libs/common.js"></script>
 </body>
 </html>

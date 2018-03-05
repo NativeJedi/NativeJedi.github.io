@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Profile</title>
+	<title>Questionnaire</title>
 	<link rel="stylesheet" href="dist/css/styles.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -10,6 +10,15 @@
 	<div class="blur">
 		<header class="s-header">
 			<div class="wrapper">
+				<button class="mobile-menu">
+					<div class="mobile-menu__sandwich">
+						<span class="mobile-menu__topper"></span>
+						<span class="mobile-menu__middle"></span>
+						<span class="mobile-menu__footer"></span>
+					</div>
+					<span>Меню</span>
+				</button>
+
 				<a href="main.html" class="b-logo">
 					<svg><use xlink:href="sprite.svg#svg-logo">
 					</svg>
@@ -18,6 +27,16 @@
 				<div class="s-header__phone">
 					<span>Телефон горячей линии</span>
 					<a href="tel:+0800211112">0 800 211 112</a>
+				</div>
+				
+				<div class="mobile-icons">
+					<a href="#" class="mobile-link">
+						<i class="fas fa-phone"></i>
+					</a>
+
+					<a href="private-profile.html" class="mobile-link">
+						<i class="fas fa-sign-in-alt"></i>
+					</a>
 				</div>
 
 				<div class="b-nav">
@@ -34,9 +53,11 @@
 					<button class="b-btn b-btn--lang">Укр</button>
 				</div>
 
-				<button class="b-btn-login">Мой кабинет<span class="icon icon--login"></span></button>
+				<a href="private-profile.html" class="b-btn-login">Мой кабинет <span class="icon icon--login"></span></a>
 			</div>
 		</header>
+
+
 		<section class="s-question">
 			<div class="wrapper">
 				<nav class="b-top-nav">
@@ -275,7 +296,7 @@
 						<fieldset class="questionnaire__field">
 							<label class="questionnaire__label">Зайнятість</label>
 
-							<select class="b-select">
+							<select class="b-select b-select--stretch">
 								<option selected disabled hidden>Фізична особа - підприємець - зазначається з одночасним над...</option>
 								<option value="ФОП">ФОП</option>
 							</select>
@@ -746,7 +767,7 @@
 									</div>
 								</div>
 							</div>
- 
+
 							<div class="questionnaire__item questionnaire__item--column">
 								<label class="questionnaire__label">Надані документи</label>
 								<div class="b-checkbox">

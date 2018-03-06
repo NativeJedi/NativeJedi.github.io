@@ -766,9 +766,7 @@ fieldset {
 }
 
 .popup {
-	position: absolute;
-	top: 0;
-	left: 0;
+	@include stretch;
 	display: flex;
 	align-items: flex-start;
 	opacity: 0;

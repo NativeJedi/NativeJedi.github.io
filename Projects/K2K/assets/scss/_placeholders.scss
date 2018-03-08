@@ -1,0 +1,30 @@
+%main-hover {
+	transition: all .15s;
+	&:hover {
+		color: $main-color;
+	}
+}
+
+%main-link {
+	transition: all .3s;
+
+	&:not(:last-child) {
+		margin-right: 1rem;
+	}
+
+	&:hover {
+		border-color: $main-color;
+		color: #fff;
+		background-color: $main-color;
+	}
+
+}
+
+%svg-right {
+	svg {
+		@include centY;
+		right: 0;
+		color: $main-color;
+		font-size: 2.3rem;
+	}
+}

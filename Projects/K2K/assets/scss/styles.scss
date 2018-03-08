@@ -1,0 +1,588 @@
+@import 'normalize';
+@import 'variables';
+@import 'mixins';
+@import 'icons/_iconfont__variables.scss';
+@import 'icons/_iconfont__icons.scss';
+@import 'fonts';
+@import 'base';
+@import 'placeholders';
+
+
+.header {
+	&__top {
+		font-size: 12px;
+		color: $font-color;
+		background-color: $default-color;
+
+		.container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: .5rem 0;
+		}
+
+		&-nav {
+			a {
+				@extend %main-hover;
+				&:not(:last-child) {
+					margin-right: 2rem;
+				}
+			}	
+		}
+	}
+
+	&__login {
+		margin: 0;
+		a {
+			color: $main-color;
+		}
+	}
+
+	&__social {
+		margin: 0;
+		padding-left: 0;
+		list-style: none;
+
+		li {
+			display: inline-block;
+
+			&:not(:last-child) {
+				margin-right: .5rem;
+			}
+
+			svg {
+				@extend %main-hover;
+			}
+		}
+	}
+
+	&__main {
+		padding: 2rem 0;
+		.container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		&-nav {
+			font-size: 14px;
+			a {
+				padding: .5rem 2rem;
+				border: 1px solid transparent;
+				border-radius: 1000rem;
+				
+				@extend %main-hover;
+
+				&:hover {
+					border-color: $main-color;
+				}
+			}
+		}
+	}
+}
+
+.main {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	&-section {
+		padding: 5rem 0;
+		background: linear-gradient(0deg, rgba(#fff, .95)), url("../img/euro.jpg") no-repeat;
+		background-size: cover;
+	}
+
+	&-content {
+		width: 50%;
+
+		&__title {
+			margin: 5rem 0;
+			font-size: 3rem;
+			font-weight: normal;
+
+			span {
+				color: $main-color; 
+			}
+		}
+
+		&__text {
+			margin: 0 0 4rem 0;
+			line-height: 1.25;
+		}
+
+		&__link {
+			@extend %main-link;
+			&-box {
+				margin: 0 0 7rem 0;
+			}
+		}
+
+		&__tab {
+			font-size: 11px;
+			line-height: 1.818;
+			color: #ccc;
+			font-weight: 400;
+			&-link {
+				padding: 0 2rem;
+				border-bottom: 1px solid;
+
+				&:not(:last-child) {
+					margin-right: .5rem;
+				}
+
+				&.active {
+					border-bottom: 2px solid $main-color;
+				}
+			}
+		}
+	}
+
+	&__image {
+		position: relative;
+		width: 50%;
+
+		&-prime {
+			max-width: 100%;
+		}
+
+		&-content {
+			@include centX;
+			width: 60%;
+			top: 4.2rem;
+		}
+
+		&-abs {
+			position: absolute;
+			max-width: 30%;
+			bottom: 0;
+			right: 0;
+		}
+	}
+}
+
+.media {
+	&-section {
+		background-color: $default-color;
+	}
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+
+	&__item {
+		display: flex;
+		align-items: flex-start;
+		width: 33.33%;
+		padding: 4.5rem pxtopercent(30);
+
+		&-img {
+			margin-right: 2rem;
+		}
+
+		&-text {
+			max-width: 25rem;
+			margin: 0;
+			font-size: 14px;
+			line-height: 1.429;
+		}
+
+		&:nth-child(even) {
+			color: #fff;
+			background-color: $main-color;
+		}
+	}
+}
+
+.decision {
+	padding: 1.5rem 0;
+	background-color: $default-color;
+
+	.container { display: flex; }
+
+	&__img {
+		width: 30%;
+
+		img { max-width: 100%;}
+	}
+
+	&__title {
+		margin-bottom: 0;
+		font-style: 2.4rem;
+		font-weight: normal;
+		text-transform: uppercase;
+	}
+
+	&__text {
+		max-width: 50rem;
+		font-size: 1.4rem;
+	}
+
+	&__link {
+		color: $main-color;
+		font-weight: bold;
+
+		@extend %main-link;
+	}
+}
+
+.question {
+	max-width: 56rem;
+	margin: 2rem auto;
+
+	&__title {
+		position: relative;
+		font-size: 16px;
+		margin: 0;
+		padding: .5rem 3rem .5rem 0;
+		border-bottom: 2px solid $main-color;
+		
+		@extend %svg-right;
+	}
+
+	&__answer {
+		font-size: 12px;
+		line-height: 1.5;
+	}
+}
+
+.faq {
+	padding: 3.5rem 0;
+	background: $main-color url("../img/hands.jpg") no-repeat;
+	background-position: 0 0;
+	background-size: contain;
+	.container {
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+.footer {
+	font-size: 1.4rem;
+	padding: 3rem 0 0 0;
+	background-color: #2F2F2F;
+
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	&-title {
+		font-size: inherit;
+		margin: 0 0 1rem 0;
+		color: $main-color;
+		font-weight: normal;
+	}
+	
+	&__contacts {
+		a,
+		.footer-title {
+			padding-left: 2.3rem;
+		}
+
+		a {
+			position: relative;
+
+			&:hover {
+				color: $main-color;
+			}
+		}
+
+		svg {
+			@include centY;
+			left: 0;
+		}
+	}
+
+	&__nav {
+		margin: 0 2rem;
+		max-width: 20rem;
+		line-height: 1.2;
+
+		&-link {
+			display: block;
+			word-wrap: break-word;
+			&:hover {
+				color: $main-color;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__payment {
+		display: flex;
+		flex-wrap: wrap;
+		max-width: 12rem;
+		margin-right: -2rem;
+		&-title {
+			width: 100%;
+		}
+
+		svg {
+			font-size: 2.4rem;
+			margin-right: 1rem;
+			transition: transform .3s;
+			&:hover {
+				color: $main-color;
+				transform: scale(1.8);
+			}
+		}
+	}
+
+	&__base  {
+		width: 100%;
+		margin: 4rem 0 0 0;
+		padding: .5rem 0;
+		font-size: 11px;
+		text-align: right;
+
+		span {
+			color: $main-color;
+		}
+	}
+}
+
+.form {
+	&-faq {
+		padding: 6rem pxtopercent(100, 800);
+		width: 100%;
+		max-width: 80rem;
+		font-size: 1.4rem;
+		background-color: #fff;
+	}
+
+	&-credit {
+		width: 100%;
+		max-width: 48rem;
+		margin: 0 auto;
+		font-size: 12px;
+		&__title {
+			text-align: center;
+			font-size: 12px;
+			line-height: 1.5;
+			color: $font-color;
+			font-weight: normal;
+		}
+
+		&__field {
+			padding: 3.5rem;
+			background-color: #F7F9FC;
+		}
+
+		&__item {
+			margin-bottom: 2rem;
+		}
+
+		&__label {
+			display: block;
+			margin-bottom: .5rem;
+			color: $font-color;
+			cursor: pointer;
+		}
+
+		&__input {
+			width: 100%;
+			padding: .5rem 1rem;
+			background-color: transparent;
+			border: none;
+			border-bottom: 1px solid;
+
+			&:focus {
+				outline: none;
+				border-color: $main-color;
+				color: $main-color;
+				&::placeholder {
+					color: $main-color;
+				}
+			}
+
+			&--tel {
+				font-size: 1.6rem;
+				border-bottom: 0;
+			}
+
+			&--serial,
+			&--serial-num,
+			&--serial-id {
+				padding: .5rem 0 .5rem 1rem;
+				letter-spacing: 1.5rem;
+				text-transform: uppercase;
+			}
+
+			&--serial {
+				width: 5.5rem;
+				margin-right: 12rem;
+
+				&-num {
+					width: 14.3rem;
+				}
+
+				&-id {
+					width: 23rem;
+				}
+			}
+		}
+	}
+
+	&__title {
+		margin: 0 0 4rem 0;
+		font-size: 1.6rem;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	
+	&__item {
+		margin-bottom: 1rem;
+		border: none;
+		border-bottom: 1px solid $main-color;
+
+		&-multiple {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+	
+	&__btn-apply {
+		display: block;
+		padding: 1rem 7rem;
+		margin: 4rem auto 0 auto;
+		border: none;
+		background-color: rgb(99, 122, 142);;
+		color: #fff;
+		font-weight: 500;
+		font-size: 1.8rem;
+		transition: box-shadow .3s;
+		&:hover {
+			box-shadow: 0 0 15px 4px rgb(99, 122, 142);
+		}
+	}
+
+	&__btn {
+		display: block;
+		margin: 4rem auto 0 auto;
+		color: #fff;
+		border-color: $main-color;
+		background-color: $main-color;
+		transition: box-shadow .3s;
+		&:hover {
+			box-shadow: 0 0 20px $main-color;
+		}
+	}
+}
+
+.input {
+	display: block;
+	width: 100%;
+	padding: 1rem 0;
+	text-align: center;
+
+	&:focus {
+		outline: none;
+
+		&::placeholder {
+			color: $main-color;
+		}	
+	}
+}
+
+
+/*Jquery ui styling*/
+.ui-selectmenu {
+	&-button {
+		&.ui-button {
+			padding: 0 0 1rem 0;
+			margin-bottom: 1rem;
+			border: none;
+			border-bottom: 1px solid $main-color;
+			background: none;
+			text-align: center;
+			color: $font-color;
+			width: 100%;
+
+			&:focus {
+				outline: none;
+				color: $main-color;
+			}
+			&:hover .ui-icon{
+				background: url("../img/arrow.png") center no-repeat;
+			}
+		}
+	}
+	
+	&-icon {
+		&.ui-icon.ui-icon-triangle-1-s {
+			@include centY;
+			right: 0;
+			background: url("../img/arrow.png") center no-repeat;
+		}
+	}
+
+	&-text {
+		margin-right: 0;
+	}
+}
+
+.ui-menu .ui-menu-item-wrapper {
+	padding: .5rem 0;
+	text-align: center;
+}
+
+.ui-widget {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.4rem;
+
+	.ui-state-active {
+		background: $main-color;
+	}
+}
+
+
+/*#slider*/
+
+
+.form-slider {
+	padding: 0 0 3rem 0;
+	.ui {
+		&-slider {
+			position: relative;
+			width: 100%;
+
+			&-handle {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-40%);
+				background: #fff;
+				border: 4px solid $main-color;
+				border-radius: 50%;
+				cursor: pointer;
+
+				&:focus {
+					outline: none;
+				}
+			}
+
+			&-val {
+				@include centX;
+				color: $font-color;
+				white-space: nowrap;
+				bottom: -2.2rem;
+				font-weight: bold;
+			}
+
+			&-horizontal {
+				height: 5px;
+			}
+
+			&-helper {
+				position: relative;
+				width: calc(100% - 1rem);
+				margin: 0 auto;
+			}
+		}
+
+		&-widget-content {
+			background: $main-color; 
+		}
+
+		&-widget-header {
+			background: $main-color; 
+		}
+	}	
+}

@@ -1,0 +1,121 @@
+* {
+	box-sizing: border-box;
+}
+html, body {
+	font-family: 'Roboto', sans-serif;
+}
+html {
+	font-size: 10px;
+	color: #6b6b6b;
+}
+
+body {
+	font-size: 16px;
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: inherit;
+}
+
+fieldset {
+	border: none;
+}
+
+ul {
+	margin: 0;
+	padding-left: 0;
+	list-style-type: none;
+}
+
+.container {
+	max-width: 1170px;
+	margin: 0 auto;
+}
+
+.b-logo {
+	max-width: 10rem;
+}
+
+.section-title {
+	margin: 4rem 0;
+	font-size: 16px;
+	font-weight: normal;
+	text-transform: uppercase;
+	line-height: 1.5;
+	text-align: center;
+}
+
+.btn {
+	padding: .5rem 3rem;
+	border: 1px solid;
+	border-radius: 1000rem;
+	font-size: 14px;
+}
+
+.b-checkbox {
+	$h: 13px;
+
+	input {
+		display: none;
+
+		&:checked + label:before {
+			content: "\2713";
+			font-size: 16px;
+			font-weight: bold;
+			color: $main-color;
+			text-align: center;
+			line-height: $h;
+			border-color: $main-color;
+		}
+
+		&:checked + label {
+			color: $main-color;
+		}
+	}
+
+	label {
+		display: inline-block;
+		position: relative;
+		padding-left: 2rem;
+		cursor: pointer;
+
+		&:before {
+			content: "";
+			@include centY;
+			left: 0;
+			width:  $h;
+			height: $h;
+			background-color: #fff;
+			border: 1px solid #ccc;
+		}
+	}	
+
+	&__link {
+		font-weight: 500;
+		color: $secondary-font;
+		text-decoration: underline;
+
+		&:hover {
+			opacity: .7;
+		}
+	}
+}
+
+.spoiler {
+	overflow: hidden;
+	
+	h3 {
+		cursor: pointer;
+		&.is-active + p {
+			max-height: 10rem;
+			margin: 2.5rem 0 0 0;
+		}
+	}
+	p {
+		margin: 0;
+		max-height: 0;
+		transition: all .4s;
+	}
+}

@@ -51,7 +51,26 @@ ul {
 	padding: .5rem 3rem;
 	border: 1px solid;
 	border-radius: 1000rem;
-	font-size: 14px;
+	font-size: 14px;	
+	
+	&-group {
+		button {
+			&:not(:last-child) {
+				margin-right: 2rem;
+			}
+		}
+	}
+	&-prime {
+		background-color: transparent;
+		transition: all .3s;
+		
+		&:hover {
+			box-shadow: 0 0 20px  2px $main-color;
+			color: #fff;
+			background-color: $main-color;
+			border-color: $main-color;
+		}
+	}
 }
 
 .b-checkbox {

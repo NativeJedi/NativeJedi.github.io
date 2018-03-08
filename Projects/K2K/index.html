@@ -51,9 +51,9 @@
 					<h1 class="main-content__title">Уникальная система <span>кредитования</span></h1>
 					<p class="main-content__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto voluptate cumque ea corrupti nostrum accusamus! Iste nam mollitia dolores quos ea maxime? Reiciendis delectus tenetur voluptatibus, officia tempora. Nobis, temporibus.</p>
 
-					<div class="main-content__link-box">
-						<a class="btn main-content__link" href="#">Получить кредит</a>
-						<a class="btn main-content__link" href="#">Регистрация</a>
+					<div class="btn-group">
+						<button class="btn btn-prime" href="#">Получить кредит</a>
+						<button class="btn btn-prime btnRegistration">Регистрация</button>
 					</div>
 
 					<div class="main-content__tab">
@@ -105,7 +105,7 @@
 	<section>
 		<div class="container">
 			<h2 class="section-title">Оформить кредит</h2>
-			<form action="" class="form form-credit">
+			<form action="#" class="form-credit">
 				<h3 class="form-credit__title">Сумма кредита</h3>
 				<div class="form-slider">
 					<div id="credit-slider">
@@ -166,6 +166,7 @@
 			</form>
 		</div>
 	</section>
+
 	<section class="decision">
 		<div class="container">
 			<div class="decision__img">
@@ -174,9 +175,9 @@
 			<div class="decision__content">
 				<h2 class="decision__title">Получай решение онлайн без звонка</h2>
 				<p class="decision__text">Просто зарегистрируйтесь на сайте и получите уникальное придложение от нашего сервиса</p>
-				<div class="decision__link-box">
-					<a href="#" class="btn decision__link">Регистрация</a>
-					<a href="#" class="btn decision__link">Вход</a>
+				<div class="btn-group">
+					<button class="btn btn-prime btnRegistration">Регистрация</button>
+					<button class="btn btn-prime btnLogin">Вход</button>
 				</div>
 			</div>
 		</div>
@@ -224,7 +225,7 @@
 
 	<section class="faq">
 		<div class="container">
-			<form action="#" class="form-faq">
+			<form action="#" class="form">
 				<h3 class="form__title">Есть вопросы? Задайте их нам</h3>
 				<select class="form__item select">
 					<option value="Тема">Тема</option>
@@ -295,6 +296,62 @@
 			</p>
 		</div>
 	</footer>
+
+	<div class="popup">
+		<form id="form-quest" action="#" class="form popup-content">
+			<h3 class="form__title">Есть вопросы? Задайте их нам</h3>
+			<select class="form__item select">
+				<option value="Тема">Тема</option>
+				<option value="Тема">Тема</option>
+			</select>
+
+			<input class="form__item input" type="mail" placeholder="E-mail" required>
+			<input class="form__item input" type="text" placeholder="Имя" required>
+			<input class="form__item input" type="text" placeholder="Ваш вопрос" required>
+
+			<button type="submit" class="btn form__btn">Отправить</button>
+
+			<span class="popup__close"></span>
+		</form>
+		
+		<form id="form-reg" action="#" class="form popup-content">
+			<h3 class="form__title">Регистрация</h3>
+			<input class="form__item input" type="tel" placeholder="Телефон" required>
+			<input class="form__item input" type="mail" placeholder="E-mail" required>
+			<input class="form__item input" type="text" placeholder="Имя" required>
+
+			<button type="submit" class="btn form__btn btnKeep">Продолжить</button>
+
+			<a href="#" class="form__already">У меня уже есть учетная запись</a>
+
+			<span class="popup__close"></span>
+		</form>
+
+		<form id="form-login" action="#" class="form popup-content">
+			<h3 class="form__title">Вход</h3>
+			<input class="form__item input" type="tel" placeholder="Логин" required>
+			<input class="form__item input" type="password" placeholder="Пароль" required>
+
+			<button type="submit" class="btn form__btn">Войти</button>
+
+			<a href="#" class="form__already">Зарегистрироватся</a>
+
+			<span class="popup__close"></span>
+		</form>
+
+		<form id="form-confirm" action="#" class="form popup-content">
+			<h3 class="form__title">Подтверждение аккаунта</h3>
+			<p class="form__message">На ваш номер отправлено смс с шестизначним кодом. <br> Введите код, что бы подтвердить номер</p>
+
+			<input type="text" class="input input--code" placeholder="XXXXXX" maxlength="6" required>
+
+			<button type="submit" class="btn form__btn">Отправить</button>
+			<button class="form__already  form__already--btn">Отправить код повторно</button>
+
+			<span class="popup__close"></span>
+		</form>
+	</div>
+
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
 	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>

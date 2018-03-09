@@ -327,6 +327,347 @@
 	}
 }
 
+/*#Profile */
+
+.profile {
+
+	&__head {
+		background-color: $default-color;
+		font-size: 1.2rem;
+
+		.container {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&-bar {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 1rem 0;
+			color: rgb(143, 143, 143);
+		}
+
+		&-item {
+			&:not(:last-child) {
+				margin-right: 2rem;
+			}
+		}
+	}
+
+
+	&__user {
+		svg {
+			margin-right: 1rem;
+		}
+	}
+
+	&__login {
+		span {
+			color: $main-color;
+		}
+	}
+
+	&__charity {
+		position: relative;
+		color: $main-color;
+		cursor: pointer;
+		&:hover {
+			.tooltip {
+				display: block;
+				opacity: 1;
+			}
+		}
+	}
+
+	&-tab {
+		position: relative;
+		min-height: 100%;
+
+		&-box {
+			display: flex;
+		}
+
+		&:hover {
+			.profile-tab__btn {
+				color: #fff;
+				background-color: $main-color;
+			}
+			.profile-tab__container{
+				display: block;
+			}
+		}
+		
+		
+		&__btn {
+			height: 100%;
+			padding: 0 1.3rem;
+			border: none;
+			background-color: transparent;
+
+			svg {
+				margin-right: 1rem;
+			}
+
+			&-apply {
+				float: right;
+				margin: 4rem 2rem 0 0;
+			}
+		}
+
+		&__container {
+			min-width: 37rem;
+			position: absolute;
+			display: none;
+			padding: 1.5rem 0;
+			right: 0;
+			bottom: 0;
+			transform: translateY(100%);
+			background-color: #fff;
+			border: 1px solid $main-color;
+			z-index: 10;
+		}
+		&__content {
+			max-height: 23rem;
+			padding: 0 2rem;
+			@include scrollbar(5px, $main-color);
+		}
+
+		&__search {
+			display: block;
+			width: calc(100% - 2rem);
+			padding: .5rem 1rem .5rem 1rem;
+			border: none;
+			border-bottom: 1px solid;
+
+			&:focus {
+				outline: none;
+				border-color: $main-color;
+				color: $main-color;
+
+				&::placeholder {
+					color: $main-color;
+				}
+			}
+		}
+		
+		&-text {
+			font-size: 11px;
+			line-height: 1.273;
+		}
+	}
+
+	&-person {
+		position: relative;
+		padding: 1rem 1.5rem;
+		background-color: $default-color;
+
+		&:not(:last-child) {
+			margin: 0 0 2rem 0;
+		}
+
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 5px;
+			background-color: $main-color;
+		}
+
+		&--red {
+			&:before {
+				background-color: $error-color;
+			}
+
+			h4 {
+				color: $error-color;
+			}
+		}
+
+		&__item {
+			span {
+				&:not(:last-child) {
+					margin: 0 1rem 0 0;
+				}
+			}
+
+			&-special {
+				color: $main-color;
+			}
+			&:not(:last-child) {
+				margin: 0 0 .5rem 0;
+			}
+		}
+	}
+	
+	&__mycard {
+		text-align: center;
+		font-size: 18px;
+		color: $main-color;
+	}
+
+	&__data {
+		display: flex;
+		align-items: flex-start;
+		
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+		&-form {
+			padding: 8rem 0;
+			width: 60%;
+			font-size: 1.2rem;
+		}
+		
+		&-item {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			max-width: 20rem;
+			color: $main-color;
+		}
+		&-label {
+			display: block;
+			min-width: 30%;
+			margin: .3rem 0;
+		}
+
+		&-input {
+			background-color: transparent;
+			border:none;
+		}
+
+		&-redact {
+			position: relative;
+			width: 2.3rem;
+			height: 2.3rem;
+			margin-left: 2rem;
+			color: #fff;
+			border-radius: 50%;
+			background-color: $main-color;
+
+			svg {
+				@include cent;
+			}
+		}
+
+		&-more {
+			padding: 0;
+			color: rgb(194, 194, 194);
+			text-decoration: underline;
+		}
+
+		&-btn {
+			margin: 2rem 0 0 30%;
+		}
+	}
+	
+	&__donations {
+		width: 40%;
+		padding: 3rem pxtopercent(60);
+		background-color: $default-color;
+		text-align: center;
+		color: rgb(139, 139, 139);
+
+		&-icon {
+			font-size: 2.8rem;
+			color: #C9DB3B;
+		}
+
+		&-title {
+			margin: 2rem 0;
+			font-size: 20px;
+			font-weight: normal;
+		}
+
+		&-message {
+			margin: 0 0 2rem 0;
+			font-size: 14px;
+		}
+
+		&-sum,
+		&-total {
+			margin: 0 0 2rem 0;
+			color: #C9DB3B;
+		}
+		&-sum {
+			font-size: 36px;
+			font-weight: bold;
+		}
+
+		&-text {
+			margin: 0 0 2rem 0;
+			font-size: 12px;
+		}
+	}
+}
+
+.switcher {
+	position: relative;
+	display: inline-block;
+	margin-top: .2rem;
+	font-size: 14px;
+	color: $main-color;
+	
+	&__heart {
+		position: relative;
+		display: inline-block;
+		background-color: $main-color;
+		width: 3rem;
+		height: 1.5rem;
+		border-radius: 9000rem;
+		cursor: pointer;
+
+		&:before {
+			content: "";
+			width: 1rem;
+			height: 1rem;
+			@include centY;
+			left: 2px;
+			background-color: #fff;
+			border: 1px solid #fff;
+			border-radius: 50%;
+			transition: transform .4s;
+		}
+	}
+
+	&__value {
+		position: absolute;
+		width: 3rem;
+		top: 50%;
+		right: -0.5rem;
+		transform: translate(100%, -65%);
+		opacity: 0;
+		cursor: pointer;
+
+		&--off {
+			opacity: 1;
+		}
+	}
+	
+
+	input{
+		display: none;
+
+		&:checked {
+			& + .switcher__heart{
+				&:before {
+					transform: translate(1.4rem, -50%);
+				}
+			}
+
+			& ~ .switcher__value--on {
+				opacity: 1;
+			}
+			& ~ .switcher__value--off {
+				opacity: 0;
+			}
+		}
+	}
+}
+
 .form {
 	position: relative;
 	padding: 6rem pxtopercent(100, 800) 3.5rem pxtopercent(100, 800);

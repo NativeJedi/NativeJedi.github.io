@@ -32,6 +32,12 @@ ul {
 .container {
 	max-width: 1170px;
 	margin: 0 auto;
+
+	&--flex {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
 }
 
 .b-logo {
@@ -70,6 +76,25 @@ ul {
 			background-color: $main-color;
 			border-color: $main-color;
 		}
+
+		&--green {
+			background-color: $main-color;
+			color: #fff;
+		}
+	}
+
+	&-transparent {
+		border: none;
+		background-color: transparent;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&-copy {
+		color: $main-color;
+		vertical-align: bottom;
 	}
 }
 
@@ -136,5 +161,31 @@ ul {
 		margin: 0;
 		max-height: 0;
 		transition: all .4s;
+	}
+}
+
+.tooltip {
+	position: absolute;
+	display: none;
+	left: -7.5rem;
+	bottom: 0;
+	transform: translate(0, 130%);
+	padding: .7rem 2rem;
+	background-color: #D6E3F1;
+	color: $font-color;
+	transition: opacity .3s;
+	opacity: 0;
+
+	&:after {
+		content: "";
+		position: absolute;
+		left: 50%;
+		top: 0;
+		transform: translate(-50%, -100%);
+		width: 0; 
+		height: 0; 
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		border-bottom: 7px solid #D6E3F1;
 	}
 }

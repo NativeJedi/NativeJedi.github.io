@@ -25,6 +25,7 @@
 		font-family: 'Futura';
 		color: $main-color;
 		font-size: 14px;
+
 		&-link {
 			transition: color .2s;
 			&:not(:last-child) {
@@ -356,7 +357,6 @@
 			display: inline-block;
 			min-width: 6rem;
 			min-height: 6rem;
-			padding: 0 0 0 .4rem;
 			color: $main-color;
 			border: 1px solid rgba($main-color, .4);
 			font-size: 4.5rem;

@@ -612,10 +612,7 @@ ul {
     border: none;
     padding: 0;
     bottom: 0;
-    right: 0;
-    -webkit-transform: translateY(50%);
-        -ms-transform: translateY(50%);
-            transform: translateY(50%); }
+    right: 0; }
 
 .container {
   max-width: 115rem;
@@ -691,7 +688,8 @@ ul {
       -webkit-box-pack: justify;
           -ms-flex-pack: justify;
               justify-content: space-between;
-      max-width: 59rem; }
+      max-width: 59rem;
+      padding-bottom: 4rem; }
     .main__content--right {
       padding-left: 4rem; }
   .main-price {
@@ -819,13 +817,33 @@ ul {
     background-color: rgba(34, 161, 255, 0.1);
     border: 0; }
     .main-subscribe__input::-webkit-input-placeholder {
-      color: #fff; }
+      color: #fff;
+      -webkit-transition: color .3s;
+      -o-transition: color .3s;
+      transition: color .3s; }
     .main-subscribe__input:-ms-input-placeholder {
-      color: #fff; }
+      color: #fff;
+      -webkit-transition: color .3s;
+      -o-transition: color .3s;
+      transition: color .3s; }
     .main-subscribe__input::-ms-input-placeholder {
-      color: #fff; }
+      color: #fff;
+      -webkit-transition: color .3s;
+      -o-transition: color .3s;
+      transition: color .3s; }
     .main-subscribe__input::placeholder {
-      color: #fff; }
+      color: #fff;
+      -webkit-transition: color .3s;
+      -o-transition: color .3s;
+      transition: color .3s; }
+    .main-subscribe__input:focus::-webkit-input-placeholder {
+      color: #22A1FF; }
+    .main-subscribe__input:focus:-ms-input-placeholder {
+      color: #22A1FF; }
+    .main-subscribe__input:focus::-ms-input-placeholder {
+      color: #22A1FF; }
+    .main-subscribe__input:focus::placeholder {
+      color: #22A1FF; }
   .main-subscribe__btn {
     padding: 1rem 5rem;
     text-transform: uppercase;
@@ -836,7 +854,9 @@ ul {
       -webkit-box-shadow: 0 0 20px 2px #22A1FF;
               box-shadow: 0 0 20px 2px #22A1FF; }
   .main__exchange {
-    padding: 0 1rem; }
+    display: inline-block;
+    padding: 0 1rem;
+    text-align: center; }
     .main__exchange:not(:last-child) {
       margin-right: 2rem; }
     .main__exchange-wrap {

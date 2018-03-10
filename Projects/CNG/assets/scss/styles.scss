@@ -82,6 +82,7 @@
 			flex-wrap: wrap;
 			justify-content: space-between;
 			max-width: 59rem;
+			padding-bottom: 4rem;
 		}
 
 		&--right {
@@ -145,7 +146,7 @@
 			border-radius: 50px;
 			position: absolute;
 			clip: rect(0px, 50px, 100px, 0px);
-
+			
 			&--right {
 				transform: rotate(120deg);
 			}
@@ -254,8 +255,16 @@
 			color: #fff;
 			background-color: rgba($main-color, .1);
 			border: 0;
+
 			&::placeholder {
 				color: #fff;
+				transition: color .3s;
+			}
+
+			&:focus {
+				&::placeholder {
+					color: $main-color;
+				}
 			}
 		}
 
@@ -273,7 +282,9 @@
 	}
 
 	&__exchange {
+		display: inline-block;
 		padding: 0 1rem;
+		text-align: center;
 		&:not(:last-child) {
 			margin-right: 2rem;
 		}
@@ -300,11 +311,12 @@
 		}
 
 		&-title {
-			margin: 0 0 1rem 0;
+			margin: 0;
 			color: #fff;
 		}
 		
 		&-rate {
+			margin-top: 1rem;
 			font-family: "OpenSans";
 			font-size: 16px;
 			color: #000;

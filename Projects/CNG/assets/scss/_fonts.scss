@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans/OpenSans.woff2') format('woff2'),
+        url('../fonts/OpenSans/OpenSans.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans/OpenSans-Bold.woff2') format('woff2'),
+        url('../fonts/OpenSans/OpenSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans/OpenSans-BoldItalic.woff2') format('woff2'),
+        url('../fonts/OpenSans/OpenSans-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway/Raleway-Medium.woff2') format('woff2'),
+        url('../fonts/Raleway/Raleway-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('../fonts/Futura/FuturaBT-Medium.woff2') format('woff2'),
+        url('../fonts/Futura/FuturaBT-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway/Raleway-Italic.woff2') format('woff2'),
+        url('../fonts/Raleway/Raleway-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway/Raleway-SemiBold.woff2') format('woff2'),
+        url('../fonts/Raleway/Raleway-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('../fonts/Futura/FuturaBT-Bold.woff2') format('woff2'),
+        url('../fonts/Futura/FuturaBT-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}

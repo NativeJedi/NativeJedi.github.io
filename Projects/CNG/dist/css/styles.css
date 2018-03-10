@@ -610,7 +610,12 @@ ul {
     position: absolute;
     background-color: transparent;
     border: none;
-    padding: 0; }
+    padding: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-transform: translateY(50%);
+        -ms-transform: translateY(50%);
+            transform: translateY(50%); }
 
 .container {
   max-width: 115rem;
@@ -669,7 +674,8 @@ ul {
     padding: 0 .5rem;
     color: #22A1FF; }
   .main__content {
-    width: 50%; }
+    width: 50%;
+    position: relative; }
     .main__content-title {
       font-family: "Futura";
       margin: 4.5rem 0 3.5rem 0;

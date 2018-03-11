@@ -1,12 +1,24 @@
 window.onload = function() {
 	var popup = new Popup();
+
+	var play;
+
+	function onYouTubePlayerAPIReady() {
+		play = new YT.Player('GNCvideo', {videoId: 'tD_mGEcAi9Q', autoplay: 0});
+		document.querySelector('#site-video .popup__close').onclick = function() {
+			play.pauseVideo();};
+	}
+
+	onYouTubePlayerAPIReady();
+
 	$('.btn-play').on('click', function() {
 		popup.open($('.popup #site-video'));
 	});
 
-	$('#site-video .popup__close').on('click', function(e) {
+	/*$('#site-video .popup__close').on('click', function(e) {
+		console.log(1)
 		$('#site-video iframe')[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-	});
+	});*/
 	var countDownDate = new Date("Mar 13, 2018 0:00:00").getTime();
 
 	// Update the count down every 1 second

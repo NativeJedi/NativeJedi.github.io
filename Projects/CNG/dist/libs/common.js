@@ -1,10 +1,12 @@
 window.onload = function() {
 	var popup = new Popup();
 	$('.btn-play').on('click', function() {
-		console.log(1)
 		popup.open($('.popup #site-video'));
 	});
 
+	$('#site-video .popup__close').on('click', function(e) {
+		$('#site-video iframe')[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+	});
 	var countDownDate = new Date("Mar 13, 2018 0:00:00").getTime();
 
 	// Update the count down every 1 second

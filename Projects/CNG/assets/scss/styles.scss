@@ -213,25 +213,6 @@
 				width: 100%;
 			}
 		}
-
-		.btn-play {
-			@include cent;
-			width: 8.5rem;
-			height: 8.5rem;
-			border-radius: 50%;
-			background-color: #fff;
-			color: $main-color;
-			font-size: 2rem;
-			border: 20px solid $main-color;
-			box-shadow: 0 0 0 20px rgba($main-color, .6),
-			0 0 0 40px rgba($main-color, .4);
-			svg {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-40%, -50%);
-			}
-		}	
 	}
 
 	&-subscribe {
@@ -443,5 +424,43 @@
 		&:before {
 			transform: translate(-50%, -50%) rotate(-45deg);
 		}
+	}
+}
+
+.btn-play {
+	@include cent;
+	width: 5.5rem;
+	height: 5.5rem;
+	border: none;
+	border-radius: 50%;
+	background-color: #fff;
+	color: $main-color;
+	font-size: 2rem;
+
+	box-shadow: 
+	0 0 0 20px $main-color,
+	0 0 0 40px rgba($main-color, .6),
+	0 0 0 60px rgba($main-color, .4);
+	svg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-40%, -50%);
+	}
+
+	&:hover {
+		animation: boxShadow 1.5s infinite;
+		animation-direction: alternate-reverse;
+	}
+}	
+
+@keyframes boxShadow {
+	0% {
+		box-shadow: 0 0 0 0 $main-color;
+	}
+	100% {
+		box-shadow: 0 0 0 20px $main-color,
+								0 0 0 40px rgba($main-color, .6),
+								0 0 0 60px rgba($main-color, .4);
 	}
 }

@@ -1,29 +1,302 @@
 {
   "Kyiv": {
-    "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10162.139723564858!2d30.5040787856177!3d50.449762742029634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce50ffa1b91f%3A0x42d5962fe7e791c!2sIndependence+Square!5e0!3m2!1sru!2sua!4v1517866006743",
-    "adress": "ул. Анны Ахматовой 14 А",
-    "name": "Киев",
-    "localAdress": "ул. Анны Ахматовой 14А, 2 этаж",
-    "schedule": "с 9:00 до 18:00",
-    "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
-    "phone": "(044)-228-70-51"
+    "office1": {
+      "lats": {"lat": 50.488343, "lng": 30.497964},
+      "adress": "ул. Анны Ахматовой 14 А",
+      "name": "Киев",
+      "localAdress": "ул. Анны Ахматовой 14А, 1 этаж",
+      "schedule": "с 9:00 до 18:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-70-51"
+    },
+    "office2": {
+      "lats": {"lat": 50.435290, "lng": 30.366900},
+      "adress": "ул. Металлистов",
+      "name": "Киев",
+      "localAdress": "ул. Металлистов, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    },
+    "office3": {
+      "lats": {"lat": 50.474416, "lng":  30.498050},
+      "adress": "ул. Металлистов",
+      "name": "Киев",
+      "localAdress": "ул. Металлистов, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    }
   },
   "Odessa": {
-  	"link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9243.395370605518!2d30.73628941945494!3d46.466965233018676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c6317f18ccef07%3A0x9220496065a5bfd2!2z0J7QtNC10YHRgdCwLdCT0LvQsNCy0L3QsNGP!5e0!3m2!1sru!2sua!4v1517929095143",
-  	"adress": "ул. Одесская",
-    "name": "Одесса",
-    "localAdress": "ул. Одесская 14А, 2 этаж",
-    "schedule": "с 6:00 до 22:00",
-    "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
-    "phone": "912-51-15"
+    "office1": {
+      "lats": {"lat": 50.474416, "lng":  30.498050},
+      "adress": "ул. Одесская",
+      "name": "Киев",
+      "localAdress": "ул. Одесская, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    }
+  },
+  "Bila Thserkva": {
+    "office1": {
+      "lats": {"lat": 50.474416, "lng":  30.498050},
+      "adress": "ул. Белоцерковская-1",
+      "name": "Белая церковь",
+      "localAdress": "ул. Белоцерковская-2, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    },
+    "office2": {
+      "lats": {"lat": 50.435290, "lng": 30.366900},
+      "adress": "ул. Металлистов",
+      "name": "Киев",
+      "localAdress": "ул. Металлистов, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    }
   },
   "Chernihiv": {
-  	"link" : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.9657462583823!2d31.330289914821755!3d51.51384441805439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46d5484690d9a247%3A0x4507943d4c607284!2z0KfQtdGA0L3QuNCz0L7QstGB0LrQsNGPINC-0LHRidC10L7QsdGA0LDQt9C-0LLQsNGC0LXQu9GM0L3QsNGPINGI0LrQvtC70LAg4oSWMzA!5e0!3m2!1sru!2sua!4v1517929335908",
-  	"adress": "ул. Черниговская",
-    "name": "Чернигов",
-    "localAdress": "ул. Черниговская 14А, 2 этаж",
-    "schedule": "с 10:00 до 22:00",
-    "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
-    "phone": "912-51-15"
+    "office1": {
+      "lats": {"lat": 50.474416, "lng":  30.498050},
+      "adress": "ул. Черниговская-1",
+      "name": "Чернигов",
+      "localAdress": "ул. Черниговская-2, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    },
+    "office2": {
+      "lats": {"lat": 50.435290, "lng": 30.366900},
+      "adress": "ул. Металлистов",
+      "name": "Киев",
+      "localAdress": "ул. Металлистов, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    }
+  },
+  "Kharkiv": {
+    "office1": {
+      "lats": {"lat": 50.474416, "lng":  30.498050},
+      "adress": "ул. Харьковская-1",
+      "name": "Харьковь",
+      "localAdress": "ул. Харьковская-2, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    },
+    "office2": {
+      "lats": {"lat": 50.435290, "lng": 30.366900},
+      "adress": "ул. Металлистов",
+      "name": "Киев",
+      "localAdress": "ул. Металлистов, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    }
+  },
+  "Poltava": {
+    "office1": {
+      "lats": {"lat": 50.474416, "lng":  30.498050},
+      "adress": "ул. Poltava-1",
+      "name": "Poltava",
+      "localAdress": "ул. Poltava-2, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    },
+    "office2": {
+      "lats": {"lat": 50.435290, "lng": 30.366900},
+      "adress": "ул. Металлистов",
+      "name": "Киев",
+      "localAdress": "ул. Металлистов, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    }
+  },
+  "Vinnytsia": {
+    "office1": {
+      "lats": {"lat": 50.474416, "lng":  30.498050},
+      "adress": "ул. Vinnytsia-1",
+      "name": "Vinnytsia",
+      "localAdress": "ул. Vinnytsia-2, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    },
+    "office2": {
+      "lats": {"lat": 50.435290, "lng": 30.366900},
+      "adress": "ул. Металлистов",
+      "name": "Vinnytsia",
+      "localAdress": "ул. Металлистов, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    }
+  },
+  "Ivano-Frankivsk": {
+    "office1": {
+      "lats": {"lat": 50.474416, "lng":  30.498050},
+      "adress": "ул. Ivano-Frankivsk-1",
+      "name": "Ivano-Frankivsk",
+      "localAdress": "ул. Ivano-Frankivsk-2, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    },
+    "office2": {
+      "lats": {"lat": 50.435290, "lng": 30.366900},
+      "adress": "ул. Металлистов",
+      "name": "Киев",
+      "localAdress": "ул. Металлистов, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    }
+  },
+  "Lviv": {
+    "office1": {
+      "lats": {"lat": 50.474416, "lng":  30.498050},
+      "adress": "ул. Lviv-1",
+      "name": "Lviv",
+      "localAdress": "ул. Lviv-2, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    },
+    "office2": {
+      "lats": {"lat": 50.435290, "lng": 30.366900},
+      "adress": "ул. Металлистов",
+      "name": "Киев",
+      "localAdress": "ул. Металлистов, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    }
+  },
+  "Cherkasy": {
+    "office1": {
+      "lats": {"lat": 50.474416, "lng":  30.498050},
+      "adress": "ул. Cherkasy-1",
+      "name": "Cherkasy",
+      "localAdress": "ул. Cherkasy-2, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    },
+    "office2": {
+      "lats": {"lat": 50.435290, "lng": 30.366900},
+      "adress": "ул. Металлистов",
+      "name": "Cherkasy",
+      "localAdress": "ул. Металлистов, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    }
+  },
+  "Kryvyi Rih": {
+    "office1": {
+      "lats": {"lat": 50.474416, "lng":  30.498050},
+      "adress": "ул. Kryvyi Rih-1",
+      "name": "Kryvyi Rih",
+      "localAdress": "ул. Kryvyi Rih-2, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    },
+    "office2": {
+      "lats": {"lat": 50.435290, "lng": 30.366900},
+      "adress": "ул. Металлистов",
+      "name": "Kryvyi Rih",
+      "localAdress": "ул. Металлистов, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    }
+  },
+  "Khmelnytskyi": {
+    "office1": {
+      "lats": {"lat": 50.474416, "lng":  30.498050},
+      "adress": "ул. Khmelnytskyi-1",
+      "name": "Khmelnytskyi",
+      "localAdress": "ул. Khmelnytskyi-2, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    },
+    "office2": {
+      "lats": {"lat": 50.435290, "lng": 30.366900},
+      "adress": "ул. Металлистов",
+      "name": "Khmelnytskyi",
+      "localAdress": "ул. Металлистов, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    }
+  },
+  "Dnipropetrovsk": {
+    "office1": {
+      "lats": {"lat": 50.474416, "lng":  30.498050},
+      "adress": "ул. Dnipropetrovsk-1",
+      "name": "Dnipropetrovsk",
+      "localAdress": "ул. Dnipropetrovsk-2, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    },
+    "office2": {
+      "lats": {"lat": 50.435290, "lng": 30.366900},
+      "adress": "ул. Металлистов",
+      "name": "Dnipropetrovsk",
+      "localAdress": "ул. Металлистов, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    }
+  },
+  "Kropyvnytskyi": {
+    "office1": {
+      "lats": {"lat": 50.474416, "lng":  30.498050},
+      "adress": "ул. Kropyvnytskyi-1",
+      "name": "Kropyvnytskyi",
+      "localAdress": "ул. Kropyvnytskyi-2, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    },
+    "office2": {
+      "lats": {"lat": 50.435290, "lng": 30.366900},
+      "adress": "ул. Металлистов",
+      "name": "Kropyvnytskyi",
+      "localAdress": "ул. Металлистов, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    }
+  },
+  "Zaporizhia": {
+    "office1": {
+      "lats": {"lat": 50.474416, "lng":  30.498050},
+      "adress": "ул. Zaporizhia-1",
+      "name": "Zaporizhia",
+      "localAdress": "ул. Zaporizhia-2, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    },
+    "office2": {
+      "lats": {"lat": 50.435290, "lng": 30.366900},
+      "adress": "ул. Металлистов",
+      "name": "Zaporizhia",
+      "localAdress": "ул. Металлистов, 6 этаж",
+      "schedule": "с 11:00 до 16:00",
+      "mail": "rm.kyiv.kharkivskiy@expressfinance.com.ua",
+      "phone": "(044)-228-ads-51"
+    }
   }
 }

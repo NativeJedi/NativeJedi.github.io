@@ -1,0 +1,105 @@
+@media only screen and (max-width : 1041px) {
+
+	.header {
+		padding: 0 2rem;
+	}
+
+	.main {
+		.container {
+			padding: 0 2rem;
+			justify-content: center;
+		}
+
+		&__content {
+			width: 100%;
+			
+			&--left {
+				max-width: 100%;
+				padding-bottom: 4rem;
+				justify-content: flex-start;
+			}
+
+			&--right {
+				display: flex;
+				padding-bottom: 9rem;
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+
+		&__assets {
+			margin-top: 4rem;
+		}
+
+		&__exchange {
+			padding: 0;
+			margin-bottom: 1rem;
+		}
+	}
+
+}
+
+@media only screen and (max-width : 767px) {
+	.logo {
+		margin-top: 5px;
+	}
+	.header {
+		&__nav {
+			display: none;
+		}
+	}
+}
+
+@media only screen and (max-width : 568px) {
+	.btn-play {
+		display: none;
+	}
+
+	.link-play {
+		display: block;
+	}
+
+	.header {
+		flex-wrap: wrap;
+		justify-content: space-between;
+		.btn-box {
+			width: 100%;
+			margin-top: 2rem;
+			display: flex;
+			justify-content: space-between;
+			order: 2;
+		}
+	}
+
+	.main {
+		&__content {
+
+		}
+		&-price {
+			margin-top: 4rem;
+			padding-left: 0;
+		}
+
+		&__info {
+			text-align: center;
+
+			&-text {
+				text-align: left;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width : 375px) {
+	.main-subscribe__btn {
+		padding: 1rem 2rem;
+	}
+
+	.main-price {
+		width: 100%;
+	}
+
+	.main__info-title {
+		font-size: 3rem;
+	}
+}

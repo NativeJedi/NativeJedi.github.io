@@ -469,56 +469,17 @@
 	0 0 0 35px rgba($main-color, .4);
 }
 
-@media only screen and (max-width : 1041px) {
-
-	.header {
-		padding: 0 2rem;
-	}
-
-	.main {
-		.container {
-			padding: 0 2rem;
-			justify-content: center;
-		}
-
-		&__content {
-			width: 100%;
-			
-			&--left {
-				max-width: 100%;
-				padding-bottom: 4rem;
-				justify-content: flex-start;
-			}
-
-			&--right {
-				display: flex;
-				padding-bottom: 9rem;
-				flex-direction: column;
-				align-items: center;
-			}
-		}
-
-		&__assets {
-			margin-top: 4rem;
-		}
-
-		&__exchange {
-			padding: 0;
-			margin-bottom: 1rem;
-		}
-	}
-
-}
 
 .mobile-btn {
 	position: relative;
-	display: flex;
+	display: none;
 	align-items: center;
 	border: none;
 	background-color: transparent;
 	font-size: 18px;
 	color: rgb(154, 154, 154);
 	line-height: 1;
+	color: #fff;
 	z-index: 10;
 	&__sandwich {
 		display: inline-block;
@@ -575,7 +536,7 @@
 		display: block;
 		padding: 1rem 0;
 		text-align: center;
-		font-size: 2.3rem;
+		font-size: 2rem;
 		color: #fff;
 
 		&:hover {

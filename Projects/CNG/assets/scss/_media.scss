@@ -40,6 +40,9 @@
 }
 
 @media only screen and (max-width : 767px) {
+	.mobile-btn {
+		display: flex;
+	}
 	.logo {
 		margin-top: 5px;
 	}

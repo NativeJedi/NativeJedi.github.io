@@ -356,7 +356,6 @@ window.onload = function() {
 	
 	initMap();
 }
-
 function initMap() {
 	if (document.getElementById('map') == null) return;
 	var map = new google.maps.Map(document.getElementById('map'), {
@@ -476,7 +475,7 @@ function fieldFiller (datacity, url) {
 						var myLatlng = officeArr[0].lats;
 
 						var map = new google.maps.Map(document.getElementById('map'), {
-							zoom: 10,
+							zoom: 4,
 							center: myLatlng
 						});
 

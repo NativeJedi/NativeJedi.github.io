@@ -475,7 +475,7 @@ function fieldFiller (datacity, url) {
 						var myLatlng = officeArr[0].lats;
 
 						var map = new google.maps.Map(document.getElementById('map'), {
-							zoom: 4,
+							zoom: 10,
 							center: myLatlng
 						});
 

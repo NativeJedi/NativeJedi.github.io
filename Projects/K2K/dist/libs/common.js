@@ -25,7 +25,44 @@ window.onload = function() {
 		e.preventDefault();
 
 		popup.changeContent($('#form-confirm'));
+	});	
+
+	$('.profile-tab__btn').on('click', function(e) {
+		$('.profile-tab__btn').not(this).removeClass('is-active');
+		$(this).toggleClass('is-active');
 	});
+
+	$('input[type=file]').on('change', function(e) {
+		var reader = new FileReader();
+
+		var targ = getTarget(e);
+
+		for (var i = 0; i < targ.files.length; i++) {
+			var file = targ.files[i];
+			var div = document.createElement('div');
+			div.classList.add('profile__doc');
+
+			var span = document.createElement("span");
+			span.classList.add('doc-add__icon');
+
+			var icon = document.createElement("i");
+			icon.classList.add('far');
+			icon.classList.add('fa-file');
+			
+			var title = document.createElement('span');
+			title.classList.add('doc-add__text');
+
+			var fileName = $(this).val().split('\\').pop();
+
+			title.innerHTML = fileName;
+
+			$(this).parent().before(div);
+			div.append(span);
+			span.append(icon);
+			div.append(title);	
+		}
+	});
+
 	function minHeight(selector) {
 		var currentHeight = selector.height();
 		console.log(currentHeight)
@@ -75,4 +112,14 @@ function Popup() {
   }
 
   popup.on('click', self.close);
+}
+
+function getTarget(obj) {
+	var targ;
+	var e=obj;
+	if (e.target) targ = e.target;
+	else if (e.srcElement) targ = e.srcElement;
+  if (targ.nodeType == 3) // defeat Safari bug
+  	targ = targ.parentNode;
+  return targ;
 }

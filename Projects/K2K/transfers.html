@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Transfers</title>
 	<link rel="stylesheet" href="dist/css/jquery-ui.css">
 	<link rel="stylesheet" href="dist/css/styles.css">
 </head>
@@ -48,11 +48,11 @@
 		<div class="container">
 			<div class="main">
 				<main class="main-content">
-					<h1 class="main-content__title">Уникальная система <span>кредитования</span></h1>
+					<h1 class="main-content__title">Денежные <span>переводы</span></h1>
 					<p class="main-content__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto voluptate cumque ea corrupti nostrum accusamus! Iste nam mollitia dolores quos ea maxime? Reiciendis delectus tenetur voluptatibus, officia tempora. Nobis, temporibus.</p>
 
 					<div class="btn-group">
-						<button class="btn btn-prime" href="#">Получить кредит</button>
+						<a href="#" class="btn btn-prime" href="#">Перевести деньги</a>
 						<button class="btn btn-prime btnRegistration">Регистрация</button>
 					</div>
 
@@ -64,7 +64,7 @@
 				<!--img height must be less than 280px-->
 				<div class="main__image">
 					<img src="dist/img/macbook.png" alt="macbook" class="main__image-prime">
-					<img src="dist/img/content-1.jpg" alt="content" class="main__image-content">
+					<img src="dist/img/content-2.jpg" alt="content" class="main__image-content">
 					<img src="dist/img/pig.png" alt="pig" class="main__image-abs">
 				</div>
 			</div>
@@ -101,67 +101,67 @@
 			</div>
 		</div>
 	</section>
-
+	
 	<section class="section">
 		<div class="container">
-			<h2 class="section-title">Оформить кредит</h2>
-			<form action="#" class="form-credit">
-				<h3 class="form-credit__title">Сумма кредита</h3>
-				<div class="form-slider">
-					<div id="credit-slider">
-						<div class="ui-slider-helper">
-							<a class='ui-slider-handle'>
-								<span class="ui-slider-val">0 грн</span>
-							</a>
-						</div>
+			<h2 class="section-title">Переводы</h2>
+			<form action="#" class="form-delivery">
+				<fieldset class="form-delivery__person">
+					<h4 class="form-delivery__caption">Відправник</h4>
+					<div class="form-delivery__card">
+						<label for="card-1" class="form-delivery__label">Введіть номер своєї карти</label>
+						<input id="card-1" type="tel" class="form-delivery__input form-delivery__input--card" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="16">
+						<span class="form-delivery__icon">
+							<i class="far fa-envelope"></i>
+						</span>
 					</div>
-				</div>
-				<h3 class="form-credit__title">Строк кредита</h3>
+					<div class="form-delivery__multiple">
+						<div class="form-delivery__multiple-item">
+							<label for="date-1" class="form-delivery__label form-delivery__label--expanded">Термін дії</label>
 
-				<div class="form-slider">
-					<div id="termin-slider">
-						<div class="ui-slider-helper">
-							<a class='ui-slider-handle'>
-								<span class="ui-slider-val">0 дней</span>
-							</a>
+							<input id="date-1" type="tel" class="form-delivery__input form-delivery__input--date" placeholder="MM" maxlength="2">
+							<input id="date-2" type="tel" class="form-delivery__input form-delivery__input--date" placeholder="YY" maxlength="2">
+						</div>
+						<div class="form-delivery__multiple-item">
+							<label for="cvv-1" class="form-delivery__label">CVV</label>
+							<a href="#" class="form-delivery__link-top">Що це?</a>
+							<input id="cvv-1" type="password" class="form-delivery__input form-delivery__input--cvv" placeholder="***" maxlength="3">
 						</div>
 					</div>
-				</div>
-				<fieldset class="form-credit__field">
-					<div class="form-credit__item">
-						<label for="credit-name" class="form-credit__label">ФИО</label>
-						<input id="credit-name" type="text" class="form-credit__input" placeholder="Ведите ФИО" required>
+				</fieldset>
+				<fieldset class="form-delivery__person">
+					<h4 class="form-delivery__caption">Отримувач</h4>
+					<div class="form-delivery__card">
+						<label for="card-2" class="form-delivery__label">Введіть номер карти отримувача</label>
+						<input id="card-2" type="tel" class="form-delivery__input form-delivery__input--card" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="16">
+						<span class="form-delivery__icon">
+							<i class="far fa-envelope"></i>
+						</span>
 					</div>
-					<div class="form-credit__item">
-						<label for="credit-phone" class="form-credit__label">Номер телефона</label>
-						<input id="credit-phone" type="tel" class="form-credit__input form-credit__input--tel" placeholder="+38 (_ _ _) _ _ _  _ _ _ _" required>
+				</fieldset>
+				<fieldset class="form-delivery__main">
+					<h4 class="form-delivery__main-title">
+						<span>Сума переказу</span>
+						від 10 до 14999 (включаючи комісію)
+					</h4>
+					<input type="tel" placeholder="0.00" class="form-delivery__input form-delivery__input--labeled">
+					<span for="#" class="form-delivery__input-caption">грн</span>
+					<p class="form-delivery__main-prompt">Комісія буде зарахована автоматично (0.6% + 3.06 грн).</p>
+					<p class="form-delivery__main-info">Разом з урахуванням комісії: </p>
+					<div class="form-delivery__main-total">0.00 грн</div>
+					<div class="form-delivery__phone">
+						<label for="delivery-phone" class="form-delivery__label">Ваш телефон</label>
+						<input class="form-delivery__input form-delivery__input--phone" id="delivery-phone" type="tel" placeholder="+38 (_ _ _) _ _ _  _ _ _ _">
+						<span class="form-delivery__icon form-delivery__icon--inside">
+							<i class="fas fa-phone"></i>
+						</span>
+						<a href="#" class="form-delivery__icon-link" title="Подсказка"><i class="far fa-question-circle"></i></a>
 					</div>
-					<div class="form__item-multiple">
-						<div class="form-credit__item">
-							<label for="credit-passport" class="form-credit__label">Серия паспорта</label>
-							<input id="credit-seria" type="text" class="form-credit__input form-credit__input--serial" placeholder="XX" maxlength="2" required>
-						</div>
-						<div class="form-credit__item">
-							<label for="credit-seria-num" class="form-credit__label">Номер паспорта</label>
-							<input id="credit-seria-num" type="tel" class="form-credit__input form-credit__input--serial-num" placeholder="XXXXXX" maxlength="6" required>
-						</div>
-					</div>
-
-					<div class="form-credit__item">
-						<label for="credit-id" class="form-credit__label">ИНН</label>
-						<input id="credit-id" type="text" class="form-credit__input form-credit__input--serial-id" placeholder="XXXXXXXXXX" maxlength="10" required>
-					</div>
-					<div class="form-credit__item">
-						<label for="credit-mail" class="form-credit__label">Почта</label>
-						<input id="credit-mail" type="text" class="form-credit__input" placeholder="Введите ваш e-mail" required>
-					</div>
-
 					<div class="b-checkbox">
-						<input id="credit-check" type="checkbox">
-						<label for="credit-check">Я соглашаюсь с <a href="#" class="b-checkbox__link">правилами обработки данных</a></label>	
+						<input id="delivery-check" type="checkbox">
+						<label for="delivery-check">Я погоджуюсь з <a href="#" class="b-checkbox__link">умовами публічного договору</a></label>
+						<button class="form__btn-apply">Здійснити переказ</button>	
 					</div>
-
-					<button class="form__btn-apply">Отправить</button>
 				</fieldset>
 			</form>
 		</div>
@@ -173,7 +173,7 @@
 				<img src="dist/img/credit-cards.png" alt="credit-cards">
 			</div>
 			<div class="decision__content">
-				<h2 class="decision__title">Получай решение онлайн без звонка</h2>
+				<h2 class="decision__title">Економте на комисии до 90%</h2>
 				<p class="decision__text">Просто зарегистрируйтесь на сайте и получите уникальное придложение от нашего сервиса</p>
 				<div class="btn-group">
 					<button class="btn btn-prime btnRegistration">Регистрация</button>

@@ -45,12 +45,17 @@ ul {
 }
 
 .section-title {
+	
 	margin: 4rem 0;
 	font-size: 16px;
 	font-weight: normal;
 	text-transform: uppercase;
 	line-height: 1.5;
 	text-align: center;
+
+	&--for-flex {
+		width: 100%;
+	}
 }
 
 .btn {
@@ -95,6 +100,15 @@ ul {
 	&-copy {
 		color: $main-color;
 		vertical-align: bottom;
+	}
+
+	&-shop {
+		background-color: #fff;
+		color: $main-color;
+
+		&:hover {
+			box-shadow: 0 0 15px 0 $main-color;
+		}
 	}
 }
 
@@ -167,15 +181,21 @@ ul {
 .tooltip {
 	position: absolute;
 	display: none;
-	left: -7.5rem;
+	left: 50%;
 	bottom: 0;
-	transform: translate(0, 130%);
-	padding: .7rem 2rem;
+	transform: translate(-50%, 100%);
+	padding: 1rem 2rem;
 	background-color: #D6E3F1;
 	color: $font-color;
 	transition: opacity .3s;
 	opacity: 0;
+	white-space: nowrap;
+	text-align: center;
+	font-weight: 500;
 
+	&__text {
+		margin-bottom: .7rem;
+	}
 	&:after {
 		content: "";
 		position: absolute;

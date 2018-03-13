@@ -39,6 +39,7 @@
 					<a href="#">Преимущества</a>
 					<a href="#">Бизнесу</a>
 					<a href="#">Благотворительность</a>
+					<a href="#">Мой кабинет <i class="fas fa-sign-out-alt"></i></a>
 				</nav>
 			</div>
 		</main>
@@ -51,12 +52,21 @@
 					<div class="profile__head-item profile__user"><i class="fas fa-user"></i><span>Илья Ведун</span></div>
 					<div class="profile__head-item profile__login">Логин: <span>+38096 06 08 088</span></div>
 
-					<div class="profile__head-item profile__charity">
+					<div class="profile__head-item profile__icon-item">
 						<i class="fas fa-heart"></i>
 						23.00грн
 						<div class="tooltip">Благотворительность</div>
 					</div>
-
+					
+					<div class="profile__head-item profile__icon-item">
+						<i class="fas fa-gift"></i>
+						23.00грн
+						<div class="tooltip">
+							<div class="tooltip__text">Бонусный счет</div>
+							
+							<a href="#" class="btn btn-shop">В магазин</a>
+						</div>
+					</div>
 					<button class="profile__head-item btn btn-prime btn-prime--green btnChangeData">Изменить данные</button>
 				</div>
 
@@ -162,7 +172,68 @@
 		</div>
 
 		<div class="container container--flex">
-			<form action="#" class="profile__data-form">
+			<h2 class="section-title section-title--for-flex">Переводы</h2>
+			<form action="#" class="form-delivery">
+				<fieldset class="form-delivery__person">
+					<h4 class="form-delivery__caption">Відправник</h4>
+					<div class="form-delivery__card">
+						<label for="card-1" class="form-delivery__label">Введіть номер своєї карти</label>
+						<input id="card-1" type="tel" class="form-delivery__input form-delivery__input--card" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="16">
+						<span class="form-delivery__icon">
+							<i class="far fa-envelope"></i>
+						</span>
+					</div>
+					<div class="form-delivery__multiple">
+						<div class="form-delivery__multiple-item">
+							<label for="date-1" class="form-delivery__label form-delivery__label--expanded">Термін дії</label>
+
+							<input id="date-1" type="tel" class="form-delivery__input form-delivery__input--date" placeholder="MM" maxlength="2">
+							<input id="date-2" type="tel" class="form-delivery__input form-delivery__input--date" placeholder="YY" maxlength="2">
+						</div>
+						<div class="form-delivery__multiple-item">
+							<label for="cvv-1" class="form-delivery__label">CVV</label>
+							<a href="#" class="form-delivery__link-top">Що це?</a>
+							<input id="cvv-1" type="password" class="form-delivery__input form-delivery__input--cvv" placeholder="***" maxlength="3">
+						</div>
+					</div>
+				</fieldset>
+				<fieldset class="form-delivery__person">
+					<h4 class="form-delivery__caption">Отримувач</h4>
+					<div class="form-delivery__card">
+						<label for="card-2" class="form-delivery__label">Введіть номер карти отримувача</label>
+						<input id="card-2" type="tel" class="form-delivery__input form-delivery__input--card" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="16">
+						<span class="form-delivery__icon">
+							<i class="far fa-envelope"></i>
+						</span>
+					</div>
+				</fieldset>
+				<fieldset class="form-delivery__main">
+					<h4 class="form-delivery__main-title">
+						<span>Сума переказу</span>
+						від 10 до 14999 (включаючи комісію)
+					</h4>
+					<input type="tel" placeholder="0.00" class="form-delivery__input form-delivery__input--labeled">
+					<span for="#" class="form-delivery__input-caption">грн</span>
+					<p class="form-delivery__main-prompt">Комісія буде зарахована автоматично (0.6% + 3.06 грн).</p>
+					<p class="form-delivery__main-info">Разом з урахуванням комісії: </p>
+					<div class="form-delivery__main-total">0.00 грн</div>
+					<div class="form-delivery__phone">
+						<label for="delivery-phone" class="form-delivery__label">Ваш телефон</label>
+						<input class="form-delivery__input form-delivery__input--phone" id="delivery-phone" type="tel" placeholder="+38 (_ _ _) _ _ _  _ _ _ _">
+						<span class="form-delivery__icon form-delivery__icon--inside">
+							<i class="fas fa-phone"></i>
+						</span>
+						<a href="#" class="form-delivery__icon-link" title="Подсказка"><i class="far fa-question-circle"></i></a>
+					</div>
+					<div class="b-checkbox">
+						<input id="delivery-check" type="checkbox">
+						<label for="delivery-check">Я погоджуюсь з <a href="#" class="b-checkbox__link">умовами публічного договору</a></label>
+						<button class="form__btn-apply">Здійснити переказ</button>	
+					</div>
+				</fieldset>
+			</form>
+
+			<form style="display: none;" action="#" class="profile__data-form">
 				<div class="profile__data">
 					<label class="profile__data-label">Мой логин: </label>
 					
@@ -218,7 +289,7 @@
 				<button type="submit" class="btn btn-prime btn-prime--green profile__data-btn">Сохранить данные</button>
 			</form>
 
-			<div class="profile__donations">
+			<div style="display: none;" class="profile__donations">
 				<div class="profile__donations-icon"><i class="fas fa-heart"></i></div>
 				<h3 class="profile__donations-title">Благотворительность</h3>
 				<p class="profile__donations-message">Пожертвовано <br>на блаотворительность</p>
@@ -285,6 +356,107 @@
 			</p>
 		</div>
 	</footer>
+	
+	<div class="popup">
+		<form id="form-quest" action="#" class="form popup-content">
+			<h3 class="form__title">Есть вопросы? Задайте их нам</h3>
+			<select class="form__item select">
+				<option value="Тема">Тема</option>
+				<option value="Тема">Тема</option>
+			</select>
+
+			<input class="form__item input" type="mail" placeholder="E-mail" required>
+			<input class="form__item input" type="text" placeholder="Имя" required>
+			<input class="form__item input" type="text" placeholder="Ваш вопрос" required>
+
+			<button type="submit" class="btn form__btn">Отправить</button>
+
+			<span class="popup__close"></span>
+		</form>
+
+		<form id="form-reg" action="#" class="form popup-content">
+			<h3 class="form__title">Регистрация</h3>
+			<input class="form__item input" type="tel" placeholder="Телефон" required>
+			<input class="form__item input" type="mail" placeholder="E-mail" required>
+			<input class="form__item input" type="text" placeholder="Имя" required>
+
+			<button type="submit" class="btn form__btn btnKeep">Продолжить</button>
+
+			<a href="#" class="form__already">У меня уже есть учетная запись</a>
+
+			<span class="popup__close"></span>
+		</form>
+
+		<form id="form-login" action="#" class="form popup-content">
+			<h3 class="form__title">Вход</h3>
+			<input class="form__item input" type="tel" placeholder="Логин" required>
+			<input class="form__item input" type="password" placeholder="Пароль" required>
+
+			<button type="submit" class="btn form__btn">Войти</button>
+
+			<a href="#" class="form__already">Зарегистрироватся</a>
+
+			<span class="popup__close"></span>
+		</form>
+
+		<form id="form-confirm" action="#" class="form popup-content">
+			<h3 class="form__title">Подтверждение аккаунта</h3>
+			<p class="form__message">На ваш номер отправлено смс с шестизначним кодом. <br> Введите код, что бы подтвердить номер</p>
+
+			<input type="text" class="input input--code" placeholder="XXXXXX" maxlength="6" required>
+
+			<button type="submit" class="btn form__btn">Отправить</button>
+			<button class="form__already  form__already--btn">Отправить код повторно</button>
+
+			<span class="popup__close"></span>
+		</form>
+
+		<form id="form-apply" action="#" class="form">
+			<h3 class="form__title">Заявить о мошеннике</h3>
+			<select class="form__item select">
+				<option value="Тема">Площадка</option>
+				<option value="Тема">Тема</option>
+			</select>
+
+			<input class="form__item input" type="tel" placeholder="Номер карты" required>
+			<input class="form__item input" type="text" placeholder="ФИО владельца" required>
+
+
+			<div class="doc-box">
+				<label class="doc-add">
+					<input type="file">	
+					<span class="doc-add__icon">
+						<i class="far fa-file"></i>
+					</span>
+
+					<span class="doc-add__text">Добавить файл</span>
+				</label>
+			</div>
+
+			<button type="submit" class="btn form__btn">Отправить</button>
+
+			<span class="popup__close"></span>
+		</form>
+
+		<form id="form-password" action="#" class="form">
+			<h3 class="form__title">Восстновление пароля</h3>
+
+			<div class="validation-box">
+				<input class="form__item input" type="password" placeholder="Новый пароль" required>
+				<i class="fas fa-snowflake"></i>
+			</div>
+
+			<div class="validation-box">
+				<input class="form__item input" type="password" placeholder="Повторить пароль" required>
+				<i class="fas fa-snowflake"></i>
+			</div>
+
+			<div class="validation-error"><i class="fas fa-snowflake"></i> Поле заполнено неверно</div>
+			<button type="submit" class="btn form__btn">Отправить</button>
+
+			<span class="popup__close"></span>
+		</form>
+	</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
 	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>

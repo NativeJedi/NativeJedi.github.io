@@ -63,6 +63,9 @@ window.onload = function() {
 		}
 	});
 
+	$('.mobile-menu').on('click', function(e) {
+		$(this).toggleClass('active');
+	});
 	function minHeight(selector) {
 		var currentHeight = selector.height();
 		console.log(currentHeight)

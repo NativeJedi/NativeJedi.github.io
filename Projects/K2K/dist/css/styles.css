@@ -571,9 +571,7 @@ ul {
 
 .mobile-menu {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1666,7 +1664,8 @@ ul {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7); }
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000; }
   .popup-content {
     display: none;
     margin: 2rem auto 0 auto; }
@@ -1774,6 +1773,10 @@ ul {
     width: 50%; } }
 
 @media only screen and (max-device-width: 767px) {
+  .mobile-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
   .header__top-nav,
   .footer__nav {
     display: none; }

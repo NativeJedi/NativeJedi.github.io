@@ -173,7 +173,7 @@
 								</div>
 							</div>
 
-							<button class="btn btn-prime profile-tab__btn-apply">Заявить о мошеннике</button>				
+							<button class="btn btn-prime profile-tab__btn-apply btnApply">Заявить о мошеннике</button>				
 						</div>
 					</div>
 				</nav>
@@ -352,6 +352,51 @@
 
 			<button type="submit" class="btn form__btn">Отправить</button>
 			<button class="form__already  form__already--btn">Отправить код повторно</button>
+
+			<span class="popup__close"></span>
+		</form>
+		<form id="form-apply" action="#" class="form">
+			<h3 class="form__title">Заявить о мошеннике</h3>
+			<select class="form__item select">
+				<option value="Тема">Площадка</option>
+				<option value="Тема">Тема</option>
+			</select>
+
+			<input class="form__item input" type="tel" placeholder="Номер карты" required>
+			<input class="form__item input" type="text" placeholder="ФИО владельца" required>
+
+
+			<div class="doc-box">
+				<label class="doc-add">
+					<input type="file">	
+					<span class="doc-add__icon">
+						<i class="far fa-file"></i>
+					</span>
+
+					<span class="doc-add__text">Добавить файл</span>
+				</label>
+			</div>
+
+			<button type="submit" class="btn form__btn">Отправить</button>
+
+			<span class="popup__close"></span>
+		</form>
+
+		<form id="form-password" action="#" class="form">
+			<h3 class="form__title">Восстновление пароля</h3>
+
+			<div class="validation-box">
+				<input class="form__item input" type="password" placeholder="Новый пароль" required>
+				<i class="fas fa-snowflake"></i>
+			</div>
+
+			<div class="validation-box">
+				<input class="form__item input" type="password" placeholder="Повторить пароль" required>
+				<i class="fas fa-snowflake"></i>
+			</div>
+
+			<div class="validation-error"><i class="fas fa-snowflake"></i> Поле заполнено неверно</div>
+			<button type="submit" class="btn form__btn">Отправить</button>
 
 			<span class="popup__close"></span>
 		</form>

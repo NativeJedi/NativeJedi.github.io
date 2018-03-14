@@ -130,6 +130,9 @@
 }
 
 @media only screen and (max-device-width: 767px) {
+	.mobile-menu {
+		display: flex;
+	}
 	.header__top-nav,
 	.footer__nav {
 		display: none;

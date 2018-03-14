@@ -1290,7 +1290,7 @@
 	right: 0;
 	bottom: 0;
 	background-color: rgba(#000, .7);
-
+	z-index: 1000;
 	&-content {
 		display: none;
 		margin: 2rem auto 0 auto;

@@ -67,7 +67,9 @@
 							<a href="#" class="btn btn-shop">В магазин</a>
 						</div>
 					</div>
-					<a href="data-change.html" class="profile__head-item btn btn-prime btn-prime--green">Изменить данные</a>
+					<button class="profile__head-item btn btn-prime btn-prime--green btnChangeData">Изменить данные</button>
+
+					<a href="private.html" class="profile__head-home"><i class="fas fa-home"></i></a>
 				</div>
 
 				<nav class="profile-tab-box">
@@ -173,66 +175,71 @@
 		
 		<section class="section">
 			<div class="container container--flex">
-				<h2 class="section-title section-title--for-flex">Переводы</h2>
-				<form action="#" class="form-delivery">
-					<fieldset class="form-delivery__person">
-						<h4 class="form-delivery__caption">Відправник</h4>
-						<div class="form-delivery__card">
-							<label for="card-1" class="form-delivery__label">Введіть номер своєї карти</label>
-							<input id="card-1" type="tel" class="form-delivery__input form-delivery__input--card" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="16">
-							<span class="form-delivery__icon">
-								<i class="far fa-envelope"></i>
-							</span>
-						</div>
-						<div class="form-delivery__multiple">
-							<div class="form-delivery__multiple-item">
-								<label for="date-1" class="form-delivery__label form-delivery__label--expanded">Термін дії</label>
+				<form action="#" class="profile__data-form">
+					<div class="profile__data">
+						<label class="profile__data-label">Мой логин: </label>
 
-								<input id="date-1" type="tel" class="form-delivery__input form-delivery__input--date" placeholder="MM" maxlength="2">
-								<input id="date-2" type="tel" class="form-delivery__input form-delivery__input--date" placeholder="YY" maxlength="2">
-							</div>
-							<div class="form-delivery__multiple-item">
-								<label for="cvv-1" class="form-delivery__label">CVV</label>
-								<a href="#" class="form-delivery__link-top">Що це?</a>
-								<input id="cvv-1" type="password" class="form-delivery__input form-delivery__input--cvv" placeholder="***" maxlength="3">
-							</div>
+						<div class="profile__data-item">
+							<input maxlength="12" value="+38098 06 06 606" type="tel" class="profile__data-input" disabled>
+							<button class="profile__data-redact btn-transparent"><i class="fas fa-pencil-alt"></i></button>
 						</div>
-					</fieldset>
-					<fieldset class="form-delivery__person">
-						<h4 class="form-delivery__caption">Отримувач</h4>
-						<div class="form-delivery__card">
-							<label for="card-2" class="form-delivery__label">Введіть номер карти отримувача</label>
-							<input id="card-2" type="tel" class="form-delivery__input form-delivery__input--card" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="16">
-							<span class="form-delivery__icon">
-								<i class="far fa-envelope"></i>
-							</span>
+					</div>
+
+					<div class="profile__data">
+						<label class="profile__data-label">Мой пароль: </label>
+						<div class="profile__data-item">
+							<input value="password" type="password" class="profile__data-input" disabled>
+							<button class="profile__data-redact btn-transparent"><i class="fas fa-pencil-alt"></i></button>
 						</div>
-					</fieldset>
-					<fieldset class="form-delivery__main">
-						<h4 class="form-delivery__main-title">
-							<span>Сума переказу</span>
-							від 10 до 14999 (включаючи комісію)
-						</h4>
-						<input type="tel" placeholder="0.00" class="form-delivery__input form-delivery__input--labeled">
-						<span for="#" class="form-delivery__input-caption">грн</span>
-						<p class="form-delivery__main-prompt">Комісія буде зарахована автоматично (0.6% + 3.06 грн).</p>
-						<p class="form-delivery__main-info">Разом з урахуванням комісії: </p>
-						<div class="form-delivery__main-total">0.00 грн</div>
-						<div class="form-delivery__phone">
-							<label for="delivery-phone" class="form-delivery__label">Ваш телефон</label>
-							<input class="form-delivery__input form-delivery__input--phone" id="delivery-phone" type="tel" placeholder="+38 (_ _ _) _ _ _  _ _ _ _">
-							<span class="form-delivery__icon form-delivery__icon--inside">
-								<i class="fas fa-phone"></i>
-							</span>
-							<a href="#" class="form-delivery__icon-link" title="Подсказка"><i class="far fa-question-circle"></i></a>
+					</div>
+
+					<div class="profile__data">
+						<label class="profile__data-label">Имя: </label>
+						<div class="profile__data-item">
+							<input value="Илья Ведун" type="text" class="profile__data-input" disabled>
+							<button class="profile__data-redact btn-transparent"><i class="fas fa-pencil-alt"></i></button>
 						</div>
-						<div class="b-checkbox">
-							<input id="delivery-check" type="checkbox">
-							<label for="delivery-check">Я погоджуюсь з <a href="#" class="b-checkbox__link">умовами публічного договору</a></label>
-							<button class="form__btn-apply">Здійснити переказ</button>	
+					</div>
+
+					<div class="profile__data">
+						<label class="profile__data-label">Номер карты: </label>
+						<div class="profile__data-item">
+							<input value="6565 6565 6575 4582" type="tel" class="profile__data-input" disabled>
+							<button class="profile__data-redact btn-transparent"><i class="fas fa-pencil-alt"></i></button>
+
+							<a href="#" class="profile__data-more">Добавить еще одну карту</a>
 						</div>
-					</fieldset>
+					</div>
+
+					<div class="profile__data">
+						<label class="profile__data-label">Бонусный счет: </label>
+						<div class="profile__data-item">0.00 грн <a class="btn btn-shop btn-shop--inside" href="#">В магазин</a></div>
+					</div>
+
+					<div class="profile__data">
+						<label class="profile__data-label">Двухфакторная авторизация:</label>
+						<div class="profile__data-item">
+							<label for="profile-checkbox" class="switcher">
+								<input id="profile-checkbox" type="checkbox">
+								<span class="switcher__heart"></span>
+								<span class="switcher__value switcher__value--on">вкл</span>
+								<span class="switcher__value switcher__value--off">выкл</span>
+							</label>
+						</div>
+					</div>
+
+					<button type="submit" class="btn btn-prime btn-prime--green profile__data-btn">Сохранить данные</button>
 				</form>
+
+				<div class="profile__donations">
+					<div class="profile__donations-icon"><i class="fas fa-heart"></i></div>
+					<h3 class="profile__donations-title">Благотворительность</h3>
+					<p class="profile__donations-message">Пожертвовано <br>на блаотворительность</p>
+					<div class="profile__donations-sum">23.00 грн</div>
+					<div class="profile__donations-total">Всего пожертвовано: 12.345 грн</div>
+					<p class="profile__donations-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente eaque temporibus vitae quae sit mollitia totam </p>
+					<button class="btn btn-prime btn-prime--green">Сделать пожертву</button>
+				</div>
 			</div>
 		</section>
 	</section>

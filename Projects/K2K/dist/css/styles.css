@@ -461,6 +461,9 @@ ul {
     .btn-shop:hover {
       -webkit-box-shadow: 0 0 15px 0 #ADB934;
               box-shadow: 0 0 15px 0 #ADB934; }
+    .btn-shop--inside {
+      margin-left: 2rem;
+      background-color: #fafafa; }
 
 .b-checkbox input {
   display: none; }
@@ -706,23 +709,24 @@ ul {
       color: #fff;
       background-color: #ADB934; }
 
-.decision {
+.s-info {
   padding: 1.5rem 0;
   background-color: #FBFBFB; }
-  .decision .container {
+  .s-info .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
-  .decision__img {
+  .s-info__img {
     width: 30%; }
-    .decision__img img {
+    .s-info__img img {
       max-width: 100%; }
-  .decision__title {
+  .s-info__title {
     margin-bottom: 0;
-    font-style: 2.4rem;
-    font-weight: normal;
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: #637A8E;
     text-transform: uppercase; }
-  .decision__text {
+  .s-info__text {
     max-width: 50rem;
     font-size: 1.4rem; }
 
@@ -855,6 +859,11 @@ ul {
     color: #8f8f8f; }
   .profile__head-item:not(:last-child) {
     margin-right: 2rem; }
+  .profile__head-home {
+    font-size: 2rem;
+    color: #ADB934; }
+    .profile__head-home:hover {
+      opacity: .5; }
 
 .profile__user svg {
   margin-right: 1rem; }
@@ -889,6 +898,7 @@ ul {
       float: right;
       margin: 4rem 2rem 0 0; }
     .profile-tab__btn.is-active {
+      outline: none;
       color: #fff;
       background-color: #ADB934; }
       .profile-tab__btn.is-active + .profile-tab__container {
@@ -1047,6 +1057,7 @@ ul {
     margin: 0 0 2rem 0;
     font-size: 12px; }
 
+/*#docs form*/
 .doc-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1079,6 +1090,30 @@ ul {
   .doc-add:hover .doc-add__text {
     text-decoration: underline;
     color: #ADB934; }
+
+/*#error */
+.error {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .error-section {
+    padding: 10rem 0 19rem 0; }
+  .error__info {
+    margin-left: 2rem; }
+  .error__code {
+    font-size: 9rem;
+    font-weight: 500;
+    color: #ADB934; }
+  .error__message {
+    font-size: 1.8rem;
+    margin: 0 0 2rem 0; }
 
 .switcher {
   position: relative;

@@ -431,7 +431,7 @@ ul {
   border: 1px solid;
   border-radius: 1000rem;
   font-size: 14px; }
-  .btn-group button:not(:last-child) {
+  .btn-group .btn:not(:last-child) {
     margin-right: 2rem; }
   .btn-prime {
     background-color: transparent;
@@ -534,7 +534,8 @@ ul {
   opacity: 0;
   white-space: nowrap;
   text-align: center;
-  font-weight: 500; }
+  font-weight: 500;
+  z-index: 20; }
   .tooltip__text {
     margin-bottom: .7rem; }
   .tooltip:after {
@@ -699,6 +700,7 @@ ul {
     width: 33.33%;
     padding: 4.5rem 2.5641%; }
     .media__item-img {
+      max-width: 5rem;
       margin-right: 2rem; }
     .media__item-text {
       max-width: 25rem;
@@ -717,7 +719,8 @@ ul {
     display: -ms-flexbox;
     display: flex; }
   .s-info__img {
-    width: 30%; }
+    width: 30%;
+    margin-right: 2rem; }
     .s-info__img img {
       max-width: 100%; }
   .s-info__title {
@@ -805,12 +808,13 @@ ul {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     max-width: 12rem;
-    margin-right: -2rem; }
+    margin-left: -1rem; }
     .footer__payment-title {
+      margin-left: 1rem;
       width: 100%; }
     .footer__payment svg {
+      margin-left: 1rem;
       font-size: 2.4rem;
-      margin-right: 1rem;
       -webkit-transition: -webkit-transform .3s;
       transition: -webkit-transform .3s;
       -o-transition: transform .3s;
@@ -865,8 +869,13 @@ ul {
     .profile__head-home:hover {
       opacity: .5; }
 
-.profile__user svg {
-  margin-right: 1rem; }
+.profile__user {
+  position: relative;
+  padding-left: 2rem; }
+  .profile__user svg {
+    position: absolute;
+    top: 2px;
+    left: 0; }
 
 .profile__login span {
   color: #ADB934; }
@@ -875,7 +884,8 @@ ul {
   position: relative;
   color: #ADB934;
   cursor: pointer;
-  padding: 1rem 0; }
+  padding: 1rem 0;
+  white-space: nowrap; }
   .profile__icon-item:hover .tooltip {
     display: block;
     opacity: 1; }
@@ -904,7 +914,7 @@ ul {
       .profile-tab__btn.is-active + .profile-tab__container {
         display: block; }
   .profile-tab__container {
-    min-width: 37rem;
+    width: 37rem;
     position: absolute;
     display: none;
     padding: 1.5rem 0;
@@ -951,6 +961,7 @@ ul {
 .profile-person {
   position: relative;
   padding: 1rem 1.5rem;
+  word-wrap: break-word;
   background-color: #FBFBFB; }
   .profile-person:not(:last-child) {
     margin: 0 0 2rem 0; }
@@ -1641,5 +1652,75 @@ ul {
       -webkit-transform: translate(-50%, -50%) rotate(-45deg);
           -ms-transform: translate(-50%, -50%) rotate(-45deg);
               transform: translate(-50%, -50%) rotate(-45deg); }
+
+/*#Medi*/
+@media only screen and (max-device-width: 1040px) {
+  .container {
+    padding: 0 1rem; }
+  .header__top .container {
+    padding: .5rem 1rem; }
+  .main__image-abs {
+    bottom: 8rem; }
+  .profile__head .container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .profile__head-bar, .profile-tab-box {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .profile-tab__container--left {
+    left: 0; }
+  .profile-tab__btn {
+    padding: 2rem; }
+  .popup-content {
+    width: 80%; } }
+
+@media only screen and (max-device-width: 768px) {
+  .header__main .container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .header__main-nav {
+    width: 100%;
+    margin-top: 2rem;
+    text-align: center; }
+  .main {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .main__image-content {
+      height: 30%; }
+    .main__image-abs {
+      bottom: 0; }
+    .main-content__title {
+      font-size: 2rem; }
+  .media__item {
+    width: 50%; }
+  .form-delivery {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .form-delivery__person {
+      margin-bottom: 2rem; }
+  .faq {
+    padding: 0;
+    background: none; }
+    .faq .container {
+      padding: 0; }
+    .faq .form {
+      padding: 0 12.5% 2rem 12.5%; }
+  .footer .container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .footer__contacts, .footer__payment {
+    margin: 1rem 1rem 0 0; }
+  .profile__data-form {
+    width: 50%; }
+  .profile__donations {
+    width: 50%; } }
 
 /*# sourceMappingURL=styles.css.map */

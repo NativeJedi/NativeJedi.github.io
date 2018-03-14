@@ -1,0 +1,130 @@
+@media only screen and (max-device-width: 1040px) {
+	.container, {
+		padding: 0 1rem;
+	}
+
+	.header__top .container {
+		padding: .5rem 1rem;
+	}
+
+	.main {
+		&__image-abs {
+			bottom: 8rem;
+		}
+	}
+
+	.profile {
+
+		&__head {
+			.container {
+				flex-wrap: wrap;
+			}
+		}
+		&__head-bar,
+		&-tab-box {
+			width: 100%;
+			justify-content: center;
+		}
+
+		&-tab {
+			&__container--left {
+				left: 0;
+			}
+			&__btn {
+				padding: 2rem;
+			}
+		}
+	}
+
+	.popup-content {
+		width: 80%;
+
+		&.form {
+			
+		}
+	}
+}
+
+
+@media only screen and (max-device-width: 768px) {
+
+	.header {
+		&__main {
+			.container {
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+
+			&-nav {
+				width: 100%;
+				margin-top: 2rem;
+				text-align: center;
+			}
+		}
+	}
+	.main {
+		align-items: center;
+		&__image {
+			&-content {
+				height: 30%;
+			}
+			&-abs {
+				bottom: 0;
+			}
+		}
+
+		&-content {
+			&__title {
+				font-size: 2rem;
+			}
+		}
+	}
+
+	.media {
+		&__item {
+			width: 50%;
+		}
+	}
+
+	.form-delivery {
+		justify-content: center;
+
+		&__person {
+			margin-bottom: 2rem;
+		}
+	}
+
+	.faq {
+		padding: 0;
+		background: none;
+		.container {
+			padding: 0;
+		}
+
+		.form {
+			padding: 0 pxtopercent(100, 800) 2rem pxtopercent(100, 800);
+		}
+	}
+
+	.footer {
+		.container {
+			justify-content: center;
+		}
+
+		&__contacts,
+		&__payment {
+			margin: 1rem 1rem 0 0;
+		}
+	}
+
+	.profile {
+		&__data-form {
+			width: 50%;
+		}
+
+		&__donations {
+			width: 50%;
+		}
+	}
+
+}

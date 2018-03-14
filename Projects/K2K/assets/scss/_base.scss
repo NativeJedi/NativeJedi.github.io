@@ -65,12 +65,13 @@ ul {
 	font-size: 14px;	
 	
 	&-group {
-		button {
+		.btn {
 			&:not(:last-child) {
 				margin-right: 2rem;
 			}
 		}
 	}
+
 	&-prime {
 		background-color: transparent;
 		transition: all .3s;
@@ -197,6 +198,7 @@ ul {
 	white-space: nowrap;
 	text-align: center;
 	font-weight: 500;
+	z-index: 20;
 
 	&__text {
 		margin-bottom: .7rem;

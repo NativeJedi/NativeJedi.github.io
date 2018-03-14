@@ -169,6 +169,7 @@
 		padding: 4.5rem pxtopercent(30);
 
 		&-img {
+			max-width: 5rem;
 			margin-right: 2rem;
 		}
 
@@ -194,6 +195,7 @@
 
 	&__img {
 		width: 30%;
+		margin-right: 2rem;
 
 		img { max-width: 100%;}
 	}
@@ -300,14 +302,15 @@
 		display: flex;
 		flex-wrap: wrap;
 		max-width: 12rem;
-		margin-right: -2rem;
+		margin-left: -1rem;
 		&-title {
+			margin-left: 1rem;
 			width: 100%;
 		}
 
 		svg {
+			margin-left: 1rem;
 			font-size: 2.4rem;
-			margin-right: 1rem;
 			transition: transform .3s;
 			&:hover {
 				color: $main-color;
@@ -369,10 +372,13 @@
 		}
 	}
 
-
 	&__user {
+		position: relative;
+		padding-left: 2rem;
 		svg {
-			margin-right: 1rem;
+			position: absolute;
+			top: 2px;
+			left: 0;
 		}
 	}
 
@@ -387,6 +393,7 @@
 		color: $main-color;
 		cursor: pointer;
 		padding: 1rem 0;
+		white-space: nowrap;
 		&:hover {
 			.tooltip {
 				display: block;
@@ -431,7 +438,7 @@
 		}
 
 		&__container {
-			min-width: 37rem;
+			width: 37rem;
 			position: absolute;
 			display: none;
 			padding: 1.5rem 0;
@@ -475,6 +482,7 @@
 	&-person {
 		position: relative;
 		padding: 1rem 1.5rem;
+		word-wrap: break-word;
 		background-color: $default-color;
 
 		&:not(:last-child) {
@@ -1322,3 +1330,8 @@
 		}
 	}
 }
+
+
+/*#Medi*/
+
+@import 'media';

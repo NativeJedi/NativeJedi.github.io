@@ -606,6 +606,21 @@ ul {
       border-color: #22A1FF;
       background-color: #22A1FF;
       color: #fff; }
+  .btn--main {
+    border: none;
+    background-color: #22A1FF;
+    padding: 1rem 6rem;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    -webkit-transition: -webkit-box-shadow .3s;
+    transition: -webkit-box-shadow .3s;
+    -o-transition: box-shadow .3s;
+    transition: box-shadow .3s;
+    transition: box-shadow .3s, -webkit-box-shadow .3s; }
+    .btn--main:hover {
+      -webkit-box-shadow: 0 0 15px 5px #22A1FF;
+              box-shadow: 0 0 15px 5px #22A1FF; }
   .btn-mouse {
     position: absolute;
     left: 50%;
@@ -615,10 +630,95 @@ ul {
             transform: translate(-50%, -100%);
     background-color: transparent;
     border: none; }
+  .btn-transparent {
+    background-color: transparent;
+    border: none; }
+  .btn-example {
+    position: relative;
+    padding: 0 0 0 3rem;
+    font-size: 1.2rem; }
+    .btn-example:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
+      left: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: #474849; }
+    .btn-example:active {
+      outline: none; }
+    .btn-example.is-active {
+      outline: none; }
+      .btn-example.is-active:after {
+        background-color: #22A1FF; }
+
+.player {
+  display: inline-block;
+  position: relative;
+  font-family: "Futura";
+  color: #fff;
+  text-align: center;
+  margin-bottom: 4rem;
+  background: url("../img/elipses.png") no-repeat;
+  background-size: contain; }
+  .player__link {
+    text-decoration: underline; }
+    .player__link:hover {
+      color: #22A1FF; }
+  .player__img {
+    position: relative;
+    max-width: 50rem; }
+    .player__img img {
+      display: block;
+      width: 100%; }
+
+.section {
+  padding: 6rem 0; }
+  .section-title {
+    margin: 4.5rem 0 3.5rem 0;
+    font-size: 36px;
+    font-family: "Futura";
+    font-weight: normal;
+    color: #fff; }
+    .section-title--mt0 {
+      margin-top: 0; }
+  .section-text {
+    max-width: 67rem;
+    margin: 0 0 3rem 0;
+    line-height: 1.438;
+    color: #fff; }
+    .section-text--centered {
+      text-align: center;
+      color: #80838B; }
+  .section--dark {
+    background: #0B162C; }
 
 .container {
   max-width: 115rem;
   margin: 0 auto; }
+  .container--flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .container--flex-center {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
 
 .header {
   display: -webkit-box;
@@ -739,17 +839,8 @@ ul {
         -webkit-transform: rotate(120deg);
             -ms-transform: rotate(120deg);
                 transform: rotate(120deg); }
-  .main__info {
-    color: #fff; }
-    .main__info-title {
-      margin: 4.5rem 0 3.5rem 0;
-      font-size: 36px;
-      font-family: "Futura";
-      font-weight: normal; }
-    .main__info-text {
-      margin: 0 0 3rem 0;
-      line-height: 1.438; }
   .main__assets {
+    width: 100%;
     margin-top: 7rem;
     color: #fff; }
     .main__assets-item svg {
@@ -758,25 +849,6 @@ ul {
       margin-right: 2.4rem; }
     .main__assets-item:hover {
       color: #22A1FF; }
-  .main__player {
-    display: inline-block;
-    position: relative;
-    font-family: "Futura";
-    color: #fff;
-    text-align: center;
-    margin-bottom: 4rem;
-    background: url("../img/elipses.png") no-repeat;
-    background-size: contain; }
-    .main__player-link {
-      text-decoration: underline; }
-      .main__player-link:hover {
-        color: #22A1FF; }
-    .main__player-img {
-      position: relative;
-      max-width: 50rem; }
-      .main__player-img img {
-        display: block;
-        width: 100%; }
   .main-subscribe__label {
     display: block;
     padding-left: 2.5rem;
@@ -1062,6 +1134,153 @@ ul {
     -webkit-transform: rotate(45deg) translate(-9px, -7px);
         -ms-transform: rotate(45deg) translate(-9px, -7px);
             transform: rotate(45deg) translate(-9px, -7px); }
+
+.diagram {
+  position: relative;
+  width: 100%;
+  min-width: 50rem;
+  height: 32rem;
+  padding: 6rem 2.8rem 2rem 2.8rem;
+  background-color: #000; }
+  .diagram__list {
+    position: absolute;
+    top: 1rem;
+    left: 2.8rem; }
+    .diagram__list-item {
+      margin-bottom: 1rem; }
+  .diagram__image {
+    display: none;
+    width: 100%;
+    height: 100%; }
+    .diagram__image.is-active {
+      display: inline-block; }
+
+.profit {
+  margin-bottom: 4rem;
+  color: #424242;
+  font-size: 16px; }
+  .profit-column {
+    width: 50%;
+    max-width: 50rem; }
+  .profit__title {
+    font-family: "Futura"; }
+  .profit__text {
+    line-height: 1.438; }
+
+.advantage {
+  position: relative;
+  max-width: 27rem;
+  padding: 2.8rem 2.5rem 4rem 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.4rem;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 79px 0px rgba(79, 79, 79, 0.43);
+          box-shadow: 0px 0px 79px 0px rgba(79, 79, 79, 0.43); }
+  .advantage:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: .5rem;
+    background-color: #ccc; }
+  .advantage-section {
+    position: relative;
+    padding: 7rem 0 5rem 0;
+    background-color: #fafafa;
+    z-index: 2; }
+    .advantage-section .container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
+  .advantage__img {
+    max-width: 5rem;
+    margin-bottom: 1rem; }
+  .advantage__text {
+    width: 100%;
+    word-wrap: break-word;
+    margin: 1rem 0 0 0;
+    font-size: 1.3rem; }
+    .advantage__text:nth-child(even) {
+      color: #007bff;
+      font-weight: bold;
+      font-size: 1.4rem; }
+  .advantage__bg-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    font-size: 150px;
+    font-family: "OpenSans";
+    line-height: .7;
+    color: rgba(242, 242, 242, 0.169);
+    font-weight: bold;
+    background-color: #007bff;
+    z-index: -1; }
+
+.slider-caption {
+  font-family: "Futura";
+  text-transform: uppercase;
+  line-height: 1.2; }
+
+.slider .ui-slider {
+  position: relative;
+  width: 100%;
+  margin: 1rem 0;
+  font-family: 'Open Sans';
+  font-weight: bold; }
+  .slider .ui-slider-handle {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translate(-50%, -35%);
+        -ms-transform: translate(-50%, -35%);
+            transform: translate(-50%, -35%);
+    width: 7rem;
+    height: 3rem;
+    line-height: 3rem;
+    background: #22A1FF;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+    color: #Fff;
+    -webkit-box-shadow: 0 0 10px 1px #22A1FF;
+            box-shadow: 0 0 10px 1px #22A1FF; }
+    .slider .ui-slider-handle:focus {
+      outline: none; }
+  .slider .ui-slider-horizontal {
+    height: 1rem; }
+  .slider .ui-slider-helper {
+    position: relative;
+    width: calc(100% - 7rem);
+    margin: 0 auto; }
+
+.slider .ui-widget-content {
+  background-color: rgba(0, 0, 0, 0.075); }
+
+.slider .ui-widget-header {
+  top: 0px;
+  height: 100%;
+  background-color: #1380B7; }
+
+.slider .ui-corner-all {
+  border-radius: 10000rem; }
+
+.special {
+  color: #007bff; }
 
 .mobile-menu {
   display: none;

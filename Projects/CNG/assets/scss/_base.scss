@@ -217,7 +217,18 @@ ul {
 			color: #fff;
 		}
 	}
-
+	&--main {
+		border: none;
+		background-color: $main-color;
+		padding: 1rem 6rem;
+		font-size: 16px;
+		color: rgb(255, 255, 255);
+		font-weight: 500;
+		transition: box-shadow .3s;
+		&:hover {
+			box-shadow: 0 0 15px 5px $main-color;
+		}
+	}
 	&-mouse {
 		position: absolute;
 		left: 50%;
@@ -225,5 +236,92 @@ ul {
 		transform: translate(-50%, -100%);
 		background-color: transparent;
 		border: none;
+	}
+	&-transparent {
+		background-color: transparent;
+		border: none;
+	}
+	&-example {
+		position: relative;
+		padding: 0 0 0 3rem;
+		font-size: 1.2rem;
+
+		&:after {
+			content: "";
+			@include centY;
+			left: 0;
+			width: 1.5rem;
+			height: 1.5rem;
+			background-color: $font-second;
+		}
+		&:active {
+			outline: none;
+		}
+		&.is-active {
+			outline: none;
+			&:after {
+				background-color: $main-color;
+			}
+		}
+	}
+}
+
+.player {
+	display: inline-block;
+	position: relative;
+	font-family: "Futura";
+	color: #fff;
+	text-align: center;
+	margin-bottom: 4rem;
+	background: url("../img/elipses.png") no-repeat;
+	background-size: contain;
+	&__link {
+		text-decoration: underline;
+
+		&:hover {
+			color: $main-color;
+		}
+	}
+
+	&__img {
+		position: relative;
+		max-width: 50rem;
+
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+}
+
+.section {
+	padding: 6rem 0;
+	&-title {
+		margin: 4.5rem 0 3.5rem 0;
+		font-size: 36px;
+		font-family: "Futura";
+		font-weight: normal;
+		color: #fff;
+
+		&--mt0 {
+			margin-top: 0;
+		}
+	}
+
+	&-text {
+		max-width: 67rem;
+		margin: 0 0 3rem 0;
+		line-height: 1.438;
+		color: #fff;
+		
+		&--centered {
+			text-align: center;
+			color: #80838B;
+
+		}
+	}
+
+	&--dark {
+		background: #0B162C;
 	}
 }

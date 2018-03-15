@@ -46,6 +46,21 @@ window.onload = function() {
 		$('.mobile-btn').removeClass('active');
 		$('.mobile-menu').stop(true, true).fadeOut();
 	});
+
+	new Slider('#credit-slider-1', 0, 10000);
+	new Slider('#credit-slider-2', 0, 10000);
+
+	$('.btn-example').on('click', function(e) {
+		$('.btn-example').removeClass('is-active');
+		$(this).addClass('is-active');
+
+		var data = $(this).data('example');
+
+		var img = $('img[data-example="' + data + '"]');
+
+		$('.diagram__image').removeClass('is-active');
+		img.addClass('is-active');
+	});
 };
 
 function Popup() {
@@ -113,4 +128,21 @@ function Timer(date) {
 			}
 		}, 1000);
 	}
+}
+
+function Slider(initialId, min, max) {
+
+	if (document.querySelector(initialId) == null) return;
+
+	var sliderHandle = $(initialId + ' .ui-slider-val');
+
+	$(initialId).slider({
+		min: min,
+		max: max,
+		range: "min",
+		animate: "slow",
+		slide: function( event, ui) {
+			sliderHandle.html('$' + ui.value);
+		}
+	});
 }

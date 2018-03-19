@@ -61,8 +61,46 @@ window.onload = function() {
 		$('.diagram__image').removeClass('is-active');
 		img.addClass('is-active');
 	});
+
+	$('.b-spoiler h3').on('click', function(e) {
+		$('.b-spoiler h3').not($(this)).removeClass('is-active');
+		$(this).toggleClass('is-active');
+	});
+	var graphImages1 = $('#graph-1 .graph__img');
+	var mainImg1 = $('#graph-1 .img-main');
+	var changinImages1 = $('#graph-1 .graph__img:not(.img-main)');
+	var selector1 = $('#graph-1 .graph-info__item');
+	var graphImages2 = $('#graph-2 .graph__img');
+	var mainImg2 = $('#graph-2 .img-main');
+	var changinImages2 = $('#graph-2 .graph__img:not(.img-main)');
+	var selector2 = $('#graph-2 .graph-info__item');
+	graphChange(selector1, graphImages1, mainImg1, changinImages1);
+	graphChange(selector2, graphImages2, mainImg2, changinImages2)
+
+	
 };
 
+function graphChange(selector, graphImages, mainImg, changinImages) {
+	selector.on('mouseover', function(e) {
+		graphImages.not($(this)).css({
+			opacity: '0'
+		});
+
+		var data = $(this).data('img');
+		var dataImg = $('.'+ data);
+		dataImg.css({opacity: '1'});
+	});
+
+	selector.on('mouseout', function(e) {
+		mainImg.css({
+			opacity: '1'
+		});
+
+		changinImages.css({
+			opacity: '0'
+		});
+	});
+}
 function Popup() {
 	var popup = $('.popup');
 	var self = this;

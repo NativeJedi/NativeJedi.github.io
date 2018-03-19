@@ -14,7 +14,9 @@ html {
 body {
 	font-size: 16px;
 }
-
+p {
+	color: rgb(86, 86, 86);
+}
 a {
 	display: inline-block;
 	text-decoration: none;
@@ -87,7 +89,7 @@ ul {
 		cursor: pointer;
 		&.is-active + p {
 			max-height: 10rem;
-			margin: 2.5rem 0 0 0;
+			padding: 2rem 0;
 		}
 	}
 	p {
@@ -266,6 +268,14 @@ ul {
 	}
 }
 
+.link {
+	line-height: 0.9;
+	border-bottom: 1px solid;
+
+	&:hover {
+		color: $main-color;
+	}
+}
 .player {
 	display: inline-block;
 	position: relative;
@@ -275,13 +285,6 @@ ul {
 	margin-bottom: 4rem;
 	background: url("../img/elipses.png") no-repeat;
 	background-size: contain;
-	&__link {
-		text-decoration: underline;
-
-		&:hover {
-			color: $main-color;
-		}
-	}
 
 	&__img {
 		position: relative;
@@ -303,6 +306,13 @@ ul {
 		font-weight: normal;
 		color: #fff;
 
+		&--center {
+			text-align: center;
+		}
+		&--prime {
+			text-align: center;
+			color: #000;
+		}
 		&--mt0 {
 			margin-top: 0;
 		}
@@ -316,12 +326,20 @@ ul {
 		
 		&--centered {
 			text-align: center;
-			color: #80838B;
-
-		}
+			color: $text-dark;
+			font-size: 1.5rem;
+		}	
 	}
 
 	&--dark {
-		background: #0B162C;
+		background: #0B162C  linear-gradient( 0deg, #18346C 0%,
+			rgba(48,107,223,0) 100%);
+
+	}
+
+	&--main {
+		color: #fff;
+		background-color: rgb(22, 22, 22);
 	}
 }
+

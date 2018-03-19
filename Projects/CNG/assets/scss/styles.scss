@@ -108,13 +108,14 @@
 	}
 
 	&-price {
+		position: relative;
 		display: flex;
 		width: 50%;
 		padding-left: 10%;
 		color: #fff;
 
-		&__content {
-			width: 100%;
+		p {
+			color: #fff;
 		}
 
 		&__title {
@@ -142,31 +143,14 @@
 		&__time {
 			padding: 0;
 		}
+
 	}
 
-	&-progress {
-		position: relative;
-		width: 120px;
-		height: 80px;
-
-		&__container {
-			width: 100px;
-			height: 100px;
-			position: absolute; 
-			clip: rect(0px, 100px, 100px, 50px);
-		}
-
-		&__circle {
-			width: 80px;
-			height: 80px;
-			border: 15px solid $main-color;
-			border-radius: 50px;
-			position: absolute;
-			clip: rect(0px, 50px, 100px, 0px);
-			
-			&--right {
-				transform: rotate(120deg);
-			}
+	&__progress {
+		margin-top: 3.5rem;
+		&-heart {
+			width: 6.5rem;
+			height: 6.5rem;
 		}
 	}
 
@@ -314,7 +298,6 @@
 	&__item {
 		display: inline-block;
 		text-align: center;
-
 		&:not(:last-child) {
 			margin-right: 1.5rem;
 		}
@@ -331,6 +314,7 @@
 		}
 
 		&-caption {
+			padding-top: .5rem;
 			color: $font-dark;
 		}
 	}
@@ -415,16 +399,21 @@
 		transform: translate(-40%, -50%);
 	}
 }
+
 .btn-play {
 	@extend %play;
 	width: 5.5rem;
 	height: 5.5rem;
 	font-size: 2rem;
+	border: none;
 	box-shadow: 
 	0 0 0 20px $main-color,
 	0 0 0 40px rgba($main-color, .6),
 	0 0 0 60px rgba($main-color, .4);
-
+	
+	&:focus {
+		outline: none;
+	}
 	&:hover {
 		animation: boxShadow 1.5s infinite;
 		animation-direction: alternate-reverse;
@@ -864,6 +853,7 @@
 			font-size: 2.4rem;
 			font-family: "Raleway";
 		}
+
 		p {
 			font-size: 15px;
 			color: rgb(232, 232, 232);
@@ -879,7 +869,10 @@
 		&__item {
 			display: flex;
 			padding: 1rem 0;
-			border-bottom: 1px solid $text-dark;
+			text-transform: uppercase;
+			&:not(:last-child) {
+				border-bottom: 1px solid $text-dark;
+			}
 		}
 
 		&__title {
@@ -1133,9 +1126,10 @@
 }
 
 .contact {
+	display: inline-block;
 	width: 50%;
 	color: #fff;
-	padding: 4.5rem;
+	padding: 4rem;
 	&-section {
 		background-color: #0B162D;
 	}
@@ -1153,7 +1147,7 @@
 		margin-bottom: 2rem;
 
 		a {
-			display: block;
+			display: inline-block;
 			line-height: 1.5rem;
 			transition: color .3s;
 			&:not(:last-child) {

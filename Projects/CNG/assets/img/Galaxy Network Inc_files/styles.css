@@ -2064,14 +2064,7 @@ ul {
     padding: 2rem 1rem; }
   .advantage__bg-text {
     font-size: 6.5rem; }
-  .section-text,
-  .profit__text {
-    font-size: 1.4rem; }
-  .emision {
-    padding: 2rem 1rem; }
-    .emision-text, .emision-container {
-      padding: 0; }
-  .contract__info {
-    padding: 1rem; } }
+  .section-text {
+    font-size: 1.4rem; } }
 
 /*# sourceMappingURL=styles.css.map */

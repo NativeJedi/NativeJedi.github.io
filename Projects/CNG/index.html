@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Galaxy Network Inc</title>
+	<link rel="shortcut icon" href="dist/img/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="dist/css/styles.css">
 </head>
 <body>
@@ -21,10 +22,10 @@
 			</a>
 			
 			<nav class="header__nav">
-				<a href="#" class="header__nav-link">Project</a>
-				<a href="#" class="header__nav-link">Payments</a>
-				<a href="#" class="header__nav-link">Team</a>
-				<a href="#" class="header__nav-link">Contact</a>
+				<a href="#project" class="header__nav-link">Project</a>
+				<a href="#payment" class="header__nav-link">Payments</a>
+				<a href="#team" class="header__nav-link">Team</a>
+				<a href="#contact" class="header__nav-link">Contact</a>
 			</nav>
 
 			<button class="mobile-btn">
@@ -71,6 +72,10 @@
 							<p>End of discount</p>
 							<time class="main-price__time main-special">00:06:14:54</time>
 						</div>
+						<div class="main__progress">
+							<!--Progress should be from 0 to 1-->
+							<div data-progress="0.4" class="main__progress-heart"></div>
+						</div>
 					</div>
 
 					<h1 class="section-title">Galaxy Network Inc</h1>
@@ -92,7 +97,7 @@
 						<div class="player__img">
 							<img src="dist/img/monitor.png" alt="display">
 							<button class="btn-play"><i class="fas fa-play"></i></button>
-							<a href="https://www.youtube.com/watch?v=tD_mGEcAi9Q" class="link-play"><i class="fas fa-play"></i></a>
+							<a href="http://www.youtube.com/watch?v=tD_mGEcAi9Q" class="link-play"><i class="fas fa-play"></i></a>
 						</div>
 						<a href="https://www.youtube.com/watch?v=tD_mGEcAi9Q" class="link" target="_blank">Whatch the video</a>
 					</div>
@@ -165,7 +170,7 @@
 		</section>
 	</section>
 	
-	<section class="section">
+	<section class="section profit-section">
 		<div class="container container--flex">
 			<div class="profit-column">
 				<div class="profit">
@@ -226,7 +231,7 @@
 		</div>
 	</section>
 
-	<section class="section section--dark">
+	<section class="section section--mono">
 		<div class="container container--flex-center">
 			<div class="player">
 				<div class="player__img">
@@ -234,7 +239,7 @@
 				</div>
 			</div>
 
-			<h2 class="section-title section-title--mt0">Galaxy Network Inc</h2>
+			<h2 class="section-title section-title--mt0 section-title--center">Galaxy Network Inc</h2>
 			<p class="section-text section-text--centered">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis eaque libero, incidunt mollitia veniam temporibus eos quod ipsam sit nesciunt praesentium pariatur voluptas amet saepe, at assumenda. At, nihil, inventore.</p>
 			<button class="btn btn--main">Registration</button>
 		</div>
@@ -270,7 +275,7 @@
 	</section>
 	
 	<section class="section">
-		<div class="container">
+		<div class="container emision-container">
 			<h2 class="emision-title">Condition of emision</h2>
 			<p class="emision-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero in hic fugiat, repellat ratione id quod vitae sequi maiores explicabo ad labore, mollitia minus ab. Sequi repellendus similique, quibusdam enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed culpa, hic ea sint dignissimos? Ut neque facilis excepturi quas dolores, sapiente tenetur vel temporibus aut voluptatum, exercitationem minima incidunt quod!</p>
 			<div class="emision-box">
@@ -379,9 +384,9 @@
 		</div>
 	</section>
 
-	<section class="section section--main">
+	<section class="section section--main" id="payment">
 		<div class="container container--flex-center">
-			<h2 class="section-title">Bonuses for the amount of payment</h2>
+			<h2 class="section-title section-title--center">Bonuses for the amount of payment</h2>
 			<p class="section-text section-text--centered">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae aliquam deserunt nostrum mollitia dolorum magni, iusto reprehenderit aut et quidem at fugit! Nulla vitae eum, cum sint, harum ex adipisci!</p>
 
 			<div class="gistogram">
@@ -524,7 +529,7 @@
 
 	<section class="section section--main">
 		<div class="container container--flex-center">
-			<h2 class="section-title">Bounty and referral program</h2>
+			<h2 class="section-title section-title--center">Bounty and referral program</h2>
 			<p class="section--text section-text--centered">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus maxime debitis ratione sequi deserunt soluta beatae libero consequuntur autem, deleniti modi numquam fugiat tempore fugit voluptas quia perspiciatis enim quisquam!</p>
 			<div class="referal">
 				<a href="#" class="referal__item">referal item</a>
@@ -539,7 +544,7 @@
 		</div>
 	</section>
 
-	<section class="section team">
+	<section class="section team" id="team">
 		<div class="container">
 			<h2 class="section-title section-title--prime">Team</h2>
 			<div class="team">
@@ -711,7 +716,7 @@
 		</div>
 	</section>
 
-	<section class="section contact-section">
+	<section class="section contact-section" id="contact">
 		<div class="container contact-container">
 			<form action="#" class="form">
 				<h4 class="form__title">Have questions? Contact Us</h4>
@@ -761,10 +766,10 @@
 			</a>
 			<a href="#" class="footer__link">Contribute</a>
 			<nav class="footer__nav">
-				<a href="#" class="footer__nav-link">Project</a>
-				<a href="#" class="footer__nav-link">Payments</a>
-				<a href="#" class="footer__nav-link">Team</a>
-				<a href="#" class="footer__nav-link">Contact</a>
+				<a href="#project" class="footer__nav-link">Project</a>
+				<a href="#payment" class="footer__nav-link">Payments</a>
+				<a href="#team" class="footer__nav-link">Team</a>
+				<a href="#contact" class="footer__nav-link">Contact</a>
 			</nav>
 
 			<div class="footer__copy">
@@ -772,6 +777,7 @@
 			</div>
 		</div>
 	</footer>
+
 	<div class="popup">
 		<div id="site-video" class="popup-content">
 
@@ -784,8 +790,10 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
 	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/divbs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	<script src="dist//libs/progressbar.min.js"></script>
+	<script src="dist/libs/PageScroll2id.min.js"></script>
 	<script src="dist/libs/common.js"></script>
 </body>
 </html>

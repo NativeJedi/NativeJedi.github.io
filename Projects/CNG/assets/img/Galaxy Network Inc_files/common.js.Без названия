@@ -11,7 +11,7 @@ window.onload = function() {
 			modestbranding: 1, 
 			loop: 1
 		});
-
+		
 		$('#videoClose').on('click', function(e) {
 			play.pauseVideo();
 		});
@@ -97,9 +97,7 @@ window.onload = function() {
 	var changinImages2 = $('#graph-2 .graph__img:not(.img-main)');
 	var selector2 = $('#graph-2 .graph-info__item');
 	graphChange(selector1, graphImages1, mainImg1, changinImages1);
-	graphChange(selector2, graphImages2, mainImg2, changinImages2);
-
-	$(".header__nav-link").mPageScroll2id();
+	graphChange(selector2, graphImages2, mainImg2, changinImages2)
 };
 
 function graphChange(selector, graphImages, mainImg, changinImages) {

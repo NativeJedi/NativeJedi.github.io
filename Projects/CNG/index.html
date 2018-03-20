@@ -27,6 +27,11 @@
 				<a href="#team" class="header__nav-link">Team</a>
 				<a href="#contact" class="header__nav-link">Contact</a>
 			</nav>
+			
+			<div class="btn-box">
+				<button class="btn header__btn" id="btn-login">Log in</button>
+				<button class="btn header__btn" id="btn-registration">Registration</button>
+			</div>
 
 			<button class="mobile-btn">
 				<div class="mobile-btn__sandwich">
@@ -777,7 +782,8 @@
 			</div>
 		</div>
 	</footer>
-
+	
+	
 	<div class="popup">
 		<div id="site-video" class="popup-content">
 
@@ -785,6 +791,44 @@
 
 			<span id="videoClose" class="popup__close"></span>
 		</div>
+
+		<form id="form-login" action="#" class="form-main popup-content">
+			<h4 class="form-main__title">Log in</h4>
+			<label for="user-name" class="form-main__label">Login</label>
+			<input id="user-name" type="text" class="form-main__input" required>
+			<label for="user-password" class="form-main__label">Password</label>
+			<input id="user-password" type="password" class="form-main__input" required>
+			<p class="form-main__text">Enter through</p>
+			<div class="form-main__social">
+				<button class="form-main__social-btn"><i class="fab fa-facebook-square"></i>Facebook</button>
+				<button class="form-main__social-btn"><i class="fab fa-facebook-square"></i>Facebook</button>
+				<button class="form-main__social-btn"><i class="fab fa-facebook-square"></i>Facebook</button>
+			</div>
+			<button class="btn btn--main form-main__btn" type="submit">Entrance</button>
+
+			<span class="popup__close"></span>
+		</form>
+
+		<form id="form-registration" action="#" class="form-main popup-content">
+			<h4 class="form-main__title">Registration</h4>
+			<label for="reg-name" class="form-main__label">Name</label>
+			<input id="reg-name" type="text" class="form-main__input" required>
+			<label for="reg-mail" class="form-main__label">E-mail</label>
+			<input id="reg-mail" type="email" class="form-main__input" required>
+			<label for="reg-password" class="form-main__label">Password</label>
+			<input type="password" requred class="form-main__input" id="reg-password">
+			<label for="reg-confirm" class="form-main__label">Confirm password</label>
+			<input type="password" requred class="form-main__input" id="reg-confirm">
+			<p class="form-main__text">Enter through</p>
+			<div class="form-main__social">
+				<button class="form-main__social-btn"><i class="fab fa-facebook-square"></i>Facebook</button>
+				<button class="form-main__social-btn"><i class="fab fa-facebook-square"></i>Facebook</button>
+				<button class="form-main__social-btn"><i class="fab fa-facebook-square"></i>Facebook</button>
+			</div>
+			<button class="btn btn--main form-main__btn" type="submit">Entrance</button>
+
+			<span class="popup__close"></span>
+		</form>
 	</div>
 	<script src="https://www.youtube.com/iframe_api"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"

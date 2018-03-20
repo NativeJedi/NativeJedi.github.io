@@ -8,11 +8,28 @@
 
 	.header {
 		padding: 0 2rem;
+		
+
+		.btn-box {
+			width: auto;
+		}
 	}	
 	
+	.form-main {
+		width: 80%;
+
+		&__social {
+			&-btn {
+				&:not(:last-child) {
+					margin-bottom: 1rem;
+				}
+			}
+		}
+	}
 	.container {
 		padding: 0 2rem;
 	}
+
 	.main {
 		.container {
 			justify-content: center;
@@ -171,6 +188,25 @@
 }
 
 @media only screen and (max-width : 767px) {
+	.popup {
+		overflow-y: scroll;
+	}
+	.popup-content {
+		top: 0;
+		left: 0;
+		transform: none;
+	}
+
+	.popup__close {
+		top: 1rem;
+		right: 1rem;
+	}
+
+	.form-main {
+		width: 100%;
+		max-width: 100%;
+		padding: 2rem 10%;
+	}
 	.mobile-btn {
 		display: flex;
 	}
@@ -224,7 +260,7 @@
 			width: 100%;
 			margin-top: 2rem;
 			display: flex;
-			justify-content: space-between;
+			justify-content: space-around;
 			order: 2;
 		}
 	}

@@ -27,6 +27,14 @@ window.onload = function() {
 		popup.open($('.popup #site-video'));
 	});
 
+	$('#btn-login').on('click', function() {
+		popup.open($('#form-login'));
+	});
+
+	$('#btn-registration').on('click', function() {
+		popup.open($('#form-registration'));
+	});
+
 	var time = $('.timer').data('time')
 	var timer = new Timer(time);
 

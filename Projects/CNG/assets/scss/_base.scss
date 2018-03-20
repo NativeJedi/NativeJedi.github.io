@@ -221,14 +221,14 @@ ul {
 	}
 	&--main {
 		border: none;
-		background-color: $main-color;
+		background-color: $special-color;
 		padding: 1rem 6rem;
 		font-size: 16px;
 		color: rgb(255, 255, 255);
 		font-weight: 500;
 		transition: box-shadow .3s;
 		&:hover {
-			box-shadow: 0 0 15px 5px $main-color;
+			box-shadow: 0 0 15px 5px $special-color;
 		}
 	}
 	&-mouse {

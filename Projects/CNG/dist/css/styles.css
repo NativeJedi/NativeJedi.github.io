@@ -611,7 +611,7 @@ ul {
       color: #fff; }
   .btn--main {
     border: none;
-    background-color: #22A1FF;
+    background-color: #007bff;
     padding: 1rem 6rem;
     font-size: 16px;
     color: white;
@@ -622,8 +622,8 @@ ul {
     transition: box-shadow .3s;
     transition: box-shadow .3s, -webkit-box-shadow .3s; }
     .btn--main:hover {
-      -webkit-box-shadow: 0 0 15px 5px #22A1FF;
-              box-shadow: 0 0 15px 5px #22A1FF; }
+      -webkit-box-shadow: 0 0 15px 5px #007bff;
+              box-shadow: 0 0 15px 5px #007bff; }
   .btn-mouse {
     position: absolute;
     left: 50%;
@@ -1017,9 +1017,10 @@ ul {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7); }
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10000; }
   .popup-content {
-    display: inline-block;
+    display: none;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1771,6 +1772,64 @@ ul {
     color: #474849;
     text-align: center; }
 
+.form-main__input, .form-main__social-btn {
+  border: none;
+  background-color: rgba(34, 161, 255, 0.1); }
+
+.form-main {
+  max-width: 65rem;
+  margin: 0 auto;
+  padding: 4rem 8rem;
+  background-color: #fff;
+  border-top: 3px solid #007bff;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 500;
+  font-family: "Raleway"; }
+  .form-main__title, .form-main__input, .form-main__social {
+    color: #007bff; }
+  .form-main__title {
+    margin: 0 0 4rem 0;
+    font-size: 1.8rem; }
+  .form-main__label {
+    display: block;
+    margin-bottom: .5rem;
+    color: #80838B;
+    cursor: pointer; }
+  .form-main__input {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-top: 2px solid #22A1FF; }
+  .form-main__text {
+    margin: 2rem 0;
+    font-size: 1.2rem; }
+  .form-main__social {
+    margin: 1rem 0; }
+    .form-main__social-btn {
+      display: inline-block;
+      position: relative;
+      min-width: 14.5rem;
+      padding: 1.5rem 3rem 1.5rem 5rem; }
+      .form-main__social-btn:not(:last-child) {
+        margin-right: .5rem; }
+      .form-main__social-btn svg {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        left: 2.5rem;
+        font-size: 1.8rem; }
+      .form-main__social-btn:hover {
+        background-color: #007bff;
+        color: #fff; }
+  .form-main__btn {
+    margin-top: 3rem;
+    padding: 1rem 5rem;
+    font-family: "Roboto"; }
+
 .slider-caption {
   font-family: "Futura";
   text-transform: uppercase;
@@ -1870,6 +1929,12 @@ ul {
     -webkit-box-shadow: 0 0 0 20px #22A1FF, 0 0 0 40px rgba(34, 161, 255, 0.6), 0 0 0 60px rgba(34, 161, 255, 0.4);
             box-shadow: 0 0 0 20px #22A1FF, 0 0 0 40px rgba(34, 161, 255, 0.6), 0 0 0 60px rgba(34, 161, 255, 0.4); } }
 
+.private-body {
+  background: #0B162C -webkit-gradient(linear, left bottom, left top, from(#18346C), to(rgba(48, 107, 223, 0)));
+  background: #0B162C -o-linear-gradient(bottom, #18346C 0%, rgba(48, 107, 223, 0) 100%);
+  background: #0B162C linear-gradient(0deg, #18346C 0%, rgba(48, 107, 223, 0) 100%);
+  background-size: 100% 100%; }
+
 @media only screen and (max-width: 1041px) {
   
   .section-title,
@@ -1878,6 +1943,12 @@ ul {
     width: 100%; }
   .header {
     padding: 0 2rem; }
+    .header .btn-box {
+      width: auto; }
+  .form-main {
+    width: 80%; }
+    .form-main__social-btn:not(:last-child) {
+      margin-bottom: 1rem; }
   .container {
     padding: 0 2rem; }
   .main .container {
@@ -1975,6 +2046,21 @@ ul {
             justify-content: center; } }
 
 @media only screen and (max-width: 767px) {
+  .popup {
+    overflow-y: scroll; }
+  .popup-content {
+    top: 0;
+    left: 0;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none; }
+  .popup__close {
+    top: 1rem;
+    right: 1rem; }
+  .form-main {
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem 10%; }
   .mobile-btn {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2011,9 +2097,8 @@ ul {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: justify;
-          -ms-flex-pack: justify;
-              justify-content: space-between;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
       -webkit-box-ordinal-group: 3;
           -ms-flex-order: 2;
               order: 2; }

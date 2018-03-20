@@ -57,7 +57,6 @@
 
 	&__btn {
 		color: #fff;
-
 		transition: color .2s;
 		&:hover {
 			color: $main-color;
@@ -339,11 +338,11 @@
 	right: 0;
 	bottom: 0;
 	background-color: rgba(#000, .7);
+	z-index: 10000;
 
 	&-content {
-		display: inline-block;
+		display: none;
 		@include cent;
-
 		iframe {
 			width: 560px;
 			height: 315px;
@@ -431,7 +430,6 @@
 	0 0 0 25px rgba($main-color, .6),
 	0 0 0 35px rgba($main-color, .4);
 }
-
 
 .mobile-btn {
 	position: relative;
@@ -524,7 +522,6 @@
 		line-height: 1.438;
 	}
 }
-
 
 %shadow {
 	background-color: #fff;
@@ -1065,7 +1062,6 @@
 	color: #fff;
 	@include clearfix;
 
-
 	&__title {
 		margin: 0 0 2.5rem 0;
 		font-size: 18px;
@@ -1225,8 +1221,89 @@
 		text-align: center;
 	}
 }
-.slider {
 
+%item-form {
+	border: none;
+	background-color: rgba($main-color, .1);
+}
+
+.form-main {
+	max-width: 65rem;
+	margin: 0 auto;
+	padding: 4rem 8rem;
+	background-color: #fff;
+	border-top: 3px solid $special-color;
+	text-align: center;
+	font-size: 1.4rem;
+	font-weight: 500;
+	font-family: "Raleway";
+
+	&__title,
+	&__input,
+	&__social {
+		color: $special-color;
+	}
+
+	&__title {
+		margin: 0 0 4rem 0;
+		font-size: 1.8rem;
+	}
+	&__label {
+		display: block;
+		margin-bottom: .5rem;
+		color: $text-dark;
+		cursor: pointer;
+	}
+	
+	$bgc : rgba($main-color, .1);
+
+	&__input {
+		width: 100%;
+		text-align: center;
+		padding: 1rem;
+		margin-bottom: 1rem;
+		border-top: 2px solid $main-color;
+		@extend %item-form;
+	}
+	&__text {
+		margin: 2rem 0;
+		font-size: 1.2rem;
+	}
+
+	&__social {
+		margin: 1rem 0;
+
+		&-btn {
+			display: inline-block;
+			position: relative;
+			min-width: 14.5rem;
+			padding: 1.5rem 3rem 1.5rem 5rem;
+			@extend %item-form;
+
+			&:not(:last-child) {
+				margin-right: .5rem;
+			}
+			svg {
+				@include centY;
+				left: 2.5rem;
+				font-size: 1.8rem;
+			}
+
+			&:hover {
+				background-color: $special-color;
+				color: #fff;
+			}
+		}
+	}
+
+	&__btn {
+		margin-top: 3rem;
+		padding: 1rem 5rem;
+		font-family: "Roboto";
+	}
+}
+
+.slider {
 	&-caption {
 		font-family: "Futura";
 		text-transform: uppercase;
@@ -1290,7 +1367,6 @@
 	} 
 }
 
-
 .special {
 	color: $special-color;
 }
@@ -1336,5 +1412,5 @@
 		0 0 0 60px rgba($main-color, .4);
 	}
 }
-
+@import 'private';
 @import 'media';

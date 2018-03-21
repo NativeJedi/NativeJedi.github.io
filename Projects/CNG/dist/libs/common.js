@@ -84,33 +84,41 @@ window.onload = function() {
 
 	/*#Progress bar circle*/
 
-	var circle = new ProgressBar.Circle('.main__progress-heart', {
-		color: '#0C9BE3',
-		strokeWidth: 20,
-		trailWidth: 20,
-		trailColor: '#303744',
-		svgStyle: {
-			display: 'block',
-			width: '100%'
-		}
-	});
+	(function() {
+		if (document.querySelector('.main__progress-heart') == null) return;
+		var circle = new ProgressBar.Circle('.main__progress-heart', {
+			color: '#0C9BE3',
+			strokeWidth: 20,
+			trailWidth: 20,
+			trailColor: '#303744',
+			svgStyle: {
+				display: 'block',
+				width: '100%'
+			}
+		});
 
-	circle.set(0.4);
-	var graphImages1 = $('#graph-1 .graph__img');
-	var mainImg1 = $('#graph-1 .img-main');
-	var changinImages1 = $('#graph-1 .graph__img:not(.img-main)');
-	var selector1 = $('#graph-1 .graph-info__item');
-	var graphImages2 = $('#graph-2 .graph__img');
-	var mainImg2 = $('#graph-2 .img-main');
-	var changinImages2 = $('#graph-2 .graph__img:not(.img-main)');
-	var selector2 = $('#graph-2 .graph-info__item');
-	graphChange(selector1, graphImages1, mainImg1, changinImages1);
-	graphChange(selector2, graphImages2, mainImg2, changinImages2);
+		circle.set(0.4);
+		var graphImages1 = $('#graph-1 .graph__img');
+		var mainImg1 = $('#graph-1 .img-main');
+		var changinImages1 = $('#graph-1 .graph__img:not(.img-main)');
+		var selector1 = $('#graph-1 .graph-info__item');
+		var graphImages2 = $('#graph-2 .graph__img');
+		var mainImg2 = $('#graph-2 .img-main');
+		var changinImages2 = $('#graph-2 .graph__img:not(.img-main)');
+		var selector2 = $('#graph-2 .graph-info__item');
+		graphChange(selector1, graphImages1, mainImg1, changinImages1);
+		graphChange(selector2, graphImages2, mainImg2, changinImages2);
 
+	})($);
+	
 	$(".header__nav-link").mPageScroll2id();
 	$(".mobile-menu__link").mPageScroll2id();
 	$(".footer__nav-link").mPageScroll2id();
-	
+
+	$(".step").on("mouseover", function(e) {
+		$(".step").removeClass("is-active");
+		$(this).addClass("is-active");
+	});
 };
 
 function graphChange(selector, graphImages, mainImg, changinImages) {
@@ -134,6 +142,7 @@ function graphChange(selector, graphImages, mainImg, changinImages) {
 		});
 	});
 }
+
 function Popup() {
 	var popup = $('.popup');
 	var self = this;

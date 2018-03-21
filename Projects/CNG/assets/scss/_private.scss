@@ -1,7 +1,243 @@
 .private {
-	&-body {
-		background: #0B162C  linear-gradient( 0deg, #18346C 0%,
-			rgba(48,107,223,0) 100%);
-		background-size: 100% 100%;
+	color: #fff;
+	padding: 5.5rem 0;
+
+	.container {
+		flex-wrap: wrap;
+	}
+	&__logout {
+		margin-right: 2rem;
+
+		&:hover {
+			color: $special-color;
+		}
+	}
+	&__block {
+		width: calc(50% - 1rem);
+		padding: 2.5rem 4.5rem 7.5rem 2.5rem;
+		background-color: #080E1C;
+		margin-bottom: 4rem;
+	}
+
+	&-title {
+		width: 100%;
+		margin: 0 0 2.5rem 0;
+		font-size: 14px;
+		font-family: "Raleway";
+		line-height: 1.643;
+		color: $special-color;
+	}
+}
+
+.user {
+	&__name-wrap {
+		display: flex;
+		align-items: center;
+		margin-bottom: 6.5rem;
+	}
+
+	&__img {
+		position: relative;
+		width: 9.5rem;
+		height: 9.5rem;
+		border-radius: 50%;
+		margin-right: 2rem;
+		background-color: $main-color;
+		overflow: hidden;
+		font-size: 4.7rem;
+
+		svg {
+			@include cent;
+		}
+	}
+
+	&__name {
+		font-size: 30px;
+		font-family: "Raleway";
+		font-weight: bold;
+	}
+	
+	&-data {
+		border: none;
+		border-bottom: 2px solid $special-color;
+	}
+	&__info {
+		&-item {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+
+			&:not(:last-child) {
+				margin-bottom: 1.5rem;
+			}
+		}
+	}
+	&__label {
+		display: inline-block;
+		width: 40%;
+		color: $special-color;
+		font-size: 1.4rem;
+	}
+
+	&__input {
+		width: 60%;
+		padding: .3rem;
+		background-color: transparent;
+		font-size: 1.5rem;
+	}
+}
+
+.user-history {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: flex-start;
+
+	&__column {
+		display: flex;
+		flex-direction: column;
+		width: 20%;
+
+		&--prime {
+			width: 40%;
+		}
+
+		&-title {
+			margin: 0 0 2.5rem 0;
+			padding-right: 1rem;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			font-size: 14px;
+			font-family: "Raleway";
+			line-height: 1.643;
+			color: $special-color;
+			text-transform: uppercase;
+		}
+	}
+
+	&__item {
+		display: inline-block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		width: 100%;
+		font-size: 1.5rem;
+		padding: .6rem 1rem .6rem 0;
+		border-bottom: 1px solid #062956;
+	}
+}
+
+.step {
+	width: calc(33.33% - 1rem);
+	padding: 0;
+	background-color: #0C2245;
+
+	&.is-active {
+		.step__header {
+			opacity: 1;
+		}
+	}
+
+	&-box {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		&__title {
+			width: 100%;
+			margin: 0 0 3.5rem 0;
+			padding-left: 3.5rem;
+			font-size: 15px;
+			line-height: 1.467;
+			text-transform: uppercase;
+			font-weight: normal;
+		}
+	}
+	
+	&__header,
+	&__body {
+		padding: 3rem 4rem;
+	}
+	&__header {
+		background-color: $special-color;
+		opacity: .3;
+		min-height: 12.5rem;
+	}
+
+	&__title {
+		margin: 0;
+		font-size: 3.6rem;
+	}
+
+	&__caption {
+		margin: .5rem 0 0 0;
+		font-size: 1.4rem;
+		color: #fff;
+	}
+
+	&__body {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		&--col {
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+		}
+	}
+
+	&__radio {
+		width: 50%;
+		margin-bottom: .5rem;
+		text-align: center;
+		label {
+			display: inline-block;
+			padding: .3rem 0;
+			cursor: pointer;
+		}
+
+		input {
+			display: none;
+
+			&:checked + label {
+				color: $main-color;
+			}
+		}
+	}
+	
+	&__copy {
+		width: 100%;
+		margin-bottom: 2rem;
+
+		&:hover {
+			color: $special-color;
+			text-decoration: underline;
+		}
+	}
+	&__text {
+		margin: 0 0 2rem 0;
+		color: #fff;
+	}
+
+	&__label {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 2rem;
+		cursor: pointer;
+	}
+
+	&__input {
+		border: none;
+		border-top: 3px solid $special-color;
+		padding: 1rem;
+		width: 100%;
+		max-width: 35rem;
+		color: $special-color;
+		background-color: rgba($special-color, .1);
+	}
+
+	&__apply {
+		margin-top: 4rem;
+		padding: 1rem 7rem;
 	}
 }

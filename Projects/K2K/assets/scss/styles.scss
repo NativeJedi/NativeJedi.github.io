@@ -763,6 +763,10 @@
 
 .section {
 	padding-bottom: 5rem;
+
+	&-delivery {
+		padding: 5rem 0;
+	}
 }
 .form {
 	position: relative;

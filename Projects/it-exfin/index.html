@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head profile="http://www.w3.org/2005/10/profile>
 	<meta charset="UTF-8">
 	<title>Express Finance</title>
 	<link rel="stylesheet" href="dist/css/styles.css">
+	<link rel="icon" type="image/vnd.microsoft.icon" href="dist/img/favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -41,11 +42,11 @@
 
 			<div class="b-nav">
 				<a href="about.html" class="b-nav__link">О нас</a>
-				<a href="index.html" class="b-nav__link">Кредиты</a>
-				<a href="spoiler-page.html" class="b-nav__link">Акции</a>
+				<a href="#credits" class="b-nav__link">Кредиты</a>
+				<a href="#advanteges" class="b-nav__link">Акции</a>
 				<a href="faq.html" class="b-nav__link">Справка</a>
 				<a href="blog.html" class="b-nav__link">Блог</a>
-				<a href="job.html" class="b-nav__link">Студентам</a>
+				<a href="#" class="b-nav__link">Студентам</a>
 			</div>
 
 			<div class="s-header__lang">
@@ -58,7 +59,7 @@
 	</header>
 
 	
-	<section class="s-credits">
+	<section class="s-credits" id="credits">
 		<div class="wrapper">
 			<form action="#" class="b-main-form">
 				<fieldset class="b-main-form__content">
@@ -162,7 +163,7 @@
 		</div>
 	</section>
 
-	<section class="s-advanteges">
+	<section class="s-advanteges" id="advanteges">
 		<div class="s-advanteges-header">
 			<h2 class="b-section-title">Преимущества</h2>
 			<p class="b-section-subtitle">Незначительный текст о преимуществах сервиса и почему его стоит использовать, очень кратко о особенностях даной платформы</p>
@@ -558,10 +559,9 @@
 				<img class="visa-img" src="dist/img/visa-logo.png" alt="visa-card">
 				<img class="master-card" src="dist/img/master-card.png" alt="master-card">
 
-				<div class="b-section-cards__item-square">
-				</div>
-				<div class="b-section-cards__item-square">
-				</div>
+				<img class="b-section-cards__img" src="dist/img/pcidss.png" alt="pci">
+
+				<img class="b-section-cards__img" src="dist/img/logo-comodo1.png" alt="comodo">
 
 				<div class="b-section-cards__icons">
 					<span class="icon icon--sticker"><b>О параметрах защиты</b><br>Экспресс Финанс</span>
@@ -700,7 +700,7 @@
 	</div>
 </section>
 
-<section class="s-region">
+<section class="s-region" id="region">
 	<div class="wrapper">
 		<h2 class="b-section-title">Вы можете взять кредит в другом городе</h2>
 
@@ -788,7 +788,7 @@
 	</div>
 </section>
 
-<section class="s-media">
+<section class="s-media" id="payout">
 	<div class="wrapper">
 		<h2 class="b-section-title">Как закрыть кредит?</h2>
 		<div class="b-media">
@@ -957,6 +957,6 @@ integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="ano
 <script src="dist/libs/slick.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <script src="dist/libs/common.js"></script>
- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxIlgnkHOS9rD5yxcFwlRXwAXqsFY8c7I&callback=initMap"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxIlgnkHOS9rD5yxcFwlRXwAXqsFY8c7I&callback=initMap"></script>
 </body>
 </html>

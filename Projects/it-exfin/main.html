@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Express Finance</title>
 	<link rel="stylesheet" href="dist/css/styles.css">
+	<link rel="icon" type="image/vnd.microsoft.icon" href="dist/img/favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -41,11 +42,11 @@
 
 			<div class="b-nav">
 				<a href="about.html" class="b-nav__link">О нас</a>
-				<a href="index.html" class="b-nav__link">Кредиты</a>
-				<a href="spoiler-page.html" class="b-nav__link">Акции</a>
+				<a href="#credits" class="b-nav__link">Кредиты</a>
+				<a href="#advanteges" class="b-nav__link">Акции</a>
 				<a href="faq.html" class="b-nav__link">Справка</a>
 				<a href="blog.html" class="b-nav__link">Блог</a>
-				<a href="job.html" class="b-nav__link">Студентам</a>
+				<a href="#" class="b-nav__link">Студентам</a>
 			</div>
 
 			<div class="s-header__lang">
@@ -56,8 +57,7 @@
 			<a href="private-profile.html" class="b-btn-login">Мой кабинет <span class="icon icon--login"></span></a>
 		</div>
 	</header>
-
-	<section class="s-main">
+	<section class="s-main" style="background-image: url(dist/img/main-bg.jpg)">
 		<div class="wrapper wrapper--flex">
 			<ul class="s-main__list">
 				<li class="s-main__list-title">Выберите Ваш<br>кредний тариф</li>
@@ -123,7 +123,7 @@
 							<div class="b-main-form__total-content">
 								<p><span>Вы берете:</span><span id="credit-total-1">10000 грн</span></p>
 								<p><span>На срок:</span> <span id="termin-total-1">14 дней</span></p>
-								<p class="b-main-form__total-cost"><span>Платеж по кредиту:</span> <span>550 грн/нед.</span></p>
+								<p class="b-main-form__total-cost"><span>Платеж по кредиту:</span> <span>11111550 грн/неделя.</span></p>
 							</div>
 
 							<a href="form-callback.html" class="b-btn-primary b-btn-primary--main">Оформить кредит</a>
@@ -264,7 +264,7 @@
 		</div>
 	</section>
 
-	<section class="s-advanteges">
+	<section class="s-advanteges" id="advanteges">
 		<div class="s-advanteges-header">
 			<h2 class="b-section-title">Преимущества</h2>
 			<p class="b-section-subtitle">Незначительный текст о преимуществах сервиса и почему его стоит использовать, очень кратко о особенностях даной платформы</p>
@@ -350,7 +350,7 @@
 	</div>
 </section>
 
-<section class="s-packages">
+<section class="s-packages" id="credits">
 	<div class="wrapper">
 		<div class="b-section-header">
 			<h2 class="b-section-title">Кредитные тарифы</h2>
@@ -385,7 +385,7 @@
 						</p>
 						<a href="form-callback.html" class="b-btn-primary b-btn-primary--main">Подать заявку</a>
 					</div>
-					
+
 				</div>
 			</div>
 
@@ -414,7 +414,7 @@
 						</p>
 						<a href="form-callback.html" class="b-btn-primary b-btn-primary--main">Подать заявку</a>
 					</div>
-					
+
 				</div>
 			</div>
 
@@ -443,7 +443,7 @@
 						</p>
 						<a href="form-callback.html" class="b-btn-primary b-btn-primary--main">Подать заявку</a>
 					</div>
-					
+
 				</div>
 			</div>
 
@@ -472,7 +472,7 @@
 						</p>
 						<a href="form-callback.html" class="b-btn-primary b-btn-primary--main">Подать заявку</a>
 					</div>
-					
+
 				</div>
 			</div>
 
@@ -501,7 +501,7 @@
 						</p>
 						<a href="form-callback.html" class="b-btn-primary b-btn-primary--main">Подать заявку</a>
 					</div>
-					
+
 				</div>
 			</div>
 
@@ -530,7 +530,7 @@
 						</p>
 						<a href="form-callback.html" class="b-btn-primary b-btn-primary--main">Подать заявку</a>
 					</div>
-					
+
 				</div>
 			</div>
 
@@ -575,7 +575,7 @@
 			<div class="b-step">
 				<div class="b-step-number">1</div>
 				<h4 class="b-step-title">Выберите сумму займа и срок</h4>
-				
+
 				<div class="b-step__content b-step__content--special">
 					<div class="b-step__content--special-item">
 						<span>Сумма кредите</span>
@@ -606,7 +606,7 @@
 			<div class="b-step">
 				<div class="b-step-number">3</div>
 				<h4 class="b-step-title">Привяжите карту</h4>
-				
+
 				<div class="b-step__content b-step__content--card">
 					<img class="b-step__content-img" src="dist/img/card.png" alt="card">
 					<span class="b-step__content-abs">
@@ -660,10 +660,10 @@
 				<img class="visa-img" src="dist/img/visa-logo.png" alt="visa-card">
 				<img class="master-card" src="dist/img/master-card.png" alt="master-card">
 
-				<div class="b-section-cards__item-square">
-				</div>
-				<div class="b-section-cards__item-square">
-				</div>
+				<img class="b-section-cards__img" src="dist/img/pcidss.png" alt="pci">
+
+				<img class="b-section-cards__img" src="dist/img/logo-comodo1.png" alt="comodo">
+				
 
 				<div class="b-section-cards__icons">
 					<span class="icon icon--sticker"><b>О параметрах защиты</b><br>Экспресс Финанс</span>
@@ -679,7 +679,7 @@
 	</div>
 </section>
 
-<section class="s-review">
+<section class="s-review" id="review">
 	<div class="wrapper">
 		<div class="b-section-header b-section-header--secondary">
 			<h2 class="b-section-title">Нам доверяют сотни людей</h2>
@@ -697,7 +697,7 @@
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident blanditiis aut minima voluptatibus nobis neque nostrum voluptatum suscipit. Tenetur quos nemo ipsam repellendus aperiam illum aut laudantium itaque ipsum quod.
 					</p>
 				</div>
-				
+
 				<div>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro nihil doloribus commodi, eaque odio ex reiciendis amet sequi nobis quae ipsa beatae facere tempore enim dicta quisquam numquam repudiandae et.Ea quam sunt, distinctio nesciunt cum adipisci quia earum odio consequatur, ipsa aliquid eaque odit nam. Repellat quasi, consectetur fugit eveniet, natus fuga eos velit, rerum aut ut placeat tempora!
@@ -731,7 +731,7 @@
 			</div>
 
 			<div class="b-review__person-wrapper">
-				
+
 				<div class="b-review__person">
 					<div class="b-review__person-img">
 						<img src="dist/img/person-img.jpg" alt="person-img">
@@ -742,12 +742,12 @@
 						<p>Студентка</p>
 					</div>
 				</div>
-				
+
 				<div class="b-review__person">
 					<div class="b-review__person-img">
 						<img src="dist/img/person-img.jpg" alt="person-img">
 					</div>
-					
+
 					<div class="b-review__person-info">
 						<p><b>Инна</b></p>
 						<p>Студентка</p>
@@ -758,7 +758,7 @@
 					<div class="b-review__person-img">
 						<img src="dist/img/person-img.jpg" alt="person-img">
 					</div>
-					
+
 					<div class="b-review__person-info">
 						<p><b>Инна</b></p>
 						<p>Студентка</p>
@@ -769,7 +769,7 @@
 					<div class="b-review__person-img">
 						<img src="dist/img/person-img.jpg" alt="person-img">
 					</div>
-					
+
 					<div class="b-review__person-info">
 						<p><b>Инна</b></p>
 						<p>Студентка</p>
@@ -780,7 +780,7 @@
 					<div class="b-review__person-img">
 						<img src="dist/img/person-img.jpg" alt="person-img">
 					</div>
-					
+
 					<div class="b-review__person-info">
 						<p><b>Инна</b></p>
 						<p>Студентка</p>
@@ -791,7 +791,7 @@
 					<div class="b-review__person-img">
 						<img src="dist/img/person-img.jpg" alt="person-img">
 					</div>
-					
+
 					<div class="b-review__person-info">
 						<p><b>Инна</b></p>
 						<p>Студентка</p>
@@ -802,7 +802,7 @@
 	</div>
 </section>
 
-<section class="s-region">
+<section class="s-region" id="region">
 	<div class="wrapper">
 		<h2 class="b-section-title">Вы можете взять кредит в другом городе</h2>
 
@@ -815,6 +815,9 @@
 				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Kharkiv">Харьков</button></li>
 				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Poltava">Полтава</button></li>
 				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Cherkasy">Черкассы</button></li>
+				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Cherkasy">Черкассы</button></li>
+				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Cherkasy">Черкассы</button></li>
+				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Cherkasy">Черкассы</button></li>
 			</ul>
 			<ul class="b-region-list">
 				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Vinnytsia">Винница</button></li>
@@ -824,8 +827,14 @@
 				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Bila Thserkva">Белая Церковь</button></li>
 				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Kryvyi Rih">Кривой Рог</button></li>
 				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Poltava">Полтава</button></li>
+				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Cherkasy">Черкассы</button></li>
+				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Cherkasy">Черкассы</button></li>
+				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Cherkasy">Черкассы</button></li>
 			</ul>
 			<ul class="b-region-list">
+				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Cherkasy">Черкассы</button></li>
+				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Cherkasy">Черкассы</button></li>
+				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Cherkasy">Черкассы</button></li>
 				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Lviv">Львов</button></li>
 				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Cherkasy">Черкассы</button></li>
 				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Zhytomyr">Житомир</button></li>
@@ -835,6 +844,13 @@
 				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Bila Thserkva">Белая Церковь</button></li>
 			</ul>
 			<ul class="b-region-list">
+				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Cherkasy">Черкассы</button></li>
+				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Cherkasy">Черкассы</button></li>
+				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Cherkasy">Черкассы</button></li>
+				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Cherkasy">Черкассы</button></li>
+				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Cherkasy">Черкассы</button></li>
+				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Cherkasy">Черкассы</button></li>
+				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Cherkasy">Черкассы</button></li>
 				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Chernihiv">Чернигов</button></li>
 				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Zaporizhia">Запорожье</button></li>
 				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Kharkiv">Харьков</button></li>
@@ -843,17 +859,16 @@
 				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Ivano-Frankivsk">Ивано-Фраковск</button></li>
 				<li><span class="arrow"></span><button class="b-region-list__btn" data-city="Odessa">Одесса</button></li>
 			</ul>
-
 			<div class="popup">
-				
+
 				<div class="popup-cities">
 					<ul class="popup-list">	</ul>
 					<button class="b-btn-primary b-btn-primary--main btn-show">Показать все города</button>
 				</div>
-				
+
 
 				<div id="map" class="popup-map"></div>
-				
+
 				<div class="popup-info">
 					<h3 class="popup-info__adress">
 						<span class="icon icon--arrow"></span>
@@ -890,7 +905,7 @@
 	</div>
 </section>
 
-<section class="s-media">
+<section class="s-media" id="payout">
 	<div class="wrapper">
 		<h2 class="b-section-title">Как закрыть кредит?</h2>
 		<div class="b-media">
@@ -900,7 +915,7 @@
 						<use href="sprite.svg#svg-phone"></use>
 					</svg>
 				</div>
-				
+
 				<h4 class="b-media-item__title">Через платежные терминалы</h4>
 				<p class="b-media-item__info">Оплата кредита в терминале Ibox, EasyPay, City24 и TYME- это быстро и удобно. Терминал Вы сможете найти в ближайшем к Вам супермаркете.</p>
 				<button class="b-btn-primary b-btn-primary--main">Подробнее</button>
@@ -911,7 +926,7 @@
 						<use href="sprite.svg#svg-tablet"></use>
 					</svg>
 				</div>
-				
+
 				<h4 class="b-media-item__title">В личном кабинете</h4>
 				<p class="b-media-item__info">Вы можете погасить кредит Ваш кредит онлайн не выходя из дома. Просто перейдите в личный кабинет и оплатите займ банковской картой</p>
 				<button class="b-btn-primary b-btn-primary--main">Подробнее</button>
@@ -950,7 +965,7 @@
 				<li>На сайте при помощи калькулятора вы можете рассчитать сумму и срок выплаты кредита. В первый раз кредит не должен превышать 3000 грн, в дальнейшем</li>
 			</ul>
 		</div>
-		
+
 
 		<div class="b-info b-info--inline">
 			<h4 class="b-info__title">Сроки погашения кредита на Экспресс Финанс</h4>
@@ -1029,7 +1044,7 @@
 				<button class="b-btn-primary b-btn-primary--main">Пригласить друга</button>
 			</div>
 		</div>
-		
+
 		<div class="s-footer-base">
 			<a href="#" class="b-logo">
 				<svg><use href="sprite.svg#svg-logo">
@@ -1059,5 +1074,6 @@ integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="ano
 <script src="dist/libs/slick.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <script src="dist/libs/common.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxIlgnkHOS9rD5yxcFwlRXwAXqsFY8c7I&callback=initMap"></script>
 </body>
 </html>

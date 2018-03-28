@@ -4,58 +4,59 @@
 	<meta charset="UTF-8">
 	<title>Profile</title>
 	<link rel="stylesheet" href="dist/css/styles.css">
+	<link rel="icon" type="image/vnd.microsoft.icon" href="dist/img/favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 	<div class="blur">
 		<header class="s-header">
-			<div class="wrapper">
-				<button class="mobile-menu">
-					<div class="mobile-menu__sandwich">
-						<span class="mobile-menu__topper"></span>
-						<span class="mobile-menu__middle"></span>
-						<span class="mobile-menu__footer"></span>
-					</div>
-					<span>Меню</span>
-				</button>
+		<div class="wrapper">
+			<button class="mobile-menu">
+				<div class="mobile-menu__sandwich">
+					<span class="mobile-menu__topper"></span>
+					<span class="mobile-menu__middle"></span>
+					<span class="mobile-menu__footer"></span>
+				</div>
+				<span>Меню</span>
+			</button>
 
-				<a href="main.html" class="b-logo">
-					<svg><use xlink:href="sprite.svg#svg-logo">
-					</svg>
+			<a href="main.html" class="b-logo">
+				<svg><use xlink:href="sprite.svg#svg-logo">
+				</svg>
+			</a>
+
+			<div class="s-header__phone">
+				<span>Телефон горячей линии</span>
+				<a href="tel:+0800211112">0 800 211 112</a>
+			</div>
+			
+			<div class="mobile-icons">
+				<a href="#" class="mobile-link">
+					<i class="fas fa-phone"></i>
 				</a>
 
-				<div class="s-header__phone">
-					<span>Телефон горячей линии</span>
-					<a href="tel:+0800211112">0 800 211 112</a>
-				</div>
-				
-				<div class="mobile-icons">
-					<a href="#" class="mobile-link">
-						<i class="fas fa-phone"></i>
-					</a>
-
-					<a href="private-profile.html" class="mobile-link">
-						<i class="fas fa-sign-in-alt"></i>
-					</a>
-				</div>
-
-				<div class="b-nav">
-					<a href="about.html" class="b-nav__link">О нас</a>
-					<a href="index.html" class="b-nav__link">Кредиты</a>
-					<a href="spoiler-page.html" class="b-nav__link">Акции</a>
-					<a href="faq.html" class="b-nav__link">Справка</a>
-					<a href="blog.html" class="b-nav__link">Блог</a>
-					<a href="job.html" class="b-nav__link">Студентам</a>
-				</div>
-
-				<div class="s-header__lang">
-					<button class="b-btn b-btn--lang">Рус</button>
-					<button class="b-btn b-btn--lang">Укр</button>
-				</div>
-
-				<a href="private-profile.html" class="b-btn-login">Мой кабинет <span class="icon icon--login"></span></a>
+				<a href="private-profile.html" class="mobile-link">
+					<i class="fas fa-sign-in-alt"></i>
+				</a>
 			</div>
-		</header>
+
+			<div class="b-nav">
+				<a href="about.html" class="b-nav__link">О нас</a>
+				<a href="#" class="b-nav__link">Кредиты</a>
+				<a href="spoiler-page.html" class="b-nav__link">Акции</a>
+				<a href="faq.html" class="b-nav__link">Справка</a>
+				<a href="blog.html" class="b-nav__link">Блог</a>
+				<a href="#" class="b-nav__link">Студентам</a>
+			</div>
+
+			<div class="s-header__lang">
+				<button class="b-btn b-btn--lang">Рус</button>
+				<button class="b-btn b-btn--lang">Укр</button>
+			</div>
+
+			<a href="private-profile.html" class="b-btn-login">Мой кабинет <span class="icon icon--login"></span></a>
+		</div>
+	</header>
 
 
 		<section class="s-head">
@@ -80,9 +81,13 @@
 		<section class="s-profile">
 			<div class="wrapper">	
 				<div data-content="profile" class="tab-content is-showed">
-					<div class="profile">
+					<form action="#" class="profile">
 						<h3 class="s-title">Мой профиль</h3>
-						<div class="profile__container">
+						<filedset class="profile__container">
+							<div class="profile-data">
+								<h4 class="profile__title">№ договора</h4>
+								<p class="profile-data__info">123456789</p>
+							</div>
 							<div class="profile-data">
 								<h4 class="profile__title">Ф.И.О</h4>
 								<p class="profile-data__info">Антипенко Виталий Викторовичь</p>
@@ -117,15 +122,15 @@
 									<input id="profile-mail" type="email" class="profile-data__info" value="mail@gamil.com" disabled>
 								</div>	
 							</div>
-						</div>
-						<div class="profile__container">
+						</filedset>
+						<filedset class="profile__container">
 							<h4 class="profile__title">Двухфакторная авторизация</h4>
 							<label for="profile-checkbox" class="profile__checkbox">
 								<input id="profile-checkbox" type="checkbox">
 								<span class="profile__checkbox-switcher"></span>
 							</label>
-						</div>
-						<div class="profile__container">
+						</filedset>
+						<filedset class="profile__container">
 							<h4 class="profile__title">Документы</h4>
 							<div class="profile__docs">
 								<div class="profile__doc profile__doc--default">
@@ -135,8 +140,9 @@
 									<h4 class="profile__doc-title">Добавить документ</h4>
 								</div>
 							</div>
-						</div>
-					</div>
+						</filedset>
+						<button class="b-btn-primary b-btn-primary--main" type="submit">Сохранить</button>
+					</form>
 					<p class="s-profile__info">
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus minima corrupti labore aliquid est pariatur nesciunt. Iste atque nemo ipsa, a, eos illum totam quasi suscipit beatae nulla ducimus sed.
 					</p>
@@ -570,7 +576,7 @@
 		<form data-form="1" action="#" class="b-main-form b-main-form--popup">
 			<fieldset class="b-main-form__content">
 				<div class="b-form-item">
-					<label class="b-form-item__label" for="credit-value-1">Сумма кредита:
+					<label class="b-form-item__label b-form-item__label--wide" for="credit-value-1">Сумма кредита:
 					</label>
 
 					<input class="b-form-item__input b-form-item__input--first" type="text" id="credit-value-1">
@@ -589,7 +595,7 @@
 				</div>
 
 				<div class="b-form-item">
-					<label class="b-form-item__label" for="termin-value-1">Срок займа:</label>
+					<label class="b-form-item__label b-form-item__label--wide" for="termin-value-1">Срок займа:</label>
 
 					<input class="b-form-item__input b-form-item__input--second" type="text" id="termin-value-1">
 					<span>дней</span>

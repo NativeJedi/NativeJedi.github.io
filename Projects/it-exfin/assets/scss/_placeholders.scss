@@ -46,8 +46,7 @@
 	}
 
 	img {
-		width: 50%;
-		height: 50%;
+		max-width: 10rem
 	}
 }
 
@@ -96,7 +95,6 @@
 	display: flex;
 	flex-direction: column;
 	width: 27rem;
-	height: 41rem;
 	padding-left: 0;
 	margin: 0;
 	list-style: none;
@@ -104,9 +102,6 @@
 	li {
 		position: relative;
 		display: block;
-		height: 4rem;
 		margin-bottom: 2rem;
-		border: 2px solid #FAFAFA;
-		@include border-radius(1rem);
 	}
 }

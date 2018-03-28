@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Form-failed</title>
+	<title>Resume form</title>
 	<link rel="stylesheet" href="dist/css/styles.css">
 	<link rel="icon" type="image/vnd.microsoft.icon" href="dist/img/favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,8 +41,8 @@
 
 			<div class="b-nav">
 				<a href="about.html" class="b-nav__link">О нас</a>
-				<a href="#" class="b-nav__link">Кредиты</a>
-				<a href="spoiler-page.html" class="b-nav__link">Акции</a>
+				<a href="main.html#credits" class="b-nav__link">Кредиты</a>
+				<a href="main.html#advanteges" class="b-nav__link">Акции</a>
 				<a href="faq.html" class="b-nav__link">Справка</a>
 				<a href="blog.html" class="b-nav__link">Блог</a>
 				<a href="#" class="b-nav__link">Студентам</a>
@@ -58,28 +58,37 @@
 	</header>
 
 	
-	<form action="#" class="f-form">
-		<h2 class="f-form__title">Онлайн решение получения кредита</h2>
-		<div class="f-form__content f-form__content--stretch">
-			<p class="f-form__content-message f-form__content-message--big">
-				<img class="f-form__content-img" src="dist/img/svgstore/icons/guarantee2.svg" alt="guar">
-				К сожалению, Ваша заявка не была принята. Свяжитесь с нашим менеджером чтобы узнать детали.
-			</p>
-
-			<div class="f-form__content-multiple">
-				<p class="f-form__content-multiple-item">
-					Дополнительный текст в обработке, в ближайшее время с вами свяжется копирайтер для заполнения форм.
-				</p>
-				<div class="f-form__content-multiple-item f-form__counter">
-					<div class="f-form__counter-info">Переход на главную страницу :</div>
-					<div class="f-form__counter-heart">Через <span>10</span> секунд</div>
-				</div>
-			</div>
+	<form class="f-form" action="#">
+		<h2 class="f-form__title">Отправьте нам Ваше резюме</h2>
+		<div class="f-form__content f-form__content--secondary">
+			<input class="f-form__input f-form__input--mt" type="text" placeholder="Имя">
+			<input class="f-form__input" type="text" placeholder="Фамилия">
+			
+			<select class="b-select b-select--expanded">
+				<option value="Населенный пункт" selected disabled hidden>Населенный пункт</option>
+				<option value="пункт2">пункт2</option>
+				<option value="пункт3">пункт3</option>
+				<option value="пункт4">пункт4</option>
+				<option value="пункт5">пункт5</option>
+			</select>
+			<select class="b-select b-select--expanded">
+				<option value="Желаемая должность" selected disabled hidden>Желаемая должность</option>
+				<option value="Должность-2">Должность-2</option>
+				<option value="Должность-3">Должность-3</option>
+				<option value="Должность-4">Должность-4</option>
+				<option value="Должность-5">Должность-5</option>
+			</select>
+			<input class="f-form__input" type="tel" placeholder="Телефон">
+			<input class="f-form__input" type="email" placeholder="E-mail">
+			<label class="b-btn-primary b-btn-primary--formed file-upload">
+				<i class="fas fa-paperclip"></i>
+				<input type="file" name="file">
+				<span>Прикрепить резюме</span>
+			</label>
+			<button class="b-btn-primary b-btn-primary--formed" type="submit">Отправить резюме</button>
+			<button class="b-btn-close"></button>
 		</div>
-
-		<div class="f-form__footer"></div>
-
-		<a href="index.html" class="b-btn-close"></a>
+		<div class="f-form__footer f-form__footer--sm"></div>
 	</form>
 	
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"

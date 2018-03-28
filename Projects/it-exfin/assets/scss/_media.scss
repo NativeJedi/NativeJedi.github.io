@@ -29,8 +29,7 @@
 	.b-main-form {
 		&__content {
 			width: 100%;
-			padding: 3rem pxtopercent(70) 6rem pxtopercent(70);
-
+			padding-bottom: 6rem;
 			&-message {
 				margin: 0 0 3rem 0;
 			}
@@ -300,7 +299,6 @@
 	}
 
 	.s-head__nav {
-		justify-content: space-around;
 		font-size: 1rem;
 	}
 
@@ -621,7 +619,6 @@
 		}
 	}
 
-	.b-main-form__total { padding: 6rem 3rem 3rem 3rem; }
 
 	.b-review__info { font-size: 1.5rem; }
 
@@ -1122,7 +1119,13 @@
 			max-width: 27rem;
 		}
 	}
-
+	
+	.b-main-form__content {
+		padding: 3rem 2rem 6rem 2rem;
+	}
+	.b-main-form__total {
+		padding: 6rem 2rem 3rem 2rem;
+	}
 	.b-main-form__content-title {
 		text-align: center;
 		span {

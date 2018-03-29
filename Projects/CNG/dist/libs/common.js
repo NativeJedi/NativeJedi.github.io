@@ -110,7 +110,7 @@ window.onload = function() {
 		graphChange(selector2, graphImages2, mainImg2, changinImages2);
 
 	})($);
-	
+
 	$(".header__nav-link").mPageScroll2id();
 	$(".mobile-menu__link").mPageScroll2id();
 	$(".footer__nav-link").mPageScroll2id();

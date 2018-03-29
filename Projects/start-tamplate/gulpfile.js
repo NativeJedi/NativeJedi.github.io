@@ -10,7 +10,15 @@ consolidate  		 = require('gulp-consolidate'),
 svgstore     		 = require('gulp-svgstore'),
 rename       		 = require('gulp-rename'),
 svgmin       		 = require('gulp-svgmin'),
+rename           = require('gulp-rename');
 inject       		 = require('gulp-inject');
+
+/*#Build plugins*/
+var csso = require('gulp-csso'),
+useref 	 = require('gulp-useref'),
+concat 	 = require('gulp-concat'),
+gulpif   = require('gulp-if'),
+uglify 	 = require('gulp-uglify');
 
 var svgWatch            = './dist/img/svgstore/icons/*.svg';
 var svgIconsSource      = './sprite.svg';
@@ -94,6 +102,28 @@ gulp.task('serve', ['sass'], function(){
 	});
 });
 
+gulp.task('build:css', ['sass'], function() {
+	return gulp.src('./dist/css/styles.css')
+	.pipe(csso({
+		restructure: false,
+		sourceMap: true,
+		debug: true
+	}))
+	.pipe(rename({suffix: '.min'}))
+	.pipe(gulp.dest('./dist/css/'));
+});
+
+
+gulp.task('build:js', function() {
+	return gulp.src([
+		'dist/libs/*.js' 
+		])
+	.pipe(concat('libs.min.js'))
+	.pipe(uglify())
+	.pipe(gulp.dest('dist/js'));
+});
+
+gulp.task('build', ['img', 'build:css', 'build:js']);
 
 // Runs all of the above tasks and then waits for files to change
 gulp.task('default', ['serve'], function() {

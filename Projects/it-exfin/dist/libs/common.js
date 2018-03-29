@@ -466,6 +466,7 @@ window.onload = function() {
 
 	$('.validateForm').on('submit', function(e) {
 		e.preventDefault();
+		location.href = $(this).data('link');
 
 		if(!$(this).hasClass('error-form')) {
 

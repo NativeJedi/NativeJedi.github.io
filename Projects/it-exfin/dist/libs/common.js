@@ -1,16 +1,16 @@
 window.onload = function() {
 
-	new Slider('#credit-slider-1', 750, 10000);
+	new Slider('#credit-slider-1', 0, 15000, 500);
 
-	new Slider('#termin-slider-1', 56, 99);
+	new Slider('#termin-slider-1', 56, 99, 1);
 
-	new Slider('#credit-slider-2', 750, 10000);
+	new Slider('#credit-slider-2', 0, 15000, 500);
 
-	new Slider('#termin-slider-2', 1, 12);
+	new Slider('#termin-slider-2', 1, 12, 1);
 
-	new Slider('#credit-slider-3', 750, 10000);
+	new Slider('#credit-slider-3', 0, 15000, 500);
 
-	new Slider('#termin-slider-3', 1, 12);
+	new Slider('#termin-slider-3', 1, 12, 1);
 
 	/*#Minimal height*/
 	(function($) {
@@ -465,9 +465,6 @@ window.onload = function() {
 	});
 
 	$('.validateForm').on('submit', function(e) {
-		e.preventDefault();
-		location.href = $(this).data('link');
-
 		if(!$(this).hasClass('error-form')) {
 
 			$.ajax({
@@ -544,7 +541,7 @@ function pagination() {
 	});
 };
 
-function Slider(initialId, min, max) {
+function Slider(initialId, min, max, step) {
 
 	if (document.querySelector(initialId) == null) return;
 
@@ -562,6 +559,7 @@ function Slider(initialId, min, max) {
 		max: max,
 		range: "min",
 		animate: "slow",
+		step: step,
 		slide: function( event, ui) {
 			sliderValue.val(ui.value);
 			sliderHandle.html(ui.value + ' ' + quantity);

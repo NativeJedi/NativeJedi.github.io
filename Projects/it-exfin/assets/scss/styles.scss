@@ -874,6 +874,9 @@ fieldset {
 	margin-top: 6rem;
 
 	&-item {
+		display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 		position: relative;
 		width: calc(33% - 20rem/3);
 		text-align: center;
@@ -901,8 +904,8 @@ fieldset {
 		}
 
 		&__info {
-			margin: 2rem 0 3rem 0;
-			padding: 0 2rem;
+			margin: 2rem 0 auto 0;
+			padding: 0 2rem 3rem 2rem;
 			font-size: 14px;
 			font-family: "Myriad Pro";
 			line-height: 1.429;
@@ -1254,6 +1257,9 @@ fieldset {
 
 			&.active {
 				background: $main-gradient;
+				.message-numb {
+					background: none;
+				}
 			}
 		}	
 
@@ -1310,6 +1316,14 @@ fieldset {
 		}
 	}
 }
+
+.message-numb {
+	display: inline-block;
+	background: $main-gradient;
+	padding: .2rem .4rem;
+	border-radius: 5px;
+}
+
 .b-top-nav {
 	padding: 5.5rem 0;
 

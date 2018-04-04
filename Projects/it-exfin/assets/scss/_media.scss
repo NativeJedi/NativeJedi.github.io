@@ -113,42 +113,6 @@
 
 	.b-section-cards {
 		margin-top: 8rem;
-		flex-wrap: wrap;
-
-		&__icons { justify-content: space-around; }
-
-		&__item {
-			width: 100%;
-
-			&:first-child {
-				padding-bottom: 15rem;
-				justify-content: space-between;
-				margin-bottom: 4rem;
-			}
-
-			.bank-card {
-				margin: 0 auto;
-			}
-
-			.visa-img {
-				width: 24%;
-				margin: 0;
-			}
-			.master-card {
-				width: 24%;
-				margin: 0;
-			}
-			&-square {
-				width: 24%;
-				&:first-of-type {
-					margin: 0;
-				}
-
-				&:nth-of-type(2) {
-					margin: 0;
-				}
-			}
-		}
 	}
 
 	.b-review {
@@ -511,7 +475,6 @@
 	.s-advanteges-message,
 	.s-packages-content__item-img,
 	.b-section-cards,
-	.s-region,
 	.s-info,
 	.s-footer-referal-wrap,
 	.mob-hidden,
@@ -520,7 +483,41 @@
 	.b-sidebar {
 		display: none;
 	}
+	
+	.popup  {
+		&-list {
+			flex-direction: column;
+			align-items: center;
+			padding-bottom: 5rem;
 
+			li {
+				width: 100%;
+				max-width: 37rem;
+			}
+		}
+		
+		&-map,
+		&-info {
+			width: 100%;
+		}
+
+		&-info {
+			max-width: 100%;
+		}
+		.btn-show {
+			@include centX;
+			bottom: 2rem;
+		}
+	}
+
+	.b-region-list {
+		width: 100%;
+		&__wrapper {
+			max-height: 47rem;
+			overflow-y: scroll;
+			@include scrollbar(5px, $first-color);
+		}
+	}
 	.b-main-form,
 	.b-personal,
 	.s-advanteges-header,

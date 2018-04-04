@@ -91,7 +91,7 @@ $(function() {
 	}
 	*/
 	function Popup(fade) {
-		var popup = $('.popup');
+		var popup = $('.overlay');
 		var self = this;
 		var popupFade = fade || 200;
 		var contentFade = fade || 200;
@@ -105,9 +105,9 @@ $(function() {
 		self.close = function(e) {
 			var targ = e.target;
 
-			if (!targ.classList.contains('popup') 
+			if (!targ.classList.contains('overlay') 
 				&& !targ.classList.contains('popup__close')) return;
-				$('.popup-content').fadeOut(contentFade);
+				$('.popup').fadeOut(contentFade);
 			popup.fadeOut(popupFade);
 		}
 

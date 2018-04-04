@@ -147,8 +147,10 @@ window.onload = function() {
 		$('.b-region-list').animate({
 			opacity: "0"
 		}, 500, function(){
-			$('.b-region-list').css('z-index', '-1');
-			$('.popup').css('z-index', '100').animate({opacity: '1'}, 500);
+			$('.b-region-list').css({
+				display: 'none'
+			});
+			$('.popup').css({display: 'flex'}).animate({opacity: '1'}, 500);
 		});
 	});
 
@@ -164,8 +166,8 @@ window.onload = function() {
 		$('.popup').animate({opacity: '0'}, 500, function(){
 			$('.popup-list').empty();
 			$('.b-region-list__btn').removeClass('btn-active');
-			$('.popup').css('z-index', '-1');
-			$('.b-region-list').css('z-index', '1').animate({opacity: 1}, 300);
+			$('.popup').css('display', 'none');
+			$('.b-region-list').css('display', 'flex').animate({opacity: 1}, 300);
 		});
 	});
 

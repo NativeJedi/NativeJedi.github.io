@@ -554,46 +554,34 @@ fieldset {
 
 .b-section-cards {
 	position: relative;
-	display: flex;
-	justify-content: space-around;
 	margin-top: 14rem;
+	
+	&__logo {
+		display: inline;
+		margin: 0 4rem 2rem 0;
+		max-width: 13rem;
 
-	&__item {
-		position: relative;
-		display: flex;
-		align-content: flex-start;
-		align-items: flex-start;
-		flex-wrap: wrap;
-		width: 45%;
-
-		&:firts-child { padding-bottom: 12rem; }
-		
-
-		.visa-img {
-			max-width: 17rem;
-			margin-right: pxtopercent(70, 1170/2);
+		&-wrap {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
 		}
+	}
 
-		.master-card {
-			max-width: 10rem;
-		}
-
-		.svg-bank {
-			width: 100%;
-		}
+	.svg-bank {
+		max-width: 30rem;
 	}
 	
-	&__img {
-		margin: 2rem 0 0 auto;
-		max-width: 45%;
+	.master-card {
+		max-width: 8rem;
 	}
+		
 
 	&__icons {
-		position: absolute;
-		bottom: 0;
 		display: flex;
-		width: 100%;
-		justify-content: space-between;
+		margin-top: 2rem;
+		justify-content: center;
 		color: #fff;
 
 		.icon {
@@ -601,6 +589,7 @@ fieldset {
 			display: inline-block;
 			padding-top: 7.5rem;
 			text-align: center;
+			margin: 0 2rem;
 
 			&:before {
 				@include centX;
@@ -723,6 +712,10 @@ fieldset {
 	background-color: #fff;
 	background-position: 50% 80%;
 	background-size: 80rem 50rem;
+
+	.wrapper {
+		position: relative;
+	}
 }
 
 .b-region-list {
@@ -763,12 +756,9 @@ fieldset {
 }
 
 .popup {
-	@include stretch;
-	display: flex;
+	display: none;
 	align-items: flex-start;
 	opacity: 0;
-	z-index: -1;
-
 	&-list {
 		@extend %region-list;
 		margin-right: 2rem;
@@ -875,8 +865,8 @@ fieldset {
 
 	&-item {
 		display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+		flex-direction: column;
+		justify-content: space-between;
 		position: relative;
 		width: calc(33% - 20rem/3);
 		text-align: center;

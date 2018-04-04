@@ -53,6 +53,11 @@ $global-font-icon: 'social';
       content: $icon-facebook;
     }
   }
+  &.icon--handshake {
+    &:before {
+      content: $icon-handshake;
+    }
+  }
   &.icon--interview {
     &:before {
       content: $icon-interview;
@@ -78,6 +83,11 @@ $global-font-icon: 'social';
       content: $icon-phone-call;
     }
   }
+  &.icon--shield {
+    &:before {
+      content: $icon-shield;
+    }
+  }
   &.icon--stick-man {
     &:before {
       content: $icon-stick-man;
@@ -96,6 +106,11 @@ $global-font-icon: 'social';
   &.icon--vodafone {
     &:before {
       content: $icon-vodafone;
+    }
+  }
+  &.icon--wax {
+    &:before {
+      content: $icon-wax;
     }
   }
 

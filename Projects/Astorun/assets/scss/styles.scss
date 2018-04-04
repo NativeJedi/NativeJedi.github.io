@@ -64,6 +64,54 @@ a {
 	}
 }
 
+.btn-primary {
+	position: relative;
+	padding: .5rem 3rem;
+	background-color: transparent;
+	border: 2px solid #fff;
+	color: #fff;
+	font-weight: bold;
+	z-index: 2;
+	overflow: hidden;
+
+	&:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 0;
+		width: 0;
+		border-bottom-right-radius: 100%;
+		background-color: #fff;
+		transition: width .3s, height .3s;
+		z-index: -1;
+	}
+
+	&:hover {
+		color: #000;
+		&:after {
+			width: 140%;
+			height: 140%;
+		}
+	}
+
+	&--buy {
+		margin: 2rem auto;
+		min-width: 20rem;
+		border-color: $er-color;
+		color: $er-color;
+
+		&:after {
+			background-color: $er-color;
+		}
+
+		&:hover {
+			color: #fff;
+		}
+	}
+}
+
+
 .s-main {
 	background: linear-gradient(0deg, rgba(#000, .8)), 
 	url('../img/bg1.jpg') center no-repeat;
@@ -116,6 +164,12 @@ a {
 	}
 }
 
+.section-title {
+	margin: 4rem 0;
+	text-transform: uppercase;
+	text-align: center;
+	font-style: italic;
+}
 
 /*#News*/
 
@@ -183,6 +237,209 @@ a {
 	font-size: 18px;
 }
 
+
+/*#Shop */
+.b-checkbox {
+	$h: 20px;
+
+	input {
+		display: none;
+
+		&:checked + label:before {
+			content: "\2713";
+			font-size: 20px;
+			font-weight: bold;
+			color: green;
+			text-align: center;
+			line-height: $h;
+			border-color: green;
+		}
+
+		&:checked + label {
+			color: green;
+		}
+	}
+
+	label {
+		display: inline-block;
+		position: relative;
+		padding-left: 2rem;
+		cursor: pointer;
+
+		&:before {
+			content: "";
+			@include centY;
+			left: 0;
+			width:  $h;
+			height: $h;
+			background-color: #fff;
+			border: 1px solid #ccc;
+		}
+	}	
+}
+
+.blur {
+	&.is-active {
+		filter: blur(5px);
+	}
+	
+}
+.shop {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	max-width: 30rem;
+	margin: 4rem auto;
+
+	&__img {
+		max-width: 100%;
+	}
+
+	&__info {
+		display: none;
+		&-title {
+			margin: 0;
+			padding: 2rem;
+			text-align: center;
+			text-transform: uppercase;
+			background-color: #E17F3D;
+			color: #fff;
+		}
+
+		&-content {
+			padding: 2rem;
+		}
+		&.is-active {
+			display: block;
+		}
+	}
+
+	&__block {
+		position: relative;
+		overflow: hidden;
+		cursor: pointer;
+		
+		&:before {
+			content: "";
+			@include stretch;
+			z-index: 1;
+			opacity: 0;
+			transition: opacity .3s;
+			background-color: rgba($apply-color, .3);
+		}
+		
+		&.is-active {
+			&:before {
+				opacity: 1;
+			}
+		}
+		&:hover {
+			.shop__overlay {
+				width: 100%;
+			}
+		}
+	}
+
+	&__overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 100%;
+		background-color: rgba(#000, .4);
+		overflow: hidden;
+		transition: width .4s;
+	}
+
+	&__btn {
+		@include cent;
+	}
+	
+	&__checkbox {
+		position: absolute;
+		right: 10px;
+		top: 5px;
+		z-index: 10;
+	}
+	
+	&__info {
+	}
+	.slick-prev,
+	.slick-next {
+		width: 5rem;
+		height: 5rem;
+		z-index: 3;
+		&:before {
+			font-size: 5rem;
+			color: #D7D7D7;
+		}
+	}
+
+	.slick-prev {
+		left: 0;
+	}
+
+	.slick-next {
+		right: 0;
+	}
+}
+
+.overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(#000, .3);
+	z-index: 1000;
+}
+
+.popup {
+	@include cent;
+	min-width: 50%;
+	min-height: 50%;
+	background-color: #fff;
+	border-radius: 2rem;
+	overflow: hidden;
+
+	&__close {
+		position: absolute;
+		right: 1rem;
+		top: 1rem;
+		width: 30px;
+		height: 30px;
+		border: 4px solid #fff;
+		border-radius: 50%;
+		cursor: pointer;
+		transition: all .3s;
+
+		&:hover {
+			transform: scale(1.2) rotate(90deg);
+		}
+
+		&:after,
+		&:before {
+			content: "";
+			width: 3px;
+			height: 70%;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			background-color: #fff;
+			transform-origin: 10% 0;
+			transition: background-color .3s;
+		}
+
+		&:after {
+			transform: rotate(45deg) translate(-50%, -50%);
+		}
+
+		&:before {
+			transform: rotate(-45deg) translate(-50%, -50%);
+		}
+	}
+}
 .hidden {
 	display: none;
 }

@@ -13,6 +13,7 @@ window.onload = function() {
 	new Slider('#termin-slider-3', 1, 12, 1);
 
 	/*#Minimal height*/
+
 	(function($) {
 		var slides = $('.b-response__info');
 		var maxH = 0;
@@ -480,6 +481,37 @@ window.onload = function() {
 			}); 
 		};
 	});
+
+	/*#news showing*/
+
+	(function($){
+		if ($(window).width() < 768) return;
+		setTimeout(newFadeIn, 4000);
+
+		$('.new__close').on('click', function(e) {
+			$(this).parent().fadeOut();
+		});
+
+		function newFadeIn() {
+			$('.new').fadeIn();
+
+			setTimeout(function() {
+				newFadeChange();
+			}, 0);
+		}
+
+		function newFadeChange() {
+			var time = $('.new').data('time');
+
+			var timeId = setInterval(function() {
+				$('.new').fadeOut(function() {
+				//Do something before fade
+
+				$('.new').fadeIn();
+			}); 
+			}, time);
+		}
+	})($);
 }
 
 function initMap() {
@@ -487,6 +519,7 @@ function initMap() {
 	var map = new google.maps.Map(document.getElementById('map'), {
 	});
 }
+
 function disableSelect(context, select) {
 	if(context.val() === 'on') {
 		select.attr('disabled', false);

@@ -726,6 +726,7 @@ fieldset {
 		justify-content: space-between;
 		flex-wrap: wrap;
 		margin-top: 10rem;
+		min-height: 47rem;
 	}
 
 	@extend %region-list;
@@ -1211,6 +1212,65 @@ fieldset {
 	}
 }
 
+.social-main {
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+	list-style: none;
+	font-size: 2.5rem;
+	&__link {
+		display: inline-block;
+		color: $first-color;
+		margin-bottom: 1rem;
+		transition: transform .2s, color .2s;
+		&:hover {
+			transform: scale(1.3);
+			color: #fff;
+		}
+	}
+}
+
+.new {
+	display: none;
+	position: fixed;
+	left: 50%;
+	top: 25%;
+	z-index: 10;
+	max-width: 32rem;
+	padding: 2rem;
+	border-radius: 15px;
+	font-weight: 500;
+	background-color: $first-color;
+	color: #fff;
+
+	&__close {
+		position: absolute;
+		top: 0;
+		right: -3rem;
+		width: 2rem;
+		height: 2rem;
+		cursor: pointer;
+
+		&:after,
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 50%;
+			width: 3px;
+			height: 100%;
+			background-color: $first-color;
+		}
+
+		&:after {
+			transform: rotate(45deg);
+		}
+
+		&:before {
+			transform: rotate(-45deg);
+		}
+	}
+}
 /*#Head section*/
 
 .s-head {

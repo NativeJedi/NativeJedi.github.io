@@ -576,7 +576,7 @@ fieldset {
 	.master-card {
 		max-width: 8rem;
 	}
-	
+
 
 	&__icons {
 		display: flex;
@@ -3643,6 +3643,7 @@ fieldset {
 		font-weight: 500;
 		margin-bottom: 1rem;
 	}
+
 	&__footer {
 		padding: 2rem 0;
 		margin-top: 2rem;
@@ -3673,7 +3674,217 @@ fieldset {
 			padding: .75rem 0;
 		}
 	}
+}
 
+.f-transfer {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	max-width: 87rem;
+	margin: 4rem auto;
+	
+	&__title,
+	.f-form__footer {
+		width: 100%;
+	}
+
+	&__person {
+		width: 50%;
+		padding: 2.5rem 3rem 2.5rem 11rem;
+		color: #7b7b7b;
+	}
+
+	&__caption {
+		margin: 0 0 2rem 0;
+		text-align: center;
+		font-weight: normal;
+		color: #000;
+	}
+
+	&__card {
+		position: relative;
+		margin-bottom: 2rem;
+	}
+
+	&__icon {
+		$h: 4.5rem;
+		position: absolute;
+		display: inline-block;
+		left: 0;
+		top: 5px;
+		transform: translateX(-160%);
+		width: 5rem;
+		height: $h;
+		background-color: #E1E1E1;
+		font-size: 3.2rem;
+
+		svg { @include cent; }
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			transform: translateX(100%);
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: $h/2 0 $h/2 2.3rem;
+			border-color: transparent transparent transparent #E1E1E1;
+		}
+
+		&--inside {
+			transform: none;
+		}
+
+		&-link {
+			@include centY;
+			font-size: 2.5rem;
+			right: 0;
+			color: #D1DBE1;
+		}
+	}
+
+	&__label {
+		font-size: 1.2rem;
+		display: inline-block;
+		margin-bottom: .5rem;
+		cursor: pointer;
+
+		&--expanded {
+			width: 100%;
+		}
+	}
+
+	&__input {
+		width: 100%;
+		border: none;
+		border-bottom: 1px solid;
+		background-color: transparent;
+		letter-spacing: 2px;
+
+		&--card {
+			padding: .3rem 1.5rem;
+
+			&:focus {
+				~ .f-transfer__icon {
+					color: #fff;
+					background-color: $first-color;
+
+					&:after {
+						border-left-color: $first-color;
+					}
+				}
+			}
+		}
+
+		&--date {
+			width: 5rem;
+			padding: 1rem .3rem;
+			text-align: center;
+		}
+
+		&--cvv {
+			padding: 1rem;
+		}
+
+		&--phone {
+			padding-bottom: 1rem;
+
+			&:focus {
+				~ .f-transfer__icon {
+					color: #fff;
+					background-color: $first-color;
+
+					&:after {
+						border-left-color: $first-color;
+					}
+				}
+			}
+		}
+
+		&--labeled {
+			width: 90%;
+			text-align: center;
+			&:focus + span {
+				color: $first-color;
+			}
+		}
+
+		&:focus {
+			outline: none;
+			color: $first-color;
+
+			&::placeholder {
+				color: $first-color;
+			}		
+		}
+	}
+
+	&__multiple {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		&-item {
+			width: calc(50% - 1.5rem/2);
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+	}
+
+	&__link-top {
+		font-size: 1.2rem;
+		margin-left: auto;
+	}
+
+	&__main {
+		max-width: 36rem;
+		margin: 0 auto;
+
+		&-title {
+			font-weight: normal;
+			text-align: center;
+			font-size: 1.5rem;
+			span {
+				display: block;
+				text-transform: uppercase;
+			}
+		}
+
+		&-prompt {
+			margin: 1.5rem 0 1rem 0;
+			font-size: 1.2rem;
+			font-weight: 500;
+			color: #637A8E;
+		}
+
+		&-info,
+		&-total {
+			margin: 1rem 0;
+			text-align: center;
+		}
+
+		&-total {
+			font-size: 5.5rem;
+		}
+	}
+
+	&__phone {
+		position: relative;
+		padding: 0 3rem 0 8rem;
+		margin-bottom: 2rem;
+	}
+
+	.b-checkbox {
+		font-size: 1.4rem;
+	}
+
+	.b-btn-primary {
+		margin: 4rem auto 0 auto;
+	}
 }
 
 .error {
@@ -4166,6 +4377,16 @@ fieldset {
 			border: 2px solid #ccc;
 		}
 	}	
+
+	&__link {
+		font-weight: bold;
+		color: #637A8E;
+		text-decoration: underline;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
 }
 
 .b-input {

@@ -480,14 +480,22 @@
 	.mob-hidden,
 	.s-main__list,
 	.s-main-title,
+	.social-main
 	.b-sidebar {
 		display: none;
 	}
 	
-	.social-main {
-		display: none;
+	.f-transfer {
+
+		&__title,
+		.f-form__footer {
+			border-radius: 0;
+		}
+		
+		&__person {
+			width: 100%;
+		}
 	}
-	
 	.popup  {
 		&-list {
 			flex-direction: column;

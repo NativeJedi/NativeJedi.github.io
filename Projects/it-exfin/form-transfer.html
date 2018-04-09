@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Form-success</title>
+	<link rel="stylesheet" href="dist/css/styles.css">
+	<link rel="icon" type="image/vnd.microsoft.icon" href="dist/img/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<html>
+<body>
+	<header class="s-header">
+		<div class="wrapper">
+			<button class="mobile-menu">
+				<div class="mobile-menu__sandwich">
+					<span class="mobile-menu__topper"></span>
+					<span class="mobile-menu__middle"></span>
+					<span class="mobile-menu__footer"></span>
+				</div>
+				<span>Меню</span>
+			</button>
+
+			<a href="main.html" class="b-logo">
+				<svg><use xlink:href="sprite.svg#svg-logo">
+				</svg>
+			</a>
+
+			<div class="s-header__phone">
+				<span>Телефон горячей линии</span>
+				<a href="tel:+0800211112">0 800 211 112</a>
+			</div>
+			
+			<div class="mobile-icons">
+				<a href="#" class="mobile-link">
+					<i class="fas fa-phone"></i>
+				</a>
+
+				<a href="private-profile.html" class="mobile-link">
+					<i class="fas fa-sign-in-alt"></i>
+				</a>
+			</div>
+
+			<div class="b-nav">
+				<a href="about.html" class="b-nav__link">О нас</a>
+				<a href="#" class="b-nav__link">Кредиты</a>
+				<a href="spoiler-page.html" class="b-nav__link">Акции</a>
+				<a href="faq.html" class="b-nav__link">Справка</a>
+				<a href="blog.html" class="b-nav__link">Блог</a>
+				<a href="#" class="b-nav__link">Студентам</a>
+			</div>
+
+			<div class="s-header__lang">
+				<button class="b-btn b-btn--lang">Рус</button>
+				<button class="b-btn b-btn--lang">Укр</button>
+			</div>
+
+			<a href="private-profile.html" class="b-btn-login">Мой кабинет <span class="icon icon--login"></span></a>
+		</div>
+	</header>
+	<form action="#" class="f-form f-transfer">
+		<h3 class="f-form__title f-transfer__title">Переказ</h3>
+		<fieldset class="f-transfer__person">
+			<h4 class="f-transfer__caption">Відправник</h4>
+			<div class="f-transfer__card">
+				<label for="card-1" class="f-transfer__label">Введіть номер своєї карти</label>
+				<input id="card-1" type="tel" class="f-transfer__input f-transfer__input--card" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="16">
+				<span class="f-transfer__icon">
+					<i class="far fa-envelope"></i>
+				</span>
+			</div>
+			<div class="f-transfer__multiple">
+				<div class="f-transfer__multiple-item">
+					<label for="date-1" class="f-transfer__label f-transfer__label--expanded">Термін дії</label>
+
+					<input id="date-1" type="tel" class="f-transfer__input f-transfer__input--date" placeholder="MM" maxlength="2">
+					<input id="date-2" type="tel" class="f-transfer__input f-transfer__input--date" placeholder="YY" maxlength="2">
+				</div>
+				<div class="f-transfer__multiple-item">
+					<label for="cvv-1" class="f-transfer__label">CVV</label>
+					<a href="#" class="f-transfer__link-top">Що це?</a>
+					<input id="cvv-1" type="password" class="f-transfer__input f-transfer__input--cvv" placeholder="***" maxlength="3">
+				</div>
+			</div>
+		</fieldset>
+		<fieldset class="f-transfer__person">
+			<h4 class="f-transfer__caption">Отримувач</h4>
+			<div class="f-transfer__card">
+				<label for="card-2" class="f-transfer__label">Введіть номер карти отримувача</label>
+				<input id="card-2" type="tel" class="f-transfer__input f-transfer__input--card" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="16">
+				<span class="f-transfer__icon">
+					<i class="far fa-envelope"></i>
+				</span>
+			</div>
+		</fieldset>
+		<fieldset class="f-transfer__main">
+			<h4 class="f-transfer__main-title">
+				<span>Сума переказу</span>
+				від 10 до 14999 (включаючи комісію)
+			</h4>
+			<input type="tel" placeholder="0.00" class="f-transfer__input f-transfer__input--labeled">
+			<span for="#" class="f-transfer__input-caption">грн</span>
+			<p class="f-transfer__main-prompt">Комісія буде зарахована автоматично (0.6% + 3.06 грн).</p>
+			<p class="f-transfer__main-info">Разом з урахуванням комісії: </p>
+			<div class="f-transfer__main-total">0.00 грн</div>
+			<div class="f-transfer__phone">
+				<label for="delivery-phone" class="f-transfer__label">Ваш телефон</label>
+				<input class="f-transfer__input f-transfer__input--phone" id="delivery-phone" type="tel" placeholder="+38 (_ _ _) _ _ _  _ _ _ _">
+				<span class="f-transfer__icon f-transfer__icon--inside">
+					<i class="fas fa-phone"></i>
+				</span>
+				<a href="#" class="f-transfer__icon-link" title="Подсказка"><i class="far fa-question-circle"></i></a>
+			</div>
+			<div class="b-checkbox">
+				<input id="delivery-check" type="checkbox">
+				<label for="delivery-check">Я погоджуюсь з <a href="#" class="b-checkbox__link">умовами публічного договору</a></label>
+				<button class="b-btn-primary b-btn-primary--main" type="submit">Здійснити переказ</button>
+			</div>
+		</fieldset>
+		<div class="f-form__footer"></div>
+	</form>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="dist/libs/slick.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	<script src="dist/libs/common.js"></script>
+</body>
+</html>

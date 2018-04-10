@@ -905,6 +905,9 @@ fieldset {
     .b-nav__link:hover {
       background-color: #FCC504; }
 
+.s-section {
+  padding: 5rem 0; }
+
 /*#Credits section*/
 .s-credits {
   position: relative;
@@ -3889,10 +3892,16 @@ fieldset {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   max-width: 87rem;
-  margin: 4rem auto; }
+  margin: 2rem auto;
+  padding: 3rem 0;
+  background-color: #fafafa; }
   .f-transfer__title,
   .f-transfer .f-form__footer {
     width: 100%; }
+  .f-transfer__title {
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase; }
   .f-transfer__person {
     width: 50%;
     padding: 2.5rem 3rem 2.5rem 11rem;
@@ -4247,6 +4256,8 @@ fieldset {
     .b-btn-primary:hover {
       -webkit-box-shadow: 0 0 4rem rgba(255, 255, 255, 0.5);
               box-shadow: 0 0 4rem rgba(255, 255, 255, 0.5); }
+    .b-btn-primary--unactive {
+      background: #ccc; }
     .b-btn-primary--dark {
       background-color: #ccc;
       background-image: -webkit-gradient(linear, right top, left top, from(black), to(#434343));

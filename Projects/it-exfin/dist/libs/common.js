@@ -1,22 +1,23 @@
 window.onload = function() {
 
-	new Slider('#credit-slider-1', 0, 15000, 500);
+	var cs1 = new Slider('#credit-slider-1', 0, 15000, 500);
 
-	new Slider('#termin-slider-1', 56, 99, 1);
+	var ts1 = new Slider('#termin-slider-1', 56, 99, 1);
 
-	new Slider('#credit-slider-2', 0, 15000, 500);
+	var cs2 = new Slider('#credit-slider-2', 0, 15000, 500);
 
-	new Slider('#termin-slider-2', 1, 12, 1);
+	var ts2 = new Slider('#termin-slider-2', 1, 12, 1);
 
-	new Slider('#credit-slider-3', 0, 15000, 500);
+	var cs3 = new Slider('#credit-slider-3', 0, 15000, 500);
 
-	new Slider('#termin-slider-3', 1, 12, 1);
+	var ts3 = new Slider('#termin-slider-3', 1, 12, 1);
 
 	/*#Minimal height*/
 
 	(function($) {
 		var slides = $('.b-response__info');
 		var maxH = 0;
+
 		for (var i = 0; i < slides.length; i++) {
 			if (slides.eq(i).height() > maxH) {
 				maxH = slides.eq(i).height();
@@ -31,6 +32,7 @@ window.onload = function() {
 	/*#Slick slider*/
 
 	(function($) {
+
 		$('.s-packages-content').slick({
 			dots: true,
 			infinite: false,
@@ -116,10 +118,11 @@ window.onload = function() {
 
 	$('.b-region-list').on('click', '.b-region-list__btn', function(e) {
 		var dataCity = $(this).data('city');
+
 		fieldFiller(dataCity, "data-city.json");
+
 		$('.b-region-list__btn').removeClass('btn-active');
 		$(this).addClass('btn-active');
-
 
 		var btn = $(this).parent();
 
@@ -182,6 +185,8 @@ window.onload = function() {
 		$(this).toggleClass('active');
 	});
 
+	/*#Tabs*/
+
 	$('.b-btn--secondary').on('click', tabs);
 
 	$('.b-vacancies__tab').on('click', tabs);
@@ -192,7 +197,7 @@ window.onload = function() {
 
 	$('.message').on('click', tabs);
 
-	/*#Pagination*/
+	/*#PaginationLike*/
 
 	$('.b-blog-nav__btn').on('click', function() {
 		if ($(this).hasClass('active')) return;
@@ -231,15 +236,18 @@ window.onload = function() {
 
 	/*#Redacting at private profile*/
 
-	var inp = $('.profile__input input');
+	(function($){
+		var inp = $('.profile__input input');
 
-	$('.profile__input label').on('click', function(e) {
-		inp.attr('disabled', false);
-	});
+		$('.profile__input label').on('click', function(e) {
+			inp.attr('disabled', false);
+		});
 
-	inp.focusout(function() {
-		$(this).attr('disabled', true);
-	});
+		inp.focusout(function() {
+			$(this).attr('disabled', true);
+		});
+	})($);
+	
 
 	/*#Add files at private profile*/
 
@@ -258,7 +266,7 @@ window.onload = function() {
 			title.innerHTML = fileName;
 
 			var _tempArr = $(this).val().split('\\').pop()
-				.split('.');
+			.split('.');
 			var fileName = _tempArr[0];
 
 			title.innerHTML = fileName;
@@ -385,10 +393,18 @@ window.onload = function() {
 
 	$('.mobile-menu').on('click', function(e) {
 		$(this).toggleClass('active');
-		$('.wrapper').toggleClass('active');
+		$('.s-header .wrapper').toggleClass('active');
 	});
 
+	$('.b-nav a').on('click', function(e) {
+		$('.mobile-menu').removeClass('active');
+		$('.s-header .wrapper').removeClass('active');
+	});
+
+	/*#Secondary menu for mobile*/
+
 	(function($) {
+
 		if (document.querySelector('.s-head__nav') == null) return;
 		var defaultDist = $('.s-head__nav').offset().top;
 		var start = 0;
@@ -419,18 +435,19 @@ window.onload = function() {
 
 	initMap();
 
-	var header = $('header');
-	var padding = header.height();
+	/*#Fixed header*/
 
-	function fixedHeader() {
+	function fixedHeader (elem){
 		$('body').css({
-			'padding-top': header.height()
+			'padding-top': elem.height()
 		});
-		header.addClass('sticky');
+
+		elem.addClass('sticky');
 	};
 
-	fixedHeader();
-	$(window).resize(fixedHeader);
+	fixedHeader($('header'));
+
+	$(window).resize(fixedHeader($('header')));
 
 	/*#Validation*/
 
@@ -450,17 +467,17 @@ window.onload = function() {
 
 		switch (valType) {
 			case 'number':
-				var rvNumb = /^\d+$/;
-				if (val.length > 2 && val != ' ' && rvNumb.test(val)) {
-					$(this).removeClass('error').addClass('error-not');
-					$(this).next('.error-box')
-						.removeClass('active');
-				} else {
-					$(this).removeClass('error-not').addClass('error');
-					$(this).next('.error-box')
-						.addClass('active');
-				}
-				break;
+			var rvNumb = /^\d+$/;
+			if (val.length > 2 && val != ' ' && rvNumb.test(val)) {
+				$(this).removeClass('error').addClass('error-not');
+				$(this).next('.error-box')
+				.removeClass('active');
+			} else {
+				$(this).removeClass('error-not').addClass('error');
+				$(this).next('.error-box')
+				.addClass('active');
+			}
+			break;
 		}
 
 		if ($('[data-validate]').hasClass('error')) {
@@ -515,6 +532,25 @@ window.onload = function() {
 			}, time);
 		}
 	})($);
+
+	/*#Scroll animation*/
+	(function($){
+		var headerHeight = $('header').height();
+
+		$("a[href^='#']").off().on("click", function(event) {
+			event.preventDefault();
+
+			var id = $(this).attr('href');
+
+			var top = $(id).offset().top - headerHeight;
+
+
+			$('body,html').stop(true).animate({
+				scrollTop: top
+			}, 1000);
+		});
+	})($)
+	
 }
 
 function initMap() {
@@ -616,23 +652,10 @@ function Slider(initialId, min, max, step) {
 		sliderHandle.html(value + ' ' + quantity);
 		sliderTotal.html(value + ' ' + quantity);
 	});
-
-	/*Scroll*/
-	$("a[href^='#']").off().on("click", function(event) {
-		event.preventDefault();
-		var id = $(this).attr('href'),
-
-			top = $(id).offset().top;
-
-		$('body,html').stop(true).animate({
-			scrollTop: top
-		}, 1000);
-	});
-
-
 }
 
 function fieldFiller(datacity, url) {
+
 	function textFill(item) {
 		$('#data-adress').html(item.adress);
 		$('#data-city').html(item.name);
@@ -643,6 +666,7 @@ function fieldFiller(datacity, url) {
 		$('#data-phone').html(item.phone).attr('href',
 			'tel:' + item.phone);
 	}
+
 	$.ajax({
 		url: url,
 		success: function(data) {
@@ -652,10 +676,10 @@ function fieldFiller(datacity, url) {
 					var officeArr = [];
 					for (var k in obj) officeArr.push(obj[k]);
 
-					var myLatlng = officeArr[0].lats;
+						var myLatlng = officeArr[0].lats;
 
 					var map = new google.maps.Map(document.getElementById('map'), {
-						zoom: 4,
+						zoom: 11,
 						center: myLatlng
 					});
 
@@ -695,11 +719,11 @@ function fieldFiller(datacity, url) {
 						allMarkers.push(marker);
 					}
 
-					for (var j = 0; j < allMarkers.length; j++) {
+					for (var j = 1; j < allMarkers.length; j++) {
 						allMarkers[j].f.setIcon(icon);
-
-						if (j == 0) allMarkers[j].f.setIcon(iconChosen);
 					}
+
+					allMarkers[0].f.setIcon(iconChosen);
 				}
 			}
 		}

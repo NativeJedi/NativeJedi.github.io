@@ -845,7 +845,9 @@ fieldset {
   font-size: 1.2rem;
   z-index: 2000;
   -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-          box-shadow: 0 0 30px rgba(0, 0, 0, 0.4); }
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0); }
   .s-header .wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1815,7 +1817,7 @@ fieldset {
   position: fixed;
   left: 50%;
   top: 25%;
-  z-index: 10;
+  z-index: 1001;
   max-width: 32rem;
   padding: 2rem;
   border-radius: 15px;
@@ -3675,7 +3677,7 @@ fieldset {
     .b-main-form--prime .ui-slider-helper {
       width: calc(100% - 12rem); }
       .b-main-form--prime .ui-slider-helper--sm {
-        width: calc(100% - 9rem); }
+        width: calc(100% - 10.5rem); }
   .b-main-form--popup {
     position: relative;
     max-width: 40rem;
@@ -4249,14 +4251,13 @@ fieldset {
     font-weight: bold;
     background-image: -o-linear-gradient(175deg, #f6a40f 0%, #fcc400 100%);
     background-image: linear-gradient(-85deg, #f6a40f 0%, #fcc400 100%);
-    -webkit-transition: -webkit-box-shadow .3s;
-    transition: -webkit-box-shadow .3s;
-    -o-transition: box-shadow .3s;
-    transition: box-shadow .3s;
-    transition: box-shadow .3s, -webkit-box-shadow .3s; }
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s; }
     .b-btn-primary:hover {
-      -webkit-box-shadow: 0 0 4rem rgba(255, 255, 255, 0.5);
-              box-shadow: 0 0 4rem rgba(255, 255, 255, 0.5); }
+      -webkit-box-shadow: 0 0 2rem #FCC504;
+              box-shadow: 0 0 2rem #FCC504;
+      color: #fff; }
     .b-btn-primary--unactive {
       background: #ccc; }
     .b-btn-primary--dark {
@@ -4266,8 +4267,8 @@ fieldset {
       background-image: linear-gradient(-90deg, black 0%, #434343 100%);
       color: #FCC504; }
       .b-btn-primary--dark:hover {
-        -webkit-box-shadow: 0 0 4rem rgba(0, 0, 0, 0.5);
-                box-shadow: 0 0 4rem rgba(0, 0, 0, 0.5); }
+        -webkit-box-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
+                box-shadow: 0 0 2rem rgba(0, 0, 0, 0.5); }
     .b-btn-primary--light {
       margin: 2rem 0 1rem 0;
       max-width: 26rem;
@@ -4277,9 +4278,6 @@ fieldset {
                 box-shadow: 0 0 50px #fff; }
     .b-btn-primary--main {
       color: #fff; }
-      .b-btn-primary--main:hover {
-        -webkit-box-shadow: 0 0 4rem rgba(0, 0, 0, 0.5);
-                box-shadow: 0 0 4rem rgba(0, 0, 0, 0.5); }
     .b-btn-primary--sm {
       width: 26rem;
       font-size: 1.6rem; }

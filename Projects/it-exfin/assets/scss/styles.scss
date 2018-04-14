@@ -83,6 +83,7 @@ fieldset {
 	font-size: 1.2rem;
 	z-index: 2000;
 	box-shadow: 0 0 30px rgba(#000, .4);
+	transform: translateZ(0);
 
 	.wrapper {
 		display: flex;
@@ -1240,7 +1241,7 @@ fieldset {
 	position: fixed;
 	left: 50%;
 	top: 25%;
-	z-index: 10;
+	z-index: 1001;
 	max-width: 32rem;
 	padding: 2rem;
 	border-radius: 15px;
@@ -3416,7 +3417,7 @@ fieldset {
 			width: calc(100% - 12rem);
 
 			&--sm {
-				width: calc(100% - 9rem);
+				width: calc(100% - 10.5rem);
 			}
 		}
 	}
@@ -4123,9 +4124,12 @@ fieldset {
 		border-radius: 10000rem;
 		font-weight: bold;
 		background-image: $main-gradient;
-		transition: box-shadow .3s;
+		transition: all .3s;
 
-		&:hover { box-shadow: 0 0 4rem rgba(#fff, .5); }
+		&:hover { 
+			box-shadow: 0 0 2rem $first-color;
+			color: #fff;
+		}
 		
 		&--unactive {
 			background: #ccc;
@@ -4136,7 +4140,7 @@ fieldset {
 			background-image: $secondary-gradient;
 			color: $first-color;
 
-			&:hover { box-shadow: 0 0 4rem rgba(#000, .5); }
+			&:hover { box-shadow: 0 0 2rem rgba(#000, .5); }
 		}
 
 		&--light {
@@ -4151,7 +4155,6 @@ fieldset {
 
 		&--main {
 			color: #fff;
-			&:hover { box-shadow: 0 0 4rem rgba(#000, .5); }
 		}
 
 		&--sm {

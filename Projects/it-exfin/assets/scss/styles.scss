@@ -2993,7 +2993,7 @@ fieldset {
 .questionnaire {
 	position: relative;
 	width: pxtopercent(545);
-	margin: 0 auto;
+	margin: 0 auto 4rem auto;
 	
 	fieldset { padding: 0; }
 
@@ -3121,14 +3121,27 @@ fieldset {
 			cursor: pointer;
 		}
 	}
+	
+	&__input,
+	.b-select {
+		&:focus {
+			outline: none;
+			border-color: $first-color;
+			color: $first-color;
 
+			&::placeholder {
+				color: $first-color;
+			}
+		}
+	}
 	&__input {
 		width: 100%;
 		padding:  1rem 2rem;
 		border-radius: 10px;
 		background-color: rgb(249, 249, 249);
-		border: none;
-
+		border: 1px solid transparent;
+		
+		
 		&[disabled] {
 			&::placeholder {
 				color: #ccc;

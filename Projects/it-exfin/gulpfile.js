@@ -10,6 +10,7 @@ consolidate  		 = require('gulp-consolidate'),
 svgstore     		 = require('gulp-svgstore'),
 rename       		 = require('gulp-rename'),
 svgmin       		 = require('gulp-svgmin'),
+pug 						 = require('pug');
 inject       		 = require('gulp-inject');
 
 var svgWatch            = './dist/img/svgstore/icons/*.svg';

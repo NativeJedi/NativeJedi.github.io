@@ -3337,7 +3337,7 @@ fieldset {
 .questionnaire {
   position: relative;
   width: 46.5812%;
-  margin: 0 auto; }
+  margin: 0 auto 4rem auto; }
   .questionnaire fieldset {
     padding: 0; }
   .questionnaire__step:not(:first-of-type) {
@@ -3453,12 +3453,29 @@ fieldset {
     font-weight: bold; }
     .questionnaire__label[for] {
       cursor: pointer; }
+  .questionnaire__input:focus,
+  .questionnaire .b-select:focus {
+    outline: none;
+    border-color: #FCC504;
+    color: #FCC504; }
+    .questionnaire__input:focus::-webkit-input-placeholder,
+    .questionnaire .b-select:focus::-webkit-input-placeholder {
+      color: #FCC504; }
+    .questionnaire__input:focus:-ms-input-placeholder,
+    .questionnaire .b-select:focus:-ms-input-placeholder {
+      color: #FCC504; }
+    .questionnaire__input:focus::-ms-input-placeholder,
+    .questionnaire .b-select:focus::-ms-input-placeholder {
+      color: #FCC504; }
+    .questionnaire__input:focus::placeholder,
+    .questionnaire .b-select:focus::placeholder {
+      color: #FCC504; }
   .questionnaire__input {
     width: 100%;
     padding: 1rem 2rem;
     border-radius: 10px;
     background-color: #f9f9f9;
-    border: none; }
+    border: 1px solid transparent; }
     .questionnaire__input[disabled] {
       background-color: #fafafa; }
       .questionnaire__input[disabled]::-webkit-input-placeholder {

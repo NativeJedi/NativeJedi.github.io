@@ -4292,7 +4292,8 @@ fieldset {
       background: #fff; }
       .b-btn-primary--light:hover {
         -webkit-box-shadow: 0 0 50px #fff;
-                box-shadow: 0 0 50px #fff; }
+                box-shadow: 0 0 50px #fff;
+        color: #000; }
     .b-btn-primary--main {
       color: #fff; }
     .b-btn-primary--sm {
@@ -4305,7 +4306,8 @@ fieldset {
       color: #fff; }
       .b-btn-primary--formed:hover {
         -webkit-box-shadow: 0 0 4rem rgba(0, 0, 0, 0.5);
-                box-shadow: 0 0 4rem rgba(0, 0, 0, 0.5); }
+                box-shadow: 0 0 4rem rgba(0, 0, 0, 0.5);
+        color: #000; }
     .b-btn-primary--bordered {
       width: 17rem;
       font-size: 1.2rem;
@@ -4485,7 +4487,8 @@ fieldset {
     float: right; }
     .b-btn-unactive:hover {
       -webkit-box-shadow: 0 0 10px #ccc;
-              box-shadow: 0 0 10px #ccc; }
+              box-shadow: 0 0 10px #ccc;
+      color: #aaaaaa; }
 
 /*#Inputs*/
 .b-checkbox input {

@@ -4163,6 +4163,7 @@ fieldset {
 
 			&:hover {
 				box-shadow: 0 0 50px #fff;
+				color: #000;
 			}
 		}
 
@@ -4180,7 +4181,11 @@ fieldset {
 			width: 26rem;
 			font-size: 1.6rem;
 			color: #fff;
-			&:hover { box-shadow: 0 0 4rem rgba(#000, .5); }
+
+			&:hover { 
+				box-shadow: 0 0 4rem rgba(#000, .5); 
+				color: #000;
+			}
 		}
 
 		&--bordered {
@@ -4368,6 +4373,7 @@ fieldset {
 
 		&:hover {
 			box-shadow: 0 0 10px #ccc;
+			color: rgb(170, 170, 170);
 		}
 	}
 }

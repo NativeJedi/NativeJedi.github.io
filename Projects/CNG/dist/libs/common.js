@@ -62,8 +62,8 @@ window.onload = function() {
 		$('.mobile-menu').stop(true, true).fadeOut();
 	});
 
-	new Slider('#credit-slider-1', 0, 10000);
-	new Slider('#credit-slider-2', 0, 10000);
+	var sl1 = new Slider('#credit-slider-1', 0, 10000);
+	var sl2 = new Slider('#credit-slider-2', 0, 10000);
 
 	$('.btn-example').on('click', function(e) {
 		$('.btn-example').removeClass('is-active');
@@ -119,6 +119,13 @@ window.onload = function() {
 		$(".step").removeClass("is-active");
 		$(this).addClass("is-active");
 	});
+
+	(function($){
+		var container = $('#faqContainer');
+		var height = container.height();
+
+		container.css('min-height', height + 150 + 'px');
+	})(jQuery);
 };
 
 function graphChange(selector, graphImages, mainImg, changinImages) {

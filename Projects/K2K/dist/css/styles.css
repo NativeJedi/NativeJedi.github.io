@@ -1705,7 +1705,7 @@ ul {
               transform: translate(-50%, -50%) rotate(-45deg); }
 
 /*#Medi*/
-@media only screen and (max-device-width: 1040px) {
+@media only screen and (max-width: 1040px) {
   .container {
     padding: 0 1rem; }
   .header__top .container {
@@ -1727,7 +1727,7 @@ ul {
   .popup-content {
     width: 80%; } }
 
-@media only screen and (max-device-width: 768px) {
+@media only screen and (max-width: 768px) {
   .header__main .container {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -1774,7 +1774,7 @@ ul {
   .profile__donations {
     width: 50%; } }
 
-@media only screen and (max-device-width: 767px) {
+@media only screen and (max-width: 767px) {
   .mobile-menu {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1873,7 +1873,7 @@ ul {
     .profile-tab-box {
       position: relative; } }
 
-@media only screen and (max-device-width: 440px) {
+@media only screen and (max-width: 440px) {
   .question__title {
     font-size: 1.4rem; }
   .s-info__title {
@@ -1886,7 +1886,7 @@ ul {
   .profile-tab__content {
     padding: 1rem; } }
 
-@media only screen and (max-device-width: 375px) {
+@media only screen and (max-width: 375px) {
   .header__top .container {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -1926,7 +1926,7 @@ ul {
     .error__info {
       margin-left: 0; } }
 
-@media only screen and (max-device-width: 320px) {
+@media only screen and (max-width: 320px) {
   .btn-group .btn:not(:last-child) {
     margin: 0 0 2rem 0; } }
 

@@ -1,4 +1,4 @@
-@media only screen and (max-device-width: 1040px) {
+@media only screen and (max-width: 1040px) {
 	.container, {
 		padding: 0 1rem;
 	}
@@ -46,7 +46,7 @@
 }
 
 
-@media only screen and (max-device-width: 768px) {
+@media only screen and (max-width: 768px) {
 
 	.header {
 		&__main {
@@ -129,7 +129,7 @@
 
 }
 
-@media only screen and (max-device-width: 767px) {
+@media only screen and (max-width: 767px) {
 	.mobile-menu {
 		display: flex;
 	}
@@ -285,7 +285,7 @@
 	}
 }
 
-@media only screen and (max-device-width: 440px) {
+@media only screen and (max-width: 440px) {
 	.question__title {
 		font-size: 1.4rem;
 	}
@@ -310,7 +310,7 @@
 	}
 }
 
-@media only screen and (max-device-width: 375px) {
+@media only screen and (max-width: 375px) {
 	.header {
 		&__top {
 			.container {
@@ -391,7 +391,7 @@
 }
 
 
-@media only screen and (max-device-width: 320px) {
+@media only screen and (max-width: 320px) {
 	.btn {
 		&-group {
 			.btn {

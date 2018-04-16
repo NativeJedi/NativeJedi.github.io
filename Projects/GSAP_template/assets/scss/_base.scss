@@ -1,0 +1,200 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	font-family: 'Roboto', sans-serif;
+}
+
+html {
+	font-size: 10px;
+	color: #6b6b6b;
+}
+
+body {
+	font-size: 16px;
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: inherit;
+}
+
+fieldset {
+	border: none;
+}
+
+ul {
+	margin: 0;
+	padding-left: 0;
+	list-style-type: none;
+}
+
+.container {
+	max-width: 1170px;
+	margin: 0 auto;
+
+	&--flex {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+}
+
+.b-checkbox {
+	$h: 13px;
+
+	input {
+		display: none;
+
+		&:checked + label:before {
+			content: "\2713";
+			font-size: 16px;
+			font-weight: bold;
+			color: $main-color;
+			text-align: center;
+			line-height: $h;
+			border-color: $main-color;
+		}
+
+		&:checked + label {
+			color: $main-color;
+		}
+	}
+
+	label {
+		display: inline-block;
+		position: relative;
+		padding-left: 2rem;
+		cursor: pointer;
+
+		&:before {
+			content: "";
+			@include centY;
+			left: 0;
+			width:  $h;
+			height: $h;
+			background-color: #fff;
+			border: 1px solid #ccc;
+		}
+	}	
+
+	&__link {
+		font-weight: 500;
+		color: $secondary-font;
+		text-decoration: underline;
+
+		&:hover {
+			opacity: .7;
+		}
+	}
+}
+
+.b-spoiler {
+	overflow: hidden;
+	
+	h3 {
+		cursor: pointer;
+		
+		&.is-active + p {
+			max-height: 10rem;
+			margin: 2.5rem 0 0 0;
+		}
+	}
+	p {
+		margin: 0;
+		max-height: 0;
+		transition: all .4s;
+	}
+}
+
+.b-tooltip {
+	position: absolute;
+	display: none;
+	left: -7.5rem;
+	bottom: 0;
+	transform: translate(0, 130%);
+	padding: .7rem 2rem;
+	background-color: #D6E3F1;
+	color: $font-color;
+	transition: opacity .3s;
+	opacity: 0;
+
+	&:after {
+		content: "";
+		position: absolute;
+		left: 50%;
+		top: 0;
+		transform: translate(-50%, -100%);
+		width: 0; 
+		height: 0; 
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		border-bottom: 7px solid #D6E3F1;
+	}
+}
+
+.b-switcher {
+	position: relative;
+	display: inline-block;
+	margin-top: .2rem;
+	font-size: 14px;
+	color: $main-color;
+	
+	&__heart {
+		position: relative;
+		display: inline-block;
+		background-color: $main-color;
+		width: 3rem;
+		height: 1.5rem;
+		border-radius: 9000rem;
+		cursor: pointer;
+
+		&:before {
+			content: "";
+			width: 1rem;
+			height: 1rem;
+			@include centY;
+			left: 2px;
+			background-color: #fff;
+			border: 1px solid #fff;
+			border-radius: 50%;
+			transition: transform .4s;
+		}
+	}
+
+	&__value {
+		position: absolute;
+		width: 3rem;
+		top: 50%;
+		right: -0.5rem;
+		transform: translate(100%, -65%);
+		opacity: 0;
+		cursor: pointer;
+
+		&--off {
+			opacity: 1;
+		}
+	}
+	
+
+	input{
+		display: none;
+
+		&:checked {
+			& + .switcher__heart{
+				&:before {
+					transform: translate(1.4rem, -50%);
+				}
+			}
+
+			& ~ .switcher__value--on {
+				opacity: 1;
+			}
+			& ~ .switcher__value--off {
+				opacity: 0;
+			}
+		}
+	}
+}

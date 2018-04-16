@@ -4851,7 +4851,7 @@ fieldset {
   .mobile-link:not(:last-child) {
     margin-right: 1.5rem; }
 
-@media only screen and (max-device-width: 1040px) {
+@media only screen and (max-width: 1040px) {
   .wrapper {
     padding: 0 1rem; }
   .s-header .wrapper {
@@ -5158,7 +5158,7 @@ fieldset {
   .questionnaire {
     width: 80%; } }
 
-@media only screen and (max-device-width: 768px) {
+@media only screen and (max-width: 768px) {
   .s-howto {
     background-image: -o-radial-gradient(180% 70% at top, #fff 100%, rgba(248, 174, 6, 0.9) 90%);
     background-image: radial-gradient(180% 70% at top, #fff 100%, rgba(248, 174, 6, 0.9) 90%); }
@@ -5184,7 +5184,7 @@ fieldset {
   .chat {
     width: 95%; } }
 
-@media only screen and (max-device-width: 767px) {
+@media only screen and (max-width: 767px) {
   .b-btn-login,
   .b-section-message,
   .s-advanteges-message,
@@ -5585,7 +5585,7 @@ fieldset {
       width: 20rem;
       font-size: 1.4rem; } }
 
-@media only screen and (max-device-width: 568px) {
+@media only screen and (max-width: 568px) {
   .questionnaire__multiple .b-select,
   .questionnaire__multiple .b-checkbox {
     margin: 1rem 0; }
@@ -5669,7 +5669,7 @@ fieldset {
     .b-blog-nav__btn-prev, .b-blog-nav__btn-next {
       margin: 0; } }
 
-@media only screen and (max-device-width: 375px) {
+@media only screen and (max-width: 375px) {
   .b-spoiler-title.active + .b-spoiler-content {
     padding: 2rem 1rem; }
   .b-arrows {
@@ -5749,7 +5749,7 @@ fieldset {
     .b-response-wrap {
       width: 100%; } }
 
-@media only screen and (max-device-width: 320px) {
+@media only screen and (max-width: 320px) {
   .b-section-title {
     font-size: 2.3rem; }
   .s-advanteges-content {

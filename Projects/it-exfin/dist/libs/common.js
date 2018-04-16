@@ -445,11 +445,16 @@ window.onload = function() {
 		elem.addClass('sticky');
 	};
 
-	fixedHeader($('header'));
 
-	$(window).resize(fixedHeader($('header')));
+	(function($){
+		var header = $('header');
 
-	/*#Validation*/
+		fixedHeader(header);
+
+		$(window).on('resize', function() {
+			fixedHeader(header)
+		});
+	})(jQuery);
 
 	$('[data-validate]').unbind().blur(function(e) {
 		var valType = $(this).data('validate');

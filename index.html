@@ -56,7 +56,7 @@
 				<div class="col-md-4 col-md-push-4 animation-1">
 					<h3 class="section__title">Photo</h3>
 					<div class="person">
-						<a href="img/photo.jpg" class="popup"><img src="img/photo.jpg" alt="person-photo"></a>
+						<img src="img/photo.jpg" alt="person-photo">
 					</div>
 				</div>
 				<div class="col-md-4 col-md-pull-4 animation-2">
@@ -70,7 +70,11 @@
 					<h3 class="section__title">Personal information</h3>
 					<h4 class="section__person-name">Ruslan Lukianenko</h4>
 					<ul class="personal-list">
-						<li>Website development, HTML adaptive layout, responsive design</li>
+						<li>
+							Website development, semantic, adaptive HTML layout, responsive design <br>
+							Website optimization with dev tools and Lighthouse <br>
+							Pixel Perfect layout
+						</li>
 						<li>Date of birth: 17th March, 1996</li>
 						<li>Phone number: <a href="tel:+380962790520">+380962790520</a></li>
 						<li>E-mail: <a href="mailto:ruslan201010@gmail.com">ruslan201010@gmail.com</a></li>
@@ -100,19 +104,15 @@
 						<div class="resume__icon"><i class="fa fa-check-square-o"></i></div>
 						<div class="resume-item">
 							<div class="resume-item__caption">Technologies</div>
-							<p class="resume-item__description">HTML, CSS, JSON, AJAX, XML, jQuery, Bootstrap, Foundation<br>Sass, Pug</p>
+							<p class="resume-item__description">HTML, CSS, JSON, AJAX, XML, jQuery, jQuery UI, Bootstrap, Foundation, Sass, Pug</p>
 						</div>
 						<div class="resume-item">
 							<div class="resume-item__caption">Tools</div>
-							<p class="resume-item__description">Gulp, Git, SVN, Photoshop, FSviewer, InkScape, Koala,  JIRA, Chrome DevTools, Firebug</p>
+							<p class="resume-item__description">Gulp, Git, Photoshop, FSviewer, InkScape,  Avocode, JIRA, Chrome DevTools, Firebug</p>
 						</div>
 						<div class="resume-item">
 							<div class="resume-item__caption">Programming languages</div>
 							<p class="resume-item__description">JavaScript, C++</p>
-						</div>
-						<div class="resume-item">
-							<div class="resume-item__caption">Operating systems</div>
-							<p class="resume-item__description">Windows, Mac OS X</p>
 						</div>
 						<div class="resume-item">
 							<div class="resume-item__caption">RDBMS</div>
@@ -163,7 +163,65 @@
 						<li class="filter" data-filter=".category-3">Pure JS</li>
 					</ul>
 					<div class="portfolio" id="portfolio-grid">
-						<div class="mix col-md-3 col-sm-6 col-xs-6 category-1" id="#portfolio-item">
+						<div class="mix col-md-3 col-sm-6 col-xs-6 category-1" >
+							<img src="img/portfolio-images/it-exfin.jpg" alt="Epress Finance">
+							<div class="portfolio-content">
+								<h3 class="portfolio-content__title">Express finance</h3>
+								<p class="portfolio-content__description">Adaptive website for instant loans online</p>
+								<a href="#project-13" class="portfolio-content__link popup-content">Look</a>
+							</div>
+							<div class="hidden">
+								<div class="modal-box-content portfolio-description" id="project-13">
+									<button class="portfolio-description__btn-close mfp-close" type="button" title="Close (Esc)"></button>
+									<a class="portfolio-description__link" href="Projects/it-exfin/index.html" target="_blank">Projects/it-exfin/index.html</a>
+									<p class="portfolio-description__heart">Technologies: HTML, CSS, Sass, Gulp, jQuery, jQuery UI, AJAX, JSON, Google map API<br>
+										Methodology: BEM, SMACSS, OOCSS<br>
+									</p>
+									<img src="img/portfolio-images/it-exfin.jpg" alt="Express Finance">
+								</div>
+							</div>
+						</div>
+
+						<div class="mix col-md-3 col-sm-6 col-xs-6 category-1" >
+							<img src="img/portfolio-images/K2K.jpg" alt="K2K">
+							<div class="portfolio-content">
+								<h3 class="portfolio-content__title">K2K</h3>
+								<p class="portfolio-content__description">Adaptive website for loans and transfers online</p>
+								<a href="#project-12" class="portfolio-content__link popup-content">Look</a>
+							</div>
+							<div class="hidden">
+								<div class="modal-box-content portfolio-description" id="project-12">
+									<button class="portfolio-description__btn-close mfp-close" type="button" title="Close (Esc)"></button>
+									<a class="portfolio-description__link" href="Projects/K2K/index.html" target="_blank">Projects/K2K/index.html</a>
+									<p class="portfolio-description__heart">Technologies: HTML, CSS, Sass, Gulp, jQuery, jQuery UI, AJAX, JSON<br>
+										Methodology: BEM, SMACSS, OOCSS <br>
+									</p>
+									<img src="img/portfolio-images/K2K.jpg" alt="K2K">
+								</div>
+							</div>
+						</div>
+						
+						<div class="mix col-md-3 col-sm-6 col-xs-6 category-1" >
+							<img src="img/portfolio-images/GNC.jpg" alt="GNC">
+							<div class="portfolio-content">
+								<h3 class="portfolio-content__title">GNC</h3>
+								<p class="portfolio-content__description">Adaptive website for GNC crypto currency</p>
+								<a href="#project-11" class="portfolio-content__link popup-content">Look</a>
+							</div>
+							<div class="hidden">
+								<div class="modal-box-content portfolio-description" id="project-11">
+									<button class="portfolio-description__btn-close mfp-close" type="button" title="Close (Esc)"></button>
+									<a class="portfolio-description__link" href="Projects/GNC/index.html" target="_blank">Projects/GNC/index.html</a>
+									<p class="portfolio-description__heart">
+										Technologies: HTML, CSS, Sass, Gulp, jQuery, jQuery UI, Youtube API<br>
+										Methodology: BEM, SMACSS, OOCSS <br>
+									</p>
+									<img src="img/portfolio-images/GNC.jpg" alt="GNC">
+								</div>
+							</div>
+						</div>
+
+						<div class="mix col-md-3 col-sm-6 col-xs-6 category-1" >
 							<img src="img/portfolio-images/Mogo.jpg" alt="Mogo">
 							<div class="portfolio-content">
 								<h3 class="portfolio-content__title">Mogo</h3>
@@ -182,8 +240,8 @@
 								</div>
 							</div>
 						</div>
-	
-						<div class="mix col-md-3 col-sm-6 col-xs-6 category-2" id="#portfolio-item">
+
+						<div class="mix col-md-3 col-sm-6 col-xs-6 category-2" >
 							<img src="img/portfolio-images/base.jpg" alt="Alt">
 							<div class="portfolio-content">
 								<h3 class="portfolio-content__title">Base</h3>
@@ -202,7 +260,7 @@
 							</div>
 						</div>
 
-						<div class="mix col-md-3 col-sm-6 col-xs-6 category-2" id="#portfolio-item">
+						<div class="mix col-md-3 col-sm-6 col-xs-6 category-2" >
 							<img src="img/portfolio-images/form.jpg" alt="form">
 							<div class="portfolio-content">
 								<h3 class="portfolio-content__title">Form</h3>
@@ -220,7 +278,7 @@
 							</div>
 						</div>
 
-						<div class="mix col-md-3 col-sm-6 col-xs-6 category-2" id="#portfolio-item">
+						<div class="mix col-md-3 col-sm-6 col-xs-6 category-2" >
 							<img src="img/portfolio-images/headers.jpg" alt="form">
 							<div class="portfolio-content">
 								<h3 class="portfolio-content__title">Headers</h3>
@@ -240,7 +298,7 @@
 							</div>
 						</div>
 
-						<div class="mix col-md-3 col-sm-6 col-xs-6 category-2" id="#portfolio-item">
+						<div class="mix col-md-3 col-sm-6 col-xs-6 category-2" >
 							<img src="img/portfolio-images/footers.jpg" alt="footers">
 							<div class="portfolio-content">
 								<h3 class="portfolio-content__title">Footers</h3>
@@ -258,7 +316,7 @@
 							</div>
 						</div>
 
-						<div class="mix col-md-3 col-sm-6 col-xs-6 category-2" id="#portfolio-item">
+						<div class="mix col-md-3 col-sm-6 col-xs-6 category-2" >
 							<img src="img/portfolio-images/forms.jpg" alt="forms">
 							<div class="portfolio-content">
 								<h3 class="portfolio-content__title">Forms</h3>
@@ -276,7 +334,7 @@
 							</div>
 						</div>
 
-						<div class="mix col-md-3 col-sm-6 col-xs-6 category-3" id="#portfolio-item">
+						<div class="mix col-md-3 col-sm-6 col-xs-6 category-3" >
 							<img src="img/portfolio-images/slider1.jpg" alt="slider">
 							<div class="portfolio-content">
 								<h3 class="portfolio-content__title">Slider</h3>
@@ -293,7 +351,7 @@
 							</div>
 						</div>
 
-						<div class="mix col-md-3 col-sm-6 col-xs-6 category-3" id="#portfolio-item">
+						<div class="mix col-md-3 col-sm-6 col-xs-6 category-3" >
 							<img src="img/portfolio-images/todo.jpg" alt="todo-img">
 							<div class="portfolio-content">
 								<h3 class="portfolio-content__title">ToDo list</h3>
@@ -310,7 +368,7 @@
 							</div>
 						</div>
 
-						<div class="mix col-md-3 col-sm-6 col-xs-6 category-1" id="#portfolio-item">
+						<div class="mix col-md-3 col-sm-6 col-xs-6 category-1" >
 							<img src="img/portfolio-images/sport-lp.JPG" alt="Mogo">
 							<div class="portfolio-content">
 								<h3 class="portfolio-content__title">Sport landing</h3>
@@ -322,14 +380,14 @@
 									<button class="portfolio-description__btn-close mfp-close" type="button" title="Close (Esc)"></button>
 									<a class="portfolio-description__link" href="Projects/sport-landing/index.html" target="_blank">Project link</a>
 									<p class="portfolio-description__heart">Technologies: Bootstrap, HTML, CSS, Sass, Gulp, JavaScript <br>
-									Methodology: BEM, SMACSS, OOCSS <br>
+										Methodology: BEM, SMACSS, OOCSS <br>
 									</p>
-									<img src="img/portfolio-images/sport-lp.JPG" alt="mogo">
+									<img src="img/portfolio-images/sport-lp.JPG" alt="sport-lp">
 								</div>
 							</div>
 						</div>
 
-						<div class="mix col-md-3 col-sm-6 col-xs-6 category-3" id="#portfolio-item">
+						<div class="mix col-md-3 col-sm-6 col-xs-6 category-3" >
 							<img src="img/portfolio-images/table-data.jpg" alt="table-data">
 							<div class="portfolio-content">
 								<h3 class="portfolio-content__title">Table-data</h3>

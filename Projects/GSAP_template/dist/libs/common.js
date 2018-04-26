@@ -1,79 +1,135 @@
 $(function() {
-	
-	(function($) {
-		$.fn.tabs = function(options) {
-			var settings = $.extend({
-				'duration' : 300,
-				'animated' : true
-			}, options);
 
-			var allContent = $('[data-content]');
+	var tl = new TimelineLite();
 
-			this.each(function(index) {
-				var dataTab = $(this).data('tab');
-				var content = $('[data-content='+ dataTab +']');
+	var logo = $('.logo img');
+	var elems = $('.animation__element');
 
-				$(this).on('click', function(e) {
+	tl.to(logo, 3, {
+		scale: "2",
+		xPercent: 100,
+		yPercent: 100,
+		rotation: 720,
+		opacity: 1,
+		boxShadow: "inset 0 0 100px green, 0 0 100px green",
+		ease: Bounce.easeOut
+	}).to(logo, 3, {
+		xPercent: 200
+	});
 
-					if(content.hasClass('is-active')) return;
-					
-					if(settings.animated) {
-						allContent.stop(true).animate({
-							'opacity' : 0
-						}, settings.duration , function() {
-							$(this).removeClass('is-active')
 
-							content.addClass('is-active')
-							.stop(true)
-							.animate({
-								'opacity': 1
-							}, settings.duration)
-						})
-					}else {
-						allContent.removeClass('is-active');
-						content.addClass('is-active');
-					}
-				});
+	var count = 0;
 
-			});
+	var el1 = $('#el-1');
+	var el2 = $('#el-2');
+	var el3 = $('#el-3');
+	var el4 = $('#el-4');
 
-			
-			return this;
+	/*#Animation params*/
+
+	/*#Animation functions*/
+
+	function play(timeL, callback) {
+		timeL.play();
+		callback = callback || function() {};
+		callback();
+	};
+
+	function pause(timeL, callback) {
+		timeL.pause();
+		callback = callback || function() {};
+		callback();
+	};
+
+	function resume(timeL, callback) {
+		timeL.resume();
+		callback = callback || function() {};
+		callback();
+	};
+
+	function reverse(timeL, callback) {
+		timeL.reverse();
+		callback = callback || function() {};
+		callback();
+	};
+
+	function timeScale(timeL, t, callback) {
+		timeL.timeScale(t);
+		callback = callback || function() {};
+		callback();
+	};
+
+	function seek(timeL, seekT, callback) {
+		timeL.seek(seekT);
+		callback = callback || function() {};
+		callback();
+	};
+
+	function progress(timeL, pT, callback) {
+		timeL.progress(pT);
+		callback = callback || function() {};
+		callback();
+	};	
+
+	function restart(timeL, callback) {
+		timeL.restart();
+		callback = callback || function() {};
+		callback();
+	};
+
+	tl.to(el1, 3, {
+		yPercent: 100,
+
+		onStart: function() {
+			el1.html('start');
+		},
+		onUpdate: function() {
+			el1.html(count++);
+		},
+		onComplete: function() {
+			el1.html('finish');
+			count = 0;
 		}
-	})(jQuery);
+	})
 
-	(function($) {
-		$.fn.spoiler = function() {
-			
-			var elems = this;
+	$('.play').on('click', function() {
+		play(tl);
+	});
 
-			this.on('click', function() {
-				elems.not(this).removeClass('is-active');
-				$(this).toggleClass('is-active');
-			});
+	$('.pause').on('click', function() {
+		pause(tl);
+	})
 
-			return this;
-		}
-	})(jQuery);
+	$('.resume').on('click', function() {
+		resume(tl);
+	})
 
-	(function($) {
-		$.fn.scroll = function() {
-			var elems = this;
+	$('.reverse').on('click', function() {
+		reverse(tl);
+	})
 
-			this.on('click', function(e) { 
-				e.preventDefault();
+	$('.speedUp').on('click', function() {
+		timeScale(tl, 2);
+	})
 
-				var href = $(this).attr('href');
-				var dist = $(href).offset().top;
-				var time = Math.round(dist/5);
+	$('.slowDown').on('click', function() {
+		timeScale(tl, 0.5);
+	})
 
-				$('body, html').animate({
-					scrollTop: dist
-				}, time);
-			});
-		}
-	})(jQuery);
+	$('.seek').on('click', function() {
+		seek(tl, 3);
+	})
 
+	$('.progress').on('click', function() {
+		progress(tl, 0.5);
+	})
+
+	$('.restart').on('click', function() {
+		restart(tl, function() {
+			counter = 1;
+			$('#el-1').html('0');
+		});
+	})
 });
 
 /**

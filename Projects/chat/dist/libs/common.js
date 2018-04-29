@@ -2,7 +2,7 @@
 
 window.onload = function() {
 
-	const mes = document.querySelector('.chat__messages');
+	const chatWindow = document.querySelector('.chat__messages');
 	const form = document.querySelector('.send');
 	const input = document.querySelector('.send__input');
 	const contacts = document.querySelectorAll('.contact');
@@ -12,7 +12,7 @@ window.onload = function() {
 	let options = {
 		avatar: "dist/img/cageholder_4.jpg",
 		type: "sended",
-		chat: mes
+		chat: chatWindow
 	}
 
 	function Chat() {};
@@ -20,7 +20,7 @@ window.onload = function() {
 	Chat.prototype = options;
 	Chat.prototype.constructor = Chat;
 	Chat.prototype.sendMessage = function(text) {
-		this.chat.innerHTML += 
+		this.chat.innerHTML +=
 		`<div class="message message--${this.type}">
 		<img src="${this.avatar}" alt="person" class="message__img">
 		<p class="message__text">${text}</p>
@@ -28,7 +28,7 @@ window.onload = function() {
 	}
 
 	let firstContactImg = document.querySelectorAll('.contact')[0]
-																.querySelector('img').src;
+	.querySelector('img').src;
 
 	function Bot() {
 		this.avatar = firstContactImg,
@@ -40,12 +40,12 @@ window.onload = function() {
 	Bot.prototype.setAvatar = function(ava) {
 		this.avatar = ava;
 	}
-	Bot.prototype.getPhrase = function(url, callback = function(){}) {
+	Bot.prototype.getPhrase = function(url, callback = function() {}) {
 		let request = new XMLHttpRequest();
 
 		request.onreadystatechange = function() {
 			if (request.readyState == 4 && request.status == 200) {
-				callback(request.responseText);	
+				callback(request.responseText);
 			}
 		}
 		request.open('GET', url);
@@ -53,9 +53,9 @@ window.onload = function() {
 	}
 
 	function search(contactNames) {
-		let input = this.value.toLowerCase();		
+		let input = this.value.toLowerCase();
 
-		for(let i = 0; i < contactNames.length; i++){
+		for (let i = 0; i < contactNames.length; i++) {
 			let str = contactNames[i].textContent.toLowerCase();
 
 			if (str.includes(input) && input || !input) {
@@ -68,7 +68,7 @@ window.onload = function() {
 
 	function getRandKey(obj) {
 		let keys = Object.keys(obj);
-		let randKey = Math.floor( Math.random()*(keys.length)+0);
+		let randKey = Math.floor(Math.random() * (keys.length) + 0);
 
 		return obj[keys[randKey]];
 	}
@@ -89,7 +89,7 @@ window.onload = function() {
 
 			setTimeout(function() {
 				bot.sendMessage(phrase);
-				mes.scrollTo(0, mes.scrollHeight);
+				chatWindow.scrollTo(0, chatWindow.scrollHeight);
 			}, 500);
 		});
 
@@ -100,7 +100,7 @@ window.onload = function() {
 
 	let users = {};
 
-	for(let i = 0; i < contacts.length; i++) {
+	for (let i = 0; i < contacts.length; i++) {
 
 		/*Create user name fields with current messages in users obj*/
 
@@ -112,15 +112,15 @@ window.onload = function() {
 			if (this.classList.contains('is-active')) return;
 
 			let currentUser = document.querySelector('.contact.is-active')
-															  .querySelector('.contact__name').innerHTML;
+			.querySelector('.contact__name').innerHTML;
 
 			let activeUser = this.querySelector('.contact__name').innerHTML;
 
 			/*Saving current messages in users history*/
 
-			users[currentUser].history = mes.innerHTML;
+			users[currentUser].history = chatWindow.innerHTML;
 
-			for(let i = 0; i < contacts.length; i++) {
+			for (let i = 0; i < contacts.length; i++) {
 				contacts[i].classList.remove('is-active');
 			}
 
@@ -131,9 +131,9 @@ window.onload = function() {
 
 			/*Recovering user messages form user history*/
 
-			mes.innerHTML = users[activeUser].history;
-			mes.scrollTo(0, mes.scrollHeight);
-			
+			chatWindow.innerHTML = users[activeUser].history;
+			chatWindow.scrollTo(0, chatWindow.scrollHeight);
+
 			menu.classList.remove('is-active');
 		});
 
@@ -149,4 +149,3 @@ window.onload = function() {
 		search.call(this, contactNames);
 	});
 };
-

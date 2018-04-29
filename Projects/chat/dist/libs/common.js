@@ -96,11 +96,29 @@ window.onload = function() {
 		input.value = '';
 	});
 
+	/*Create obj with users message history*/
+
+	let users = {};
+
 	for(let i = 0; i < contacts.length; i++) {
 
-		contacts[i].addEventListener('click', function(e) {
+		/*Create user name fields with current messages in users obj*/
 
+		users[contacts[i].querySelector('.contact__name').innerHTML] = {
+			history: ""
+		}
+
+		contacts[i].addEventListener('click', function(e) {
 			if (this.classList.contains('is-active')) return;
+
+			let currentUser = document.querySelector('.contact.is-active')
+															  .querySelector('.contact__name').innerHTML;
+
+			let activeUser = this.querySelector('.contact__name').innerHTML;
+
+			/*Saving current messages in users history*/
+
+			users[currentUser].history = mes.innerHTML;
 
 			for(let i = 0; i < contacts.length; i++) {
 				contacts[i].classList.remove('is-active');
@@ -110,8 +128,12 @@ window.onload = function() {
 			let src = this.querySelector('img').src;
 
 			bot.setAvatar(src);
-			mes.innerHTML = "";
 
+			/*Recovering user messages form user history*/
+
+			mes.innerHTML = users[activeUser].history;
+			mes.scrollTo(0, mes.scrollHeight);
+			
 			menu.classList.remove('is-active');
 		});
 

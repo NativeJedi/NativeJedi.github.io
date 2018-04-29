@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>Index page</title>
+  <link rel="stylesheet" href="dist/css/styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+
+  <section class="section">
+    <div class="container">
+      <div class="chat">
+        <button class="btn-menu">
+          <span class="btn-menu__span btn-menu__span--top"></span>
+          <span class="btn-menu__span btn-menu__span--mid"></span>
+          <span class="btn-menu__span btn-menu__span--bot"></span>
+        </button>
+
+        <aside class="chat__contacts">
+          <div class="search">
+            <input class="search__input" type="search" name="search" placeholder="Search...">
+            <span class="search__icon icon icon--search"></span>
+          </div>
+
+          <div class="contact is-active">
+            <img src="dist/img/cageholder_1.jpg" alt="person" class="contact__image">
+            <div class="contact__name">Mad Cage</div>
+          </div>
+
+          <div class="contact">
+            <img src="dist/img/cageholder_2.jpg" alt="person" class="contact__image">
+            <div class="contact__name">Screaming Cage</div>
+          </div>
+
+          <div class="contact">
+            <img src="dist/img/cageholder_3.jpg" alt="person" class="contact__image">
+            <div class="contact__name">Serious Cage</div>
+          </div>
+        </aside>
+
+        <main class="chat__window">
+          <div class="chat__messages"></div>
+
+          <form action="#" class="send">
+            <input type="text" class="send__input" placeholder="Write something...">
+            <button class="send__btn" type="submit">
+              <span class="icon icon--telegram"></span>
+            </button>
+          </form>
+        </main>
+      </div>
+    </div>
+  </section>
+
+  <script src="dist/js/libs.min.js"></script>
+</body>

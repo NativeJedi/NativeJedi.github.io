@@ -1,0 +1,42 @@
+@media screen and (max-width: 767px) {
+
+	html, body {
+		height: 100%;
+	}
+
+	.section {
+		padding: 0;
+	}
+
+	.chat,
+	.chat__contacts,
+	.chat__window {
+		min-height: 100%;
+	}
+
+	.chat {
+		&__contacts {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			padding-right: 7rem;
+			background-color: #fff;
+			transform: translateX(-100%);
+			transition: transform .3s;
+		}
+
+		&__window {
+			width: 100%;
+			padding: 6rem 0 0 0;
+		}
+	}
+
+	.btn-menu {
+		display: block;
+
+		&.is-active + .chat__contacts {
+			transform: translateX(0);
+		}
+	}
+}

@@ -42,7 +42,7 @@ $(function() {
 		}
 	})(jQuery);
 
-	$('.ordering__tab-btn').tabs();
+	$('.ordering__tab-btn').tabs({animated: false});
 
 	$('.ordering__tab-btn').on('click', function() {
 		$('.ordering__tab-btn').removeClass('is-active');

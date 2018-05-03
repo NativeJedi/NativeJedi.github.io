@@ -2,16 +2,18 @@
 	box-sizing: border-box;
 }
 
-html, body {
-	font-family: 'Arial', sans-serif;
-}
-
 html {
 	font-size: 10px;
 }
 
 body {
 	font-size: 16px;
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: inherit;
 }
 
 fieldset {

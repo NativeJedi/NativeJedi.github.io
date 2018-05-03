@@ -1,8 +1,6 @@
 @import 'normalize';
 @import 'variables';
 @import 'mixins';
-@import 'icons/_iconfont__variables.scss';
-@import 'icons/_iconfont__icons.scss';
 @import 'fonts';
 @import 'base';
 @import 'placeholders';
@@ -22,7 +20,9 @@
 
 .section {
 	&__title {
+		font-family: "Open Sans";
 		width: 100%;
+		margin: 2.5rem 0 1rem 0;
 		font-size: 3.2rem;
 		font-weight: normal;
 	}
@@ -30,21 +30,27 @@
 
 .ordering {
 	width: pxtopercent(810);
-	min-height: 55rem;
+	min-height: 65rem;
 
 	&__tab {
 		display: flex;
-		max-width: 34rem;
 
 		&-btn {
-			padding: 1rem 1.5rem;
+			max-width: 20rem;
+			padding: 1rem 0rem 1rem 1.5rem;
 			font-size: 14px;
+			word-wrap: break-word;
 			font-weight: bold;
 			line-height: 1.286;
 			background-color: transparent;
 			color: $active-color;
 			text-align: left;
-			border: 1px solid transparent;		
+			border: 1px solid $unactive-color;		
+			border-bottom: none;
+
+			&:not(:first-child) {
+				border-left: none;
+			}
 
 			&.is-active {
 				background-color: #fff;
@@ -53,7 +59,7 @@
 			
 			&.is-active,
 			&:focus {
-				border-color: #ccc #ccc transparent #ccc;
+				border-color: $unactive-color $unactive-color transparent $unactive-color;
 			}
 
 			&:hover {
@@ -62,6 +68,10 @@
 
 			&:focus {
 				outline: none;
+			}
+
+			&--sm {
+				max-width: 12rem;
 			}
 		}
 	}
@@ -72,14 +82,17 @@
 }
 
 .f-order {
-	padding: 2.5rem;
+	padding: 1.2rem 1.6rem 2.5rem 1.6rem;
+	border: 1px solid;
+	border-color: transparent $unactive-color $unactive-color $unactive-color;
+	letter-spacing: 0px;
 	@extend %light-bg;
 
 	&__title {
 		@extend %f-title;
 
 		&--wide {
-			margin: 0 0 2.5rem 0;
+			margin: 0 0 2rem 0;
 		}
 
 		&--inline {
@@ -88,13 +101,16 @@
 	}
 
 	&__block {
-		margin-bottom: 3rem;
+		margin-bottom: 2.5rem;
 	}
 
 	&__item {
 		display: flex;
 		align-items: center;
-		margin-bottom: 2rem;
+
+		&:not(:last-child) {
+			margin-bottom: 1.8rem;
+		}
 	}
 
 	&__label {
@@ -106,7 +122,7 @@
 
 	&__input {
 		@extend %inp-sel;
-		padding: .3rem 1rem;
+		padding: .5rem 1rem;
 		transition: all .2s;
 
 		&:focus {
@@ -121,11 +137,11 @@
 		padding: .5rem .8rem;
 		appearance: none!important;
 		background: url('../img/arrow.png') no-repeat;
-		background-position: 98% center;
+		background-position: 99% center;
 
 		&--lg {
 			width: calc(100% - 15rem);
-			max-width: 100%;
+			max-width: 60rem;
 		}
 	}
 
@@ -147,7 +163,7 @@
 }
 
 %pd {
-	padding: 1.5rem 2rem;
+	padding: 1.3rem 2rem;
 }
 
 .order {
@@ -155,18 +171,22 @@
 	align-items: center;
 	@extend %pd;
 	border: 1px dotted;
-	border-color: #ccc transparent;
+	border-color: $unactive-color transparent;
 
 	&__img {
+		max-width: 6rem;
 		margin-right: 2rem;
 	}
 
 	&__link {
+		display: inline-block;
 		@extend %blue-font;
+		padding-right: 1rem;
+		line-height: 1.5;
 	}
 
 	&__info {
-		margin: 1rem 0 0 0;
+		margin: .5rem 0 0 0;
 		display: flex;
 		justify-content: space-between;
 		font-size: 1.4rem;
@@ -183,18 +203,20 @@
 
 	&-wrap {
 		width: 39rem;
-		margin-left: 2rem;
+		margin-left: 3rem;
+		border: 1px solid $unactive-color;
 		@extend %light-bg;
 
 		&__title {
-			padding: 1.5rem 2rem;
+			padding: 1rem 2rem;
 			@extend %f-title;
 		}
 
 		&__total {
-			@extend %pd;
+			padding: 1rem 1.8rem;
 			text-align: right;
 			font-weight: bold;
+			font-size: 1.8rem;
 		}
 	}
 }
@@ -213,8 +235,8 @@
 	}
 
 	&-apply {
-		margin-left: 16rem;
-		padding: 1rem 1.5rem;
+		margin-left: 16.5rem;
+		padding: .5rem 1.5rem;
 		font-size: 2rem;
 		font-weight: bold;
 		border-radius: 90000rem;

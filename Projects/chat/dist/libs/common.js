@@ -148,4 +148,5 @@ window.onload = function() {
 	searchInp.addEventListener('input', function() {
 		search.call(this, contactNames);
 	});
+
 };

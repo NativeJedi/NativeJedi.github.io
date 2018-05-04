@@ -10,9 +10,20 @@
 		<div class="container">
 			<h1 class="news__title">The guardian news</h1>
 			<div class="news__controll">
-				<button class="news__refresh" id="refresh">Refresh</button>
+				<button class="btn btn--refresh" id="refresh">Refresh</button>
 			</div>
 			<ul class="news__content"></ul>
+			<div class="news__pagination">
+
+				<button class="btn btn-controll btn-controll--prev" id="prevBtn">Previous page</button>
+				<div class="news__indicator">
+					<input type="tel" class="news__input" id="currentPage" value="1">
+					<span>of </span>
+					<span class="news__page" id="totalPages"></span>
+					<span> pages</span>
+				</div>
+				<button class="btn btn-controll btn-controll--next" id="nextBtn">Next page</button>
+			</div>
 		</div>
 	</section>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

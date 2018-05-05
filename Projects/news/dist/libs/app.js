@@ -1,4 +1,5 @@
 "use strict";
+
 (function($) {
 	$.fn.spoiler = function() {
 
@@ -15,74 +16,6 @@
 
 $(function() {
 
-	let inProgress = false;
-
-	function onError(content) {
-		inProgress = false;
-		content.html('<p class="news__danger">Sorry, we couldn\'t find news for you. Please try again later</p>');
-	}
-
-	function beforeSend() {
-		inProgress = true;
-		variableWidth(null, this.input);
-	}
-
-	function checkBtns(config) {
-		let value = +config.input.val();
-
-		if (value <= 1) {
-			config.prevBtn.attr('disabled', true);
-			config.nextBtn.attr('disabled', false);
-		} else if (value >= +config.total.html()) {
-			config.nextBtn.attr('disabled', true);
-			config.prevBtn.attr('disabled', false);
-		} else {
-			config.prevBtn.attr('disabled', false);
-			config.nextBtn.attr('disabled', false);
-		}
-	}
-
-	function onDone(data) {
-		inProgress = false;
-		this.response = data.response;
-		this.input.val(data.response.currentPage);
-		this.total.html(data.response.pages);
-		let results = data.response.results;
-
-		for(let i = 0; i < results.length; i++) {
-			let newContainer = $('<li></li>').addClass('new');
-			let title = results[i].webTitle || "undefined title";
-
-			let newTitle = $('<h3></h3>').addClass('new__title')
-			.html(results[i].webTitle);
-			let newHeart = $('<div></div>').addClass('new__content');
-
-			this.content.append(newContainer);
-			newContainer.append(newTitle);
-			newContainer.append(newHeart);
-
-			let newUrl = results[i].apiUrl+'?show-blocks=body&'+this.key;
-			let newLink = results[i].webUrl;
-
-			newTitle.on('click', function(e) {
-				$.ajax({
-					url: newUrl
-				}).done(function(data) {
-					newHeart.html(" ");
-
-					let arrNews = data.response.content.blocks.body;
-
-					newHeart[0].innerHTML += arrNews[0].bodyTextSummary +=
-					`<a href="${newLink}" class="new__content-link" target="_blank">Read full news</a>`;
-
-				}).fail(function() {
-					onError(newHeart);
-				})
-			})
-		}
-
-		$('.new__title').spoiler();
-	}
 
 	let config = {
 		content: $('.news__content'),
@@ -91,18 +24,84 @@ $(function() {
 		nextBtn: $('#nextBtn'),
 		prevBtn: $('#prevBtn'),
 		key: 'api-key=184a93b7-1452-43b2-b9f4-0ae555113560',
-		url: 'https://content.guardianapis.com/search?api-key=184a93b7-1452-43b2-b9f4-0ae555113560',
-		onDone: onDone,
-		onFail: onError,
-		beforeSend: beforeSend
+		url: 'https://content.guardianapis.com/search?api-key=184a93b7-1452-43b2-b9f4-0ae555113560'
 	}
 
-	function Request() {}
+	function Request() {
+
+		this.inProgress = false;
+
+		this.beforeSend = function() {
+			this.inProgress = true;
+		}
+
+		this.onFail = function(content = this.content) {
+			this.inProgress = false;
+			content.html('<p class="news__danger">Sorry, we couldn\'t find news for you. Please try again later</p>');
+		}
+
+		this.onDone = function(data = {}) {
+			this.inProgress = false;	
+			this.response = data.response;
+			this.input.val(data.response.currentPage);
+			this.total.html(data.response.pages);
+
+			let results = data.response.results;
+
+			for(let i = 0; i < results.length; i++) {
+				let newContainer = $('<li></li>').addClass('new');
+				let title = results[i].webTitle;
+
+				let newTitle = $('<h3></h3>').addClass('new__title')
+				.html(results[i].webTitle);
+				let newHeart = $('<div></div>').addClass('new__content');
+
+				this.content.append(newContainer);
+				newContainer.append(newTitle);
+				newContainer.append(newHeart);
+
+				let newUrl = results[i].apiUrl+'?show-blocks=body&'+this.key;
+				let newLink = results[i].webUrl;
+
+				let self = this;
+
+				newTitle.on('click', function(e) {
+					$.ajax({
+						context: this,
+						url: newUrl
+					}).done(function(data) {
+						newHeart.html(" ");
+
+						try {
+							var arrNews = data.response.content.blocks.body;
+						} catch(e) {
+							self.onFail(newHeart);
+						}
+						
+						newHeart[0].innerHTML += arrNews[0].bodyTextSummary +=
+						`<a href="${newLink}" class="new__content-link" target="_blank">Read full news</a>`;
+
+					}).fail(function() {
+						self.onFail(newHeart);
+					})
+				})
+			}
+
+			$('.new__title').spoiler();
+
+			this.inputWidth();
+		}
+	}
 
 	Request.prototype = Object.create(config);
 
 	Request.prototype.send = function(url = this.url) {
-		if (inProgress) return;
+		
+		setTimeout(() => {
+    	this.checkBtns();
+  	}, 0);
+
+		if (this.inProgress) return;
 		this.content.html(' ');
 
 		$.ajax({
@@ -115,29 +114,25 @@ $(function() {
 
 	}
 
-	let request = new Request();
+	Request.prototype.checkBtns = function() {
+		let value = +this.input.val();
 
-	request.send();
+		if (value <= 1) {
+			this.prevBtn.attr('disabled', true);
+			this.nextBtn.attr('disabled', false);
+		} else if (value >= +this.total.html()) {
+			this.nextBtn.attr('disabled', true);
+			this.prevBtn.attr('disabled', false);
+		} else {
+			this.prevBtn.attr('disabled', false);
+			this.nextBtn.attr('disabled', false);
+		}
+	}
 
-	checkBtns(config);
+	Request.prototype.loadPage = function(increase = true) {
+		if (this.inProgress) return;
 
-	$('#refresh').on('click', function(e) {
-		request.send();
-	});
-
-	config.nextBtn.on('click', function(e) {
-		loadPage(true);
-	})
-
-	config.prevBtn.on('click', function(e) {
-		loadPage(false);	
-	})
-
-
-	function loadPage(increase = true) {
-		if (inProgress) return;
-
-		let pageNumb = +config.input.val();
+		let pageNumb = +this.input.val();
 
 		if (increase) {
 			pageNumb++;
@@ -145,33 +140,55 @@ $(function() {
 			pageNumb--;
 		}
 
-		config.input.val(pageNumb);
-		let url = config.url+'&page='+pageNumb;
+		this.input.val(pageNumb);
+		let url = this.url+'&page='+pageNumb;
 
-		request.send(url);
-		checkBtns(config);
+		this.send(url);
 	}
-	config.input.on('blur keydown', function(e) {
-		if (e.type ==='blur' || e.keyCode === 13 && !inProgress)  {
-			let pageNumb = +$(this).val();
 
-			if (pageNumb <=0 || !$.isNumeric(pageNumb) || pageNumb > +config.total.html()) pageNumb = 1;
-
-			let url = config.url+'&page='+pageNumb;
-			request.send(url);
-			checkBtns(config);
-		}
-	})
-
-	config.input.on('input', variableWidth);
-	
-	function variableWidth(e = {}, input = $(this)) {
+	Request.prototype.inputWidth = function(input = this.input) {
 		let inp = input.val().length;
 
 		if (!inp) return;
+
 		let w = input.outerWidth();
 
 		input.width(inp * 10);
 	}
+
+	let request = new Request();
+
+	request.send();
+
+	$('#refresh').on('click', function(e) {
+		request.send();
+	});
+
+	request.nextBtn.on('click', function(e) {
+		request.loadPage(true);
+	})
+
+	request.prevBtn.on('click', function(e) {
+		request.loadPage(false);	
+	})
+
+
+	request.input.on('blur keydown', function(e) {
+		if (e.type ==='blur' || e.keyCode === 13 && !request.inProgress)  {
+
+			let pageNumb = +$(this).val();
+
+			if (pageNumb <=0 || !$.isNumeric(pageNumb) || pageNumb > +request.total.html()) pageNumb = 1;
+
+			let url = config.url+'&page='+pageNumb;
+
+			request.send(url);
+		}
+	})
+
+	request.input.on('input', function() {
+		request.inputWidth();
+	});
+
 });
 

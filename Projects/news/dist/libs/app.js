@@ -1,6 +1,9 @@
 "use strict";
 
 (function($) {
+
+	//simple accordion plugin
+	
 	$.fn.spoiler = function() {
 
 		var elems = this;
@@ -16,7 +19,6 @@
 
 $(function() {
 
-
 	let config = {
 		content: $('.news__content'),
 		input: $('#currentPage'),
@@ -29,25 +31,34 @@ $(function() {
 
 	function Request() {
 
+		// Flag for "Mad clickers"
+		
 		this.inProgress = false;
 
+		// $.ajax beforeSend function
 		this.beforeSend = function() {
 			this.inProgress = true;
 		}
 
+		// $.ajax onFail function
 		this.onFail = function(content = this.content) {
 			this.inProgress = false;
 			content.html('<p class="news__danger">Sorry, we couldn\'t find news for you. Please try again later</p>');
+			this.checkBtns();
 		}
 
+		// $.ajax done function
 		this.onDone = function(data = {}) {
 			this.inProgress = false;	
 			this.response = data.response;
+
 			this.input.val(data.response.currentPage);
 			this.total.html(data.response.pages);
 
 			let results = data.response.results;
 
+			//Painting items
+			
 			for(let i = 0; i < results.length; i++) {
 				let newContainer = $('<li></li>').addClass('new');
 				let title = results[i].webTitle;
@@ -60,11 +71,17 @@ $(function() {
 				newContainer.append(newTitle);
 				newContainer.append(newHeart);
 
+				//Options for loading data when clicking on an accordion
+				
 				let newUrl = results[i].apiUrl+'?show-blocks=body&'+this.key;
 				let newLink = results[i].webUrl;
 
+				// Hello from ES5 :D
+				
 				let self = this;
 
+				//Data download event when clicking on an accordion
+				
 				newTitle.on('click', function(e) {
 					$.ajax({
 						context: this,
@@ -72,6 +89,8 @@ $(function() {
 					}).done(function(data) {
 						newHeart.html(" ");
 
+						//if undefined data field
+		
 						try {
 							var arrNews = data.response.content.blocks.body;
 						} catch(e) {
@@ -90,16 +109,13 @@ $(function() {
 			$('.new__title').spoiler();
 
 			this.inputWidth();
+			this.checkBtns();
 		}
 	}
 
 	Request.prototype = Object.create(config);
 
 	Request.prototype.send = function(url = this.url) {
-		
-		setTimeout(() => {
-    	this.checkBtns();
-  	}, 0);
 
 		if (this.inProgress) return;
 		this.content.html(' ');
@@ -114,6 +130,7 @@ $(function() {
 
 	}
 
+	// Checking prev/next buttons
 	Request.prototype.checkBtns = function() {
 		let value = +this.input.val();
 
@@ -129,15 +146,26 @@ $(function() {
 		}
 	}
 
-	Request.prototype.loadPage = function(increase = true) {
+	/**
+	 * Loading of desired page
+	 * @param  {bool} increase [param for loading next/prev or reloading current page]
+	 */
+	Request.prototype.loadPage = function(increase) {
 		if (this.inProgress) return;
 
 		let pageNumb = +this.input.val();
 
-		if (increase) {
-			pageNumb++;
-		} else {
+		switch (increase) {
+			case true:
+			pageNumb++;	
+			break;
+
+			case false:
 			pageNumb--;
+			break;
+
+			default:
+			break;
 		}
 
 		this.input.val(pageNumb);
@@ -146,6 +174,8 @@ $(function() {
 		this.send(url);
 	}
 
+	//Method for variable width when entering pages
+	
 	Request.prototype.inputWidth = function(input = this.input) {
 		let inp = input.val().length;
 
@@ -161,7 +191,7 @@ $(function() {
 	request.send();
 
 	$('#refresh').on('click', function(e) {
-		request.send();
+		request.loadPage();
 	});
 
 	request.nextBtn.on('click', function(e) {
@@ -172,15 +202,25 @@ $(function() {
 		request.loadPage(false);	
 	})
 
+	let isLoaded = false; //Flag for only one loading after enter press
 
 	request.input.on('blur keydown', function(e) {
+
+		//Cheking flag
+		
+		if (e.type ==='keydown' && e.keyCode === 13) isLoaded = true;
+
+		if (e.type ==='blur' && isLoaded === true) return;
+
 		if (e.type ==='blur' || e.keyCode === 13 && !request.inProgress)  {
 
 			let pageNumb = +$(this).val();
 
-			if (pageNumb <=0 || !$.isNumeric(pageNumb) || pageNumb > +request.total.html()) pageNumb = 1;
+			//Load first page when wrong input
+			if (pageNumb <=0 || !$.isNumeric(pageNumb) || 
+				pageNumb > +request.total.html()) pageNumb = 1;
 
-			let url = config.url+'&page='+pageNumb;
+			let url = request.url+'&page='+pageNumb;
 
 			request.send(url);
 		}
@@ -188,6 +228,7 @@ $(function() {
 
 	request.input.on('input', function() {
 		request.inputWidth();
+		isLoaded = false;
 	});
 
 });

@@ -578,5 +578,7 @@ fieldset {
               box-shadow: -4px 4px 10px #000; }
       .btn-controll--next:hover:after {
         right: 1rem; }
+    .btn-controll--next[disabled]:hover:after {
+      right: 2rem; }
 
 /*# sourceMappingURL=styles.css.map */

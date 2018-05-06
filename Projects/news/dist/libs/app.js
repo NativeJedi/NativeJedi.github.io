@@ -1,11 +1,8 @@
 "use strict";
 
 (function($) {
-
-	//simple accordion plugin
-	
-	$.fn.spoiler = function() {
-
+	// Simple accordion plugin.
+	$.fn.accordion = function() {
 		var elems = this;
 
 		this.on('click', function() {
@@ -18,126 +15,177 @@
 })(jQuery);
 
 $(function() {
-
 	let config = {
-		content: $('.news__content'),
-		input: $('#currentPage'),
-		total: $('#totalPages'),
-		nextBtn: $('#nextBtn'),
-		prevBtn: $('#prevBtn'),
 		key: 'api-key=184a93b7-1452-43b2-b9f4-0ae555113560',
-		url: 'https://content.guardianapis.com/search?api-key=184a93b7-1452-43b2-b9f4-0ae555113560'
+		url: 'https://content.guardianapis.com/search?'
 	}
 
-	function Request() {
+	function NewsComponent(config) {
+		this.key = config.key;
+		this.url = config.url + config.key;
 
-		// Flag for "Mad clickers"
-		
+		this.content = $('.news__content');
+		this.input = $('#currentPage');
+		this.totalPages = $('#totalPages');
+		this.refreshBtn = $('#refresh');
+		this.nextBtn = $('#nextBtn');
+		this.prevBtn = $('#prevBtn');
+
+		// Flags for request state
 		this.inProgress = false;
+		this.isLoaded = false;
 
-		// $.ajax beforeSend function
-		this.beforeSend = function() {
+		// Data loading method
+		this.load = function(url = this.url) {
+			if (this.inProgress) return;
+			this.content.html(' ');
+
+			$.ajax({
+				context: this,
+				url: url,
+				beforeSend: beforeSend,
+			})
+			.done(onDone)
+			.fail(function() {
+				onFail.call(this, this.content)
+			})
+		}
+
+		// Private functions and const.
+		const dangerPattern = '<p class="news__danger">Sorry, we couldn\'t find news for you. Please try again later</p>';
+
+		// $.ajax before send func.
+		function beforeSend() {
 			this.inProgress = true;
 		}
 
-		// $.ajax onFail function
-		this.onFail = function(content = this.content) {
+		// $.ajax.fail().
+		function onFail(content = this.content) {
 			this.inProgress = false;
-			content.html('<p class="news__danger">Sorry, we couldn\'t find news for you. Please try again later</p>');
-			this.checkBtns();
+			content.html(dangerPattern);
+			this.updateButtonsState();
 		}
 
-		// $.ajax done function
-		this.onDone = function(data = {}) {
+		// $.ajax.done().
+		function onDone(data) {
 			this.inProgress = false;	
 			this.response = data.response;
 
 			this.input.val(data.response.currentPage);
-			this.total.html(data.response.pages);
+			this.totalPages.html(data.response.pages);
 
 			let results = data.response.results;
 
-			//Painting items
-			
 			for(let i = 0; i < results.length; i++) {
-				let newContainer = $('<li></li>').addClass('new');
-				let title = results[i].webTitle;
-
-				let newTitle = $('<h3></h3>').addClass('new__title')
-				.html(results[i].webTitle);
-				let newHeart = $('<div></div>').addClass('new__content');
-
-				this.content.append(newContainer);
-				newContainer.append(newTitle);
-				newContainer.append(newHeart);
-
-				//Options for loading data when clicking on an accordion
+				let [articleTitle, articleContent] = renderItem(this.content, results[i]);
+				let articleUrl = results[i].apiUrl+'?show-blocks=body&'+this.key;
+				let articleLink = results[i].webUrl;
 				
-				let newUrl = results[i].apiUrl+'?show-blocks=body&'+this.key;
-				let newLink = results[i].webUrl;
-
-				// Hello from ES5 :D
-				
-				let self = this;
-
-				//Data download event when clicking on an accordion
-				
-				newTitle.on('click', function(e) {
-					$.ajax({
-						context: this,
-						url: newUrl
-					}).done(function(data) {
-						newHeart.html(" ");
-
-						//if undefined data field
-		
-						try {
-							var arrNews = data.response.content.blocks.body;
-						} catch(e) {
-							self.onFail(newHeart);
-						}
-						
-						newHeart[0].innerHTML += arrNews[0].bodyTextSummary +=
-						`<a href="${newLink}" class="new__content-link" target="_blank">Read full news</a>`;
-
-					}).fail(function() {
-						self.onFail(newHeart);
-					})
-				})
+				componentsHendler(articleTitle, articleContent, articleUrl, articleLink);
 			}
 
-			$('.new__title').spoiler();
-
-			this.inputWidth();
-			this.checkBtns();
+			$('.new__title').accordion();
+			updateInputWidth(this.input);
+			this.updateButtonsState();
 		}
-	}
 
-	Request.prototype = Object.create(config);
+		// Helpers functions.
+		function renderItem(body, result) {
+			let articleContainer = $('<li></li>').addClass('new');
+			let title = result.webTitle;
 
-	Request.prototype.send = function(url = this.url) {
+			let articleTitle = $('<h3></h3>').addClass('new__title')
+			.html(result.webTitle);
+			let articleContent = $('<div></div>').addClass('new__content');
 
-		if (this.inProgress) return;
-		this.content.html(' ');
+			body.append(articleContainer);
+			articleContainer.append(articleTitle);
+			articleContainer.append(articleContent);
 
-		$.ajax({
-			context: this,
-			url: url,
-			beforeSend: this.beforeSend,
-		}).done(this.onDone).fail(function() {
-			this.onFail(this.content)
-		})
+			return [articleTitle, articleContent];
+		}	
 
+		// Function for accordion title click event.
+		function componentsHendler(articleTitle, articleContent, articleUrl, articleLink) {
+			articleTitle.on('click', function(e) {
+				$.ajax({
+					url: articleUrl
+				})
+				.done(function(data) {
+					articleContent.html(" ");
+
+						// If undefined data field.
+						try {
+							var newsArray = data.response.content.blocks.body;
+							let linkPattern = `<a href="${articleLink}" class="new__content-link" target="_blank">Read full news</a>`;
+
+							articleContent.html(newsArray[0].bodyTextSummary + linkPattern);
+						} catch(e) {
+							articleContent.html(dangerPattern);
+						}
+					})
+				.fail(function() {
+					articleContent.html(dangerPattern);
+				})
+			})
+		}
+
+		// Function for updating input width on pages input.
+		function updateInputWidth(input = this.input) {
+			let inp = input.val().length;
+
+			if (!inp) return;
+
+			let w = input.outerWidth();
+
+			input.width(inp * 10);
+		}
+
+		// Event hendlers
+		this.nextBtn.on('click', () => {
+			this.loadPage(true);
+		});
+
+		this.prevBtn.on('click', () => {
+			this.loadPage(false);
+		});
+
+		this.refreshBtn.on('click', () => {
+			this.loadPage();
+		});
+
+		this.input.on('blur keydown', (e) => {
+			// Checking flag so that the request isn't sent twice
+			if (e.type ==='keydown' && e.keyCode === 13) this.isLoaded = true;
+
+			if (e.type ==='blur' && this.isLoaded === true) return;
+
+			if (e.type ==='blur' || e.keyCode === 13 && !this.inProgress)  {
+
+				let pageNumb = +this.input.val();
+
+				//If wrong type of input => load first page.
+				if (pageNumb <=0 || !$.isNumeric(pageNumb) || 
+					pageNumb > +this.totalPages.html()) pageNumb = 1;			
+
+					this.loadPage(null, pageNumb);
+			}
+		});
+
+		this.input.on('input', (e) => {
+			updateInputWidth.call(this);
+			this.isLoaded = false;
+		});
 	}
 
 	// Checking prev/next buttons
-	Request.prototype.checkBtns = function() {
+	NewsComponent.prototype.updateButtonsState = function() {
 		let value = +this.input.val();
 
 		if (value <= 1) {
 			this.prevBtn.attr('disabled', true);
 			this.nextBtn.attr('disabled', false);
-		} else if (value >= +this.total.html()) {
+		} else if (value >= +this.totalPages.html()) {
 			this.nextBtn.attr('disabled', true);
 			this.prevBtn.attr('disabled', false);
 		} else {
@@ -150,86 +198,29 @@ $(function() {
 	 * Loading of desired page
 	 * @param  {bool} increase [param for loading next/prev or reloading current page]
 	 */
-	Request.prototype.loadPage = function(increase) {
-		if (this.inProgress) return;
+	 NewsComponent.prototype.loadPage = function(increase, pageNumb = +this.input.val()) {
+	 	if (this.inProgress) return;
+	 	
+	 	switch (increase) {
+	 		case true:
+	 		pageNumb++;	
+	 		break;
 
-		let pageNumb = +this.input.val();
+	 		case false:
+	 		pageNumb--;
+	 		break;
 
-		switch (increase) {
-			case true:
-			pageNumb++;	
-			break;
+	 		default:
+	 		break;
+	 	}
 
-			case false:
-			pageNumb--;
-			break;
+	 	this.input.val(pageNumb);
+	 	let url = this.url+'&page='+pageNumb;
 
-			default:
-			break;
-		}
+	 	this.load(url);
+	 }
 
-		this.input.val(pageNumb);
-		let url = this.url+'&page='+pageNumb;
+	 let news = new NewsComponent(config);
 
-		this.send(url);
-	}
-
-	//Method for variable width when entering pages
-	
-	Request.prototype.inputWidth = function(input = this.input) {
-		let inp = input.val().length;
-
-		if (!inp) return;
-
-		let w = input.outerWidth();
-
-		input.width(inp * 10);
-	}
-
-	let request = new Request();
-
-	request.send();
-
-	$('#refresh').on('click', function(e) {
-		request.loadPage();
+	 news.load();
 	});
-
-	request.nextBtn.on('click', function(e) {
-		request.loadPage(true);
-	})
-
-	request.prevBtn.on('click', function(e) {
-		request.loadPage(false);	
-	})
-
-	let isLoaded = false; //Flag for only one loading after enter press
-
-	request.input.on('blur keydown', function(e) {
-
-		//Cheking flag
-		
-		if (e.type ==='keydown' && e.keyCode === 13) isLoaded = true;
-
-		if (e.type ==='blur' && isLoaded === true) return;
-
-		if (e.type ==='blur' || e.keyCode === 13 && !request.inProgress)  {
-
-			let pageNumb = +$(this).val();
-
-			//Load first page when wrong input
-			if (pageNumb <=0 || !$.isNumeric(pageNumb) || 
-				pageNumb > +request.total.html()) pageNumb = 1;
-
-			let url = request.url+'&page='+pageNumb;
-
-			request.send(url);
-		}
-	})
-
-	request.input.on('input', function() {
-		request.inputWidth();
-		isLoaded = false;
-	});
-
-});
-

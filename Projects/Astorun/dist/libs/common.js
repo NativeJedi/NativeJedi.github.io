@@ -6,7 +6,6 @@ $( document ).ready(function() {
 
 	$('.shop__slider').slick();
 
-	
 	$('.shop__checkbox').off().on('click', function(e) {
 		e.preventDefault();
 		e.stopPropagation();

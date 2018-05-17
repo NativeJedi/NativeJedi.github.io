@@ -1,0 +1,291 @@
+@import 'normalize';
+@import 'variables';
+@import 'mixins';
+@import 'icons/_iconfont__variables.scss';
+@import 'icons/_iconfont__icons.scss';
+@import 'fonts';
+@import 'base';
+@import 'placeholders';
+
+.container {
+	display: flex;
+	max-width: 140.4rem;
+	min-width: 102.4rem;
+	min-height: 60rem;
+	margin: 0 auto;
+}
+
+.data {
+
+	&__sidebar {
+		max-width: 5rem;
+		padding-bottom: 4rem;
+		background-color: $default-color;
+		box-shadow: 0 5px 10px #000;
+		overflow: hidden;
+		z-index: 2;
+		
+		&:hover {
+			max-width: 25rem;
+			
+			.logo__icon {
+				color: $active-color;
+			}
+
+			.notify--unreaded,
+			.notify--readed {
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&__main {
+		flex: 1;
+		background-color: $default-color;
+	}
+
+	&__header {
+		display: flex;
+		padding: 0 2rem;
+		align-items: center;
+		background-color: #fff;
+
+		&-title {
+			display: inline-block;
+			margin: 0;
+			font-size: 1.6rem;
+			@extend %active-item;
+			white-space: nowrap;
+		}
+	}
+
+	&__nav {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: 2rem;
+
+		&-item {
+			display: inline-block;
+			padding: 1.5rem 0;
+
+			&:not(:last-child) {
+				a {
+					border-right: 1px solid currentcolor;
+				}
+			}
+		}
+
+		&-link {
+			position: relative;
+			padding: 0 1rem;
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: -1.5rem;
+				left: 0;
+				width: 0;
+				height: .3rem;
+				background-color: $active-color;
+				transition: width .3s;
+			}
+
+			&:hover {
+				color: $active-color;
+
+				&:after {
+					width: 100%;
+				}
+			}
+		}
+		
+	}
+
+	&__user {
+		display: block;
+		margin-left: auto;
+	}
+}
+
+$p: 5rem;
+
+.logo {
+	position: relative;
+	display: block;
+	padding: 1.5rem 2rem 1.5rem $p;
+	margin-bottom: 2rem;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 1px;
+	font-size: 2rem;
+	background-color: #fff;
+
+	.fab {
+		position: absolute;
+		top: 50%;
+		left: 1rem;
+		transform: translateY(-55%);
+		font-size: 2.5rem;
+	}
+}
+
+.data-section {
+
+	&:not(:last-child) {
+		margin-bottom: 2rem;
+	}
+
+	&__title {
+		position: relative;
+		margin: 0 0 1rem 0;
+		padding: 0 2rem 0 $p;
+		@extend %active-item;
+		@extend %t-overflow;
+
+		i {
+			@include centY;
+			left: 1.5rem;
+		}
+	}
+
+	&__item {
+		position: relative;
+		padding: .5rem 0 .5rem $p;
+		font-size: 1.4rem;
+		font-weight: bold;
+		cursor: pointer;
+		@extend %t-overflow;
+
+		&:not(:last-child) {
+			margin-bottom: .5rem;
+		}
+
+		&:hover {
+			background-color: $active-color;
+			color: #fff;
+		}
+	}
+}
+
+.notify {
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+	margin-left: .5rem;
+	line-height: 2rem;
+	text-align: center;
+	background-color: #fff;
+	border-radius: 50%;
+	border: 1px solid #ccc;
+	
+	&--unreaded,
+	&--readed {
+		&:after {
+			content: "";
+			@include centY;
+			width: 1rem;
+			height: 1rem;
+			border-radius: 50%;
+			background-color: currentcolor;
+		}
+	}
+
+	&--unreaded {
+		color: red;
+		&:after {
+			left: 1rem;
+		}
+	}
+
+	&--readed {
+		color: $active-color;
+
+		&:after {
+			left: 2.5rem;
+		}
+	}
+}
+
+.btn {
+	padding: .5rem 2rem;
+	border: 1px solid $active-color;
+	color: $active-color;
+	background-color: transparent;
+	font-weight: 700;
+
+	&:not(:last-child) {
+		margin-right: 1rem;
+	}
+	
+	&:hover {
+		background-color: $apply-color;
+		border-color: $apply-color;
+		color: #fff;
+	}
+
+	&-group {
+		margin: 0 2rem 0 auto;
+	}
+
+	&-logout {
+		border: none;
+		background-color: transparent;
+		font-size: 2rem;
+
+		&:hover {
+			color: $active-color;
+		}
+	}
+	
+}
+
+.content {
+	padding: 4rem 0 0 2rem;
+
+	&__head {
+		display: flex;
+		padding: 2rem 3rem;
+		align-items: center;
+		background-color: #fff;
+	}
+
+	&__info {
+		margin-top: 1rem;
+		max-height: 40rem;
+		padding: 3rem;
+		background-color: #fff;
+		@include scrollbar(4px, $active-color);
+	}
+}
+
+.search {
+	position: relative;
+	display: inline-block;
+
+	&__input {
+		width: 100%;
+		border: 2px solid #ccc;
+		border-radius: 5px;
+		padding: .5rem 1rem;
+		background-color: $default-color;
+
+		&:focus {
+			outline: none;
+			border-color: $active-color;
+			color: $active-color;
+
+			&::placeholder {
+				color: $active-color;
+			}
+			& + i {
+				color: $active-color;
+			}
+		}
+	}
+
+	.fas {
+		@include centY;
+		right: .5rem;
+	}
+}

@@ -15,19 +15,14 @@ inject       		 = require('gulp-inject'),
 notify					 = require('gulp-notify'),
 plumber 				 = require("gulp-plumber"),
 pug  						 = require('gulp-pug'),
-sourcemaps       = require('gulp-sourcemaps'),
-pugBEMify 			 = require('pug-bemify'),
-browserify       = require('browserify'),
-watchify         = require('watchify'),
-source           = require('vinyl-source-stream');
+pugBEMify 			 = require('pug-bemify');
 
 /*#Build plugins*/
 var csso = require('gulp-csso'),
 useref 	 = require('gulp-useref'),
 concat 	 = require('gulp-concat'),
 gulpif   = require('gulp-if'),
-uglify 	 = require('gulp-uglify'),
-babel = require('gulp-babel');
+uglify 	 = require('gulp-uglify');
 
 var svgWatch            = './dist/img/svgstore/icons/*.svg';
 var svgIconsSource      = './sprite.svg';
@@ -50,7 +45,7 @@ gulp.task('svgstore', function () {
 	.pipe(gulp.dest(svgIconsDestination));
 });
 
-/*gulp.task('pug', function() {
+gulp.task('pug', function() {
 	return gulp.src('pug/*.pug')
 	.pipe(plumber())
 	.pipe(pug({
@@ -61,7 +56,7 @@ gulp.task('svgstore', function () {
 		return "Message to the notifier: " + error.message;
 	}))
 	.pipe(gulp.dest('./'));
-});*/
+});
 
 gulp.task("build:icons", function() {
     return gulp.src(["./assets/icons/*.svg"]) //path to svg icons
@@ -139,44 +134,16 @@ gulp.task('build:js', function() {
 	return gulp.src([
 		'dist/libs/*.js' 
 		])
-	.pipe(sourcemaps.init())
-	.pipe(babel({
-		presets: ['es2015']
-	}))
 	.pipe(concat('libs.min.js'))
 	.pipe(uglify())
 	.pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('build', ['img', 'build:css', 'build:js']);
-
-var sourceFile = './assets/common.js',
-destFolder = './dist/libs/',
-destFile = 'app.js';
-
-gulp.task('browserify', function() {
-
-	var b = browserify({
-		entries: ['./assets/common.js'],
-		cache: {},
-		packageCache: {},
-		plugin: [watchify]
-	});
-
-	b.on('update', rebundle);
-
-	function rebundle() {
-		return b.bundle()
-		.pipe(source(destFile))
-		.pipe(gulp.dest(destFolder));
-	}
-
-	return rebundle();
-});
+gulp.task('build', ['pug', 'img', 'build:css', 'build:js']);
 
 // Runs all of the above tasks and then waits for files to change
-gulp.task('default', ['browserify', 'serve'], function() {
-	//gulp.watch('pug/**/*.pug', ['pug']);
+gulp.task('default', ['serve'], function() {
+	gulp.watch('pug/**/*.pug', ['pug']);
 	gulp.watch(['assets/scss/**/*.scss'], ['sass']);
 	gulp.watch('./**/*.html').on('change', browser.reload);
 	gulp.watch('dist/libs/*.js').on('change', browser.reload);

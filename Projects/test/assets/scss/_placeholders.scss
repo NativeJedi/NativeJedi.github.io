@@ -1,0 +1,10 @@
+%active-item {
+	color: $active-color;
+	text-transform: uppercase;
+}
+
+%t-overflow {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}

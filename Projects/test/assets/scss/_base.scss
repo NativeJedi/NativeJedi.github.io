@@ -1,0 +1,32 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	font-family: 'Roboto', sans-serif;
+}
+
+html {
+	font-size: 10px;
+	color: #6b6b6b;
+}
+
+body {
+	font-size: 16px;
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: inherit;
+}
+
+fieldset {
+	border: none;
+}
+
+ul {
+	margin: 0;
+	padding-left: 0;
+	list-style-type: none;
+}

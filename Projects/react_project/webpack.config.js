@@ -8,6 +8,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ModernizrWebpackPlugin = require('modernizr-webpack-plugin');
 
 let config = {
   mode: process.env.NODE_ENV,
@@ -92,9 +93,7 @@ let config = {
     new ExtractTextPlugin("css/[name].css", {
       allChunks: true
     }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "./app/index.html")
-    }),
+    new HtmlWebpackPlugin(),
     new CleanPlugin(["dist"]),
     new CopyPlugin([{
       from: "./img",
@@ -104,7 +103,14 @@ let config = {
           glob: "svg/*"
         }]
       }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new ModernizrWebpackPlugin({
+      'feature-detects': [
+        'input',
+        'canvas',
+        'css/resize'
+      ]
+    })
   ]
 };
 

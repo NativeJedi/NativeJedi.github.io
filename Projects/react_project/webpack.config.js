@@ -103,12 +103,9 @@ let config = {
           glob: "svg/*"
         }]
       }),
-    new webpack.HotModuleReplacementPlugin(),
     new ModernizrWebpackPlugin({
       'feature-detects': [
-        'input',
-        'canvas',
-        'css/resize'
+        'canvas'
       ]
     })
   ]

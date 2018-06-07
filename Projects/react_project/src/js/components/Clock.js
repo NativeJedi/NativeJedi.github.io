@@ -1,61 +1,31 @@
 import React from 'react';
 
-class Time {
-  constructor() {
-    this.session = "AM";
+class Clock extends React.Component {
+  constructor(...args) {
+    super(args);
+
+    this.state = {
+      date: new Date(),
+    };
   }
 
-  getHours() {
-    var date = new Date();
-    var h = date.getHours();
-
-    if (h == 0) {
-      h = 12;
-    }
-
-    if (h > 12) {
-      h = h - 12;
-      this.session = "PM";
-    }
-
-    h = (h < 10) ? "0" + h : h;
-    return h;
+  componentWillMount() {
+    clearInterval(this.timerID);
   }
 
-  getMinutes() {
-    var date = new Date();
-    var m = date.getMinutes();
-
-    m = (m < 10) ? "0" + m : m;
-
-    return m;
+  componentDidMount() {
+    this.timerID = setInterval(() => this.tick(), 1000);
   }
 
-  getSeconds() {
-    var date = new Date();
-    var s = date.getSeconds();
-
-    s = (s < 10) ? "0" + s : s;
-
-    return s;
+  tick() {
+    this.setState({
+      date: new Date(),
+    });
   }
 
-  getSession() {
-    return this.session;
+  render() {
+    return <div className="clock">{this.state.date.toLocaleTimeString()}</div>;
   }
-}
-
-let time = new Time();
-
-function Clock() {
-  return (
-    <div className="clock">
-      <span className="hours">{time.getHours()} :</span>
-      <span className="minutes"> {time.getMinutes()} :</span>
-      <span className="seconds"> {time.getSeconds()} </span>
-      <span className="session"> {time.getSession()}</span>
-    </div>
-  )
 }
 
 export default Clock;

@@ -6,6 +6,7 @@ module.exports = {
     'no-plusplus': 0,
     'no-undef': 0,
     'eol-last': 0,
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }]
-  }
+    'no-trailing-spaces': 0,
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+  },
 };

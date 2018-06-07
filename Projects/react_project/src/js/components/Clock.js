@@ -4,8 +4,6 @@ class Clock extends React.Component {
   constructor(...args) {
     super(...args);
 
-    this.date = new Date();
-
     this.state = {
       time: 'Clock initialization...',
     };
@@ -20,15 +18,15 @@ class Clock extends React.Component {
   }
 
   tick() {
-    this.setState({
-      time: this.renderTime(),
-    });
+    this.renderTime();
   }
 
   renderTime() {
-    let h = this.date.getHours();
-    let m = this.date.getMinutes();
-    let s = this.date.getSeconds();
+    const date = new Date();
+
+    let h = date.getHours();
+    let m = date.getMinutes();
+    let s = date.getSeconds();
     let session = 'AM';
 
     if (h === 0) {
@@ -42,9 +40,9 @@ class Clock extends React.Component {
     m = m < 10 ? `0${m}` : m;
     s = s < 10 ? `0${s}` : s;
 
-    const time = `${h} : ${m} : ${s} ${session}`;
-
-    return time;
+    this.setState({
+      time: `${h} : ${m} : ${s} ${session}`,
+    });
   }
 
   render() {

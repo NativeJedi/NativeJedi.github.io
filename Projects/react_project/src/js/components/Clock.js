@@ -1,32 +1,32 @@
 import React from 'react';
 
+function formatTime(t) {
+  return t < 10 ? `0${t}` : t;
+}
+
 class Clock extends React.Component {
   constructor(...args) {
     super(...args);
 
     this.state = {
       time: 'Clock initialization...',
+      animationClass: 'clock',
     };
-  }
-
-  componentWillMount() {
-    clearInterval(this.timerID);
   }
 
   componentDidMount() {
     this.timerID = setInterval(() => this.tick(), 1000);
   }
 
-  tick() {
-    this.renderTime();
+  componentWillUnmount() {
+    clearInterval(this.timerID);
   }
 
-  renderTime() {
+  tick() {
     const date = new Date();
-
+    const m = date.getMinutes();
+    const s = date.getSeconds();
     let h = date.getHours();
-    let m = date.getMinutes();
-    let s = date.getSeconds();
     let session = 'AM';
 
     if (h === 0) {
@@ -36,17 +36,20 @@ class Clock extends React.Component {
       session = 'PM';
     }
 
-    h = h < 10 ? `0${h}` : h;
-    m = m < 10 ? `0${m}` : m;
-    s = s < 10 ? `0${s}` : s;
-
     this.setState({
-      time: `${h} : ${m} : ${s} ${session}`,
+      time: `${formatTime(h)} : ${formatTime(m)} : ${formatTime(s)} ${session}`,
+      animationClass: 'clock isAnimated',
     });
+
+    setTimeout(() => {
+      this.setState({
+        animationClass: 'clock',
+      });
+    }, 400);
   }
 
   render() {
-    return <div className="clock">{this.state.time}</div>;
+    return <div className={this.state.animationClass}>{this.state.time}</div>;
   }
 }
 

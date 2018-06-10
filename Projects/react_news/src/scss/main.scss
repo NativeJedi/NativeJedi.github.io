@@ -1,0 +1,71 @@
+@import "normalize";
+@import "fonts";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Open Sans";
+}
+
+.news {
+  max-width: 800px;
+  margin: 0 auto;
+
+  &__title {
+    text-align: center;
+  }
+}
+
+.article {
+  margin-bottom: 20px;
+  border: 2px solid #000;
+  &__head {
+    position: relative;
+    padding: 10px 100px 10px 20px;
+  }
+
+  &__title {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 18px;
+  }
+
+  &__body {
+    padding: 0 20px;
+    font-size: 14px;
+
+    &-text {
+      max-height: 200px;
+      overflow-y: scroll;
+    }
+  }
+}
+
+.button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  min-width: 80px;
+  transform: translate(0, -50%);
+  background-color: transparent;
+  border: 1px solid rgb(68, 130, 211);
+  color: rgb(68, 130, 211);
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.comments {
+  &__head {
+    position: relative;
+    padding: 0 40px 0 20px;
+  }
+}
+
+.comment {
+  padding: 0 40px;
+}

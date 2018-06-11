@@ -54,7 +54,7 @@ class Article extends React.Component {
           <Button
             click={this.clickHandler}
             text={this.state.isOpen ? 'hide' : 'show'}
-            className="button"
+            className={this.state.isOpen ? 'button is-opened' : 'button'}
           />
         </div>
         {this.state.isOpen && <ArticleBody text={body} />}

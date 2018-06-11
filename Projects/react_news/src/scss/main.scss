@@ -1,4 +1,6 @@
 @import "normalize";
+@import "vars";
+@import "mixins";
 @import "fonts";
 
 * {
@@ -22,6 +24,7 @@ body {
 .article {
   margin-bottom: 20px;
   border: 2px solid #000;
+
   &__head {
     position: relative;
     padding: 10px 100px 10px 20px;
@@ -40,8 +43,13 @@ body {
     font-size: 14px;
 
     &-text {
-      max-height: 200px;
-      overflow-y: scroll;
+      max-height: 400px;
+      @include scrollbar(5px, $active-color);
+
+      img {
+        max-width: 100%;
+        object-fit: cover;
+      }
     }
   }
 }
@@ -53,10 +61,26 @@ body {
   min-width: 80px;
   transform: translate(0, -50%);
   background-color: transparent;
-  border: 1px solid rgb(68, 130, 211);
-  color: rgb(68, 130, 211);
+  border: 1px solid $active-color;
+  color: $active-color;
   border-radius: 5px;
   font-size: 12px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+
+  &:focus {
+    outline: none;
+  }
+
+  &--sm {
+    min-width: 140px;
+    font-size: 12px;
+  }
+
+  &.is-opened {
+    box-shadow: 0 0 10px currentColor;
+    text-shadow: 0 0 1px currentColor;
+  }
 }
 
 .comments {

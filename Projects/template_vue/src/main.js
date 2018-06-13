@@ -1,11 +1,13 @@
-import Vue from "vue";
-import App from "./App";
+import Vue from 'vue'
+import App from './App'
 
-Vue.config.productionTip = false;
+Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  el: "#app",
-  components: { App },
-  template: "<App/>"
-});
+  el: '#app',
+  components: {
+    App
+  },
+  template: '<App/>'
+})

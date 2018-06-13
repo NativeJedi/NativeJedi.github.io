@@ -1,51 +1,40 @@
 <template>
   <div class="todo-footer">
-    <button class="todo-footer__btn" @click.self="filterAll">All</button>
-    <button class="todo-footer__btn" @click.self="filterComplited">Complited</button>
-    <button class="todo-footer__btn" @click.self="filterUncomplited">Uncomplited</button>
+    <button class="todo-footer__btn" @click="filterAll">All</button>
+    <button class="todo-footer__btn" @click="filterComplited">Complited</button>
+    <button class="todo-footer__btn" @click="filterUncomplited">Uncomplited</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: "TodoFooter",
-  props: ["todos"],
+  name: 'TodoFooter',
   methods: {
     btnClick: function(e) {
-      e.target.classList.toggle('is-active');
-      console.log('penis')
+      if (e.target.classList.contains('is-active')) return
+
+      let btns = document.querySelectorAll('.todo-footer__btn')
+
+      for (let btn of btns) {
+        btn.classList.remove('is-active')
+      }
+
+      e.target.classList.add('is-active')
     },
 
     filterComplited: function(e) {
-      // if(e.target.classList.contain('is-active')) return;
-
-      this.todos.forEach(element => {
-        let visible = element.isVisible;
-
-        if(element.active) {
-          element.isVisible = true;
-        } else {
-          element.isVisible = false;
-        }
-      });
+      this.btnClick(e)
+      this.$emit('filterComplited')
     },
 
     filterUncomplited: function(e) {
-      this.todos.forEach(element => {
-        let visible = element.isVisible;
-
-        if(element.active) {
-          element.isVisible = false;
-        } else {
-          element.isVisible = true;
-        }
-      });
+      this.btnClick(e)
+      this.$emit('filterUncomplited')
     },
 
     filterAll: function(e) {
-      this.todos.forEach(element => {
-        element.isVisible = true;
-      });
+      this.btnClick(e)
+      this.$emit('filterAll')
     }
   }
 }
@@ -60,10 +49,18 @@ export default {
     margin: 0 10px;
     background-color: transparent;
     cursor: pointer;
+    transition: all 0.3s;
 
-    &.is-active {
+    &.is-active,
+    &:focus {
+      outline: none;
       color: green;
       border-color: green;
+    }
+
+    &:hover {
+      box-shadow: 0 0 10px currentColor;
+      text-shadow: 0 0 1px currentColor;
     }
   }
 }

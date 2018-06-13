@@ -10,7 +10,13 @@
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-standart": "^0.2.0",
+    "eslint-plugin-html": "^4.0.3",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0"
+  },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",

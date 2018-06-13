@@ -1,11 +1,7 @@
 <template>
   <li>
-    <label class="todo-item__label" 
-      v-bind:class="{'is-active': todo.active}" 
-      v-bind:for="'deal-' + todo.id"
-      @click="onActive">
-      <span class="todo-item__number">{{ numb }}</span>
-      {{ todo.text }}
+    <label class="todo-item__label" v-bind:class="{'is-active': todo.active}" v-bind:for="'deal-' + todo.id" @click="onActive">
+      <span class="todo-item__number">{{ this.index + 1 }}</span>{{ todo.text }}
     </label>
     <button class="todo-item__remove" @click="onRemove">X</button>
   </li>
@@ -13,29 +9,21 @@
 
 <script>
 export default {
-  name: "TodoItem",
-  
+  name: 'TodoItem',
   data() {
-    return {
-    }
-  },
-
-  computed: {
-    numb: function() {
-      return this.todo.id + 1;
-    }
+    return {}
   },
 
   methods: {
     onRemove: function() {
-      this.todos.splice(this.todos.indexOf(this.todo), 1)
+      this.$emit('onRemove', this.todo)
     },
     onActive: function() {
-      this.todo.active = !this.todo.active;
+      this.todo.active = !this.todo.active
     }
   },
 
-  props: ['todos', 'todo'],
+  props: ['todo', 'index']
 }
 </script>
 
@@ -55,7 +43,7 @@ export default {
     font-weight: bold;
 
     &:before {
-      content: "";
+      content: '';
       position: absolute;
       left: 10px;
       top: 50%;
@@ -71,7 +59,7 @@ export default {
       text-decoration: line-through;
 
       &:before {
-        content: "\2713";
+        content: '\2713';
         border-color: green;
       }
     }
@@ -102,4 +90,3 @@ export default {
   }
 }
 </style>
-

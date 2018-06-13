@@ -3,46 +3,78 @@
     <h1>{{ title }}</h1>
     <form class="todo__form" v-on:submit.prevent="onSubmit">
       <input type="text" class="todo__input" placeholder="Input your deal..." v-model="newTodo">
-      <button type="submit" class="todo__btn">Add</button>
+      <button type="submit" class="todo__btn">Enter</button>
     </form>
     <ul id="todoList">
-      <li is="TodoItem" class="todo-item" v-for="todo in todos" v-bind:key="todo.id" :todos="todos" :todo="todo" v-show="todo.isVisible"></li>
+      <li is="TodoItem" class="todo-item" v-for="(todo, index) in todos" :key="todo.id" :todo="todo" :index="index" v-show="todo.isVisible" @onRemove="removeItem"></li>
     </ul>
-    <todo-footer :todos="todos" />
+    <todo-footer @filterAll="displayAll" @filterUncomplited="displayUncomplited" @filterComplited="displayComplited"/>
   </div>
 </template>
 
 <script>
-  import TodoItem from './TodoItem';
-  import TodoFooter from './TodoFooter';
+import TodoItem from './TodoItem'
+import TodoFooter from './TodoFooter'
 
-  console.log(TodoFooter)
-  export default {
-    name: 'TodoList',
-    components: {
-      TodoItem,
-      TodoFooter
-    },
-    data() {
-      return {
-        title: 'Simple Todo list with Vue',
-        btnTitle: 'Push to add a deal',
-        todos: [],
-        newTodo: '',
-      };
-    },
-    methods: {
-      onSubmit: function() {
-        this.todos.push({
-          id: this.todos.length,
-          text: this.newTodo,
-          active: false,
-          isVisible: true
-        })
-        this.newTodo = '';
-      },
+export default {
+  name: 'TodoList',
+  components: {
+    TodoItem,
+    TodoFooter
+  },
+  data() {
+    return {
+      title: 'Simple Todo list with Vue',
+      btnTitle: 'Push to add a deal',
+      todos: [],
+      newTodo: ''
     }
-  };
+  },
+  methods: {
+    onSubmit: function() {
+      if (!this.newTodo) return
+
+      this.todos.push({
+        id: this.todos.length,
+        text: this.newTodo,
+        active: false,
+        isVisible: true
+      })
+
+      this.newTodo = ''
+    },
+
+    removeItem: function(todo) {
+      this.todos.splice(this.todos.indexOf(todo), 1)
+    },
+
+    displayAll: function() {
+      this.todos.forEach(element => {
+        element.isVisible = true
+      })
+    },
+
+    displayUncomplited: function() {
+      this.todos.forEach(element => {
+        if (element.active) {
+          element.isVisible = false
+        } else {
+          element.isVisible = true
+        }
+      })
+    },
+
+    displayComplited: function() {
+      this.todos.forEach(element => {
+        if (element.active) {
+          element.isVisible = true
+        } else {
+          element.isVisible = false
+        }
+      })
+    }
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -92,8 +124,19 @@ ul {
     padding: 0 10px;
     background-color: transparent;
     border: 2px solid #ccc;
+    color: #ccc;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 14px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      color: #01aef0;
+      border-color: #01aef0;
+      box-shadow: 0 0 10px #01aef0;
+      text-shadow: 0 0 1px #01aef0;
+    }
   }
 }
 </style>

@@ -3,7 +3,7 @@
     <img  class= "news__img" src="../assets/logo.png">
     <h1 class="news__title">A simple news portal with Vue.js</h1>
     <div class="news__body">
-      <button class="news__btn" @click="getNews">Send request</button>
+      <button class="news__btn" @click="getNews">{{ buttonText }}</button>
       <ul class="news__list">
         <NewsItem v-for="item in results" :key="item.id" :article="item" :config-key="configKey" />
       </ul>
@@ -26,7 +26,13 @@ export default {
     return {
       configKey: config.key,
       url: config.url,
+      isLoaded: false,
       results: []
+    }
+  },
+  computed: {
+    buttonText: function() {
+      return this.isLoaded ? 'Refresh' : 'Send request'
     }
   },
 
@@ -36,7 +42,7 @@ export default {
         .then(res => res.json())
         .then(result => {
           this.results = [...result.response.results]
-          console.log(this.results)
+          this.isLoaded = true
         })
     }
   }
@@ -51,6 +57,44 @@ export default {
   text-align: center;
   &__img {
     max-width: 200px;
+  }
+
+  &__btn {
+    position: relative;
+    min-width: 150px;
+    padding: 5px 20px;
+    border: 2px solid #41b883;
+    background-color: transparent;
+    color: #41b883;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: all 0.3s;
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      color: #fff;
+      padding-left: 40px;
+      &:after {
+        transform: translateX(0);
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #41b883;
+      transform: translateX(-100%);
+      transition: transform 0.4s;
+      z-index: -1;
+    }
   }
 }
 </style>

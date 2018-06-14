@@ -1,7 +1,7 @@
 <template>
   <li class="news-item" @click="getNewsText">
-    <h4 class="news-item__title">{{ article.webTitle }}</h4>
-    <div class="news-item__text" v-bind:class="{active: isOpen}" v-html="markup"/>
+    <h4 class="news-item__title" v-bind:class="{active: isOpen}">{{ article.webTitle }}</h4>
+    <div class="news-item__text" v-html="markup"/>
   </li>
 </template>
 
@@ -61,20 +61,41 @@ export default {
     padding: 10px 20px;
     margin: 0;
     cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: all 0.4s;
+    &.active {
+      padding-left: 50px;
+      color: #41b883;
+
+      & + div {
+        max-height: 400px;
+      }
+    }
   }
 
   &__text {
+    position: relative;
     max-height: 0;
-    transition: max-height 0.6s;
+    margin: 0 10px;
+    padding: 0 10px;
+    transition: max-height 0.4s;
     overflow-y: scroll;
-
-    img {
-      max-width: 100%;
-      object-fit: cover;
+    overflow-x: hidden;
+    box-sizing: content-box;
+    font-size: 14px;
+    &::-webkit-scrollbar {
+      width: 5px;
     }
 
-    &.active {
-      max-height: 400px;
+    &::-webkit-scrollbar-thumb {
+      border-radius: 2px;
+      box-shadow: inset 10px 0 0 #41b883;
+    }
+
+    img {
+      object-fit: cover;
     }
   }
 }

@@ -1,7 +1,7 @@
-@import "normalize";
-@import "vars";
-@import "mixins";
-@import "fonts";
+@import 'normalize';
+@import 'vars';
+@import 'mixins';
+@import 'fonts';
 
 * {
   box-sizing: border-box;
@@ -9,7 +9,7 @@
 
 html,
 body {
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
 }
 
 .news {
@@ -39,11 +39,13 @@ body {
   }
 
   &__body {
-    padding: 0 20px;
+    padding: 20px;
     font-size: 14px;
 
     &-text {
-      max-height: 400px;
+      padding: 0 20px;
+      transition: all 0.4s;
+      max-height: 300px;
       @include scrollbar(5px, $active-color);
 
       img {

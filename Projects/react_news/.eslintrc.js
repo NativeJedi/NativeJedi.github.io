@@ -11,5 +11,9 @@ module.exports = {
     'react/prop-types': 0,
     'no-trailing-spaces': 0,
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
-  },
-};
+    semi: 0,
+    'comma-dangle': 0,
+    'space-before-function-paren': 0,
+    'arrow-parens': 0
+  }
+}

@@ -1,19 +1,55 @@
-import React from 'react';
-import ArticleComment from './ArticleComment';
+import React from 'react'
+import shave from 'shave'
+import propTypes from 'prop-types'
+import ArticleComment from './ArticleComment'
 
 function createMarkup(a) {
-  return { __html: a };
+  return {
+    __html: a
+  }
 }
 
-export default function ArticleBody(props) {
-  console.log(props.text);
-  const text = props.text.map(item => item.bodyHtml);
-  const markup = text.reduce((sum, current) => sum + current);
+class ArticleBody extends React.Component {
+  static propTypes = {
+    text: propTypes.array,
+    open: propTypes.bool
+  }
 
-  return (
-    <div className="article__body">
-      <div className="article__body-text" dangerouslySetInnerHTML={createMarkup(markup)} />
-      <ArticleComment />
-    </div>
-  );
+  constructor(props) {
+    super(props)
+    this.text = props.text.map(item => item.bodyHtml)
+    this.markup = this.text.join()
+  }
+
+  componentDidMount() {
+    shave(this.articleText, '50')
+
+    this.articleText.addEventListener('resize', function() {
+      console.log(this)
+    })
+  }
+
+  componentWillReceiveProps() {
+    shave(this.articleText, this.props.open ? 'auto' : '50')
+  }
+
+  componentWillUnmount() {
+    this.articleText.removeEventListener('resize')
+  }
+
+  render() {
+    return (
+      <div className="article__body">
+        <div
+          className="article__body-text"
+          dangerouslySetInnerHTML={createMarkup(this.markup)}
+          ref={node => {
+            this.articleText = node
+          }}
+        />
+        <ArticleComment />
+      </div>
+    )
+  }
 }
+export default ArticleBody

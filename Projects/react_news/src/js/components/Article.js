@@ -1,51 +1,56 @@
-import React from 'react';
-import Button from './Button';
-import ArticleBody from './ArticleBody';
+import React from 'react'
+import propTypes from 'prop-types'
+import Button from './Button'
+import ArticleBody from './ArticleBody'
 
 class Article extends React.Component {
+  static propTypes = {
+    article: propTypes.object
+  }
+
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       error: null,
       isLoaded: false,
       body: [],
-      isOpen: false,
-    };
+      isClosed: true
+    }
   }
 
   componentDidMount() {
     fetch(this.props.article.apiUrl)
       .then(res => res.json())
       .then(
-        (result) => {
+        result => {
           this.setState({
             isLoaded: true,
-            body: result.response.content.blocks.body,
-          });
+            body: result.response.content.blocks.body
+          })
         },
-        (error) => {
+        error => {
           this.setState({
             isLoaded: true,
-            error,
-          });
-        },
-      );
+            error
+          })
+        }
+      )
   }
 
   clickHandler = () => {
     this.setState({
-      isOpen: !this.state.isOpen,
-    });
-  };
+      isClosed: !this.state.isClosed
+    })
+  }
 
   render() {
-    const { error, isLoaded, body } = this.state;
+    const { error, isLoaded, body } = this.state
 
     if (error) {
-      return <div>Error: {error.message}</div>;
+      return <div>Error: {error.message}</div>
     } else if (!isLoaded) {
-      return <div>Loading...</div>;
+      return <div>Loading...</div>
     }
     return (
       <article className="article">
@@ -53,14 +58,14 @@ class Article extends React.Component {
           <h3 className="article__title">{this.props.article.title}</h3>
           <Button
             click={this.clickHandler}
-            text={this.state.isOpen ? 'hide' : 'show'}
-            className={this.state.isOpen ? 'button is-opened' : 'button'}
+            text={this.state.isClosed ? 'show' : 'hide'}
+            className={this.state.isClosed ? 'button' : 'button is-opened'}
           />
         </div>
-        {this.state.isOpen && <ArticleBody text={body} />}
+        <ArticleBody text={body} open={this.state.isClosed} />
       </article>
-    );
+    )
   }
 }
 
-export default Article;
+export default Article

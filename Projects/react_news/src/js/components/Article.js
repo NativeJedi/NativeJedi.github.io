@@ -2,12 +2,18 @@ import React from 'react'
 import propTypes from 'prop-types'
 import Button from './Button'
 import ArticleBody from './ArticleBody'
+import { NewsContext } from './App'
 
 class Article extends React.Component {
   static propTypes = {
-    article: propTypes.object
+    article: propTypes.object,
+    events: propTypes.objectOf(propTypes.func)
   }
 
+  static defaultProps = {
+    article: {},
+    events: {}
+  }
   constructor(props) {
     super(props)
 
@@ -15,7 +21,7 @@ class Article extends React.Component {
       error: null,
       isLoaded: false,
       body: [],
-      isClosed: true
+      isOpen: false,
     }
   }
 
@@ -39,9 +45,16 @@ class Article extends React.Component {
   }
 
   clickHandler = () => {
-    this.setState({
-      isClosed: !this.state.isClosed
+    this.setState(prev => {
+      return {
+        isOpen: !prev.isOpen
+      }
     })
+  }
+
+  openPopap = () => {
+    const index = this.props.article.id;
+    this.props.events.open(index)
   }
 
   render() {
@@ -58,12 +71,19 @@ class Article extends React.Component {
           <h3 className="article__title">{this.props.article.title}</h3>
           <Button
             click={this.clickHandler}
-            text={this.state.isClosed ? 'show' : 'hide'}
-            className={this.state.isClosed ? 'button' : 'button is-opened'}
+            text={this.state.isOpen ? 'hide' : 'show'}
+            className={this.state.isOpen ? 'button is-opened' : 'button'}
           />
         </div>
-        <ArticleBody text={body} open={this.state.isClosed} />
-      </article>
+        <ArticleBody text={body} open={this.state.isOpen} />
+        <div className="article__footer">
+          <NewsContext.Consumer>
+            {state => (
+              state.isRemoveVisible && <button onClick={this.openPopap} className="button-danger">Remove article</button>
+            )}
+          </NewsContext.Consumer>
+        </div>
+      </article >
     )
   }
 }

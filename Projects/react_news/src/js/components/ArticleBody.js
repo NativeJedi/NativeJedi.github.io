@@ -1,5 +1,4 @@
 import React from 'react'
-import shave from 'shave'
 import propTypes from 'prop-types'
 import ArticleComment from './ArticleComment'
 
@@ -11,8 +10,13 @@ function createMarkup(a) {
 
 class ArticleBody extends React.Component {
   static propTypes = {
-    text: propTypes.array,
+    text: propTypes.arrayOf(propTypes.object),
     open: propTypes.bool
+  }
+
+  static defaultProps = {
+    text: [],
+    open: true
   }
 
   constructor(props) {
@@ -21,31 +25,17 @@ class ArticleBody extends React.Component {
     this.markup = this.text.join()
   }
 
-  componentDidMount() {
-    shave(this.articleText, '50')
-
-    this.articleText.addEventListener('resize', function() {
-      console.log(this)
-    })
-  }
-
-  componentWillReceiveProps() {
-    shave(this.articleText, this.props.open ? 'auto' : '50')
-  }
-
-  componentWillUnmount() {
-    this.articleText.removeEventListener('resize')
+  switchClass = (isOpen) => {
+    return isOpen ? 'article__body-text is-active' : 'article__body-text'
   }
 
   render() {
     return (
-      <div className="article__body">
+      <div className="article__body" >
         <div
-          className="article__body-text"
+          className={this.switchClass(this.props.open)}
           dangerouslySetInnerHTML={createMarkup(this.markup)}
-          ref={node => {
-            this.articleText = node
-          }}
+          ref={node => { this.articleText = node }}
         />
         <ArticleComment />
       </div>

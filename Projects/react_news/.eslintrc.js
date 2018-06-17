@@ -14,6 +14,8 @@ module.exports = {
     semi: 0,
     'comma-dangle': 0,
     'space-before-function-paren': 0,
-    'arrow-parens': 0
+    'arrow-parens': 0,
+    'react/forbid-prop-types': 0,
+    'arrow-body-style': 0
   }
 }

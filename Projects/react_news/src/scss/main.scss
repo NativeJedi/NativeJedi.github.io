@@ -114,7 +114,38 @@ body {
 }
 
 .comment {
+  position: relative;
   padding: 0 40px;
+
+  &__item {
+    position: relative;
+  }
+  &__remove {
+    @include centY;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 2px solid $active-color;
+    border-radius: 50%;
+
+    &:after,
+    &:before {
+      content: '';
+      @include cent;
+      height: 80%;
+      width: 2px;
+      background-color: $active-color;
+    }
+
+    &:after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &:before {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
 }
 
 .switcher {
@@ -123,6 +154,8 @@ body {
   margin: 20px 0;
   padding: 0 50px;
   font-size: 14px;
+  background-color: transparent;
+  border: none;
   cursor: pointer;
   &:before {
     content: '';
@@ -136,8 +169,7 @@ body {
 
   &:after {
     content: '';
-    position: absolute;
-    top: 15%;
+    @include centY;
     left: 12px;
     width: 15px;
     height: 15px;
@@ -151,7 +183,7 @@ body {
       border-color: #24aa98;
     }
     &:after {
-      transform: translateX(100%);
+      transform: translate(100%, -50%);
       background-color: #24aa98;
     }
   }
@@ -191,5 +223,30 @@ body {
   &:hover {
     box-shadow: 0 0 10px currentColor;
     text-shadow: 0 0 1px currentColor;
+  }
+}
+
+.input-form {
+  text-align: center;
+  color: #535353;
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__field {
+    margin-bottom: 20px;
+  }
+
+  &__caption {
+    margin-bottom: 10px;
+  }
+
+  &__input {
+    width: 50%;
+    padding: 5px 10px;
+  }
+  &__btn {
+    color: $active-color;
   }
 }

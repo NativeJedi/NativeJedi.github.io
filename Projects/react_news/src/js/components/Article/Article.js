@@ -1,8 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import Button from './Button'
-import ArticleBody from './ArticleBody'
-import { NewsContext } from './App'
+import Button from '../Button'
+import ArticleBody from '../ArticleBody'
 
 class Article extends React.Component {
   static propTypes = {
@@ -16,32 +15,41 @@ class Article extends React.Component {
   }
   constructor(props) {
     super(props)
+    const text = `<p>${this.props.article.text}</p>`
+    const textArr = []
+    textArr.push(text)
 
     this.state = {
       error: null,
       isLoaded: false,
-      body: [],
+      body: [...textArr],
       isOpen: false,
     }
   }
 
   componentDidMount() {
-    fetch(this.props.article.apiUrl)
-      .then(res => res.json())
-      .then(
-        result => {
-          this.setState({
-            isLoaded: true,
-            body: result.response.content.blocks.body
-          })
-        },
-        error => {
-          this.setState({
-            isLoaded: true,
-            error
-          })
-        }
-      )
+    if (this.props.article.apiUrl) {
+      fetch(this.props.article.apiUrl)
+        .then(res => res.json())
+        .then(
+          result => {
+            this.setState({
+              isLoaded: true,
+              body: result.response.content.blocks.body
+            })
+          },
+          error => {
+            this.setState({
+              isLoaded: true,
+              error
+            })
+          }
+        )
+    } else {
+      this.setState({
+        isLoaded: true
+      })
+    }
   }
 
   clickHandler = () => {
@@ -75,13 +83,9 @@ class Article extends React.Component {
             className={this.state.isOpen ? 'button is-opened' : 'button'}
           />
         </div>
-        <ArticleBody text={body} open={this.state.isOpen} />
+        <ArticleBody text={body} open={this.state.isOpen} id={this.props.article.id} />
         <div className="article__footer">
-          <NewsContext.Consumer>
-            {state => (
-              state.isRemoveVisible && <button onClick={this.openPopap} className="button-danger">Remove article</button>
-            )}
-          </NewsContext.Consumer>
+          {this.props.isRemoveVisible && <button onClick={this.openPopap} className="button-danger">Remove article</button>}
         </div>
       </article >
     )

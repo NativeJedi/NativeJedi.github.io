@@ -1,6 +1,6 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import ArticleComment from './ArticleComment'
+import ArticleComment from './ArticleComment/'
 
 function createMarkup(a) {
   return {
@@ -10,19 +10,17 @@ function createMarkup(a) {
 
 class ArticleBody extends React.Component {
   static propTypes = {
-    text: propTypes.arrayOf(propTypes.object),
     open: propTypes.bool
   }
 
   static defaultProps = {
-    text: [],
     open: true
   }
 
   constructor(props) {
     super(props)
     this.text = props.text.map(item => item.bodyHtml)
-    this.markup = this.text.join()
+    this.markup = this.text[0] ? this.text.join() : props.text
   }
 
   switchClass = (isOpen) => {
@@ -37,7 +35,7 @@ class ArticleBody extends React.Component {
           dangerouslySetInnerHTML={createMarkup(this.markup)}
           ref={node => { this.articleText = node }}
         />
-        <ArticleComment />
+        <ArticleComment id={this.props.id} />
       </div>
     )
   }

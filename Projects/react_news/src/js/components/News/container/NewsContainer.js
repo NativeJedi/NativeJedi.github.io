@@ -1,13 +1,15 @@
 import { connect } from 'react-redux';
-import { loadArticles, removeArticle, switchButtons } from '../../../reducers/newsDuck';
+import { removeArticle, switchButtons, loadData } from '../../../reducers/newsDuck';
 import News from '../News';
 
 
 export default connect(state => ({
   articles: state.newsBlock.articles,
-  isRemoveVisible: state.newsBlock.isRemoveVisible
+  isRemoveVisible: state.newsBlock.isRemoveVisible,
+  isFetching: state.newsBlock.isFetching,
+  isUser: state.newsBlock.isUser
 }), {
-  loadArticles,
   removeArticle,
-  switchButtons
+  switchButtons,
+  loadData
 })(News);

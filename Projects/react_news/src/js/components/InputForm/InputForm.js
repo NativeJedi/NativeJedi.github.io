@@ -13,12 +13,16 @@ class InputForm extends React.Component {
       title: this.state.title,
       apiUrl: null,
       text: this.state.text,
-      id: this.props.articles.length,
+      _id: this.props.articles.length + 1,
       date: new Date(),
       comments: []
     }
 
     this.props.addArticle(article)
+    this.setState({
+      title: '',
+      text: ''
+    })
   }
 
   handleTitle = (e) => {
@@ -36,15 +40,15 @@ class InputForm extends React.Component {
     return (
       <form className="input-form" action="#" onSubmit={this.addArticle}>
         <h3 className="input-form__title">Add your article</h3>
-        <div className="input-form__field">
-          <div className="input-form__caption">Title:</div>
-          <input className="input-form__input" type="text" id="title" onBlur={this.handleTitle} />
+        <div className="input-field">
+          <input id="articleText" onBlur={this.handleTitle} type="text" />
+          <label htmlFor="articleText">Enter your article title</label>
         </div>
-        <div className="input-form__field">
-          <div className="input-form__caption">Text:</div>
-          <input className="input-form__input" type="text" id="text" onBlur={this.handleText} />
+        <div className="input-field">
+          <textarea id="textarea1" className="materialize-textarea" onBlur={this.handleText} />
+          <label htmlFor="textarea1">Enter your article text</label>
         </div>
-        <button className="btn input-form__btn" type="submit">Add article</button>
+        <button className="btn" type="submit">Add article</button>
       </form>
     )
   }

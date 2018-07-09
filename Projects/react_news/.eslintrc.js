@@ -18,6 +18,7 @@ module.exports = {
     'arrow-parens': 0,
     'react/forbid-prop-types': 0,
     'arrow-body-style': 0,
-    'no-restricted-syntax': 0
+    'no-restricted-syntax': 0,
+    'no-underscore-dangle': 0
   }
 }

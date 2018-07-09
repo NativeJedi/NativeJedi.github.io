@@ -1,18 +1,16 @@
-"use strict";
-
-const path = require("path");
-const webpack = require("webpack");
-const CleanPlugin = require("clean-webpack-plugin");
-const UglifyPlugin = require("uglifyjs-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
-const ImageminPlugin = require("imagemin-webpack-plugin").default;
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const webpack = require('webpack');
+const CleanPlugin = require('clean-webpack-plugin');
+const UglifyPlugin = require('uglifyjs-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModernizrWebpackPlugin = require('modernizr-webpack-plugin');
 
-let config = {
+const config = {
   mode: process.env.NODE_ENV,
-  context: path.resolve(__dirname, "src"),
+  context: path.resolve(__dirname, 'src'),
 
   entry: [
     'react-hot-loader/patch',
@@ -21,15 +19,15 @@ let config = {
   ],
 
   output: {
-    filename: "js/[name].js",
-    path: path.resolve(__dirname, "./dist"),
-    publicPath: "dist/"
+    filename: 'js/[name].js',
+    path: path.resolve(__dirname, './dist'),
+    publicPath: 'dist/'
   },
 
   devServer: {
     open: true,
     overlay: true,
-    contentBase: "./app"
+    contentBase: './app'
   },
 
   module: {
@@ -37,27 +35,28 @@ let config = {
       test: /\.(js|jsx)$/,
       exclude: /(node_modules|bower_components)/,
       use: {
-        loader: "babel-loader"
+        loader: 'babel-loader'
       }
     }, {
       test: /\.scss$/,
-      use: ["css-hot-loader"].concat(ExtractTextPlugin.extract({
-        fallback: "style-loader",
+      use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
+        fallback: 'style-loader',
         use: [{
-          loader: "css-loader",
+          loader: 'css-loader',
           options: {
             sourceMap: true
           }
         }, {
-          loader: "postcss-loader",
+          loader: 'postcss-loader',
           options: {
-            ident: "postcss",
+            ident: 'postcss',
             plugins: () => [
-              require("autoprefixer")()
+              // eslint-disable-next-line
+              require('autoprefixer')()
             ]
           }
         }, {
-          loader: "sass-loader",
+          loader: 'sass-loader',
           options: {
             sourceMap: true
           }
@@ -66,43 +65,47 @@ let config = {
     }, {
       test: /\.(png|jpg|gif)$/,
       use: [{
-        loader: "file-loader",
+        loader: 'file-loader',
         options: {
-          name: "[path][name].[ext]?[hash]",
-          publicPath: "../"
+          name: '[path][name].[ext]?[hash]',
+          publicPath: '../'
         }
-      }, "img-loader"]
+      }, 'img-loader']
     }, {
       test: /\.(woff|woff2|ttf|eot|otf)$/,
       use: [{
-        loader: "file-loader",
+        loader: 'file-loader',
         options: {
-          name: "[path][name].[ext]?[hash]",
-          publicPath: "../"
+          name: '[path][name].[ext]?[hash]',
+          publicPath: '../'
         }
       }]
     }, {
       test: /\.svg$/,
-      loader: "svg-url-loader"
+      loader: 'svg-url-loader'
     }]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx'],
+    modules: ['node_modules', 'src'],
+    alias: {
+      materialize: path.join(__dirname, '/node_modules/materialize-css/')
+    }
   },
   plugins: [
-    new ExtractTextPlugin("css/[name].css", {
+    new ExtractTextPlugin('css/[name].css', {
       allChunks: true
     }),
     new HtmlWebpackPlugin(),
-    new CleanPlugin(["dist"]),
+    new CleanPlugin(['dist']),
     new CopyPlugin([{
-      from: "./img",
-      to: "img"
+      from: './img',
+      to: 'img'
     }], {
-        ignore: [{
-          glob: "svg/*"
-        }]
-      }),
+      ignore: [{
+        glob: 'svg/*'
+      }]
+    }),
     new ModernizrWebpackPlugin({
       'feature-detects': [
         'canvas'
@@ -112,10 +115,10 @@ let config = {
 };
 
 module.exports = (env, opt) => {
-  let isProduction = opt.mode === "production";
+  const isProduction = opt.mode === 'production';
 
   if (isProduction) {
-    config.devtool = "inline-source-map";
+    config.devtool = 'inline-source-map';
 
     config.plugins.push(
       new UglifyPlugin({

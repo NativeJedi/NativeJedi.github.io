@@ -2,8 +2,9 @@ import React from 'react'
 import Modal from 'react-modal'
 import Article from '../Article/'
 import InputForm from '../InputForm/'
+import NewsHeader from '../NewsHeader'
 
-const customStyles = {
+export const customStyles = {
   content: {
     top: '50%',
     left: '50%',
@@ -20,35 +21,17 @@ class News extends React.Component {
 
     this.state = {
       modalIsOpened: false,
-      removingId: 0
+      removingId: 0,
+      apiUrl: 'https://mateacademy-react-server.herokuapp.com/api/v1/'
     }
   }
 
   componentDidMount() {
-    fetch(this.props.config.url + this.props.config.key)
-      .then(res => res.json())
-      .then(result => {
-        const articlesList = result.response.results.map(item => {
-          const article = {
-            title: item.webTitle,
-            text: '',
-            apiUrl: `${item.apiUrl}?show-blocks=body&${this.props.config.key}`,
-            id: item.id,
-            date: item.webPublicationDate,
-            comments: [{
-              text: "It's very nice task!",
-              id: 0
-            },
-            {
-              text: 'This is cool task!',
-              id: 1
-            }]
-          }
-          return article
-        })
+    this.getData();
+  }
 
-        this.props.loadArticles(articlesList)
-      })
+  getData = () => {
+    this.props.loadData(this.state.apiUrl)
   }
 
   openModal = (index) => {
@@ -87,21 +70,32 @@ class News extends React.Component {
       open: context.openModal,
       close: context.closeModal
     }
-    
-    const articleArray = this.props.articles.map((item) => {
+
+    const articleArray = this.props.articles.map(item => {
       return (
-        <Article key={item.id} article={item} events={events} />
+        <Article key={item._id} article={item} events={events}>{item.title}</Article>
       )
     })
 
+    const { isFetching } = this.props;
+
+    if (isFetching) {
+      return (
+        <div className="progress progress-bar">
+          <div className="indeterminate" />
+        </div>
+      )
+    }
+
     return (
       <div className="news">
+        <NewsHeader />
         <h1 className="news__title">Whats new tooday?</h1>
-        <button className={this.props.isRemoveVisible ? 'switcher' : 'switcher is-active'} onClick={this.switchRemoveButtonsVisibility}>Hide remove buttons</button>
+        {this.props.isUser && <button className={this.props.isRemoveVisible ? 'switcher' : 'switcher is-active'} onClick={this.switchRemoveButtonsVisibility}>Hide remove buttons</button>}
         <React.Fragment>
           {articleArray}
         </React.Fragment>
-        <InputForm />
+        {this.props.isUser && <InputForm />}
         <Modal
           isOpen={this.state.modalIsOpened}
           onRequestClose={this.closeModal}

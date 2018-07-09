@@ -13,42 +13,13 @@ class Article extends React.Component {
     article: {},
     events: {}
   }
+
   constructor(props) {
     super(props)
-    const text = `<p>${this.props.article.text}</p>`
-    const textArr = []
-    textArr.push(text)
+    const text = `<p>${this.props.article}</p>`
 
     this.state = {
-      error: null,
-      isLoaded: false,
-      body: [...textArr],
       isOpen: false,
-    }
-  }
-
-  componentDidMount() {
-    if (this.props.article.apiUrl) {
-      fetch(this.props.article.apiUrl)
-        .then(res => res.json())
-        .then(
-          result => {
-            this.setState({
-              isLoaded: true,
-              body: result.response.content.blocks.body
-            })
-          },
-          error => {
-            this.setState({
-              isLoaded: true,
-              error
-            })
-          }
-        )
-    } else {
-      this.setState({
-        isLoaded: true
-      })
     }
   }
 
@@ -61,18 +32,11 @@ class Article extends React.Component {
   }
 
   openPopap = () => {
-    const index = this.props.article.id;
+    const index = this.props.article._id;
     this.props.events.open(index)
   }
 
   render() {
-    const { error, isLoaded, body } = this.state
-
-    if (error) {
-      return <div>Error: {error.message}</div>
-    } else if (!isLoaded) {
-      return <div>Loading...</div>
-    }
     return (
       <article className="article">
         <div className="article__head">
@@ -80,12 +44,16 @@ class Article extends React.Component {
           <Button
             click={this.clickHandler}
             text={this.state.isOpen ? 'hide' : 'show'}
-            className={this.state.isOpen ? 'button is-opened' : 'button'}
+            className={this.state.isOpen ? 'btn btn-small waves-effect button is-opened' : 'btn btn-small waves-effect button'}
           />
         </div>
-        <ArticleBody text={body} open={this.state.isOpen} id={this.props.article.id} />
+        <ArticleBody
+          text={this.props.article.text}
+          open={this.state.isOpen}
+          id={this.props.article._id} 
+        />
         <div className="article__footer">
-          {this.props.isRemoveVisible && <button onClick={this.openPopap} className="button-danger">Remove article</button>}
+          {this.props.isRemoveVisible && <button onClick={this.openPopap} className="btn btn-small red">Remove article</button>}
         </div>
       </article >
     )

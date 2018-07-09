@@ -4,7 +4,7 @@ import ArticleComment from '../ArticleComment';
 
 
 export default connect(state => ({
-  articles: state.newsBlock.articles,
+  apiUrl: state.newsBlock.apiUrl,
 }), {
   removeComment
 })(ArticleComment);

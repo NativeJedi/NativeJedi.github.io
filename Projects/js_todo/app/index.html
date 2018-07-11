@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../dist/css/main.css">
+</head>
+
+<body>
+  <div class="todo">
+    <h1 class="todo-title">Pure js todo app</h1>
+    <form action="#" class="todo-form">
+      <div class="todo-form__field">
+        <input class="todo-form__input" id="todoInput" type="text" required>
+        <label class="todo-form__label" for="todoInput">Input your deal</label>
+        <span class="icon"></span>
+      </div>
+      <button class="todo-form__submit">Enter</button>
+    </form>
+    <ul class="todo-list"></ul>
+    <div class="todo-footer">
+      <div class="btn-group">
+        <button class="btn" id="filterAll" type="button">All</button>
+        <button class="btn" id="filterCompleted" type="button">Comleted</button>
+        <button class="btn" id="filterUncompleted" type="button">Uncompleted</button>
+      </div>
+    </div>
+  </div>
+  <script src="../dist/js/main.js"></script>
+</body>
+
+</html>

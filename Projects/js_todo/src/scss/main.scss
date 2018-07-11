@@ -1,0 +1,222 @@
+@import 'normalize';
+@import 'fonts';
+@import 'mixins';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Open Sans';
+  font-size: 10px;
+}
+
+body {
+  font-size: 16px;
+}
+
+$active-color: #26a69a;
+$remove-color: #dd5145;
+$edit-color: #1b95e0;
+
+.todo {
+  max-width: 76.8rem;
+  margin: 0 auto;
+  color: #535353;
+
+  &-title {
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &__field {
+      position: relative;
+      width: calc(100% - 12rem);
+      margin-top: 2rem;
+    }
+
+    &__input {
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      padding: 0.5rem 1rem;
+      &:focus {
+        outline: none;
+        border-color: $active-color;
+
+        & ~ .todo-form__label {
+          top: 0;
+          left: 0;
+          transform: translate(0, -100%);
+          font-size: 12px;
+          color: $active-color;
+        }
+      }
+
+      &.is-active ~ .todo-form__label {
+        top: 0;
+        left: 0;
+        transform: translate(0, -100%);
+        font-size: 12px;
+      }
+    }
+
+    &__label {
+      @include centY;
+      left: 2rem;
+      transition: all 0.3s;
+      padding-bottom: 0.5rem;
+    }
+
+    &__submit {
+      width: 10rem;
+      padding: 5px 0;
+      border: none;
+      background-color: $active-color;
+      color: #fff;
+      font-size: 14px;
+      box-shadow: 0 0 2px #000;
+    }
+  }
+
+  &-list {
+    list-style: none;
+    min-height: calc(100vh - 250px);
+    padding-left: 0;
+
+    &__item {
+      position: relative;
+      padding: 1rem 4rem 1rem 3rem;
+      background-color: #fafafa;
+      border: 1px solid #ccc;
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    &__checkbox {
+      display: none;
+      &:checked {
+        & + .todo-list__label {
+          color: $active-color;
+          text-decoration: line-through;
+          &:before {
+            content: '\2713';
+            border-color: $active-color;
+          }
+        }
+      }
+    }
+
+    &__text {
+      width: calc(100% - 60px);
+      background-color: transparent;
+      border: none;
+      pointer-events: none;
+    }
+
+    &__label {
+      position: relative;
+      width: 100%;
+      margin-right: auto;
+      padding-left: 40px;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+
+      &:before {
+        content: '';
+        @include centY;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #535353;
+        text-align: center;
+        font-size: 23px;
+        font-weight: bold;
+        line-height: 20px;
+      }
+    }
+
+    &__edit,
+    &__remove {
+      position: relative;
+      display: inline-block;
+      line-height: 40px;
+      text-align: center;
+      .material-icons {
+        @include cent;
+      }
+    }
+
+    &__edit {
+      width: 30px;
+      height: 30px;
+      margin-right: 20px;
+      border-radius: 50%;
+      border: 2px solid $edit-color;
+      background-color: #fff;
+      box-shadow: 0 0 2px $edit-color;
+      color: $edit-color;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $edit-color;
+        color: #fff;
+      }
+      .material-icons {
+        font-size: 20px;
+      }
+    }
+    &__remove {
+      @include centY;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+      background-color: transparent;
+      color: $remove-color;
+      border: none;
+
+      &:hover {
+        transform: translate(0, -55%) scale(1.1);
+      }
+      .material-icons {
+        font-size: 35px;
+      }
+    }
+  }
+}
+
+.btn {
+  padding: 5px 15px;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  font-size: 14px;
+  box-shadow: 0 0 2px #000;
+  font-weight: bold;
+
+  &:not(:last-child) {
+    margin-right: 2rem;
+  }
+
+  &.is-active {
+    border-color: $active-color;
+    background-color: $active-color;
+    color: #fff;
+  }
+
+  &:hover:not(.is-active) {
+    border-color: $active-color;
+    color: $active-color;
+  }
+  &-group {
+    display: flex;
+    justify-content: center;
+  }
+}

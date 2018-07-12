@@ -34,15 +34,51 @@ $edit-color: #1b95e0;
   padding: 0 2rem;
 }
 
+.logo {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-image: url(../img/icons/js-logo.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  perspective: 100px;
+  animation-name: spinner;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  animation-duration: 6s;
+  transform-style: preserve-3d;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes spinner {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
 .todo {
   max-width: 76.8rem;
   margin: 0 auto;
   @extend %default-padding;
   color: $default-color;
 
+  &__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+  }
+
   &__title {
+    margin: 0 0 0 2rem;
     font-size: 24px;
-    text-align: center;
     text-transform: uppercase;
   }
 
@@ -123,7 +159,7 @@ $edit-color: #1b95e0;
 
   &-list {
     list-style: none;
-    min-height: calc(100vh - 250px);
+    min-height: calc(100vh - 275px);
     padding-left: 0;
 
     &__item {
@@ -263,6 +299,16 @@ $edit-color: #1b95e0;
 
 @media screen and (max-width: 375px) {
   .todo {
+    &__header {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &__title {
+      width: 100%;
+      text-align: center;
+      margin: 1rem 0;
+      font-size: 18px;
+    }
     &-form {
       &__field {
         width: calc(100% - 55px);

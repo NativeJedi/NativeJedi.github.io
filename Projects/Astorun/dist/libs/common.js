@@ -1,4 +1,13 @@
 $( document ).ready(function() {
+
+	if(lightbox) {
+		lightbox.option({
+			'resizeDuration': 200,
+			'wrapAround': true,
+			'showImageNumberLabel': false
+		})
+	}
+
 	$('.b-news-slider').slick({
 		speed: 500,
 		cssEase: 'linear'
@@ -6,60 +15,34 @@ $( document ).ready(function() {
 
 	$('.shop__slider').slick();
 
-	$('.shop__checkbox').off().on('click', function(e) {
-		e.preventDefault();
-		e.stopPropagation();
-		var attr = $(this).find('input')[0].checked;
-
-		if(attr) {
-			$(this).find('input')[0].checked = false;
-		} else {
-			$(this).find('input')[0].checked = true;
-		}
+	$('.product__checkbox').on('change', function(e) {
 		$(this).parent().toggleClass('is-active');
-		
 	});
 
-	$('.shop__block').on('click', function(e) {
-		var attr = $(this).find('.shop__checkbox input')[0].checked;
+	$('.product').on('click', function(e) {
+		console.log(e.target);
 		
-		if(attr) {
-			$(this).find('.shop__checkbox input')[0].checked = false;
-		} else {
-			$(this).find('.shop__checkbox input')[0].checked = true;
-		}
-
+		if(!e.target.classList.contains('product')) return;
+		let input = $(this).find('.product__checkbox input')[0];
+		input.checked = !input.checked;
 		$(this).toggleClass('is-active');
 	})
 
 	var popup = new Popup(400);
 
-	$('.shop__btn').on('click', function(e) {
+	$('.product__btn.info').on('click', function(e) {
 		e.preventDefault();
 		e.stopPropagation();
-		var content = $(this).parent().find($('.shop__info'));
+		var content = $(this).parent().parent().find($('.product__info'));
 		popup.open(content)
 	});
-	/*(function($) {
-		var img = document.querySelectorAll('#slider-img');
-		var slider = document.querySelector('.b-news-slider');
-		var div = document.createElement('div');
-		div.className = 'slider-counter';
-		slider.appendChild(div);
-		var lengthImg = img.length;
-		div.innerHTML = '1 of ' + lengthImg;
+	$('.product__btn.overview').on('click', function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		const link = $(this).parent().parent().find($('.product__overwiev')).find($('a:first-child'));
+		link.click();	
+	});
 
-		$('.slick-arrow').on('click', function() {
-			newsCounter();
-		});
-
-		function newsCounter() {
-			var div = $('.slider-counter');
-			var img = $('.slick-active img');
-			div.html(img.data('count') + ' of ' + lengthImg);
-		}
-	})($);*/
-	
 	function Popup(fade) {
 		var overlay = $('.overlay');
 		var popup = $('.popup');

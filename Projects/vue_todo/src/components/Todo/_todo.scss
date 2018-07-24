@@ -1,0 +1,27 @@
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s;
+}
+
+.fade-enter {
+  transform: translateX(-10%);
+  opacity: 0;
+
+  &-to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-leave {
+  &-to {
+    transform: translateX(10%);
+    opacity: 0;
+  }
+}
+.todo {
+  &__list {
+    padding-left: 0;
+    list-style: none;
+  }
+}

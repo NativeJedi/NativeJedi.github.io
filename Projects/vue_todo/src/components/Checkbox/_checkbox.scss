@@ -1,0 +1,32 @@
+.checkbox {
+  &__input {
+    display: none;
+
+    &:checked {
+      & + .checkbox__label {
+        color: $active-color;
+        &:before {
+          content: '\2713';
+        }
+      }
+    }
+  }
+
+  &__label {
+    position: relative;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      @include centY;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      line-height: 15px;
+      border: 1px solid currentColor;
+      text-align: center;
+      border-radius: 5px;
+      font-size: 30px;
+    }
+  }
+}

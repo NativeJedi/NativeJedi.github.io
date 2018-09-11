@@ -1,7 +1,7 @@
 import * as mutationTypes from '../types/mutations'
 
 const state = {
-  filter: JSON.parse(localStorage.getItem('filter')) || 'All'
+  filter: process.browser ? JSON.parse(localStorage.getItem('filter')) || 'All' : 'All'
 }
 
 const mutations = {

@@ -2,7 +2,7 @@ import * as mutationTypes from '../types/mutations'
 import * as getterTypes from '../types/getters'
 
 const state = {
-  todos: JSON.parse(localStorage.getItem('todos')) || []
+  todos: process.browser ? JSON.parse(localStorage.getItem('todos')) || [] : []
 }
 
 const mutations = {

@@ -11,8 +11,12 @@ export default () => new Vuex.Store({
   modules,
   plugins: [
     new persist({
-      storage: window.localStorage,
+      storage: process.browser ? window.localStorage : {},
       key: 'state',
+      reducer: state => ({
+        todos: state.todos.todos,
+        filter: state.filters.filter
+      }),
       restoreState: rehydrateStore
     }).plugin
   ]

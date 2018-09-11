@@ -1,4 +1,5 @@
 import * as mutationTypes from '../types/mutations'
+import * as getterTypes from '../types/getters'
 
 const state = {
   todos: JSON.parse(localStorage.getItem('todos')) || []
@@ -62,10 +63,10 @@ const mutations = {
 }
 
 const getters = {
-  ['GET_TODO']: state => id => {
+  [getterTypes.GET_TODO]: state => id => {
     return state.todos.find(todo => todo.id === id)
   },
-  ['DONE_TODOS_COUNT']: state => {
+  [getterTypes.DONE_TODOS_COUNT]: state => {
     return state.todos.filter(todo => todo.isChecked).length
   }
 }

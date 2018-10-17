@@ -1,0 +1,38 @@
+.checkbox {
+  $h: 20px;
+
+  &__input {
+    display: none;
+
+    &:checked + .checkbox__label:before {
+      content: '\2713';
+      font-size: 20px;
+      font-weight: bold;
+      color: $active-color;
+      text-align: center;
+      line-height: $h;
+      border-color: $active-color;
+    }
+
+    &:checked + label {
+      color: $active-color;
+    }
+  }
+
+  &__label {
+    display: inline-block;
+    position: relative;
+    padding-left: 2rem;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      @include centY;
+      left: 0;
+      width: $h;
+      height: $h;
+      background-color: #fff;
+      border: 1px solid #ccc;
+    }
+  }
+}

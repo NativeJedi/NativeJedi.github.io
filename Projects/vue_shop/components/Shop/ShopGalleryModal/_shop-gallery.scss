@@ -1,0 +1,23 @@
+.shop-gallery {
+  .modal {
+    max-width: 400px;
+    width: calc(100% - 80px);
+    min-width: auto;
+    border-radius: 0;
+    
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen  and (max-width : 460px) {
+  .shop-gallery {
+    .modal {
+      &__close {
+        top: 0;
+        right: -30px;
+      }
+    }
+  }
+}

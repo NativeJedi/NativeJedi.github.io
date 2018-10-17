@@ -1,0 +1,159 @@
+@import 'normalize';
+@import 'base';
+@import 'animations';
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  transition: all .5s cubic-bezier(.55,0,.1,1);
+}
+
+.btn {
+  &-group {
+    margin: 10px 0;
+    button, a {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &-main {
+    position: relative;
+    padding: 5px 10px;
+    width: 150px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    overflow: hidden;
+    font-weight: bold;
+    
+    &:before {
+      content: '';
+      @include stretch;
+      background-color: #fff;
+      transform: translateX(-100%);
+      z-index: -1;
+      transition: transform .3s;
+    }
+
+    &:hover {
+      color: #535353;
+      &:before {
+        transform: translateX(0);
+      }
+    }
+
+    &--danger {
+      display: block;
+      border-color: $second-color;
+      color: $second-color;
+      margin: 2rem auto;
+      text-align: center;
+      &:before {
+        background-color: $second-color;
+      }
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  &-default {
+    position: relative;
+    color: $first-color;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    z-index: 10;
+    padding: 0;
+    &.is-active {
+      color: $second-color;
+      border-bottom: 2px solid $second-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-tab {
+    padding: 10px 0;
+    width: 250px;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 2px solid currentColor;
+    font-style: italic;
+    font-weight: bold;
+
+    &.is-active {
+      color: #fff;
+      background-color: $second-color;
+      border-color: $second-color;
+    }
+  }
+}
+
+.form {
+  max-width: 550px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 0 0 0;
+
+  &--contacts {
+    padding: 0;
+  }
+}
+
+.social-list {
+  display: flex;
+  margin: 40px 0 20px 0;
+  &__item {
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    color: $default-color;
+    height: 25px;
+    font-size: 25px;
+    transition: color .3s, transform .2s;
+
+    &:hover {
+      color: $second-color;
+      transform: scale(1.3)
+    }
+  }
+}
+
+.main-title {
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.section {
+  padding: 50px 20px 40px 20px;
+}
+
+.logo-link {
+  display: block;
+  max-width: 300px;
+  margin: 0 auto;
+  img {
+    max-width: 300px;
+  }
+}
+@media only screen  and (max-width : 460px) {
+  .btn {
+    &-tab {
+      width: 100px;
+      font-size: 16px;
+    }
+  }
+}

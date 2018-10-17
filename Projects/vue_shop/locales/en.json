@@ -1,0 +1,46 @@
+{
+  "links": {
+    "shop": "Shop",
+    "collection": "Collection",
+    "contacts": "Contacts",
+    "mainpage": "Main page",
+    "tomain": "To main page"
+  },
+  "shop": {
+    "title": "Out goods"
+  },
+  "buttons": {
+    "description": "description",
+    "look": "look",
+    "buy": "Buy",
+    "menu": "Menu",
+    "close": "Close",
+    "order": "Order",
+    "back": "Back",
+    "submit": "Submit"
+  },
+  "collection": {
+    "man": "Man",
+    "woman": "Woman",
+    "kids": "Kids",
+    "clickInfo": "Click to view info"
+  },
+  "placeholders": {
+    "mail": "Input your mail",
+    "phone": "Input your phone",
+    "message": "Input your message",
+    "name": "Input your name"
+  },
+  "contacts": {
+    "title": "Our contacts",
+    "mail": "Mail",
+    "phone": "Phone",
+    "telegram": "Telegram",
+    "adress": "Adress",
+    "place": "Ukraine, Bila Tserkva, Nekrasova 12a"
+  },
+  "thanks": {
+    "thanks": "Thank you for your buying!",
+    "more": "Need something else?"
+  }
+}

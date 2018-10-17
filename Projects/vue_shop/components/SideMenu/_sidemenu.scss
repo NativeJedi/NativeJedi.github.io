@@ -1,0 +1,151 @@
+$p: 40px;
+
+.sidemenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  max-width: 250px;
+  width: 100%;
+  padding: 120px 0 60px 0;
+  background-color: rgba(#fafafa, 0.7);
+  box-shadow: 1px 1px 2px #000;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+  overflow: hidden;
+  z-index: 5;
+
+  &.is-active {
+    transform: translateX(0);
+  }
+
+  .btn-group {
+    position: absolute;
+    bottom: 20px;
+    left: $p;
+  }
+}
+
+.navigation {
+  &__link {
+    position: relative;
+    display: block;
+    padding: 5px $p;
+    text-transform: uppercase;
+    color: currentColor;
+    text-decoration: none;
+
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+
+    &:hover {
+      background-color: $first-color;
+      color: #fff;
+
+      .navigation__text {
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+    padding: 2px 0;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: currentColor;
+      transition: width 0.3s;
+    }
+  }
+}
+
+.btn-menu {
+  position: fixed;
+  top: 15px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  padding: 10px 10px 10px 5px;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  color: $first-color;
+  border-radius: 5px;
+  z-index: 10;
+  font-size: 18px;
+  line-height: 20px;
+  text-transform: uppercase;
+
+  &__wrap {
+    position: relative;
+    width: 25px;
+    height: 20px;
+    overflow: visible;
+    margin-right: 5px;
+  }
+
+  &__item {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: currentColor;
+    transition: transform 0.3s, opacity 0.3s;
+    &--top {
+      top: 0;
+    }
+    &--mid {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &--bot {
+      bottom: 0;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.is-active {
+    .btn-menu {
+      &__item {
+        &--top {
+          transform: rotate(45deg);
+          transform-origin: top left;
+        }
+
+        &--mid {
+          transform: rotate(180deg) translateY(-50%);
+          opacity: 0;
+        }
+
+        &--bot {
+          transform: rotate(-45deg);
+          transform-origin: bottom left;
+        }
+      }
+    }
+  }
+}
+
+.btn-local {
+  text-decoration: none;
+  color: $second-color;
+  font-size: 20px;
+  font-weight: bold;
+  &.is-active {
+    border-bottom: 2px solid $second-color;
+  }
+}

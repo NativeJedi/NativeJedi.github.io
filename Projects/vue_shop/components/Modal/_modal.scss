@@ -1,0 +1,112 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(#000, .5);
+  transition: opacity .3s;
+  z-index: 10;
+}
+
+.modal {
+  $bdrz: 15px;
+  @include cent;
+  min-width: 400px;
+  min-height: 200px;
+  background-color: #fff;
+  border-radius: $bdrz;
+  transition: all .3s;
+  z-index: 11;
+
+  &__header {
+    padding: 10px 20px;
+    background-color: $first-color;
+    color: #fff;
+    text-align: center;
+    border-radius: $bdrz $bdrz 0 0;
+  }
+  &__title {
+    margin: 0;
+  }
+
+  &__content {
+    padding: 20px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 5px;
+    right: -40px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    transition: transform .3s;
+
+    &:before,
+    &:after {
+      content: '';
+      @include cent;
+      width: 3px;
+      height: 100%;
+      background-color: #fafafa;
+      border-radius: 2px;
+      transition: all .3s;
+    }
+
+    &:before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &:after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &:hover {
+      transform: rotate(180deg) scale(1.1);
+
+      &:after,
+      &:before {
+        background-color: #fff;
+        box-shadow: 0 0 2px #fff;
+      }
+    }
+  }
+}
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal,
+.modal-leave-active .modal {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+@media only screen  and (max-width : 460px) {
+  .modal {
+    &--description {
+      .modal {
+        width: 95%;
+        min-width: initial;
+
+        &__close {
+          top: 10px;
+          right: 10px;
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    &--galery {
+      .modal {
+        width: 95%;
+      }
+    }
+  }
+}

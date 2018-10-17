@@ -1,0 +1,41 @@
+.form {
+  &__warning {
+    padding: 0 0 20px 0;
+    color: red;
+    font-size: 12px;
+  }
+
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    .btn-main {
+      margin: 0;
+
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+.shake-anim {
+  animation: shake .3s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0%);
+  }
+  25% {
+    transform: translateX(-10%);
+  }
+  50% {
+    transform: translateX(10%);
+  }
+  75% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}

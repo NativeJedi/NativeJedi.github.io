@@ -1,6 +1,6 @@
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
-    base: '/<repository-name>/'
+    base: '/blackjeezuz.github.io/Projects/vue_shop/'
   }
 } : {}
 

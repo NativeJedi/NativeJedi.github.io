@@ -2,7 +2,7 @@ const SUCCESS = '_SUCCESS'
 const ERROR = '_ERROR'
 const START = '_START'
 
-const logger = store => next => action => {
+const loader = store => next => action => {
   const { dispatch } = store;
   const { url, type } = action;
 
@@ -21,4 +21,4 @@ const logger = store => next => action => {
   return next(action);
 };
 
-export default logger;
+export default loader;

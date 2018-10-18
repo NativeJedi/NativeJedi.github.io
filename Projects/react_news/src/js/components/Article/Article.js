@@ -2,6 +2,7 @@ import React from 'react'
 import propTypes from 'prop-types'
 import Button from '../Button'
 import ArticleBody from '../ArticleBody'
+import ArticleComment from '../ArticleComment'
 
 class Article extends React.Component {
   static propTypes = {
@@ -16,8 +17,6 @@ class Article extends React.Component {
 
   constructor(props) {
     super(props)
-    const text = `<p>${this.props.article}</p>`
-
     this.state = {
       isOpen: false,
     }
@@ -32,8 +31,7 @@ class Article extends React.Component {
   }
 
   openPopap = () => {
-    const index = this.props.article._id;
-    this.props.events.open(index)
+    this.props.events.open(this.props.article.slug)
   }
 
   render() {
@@ -52,6 +50,7 @@ class Article extends React.Component {
           open={this.state.isOpen}
           id={this.props.article._id} 
         />
+        <ArticleComment comments={this.props.article.comments} id={this.props.article._id} />
         <div className="article__footer">
           {this.props.isRemoveVisible && <button onClick={this.openPopap} className="btn btn-small red">Remove article</button>}
         </div>

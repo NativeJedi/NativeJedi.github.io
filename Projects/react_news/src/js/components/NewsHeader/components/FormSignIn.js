@@ -1,38 +1,21 @@
 import React from 'react'
 import Cookies from 'js-cookie'
+import { connect } from 'react-redux';
 import InputField from './InputField'
+import { userLogin } from '../../../reducers/newsDuck'
 
 class FormSignIn extends React.Component {
   state = {
     mail: '',
-    password: '',
-    isFetching: false
+    password: ''
   }
 
   logIn = (e) => {
     e.preventDefault()
-    this.setState({
-      isFetching: true
-    })
-    fetch(`${this.props.apiUrl}auth/signin`, { 
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        email: this.state.mail,
-        password: this.state.password
-      })
-    }).then(res => res.json())
-      .then(result => {
-        Cookies.set('token', result.token)
-      })
-      .then(this.setState({
-        isFetching: false
-      }))
-      .then(() => {
-        this.props.close()
-      })
+    const promise = new Promise((resolve, reject) => {
+      this.props.userLogin(`${this.props.apiUrl}auth/signin`, this.state.mail, this.state.password)
+    });
+    promise.then(resolve => console.log(resolve))
   }
   
   handleMail = (e) => {
@@ -64,7 +47,7 @@ class FormSignIn extends React.Component {
       label: 'Your password'
     }
 
-    if (this.state.isFetching) {
+    if (this.props.isUserFetching) {
       return (
         <div className="preloader-wrapper big active">
           <div className="spinner-layer spinner-blue">
@@ -92,4 +75,9 @@ class FormSignIn extends React.Component {
   }
 }
 
-export default FormSignIn
+export default connect(state => ({
+  isFetching: state.newsBlock.isFetching,
+  isUserFetching: state.newsBlock.isUserFetching
+}), {
+  userLogin
+})(FormSignIn)

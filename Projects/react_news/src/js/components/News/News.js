@@ -8,9 +8,6 @@ export const customStyles = {
   content: {
     top: '50%',
     left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
     transform: 'translate(-50%, -50%)'
   }
 };
@@ -21,7 +18,7 @@ class News extends React.Component {
 
     this.state = {
       modalIsOpened: false,
-      removingId: 0,
+      removingSlug: '',
       apiUrl: 'https://mateacademy-react-server.herokuapp.com/api/v1/'
     }
   }
@@ -34,12 +31,10 @@ class News extends React.Component {
     this.props.loadData(this.state.apiUrl)
   }
 
-  openModal = (index) => {
-    const id = index;
-
+  openModal = (slug) => {
     this.setState({
       modalIsOpened: true,
-      removingId: id
+      removingSlug: slug
     })
   }
 
@@ -50,12 +45,13 @@ class News extends React.Component {
   }
 
   removeArticle = () => {
-    this.props.removeArticle(this.state.removingId);
-
+    this.props.removeArticle(`${this.state.apiUrl}article/remove/${this.state.removingSlug}`);
     this.closeModal();
   }
 
-  switchRemoveButtonsVisibility = () => {
+  switchRemoveButtonsVisibility = (e) => {
+    e.stopPropagation()
+    console.log(1)
     this.setState((prev) => {
       return {
         isRemoveVisible: !prev.isRemoveVisible
@@ -91,7 +87,20 @@ class News extends React.Component {
       <div className="news">
         <NewsHeader />
         <h1 className="news__title">Whats new tooday?</h1>
-        {this.props.isUser && <button className={this.props.isRemoveVisible ? 'switcher' : 'switcher is-active'} onClick={this.switchRemoveButtonsVisibility}>Hide remove buttons</button>}
+        {this.props.isUser && 
+          <div className="switch">
+            <label htmlFor="switchBtns">
+              Off
+              <input
+                id="switchBtns"
+                type="checkbox"
+                onChange={this.switchRemoveButtonsVisibility}
+              />
+              <span className="lever" />
+              On
+            </label>
+          </div>
+        }
         <React.Fragment>
           {articleArray}
         </React.Fragment>
@@ -102,10 +111,10 @@ class News extends React.Component {
           style={customStyles}
           ariaHideApp={false}
         >
-          <div className="modal">
-            <h4 className="modal__title">Are you sure?</h4>
-            <button className="btn btn--apply" onClick={this.removeArticle}>Yes</button>
-            <button className="btn btn--cancel" onClick={this.closeModal}>No</button>
+          <div className="confirm">
+            <h4 className="confirm__title">Are you sure?</h4>
+            <button className="btn red waves-effect" onClick={this.removeArticle}>Yes</button>
+            <button className="btn waves-effect" onClick={this.closeModal}>No</button>
           </div>
         </Modal>
       </div>

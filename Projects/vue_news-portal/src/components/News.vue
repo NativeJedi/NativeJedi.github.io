@@ -5,7 +5,7 @@
     <div class="news__body">
       <button class="news__btn" @click="getNews">{{ buttonText }}</button>
       <ul class="news__list">
-        <NewsItem v-for="item in results" :key="item.id" :article="item" :config-key="configKey" />
+        <NewsItem @getNewsText="openArticle" v-for="article in articles" :key="article.id" :article="article" :config-key="configKey" />
       </ul>
     </div>
   </div>
@@ -27,7 +27,7 @@ export default {
       configKey: config.key,
       url: config.url,
       isLoaded: false,
-      results: []
+      articles: []
     }
   },
   computed: {
@@ -41,9 +41,26 @@ export default {
       fetch(this.url + this.configKey)
         .then(res => res.json())
         .then(result => {
-          this.results = [...result.response.results]
+          this.articles = result.response.results.map(item => {
+            const article = {
+              id: item.id,
+              title: item.webTitle,
+              apiUrl: item.apiUrl,
+              isOpen: false,
+              isLoaded: false
+            }
+            return article
+          })
           this.isLoaded = true
         })
+    },
+
+    openArticle: function(article) {
+      for (let item of this.articles) {
+        if (item === article) continue
+        item.isOpen = false
+      }
+      article.isOpen = !article.isOpen
     }
   }
 }
@@ -61,11 +78,11 @@ export default {
 
   &__btn {
     position: relative;
-    min-width: 150px;
+    min-width: 175px;
     padding: 5px 20px;
-    border: 2px solid #41b883;
+    border: 2px solid $main-color;
     background-color: transparent;
-    color: #41b883;
+    color: $main-color;
     font-weight: bold;
     cursor: pointer;
     overflow: hidden;
@@ -90,7 +107,7 @@ export default {
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: #41b883;
+      background-color: $main-color;
       transform: translateX(-100%);
       transition: transform 0.4s;
       z-index: -1;

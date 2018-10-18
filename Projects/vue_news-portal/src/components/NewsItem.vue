@@ -1,6 +1,6 @@
 <template>
-  <li class="news-item" @click="getNewsText">
-    <h4 class="news-item__title" v-bind:class="{active: isOpen}">{{ article.webTitle }}</h4>
+  <li class="news-item" @click="getNewsText" >
+    <h4 class="news-item__title" v-bind:class="{active: article.isOpen}">{{ article.title }}</h4>
     <div class="news-item__text" v-html="markup"/>
   </li>
 </template>
@@ -14,31 +14,32 @@ export default {
   },
   data() {
     return {
-      markup: '',
-      isOpen: false,
-      isLoaded: false
+      markup: ''
     }
+  },
+  created() {
+    this.getRefs()
   },
 
   methods: {
     getNewsText: function() {
-      if (this.isLoaded) {
-        this.isOpen = !this.isOpen
-        return
-      }
+      this.$emit('getNewsText', this.article)
+      if (this.article.isLoaded) return
+
       const apiUrl = `${this.article.apiUrl}?show-blocks=body&${this.configKey}`
       fetch(apiUrl)
         .then(res => res.json())
         .then(result => {
-          this.isLoaded = true
+          this.article.isLoaded = true
           const data = result.response.content.blocks.body
           data.forEach(item => {
             this.markup += item.bodyHtml
           })
         })
-        .then(() => {
-          this.isOpen = true
-        })
+    },
+
+    getRefs: function() {
+      // console.log(this.$refs)
     }
   }
 }
@@ -67,7 +68,7 @@ export default {
     transition: all 0.4s;
     &.active {
       padding-left: 50px;
-      color: #41b883;
+      color: $main-color;
 
       & + div {
         max-height: 400px;
@@ -81,20 +82,16 @@ export default {
     margin: 0 10px;
     padding: 0 10px;
     transition: max-height 0.4s;
-    overflow-y: scroll;
     overflow-x: hidden;
     box-sizing: content-box;
     font-size: 14px;
-    &::-webkit-scrollbar {
-      width: 5px;
-    }
+    @include scrollbar(5px, $main-color);
 
-    &::-webkit-scrollbar-thumb {
-      border-radius: 2px;
-      box-shadow: inset 10px 0 0 #41b883;
+    p {
+      margin: 0;
     }
-
-    img {
+    .gu-image {
+      max-width: 100%;
       object-fit: cover;
     }
   }

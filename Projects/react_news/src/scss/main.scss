@@ -77,19 +77,64 @@ body {
 }
 
 .comments {
+  padding: 0 10px 0 20px;
   &__head {
     position: relative;
-    padding: 0 40px 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
   }
-}
 
-.comment {
-  position: relative;
-  padding: 0 40px;
+  &__title {
+    font-size: 16px;
+  }
+
+  &__author {
+    position: relative;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  &__delete {
+    @include centY;
+    right: 0;
+    font-size: 12px;
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    line-height: 14px;
+  }
+  &__text {
+    margin: 10px 0;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+  }
 
   &__item {
-    position: relative;
+    padding: 10px 0;
   }
+
+  &__btn {
+    padding: 5px 20px 5px 10px;
+    height: auto;
+    line-height: 16px;
+
+    .icon {
+      @include centY;
+      margin: 0 10px 0 auto;
+    }
+
+    &.is-opened {
+      .icon {
+        transform: translateY(-50%) rotate(90deg);
+      }
+    }
+  }
+
   &__remove {
     @include centY;
     right: 0;
@@ -163,20 +208,12 @@ body {
 }
 
 .ReactModal__Content {
+  width: 100%;
   max-width: 768px;
+  height: auto;
   margin: 0 auto;
   z-index: 100;
   background-color: #fff;
-}
-
-.modal {
-  padding: 0 40px;
-  text-align: center;
-
-  &__title {
-    margin: 0;
-    padding: 20px 0 30px 0;
-  }
 }
 
 .input-form {
@@ -212,7 +249,6 @@ body {
   padding: 5px 20px 5px 10px;
   width: 70px;
   line-height: 16px;
-  z-index: 0;
   .icon {
     @include centY;
     right: 2%;
@@ -225,7 +261,9 @@ body {
     }
   }
 }
-
+.btn {
+  z-index: 0;
+}
 .progress-bar {
   max-width: 768px;
   @include cent;
@@ -254,5 +292,18 @@ body {
 .btn-nav {
   &:not(:last-child) {
     margin-right: 20px;
+  }
+}
+
+.confirm {
+  text-align: center;
+
+  &__title {
+    margin: 20px 0 40px;
+    font-size: 24px;
+  }
+
+  .btn {
+    margin: 0 10px;
   }
 }

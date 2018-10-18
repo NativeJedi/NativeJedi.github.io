@@ -10,9 +10,13 @@ import {
 
 const { List } = require('immutable')
 
-export const userLogin = isUser => ({
+export const userLogin = (loginUrl, email, password) => ({
   type: USER_LOGIN,
-  isUser
+  meta: {
+    email,
+    password
+  },
+  loginUrl
 })
 
 export const loadData = url => ({
@@ -30,31 +34,29 @@ export const switchButtons = isRemoveVisible => (
 )
 
 
-export const addArticle = article => (
+export const addArticle = (articleUrl, title, text, image) => (
   {
     type: ADD_ARTICLE,
     meta: {
-      article
-    }
+      text,
+      title,
+      image
+    },
+    articleUrl
   }
 )
 
-export const removeArticle = removingId => (
+export const removeArticle = removingUrl => (
   {
     type: REMOVE_ARTICLE,
-    meta: {
-      removingId
-    }
+    removingUrl
   }
 );
 
-export const removeComment = (articleId, commentId) => (
+export const removeComment = removingCommentUrl => (
   {
     type: REMOVE_COMMENT,
-    meta: {
-      articleId,
-      commentId
-    }
+    removingCommentUrl
   }
 )
 
@@ -63,43 +65,49 @@ const initialState = {
   apiUrl: '',
   articles: List(),
   isFetching: false,
-  isUser: !!Cookies.get('token')
+  token: '',
+  isUser: !!Cookies.get('token'),
+  isUserFetching: false,
+  isArticleFetching: false
 };
 
 const actionHandlers = {
-  REMOVE_ARTICLE: (state, action) => {
-    const { meta } = action;
-
-    return { 
-      ...state, 
-      articles: state.articles.filter(item => item._id !== meta.removingId)
-    }
-  },
   SWITCH_BUTTONS: (state) => {
     return { 
       ...state, 
       isRemoveVisible: !state.isRemoveVisible
     }
   },
-  REMOVE_COMMENT: (state, action) => {
-    const { meta } = action;
-
-    return { 
-      ...state, 
-      articles: state.articles.map(item => {
-        if (item.id === meta.articleId) {
-          return { ...item, comments: item.comments.filter(el => el.id !== meta.commentId) }
-        }
-        return item
-      })
+  REMOVE_COMMENT_START: (state, action) => {
+    return {
+      ...state
     }
   },
-  ADD_ARTICLE: (state, action) => {
-    const { meta } = action;
-
+  REMOVE_COMMENT_SUCCESS: (state, action) => {
+    return {
+      ...state
+    }
+  },
+  REMOVE_ARTICLE_START: state => {
+    return {
+      ...state
+    }
+  },
+  REMOVE_ARTICLE_SUCCESS: state => {
+    return {
+      ...state
+    }
+  },
+  ADD_ARTICLE_START: (state) => {
     return {
       ...state,
-      articles: [...state.articles, meta.article]
+      isArticleFetching: true
+    }
+  },
+  ADD_ARTICLE_SUCCESS: (state, action) => {
+    return {
+      ...state,
+      isArticleFetching: false
     }
   },
   LOAD_DATA: (state, action) => {
@@ -117,8 +125,14 @@ const actionHandlers = {
     const { payload } = action;
     return { ...state, articles: [...payload.items], isFetching: false };
   },
-  USER_LOGIN: (state, action) => {
-    return { ...state, isUser: action.isUser }
+  USER_LOGIN_START: (state, action) => {
+    return {
+      ...state,
+      isUserFetching: true
+    }
+  },
+  USER_LOGIN_SUCCESS: (state, action) => {
+    return { ...state, token: action.token, isUserFetching: false }
   }
 };
 

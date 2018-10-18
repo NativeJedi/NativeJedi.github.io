@@ -438,7 +438,6 @@
 	border: none;
 	background-color: transparent;
 	font-size: 18px;
-	color: rgb(154, 154, 154);
 	line-height: 1;
 	color: #fff;
 	z-index: 10;
@@ -462,9 +461,7 @@
 		transition-delay: 0.1s; 
 	}
 
-
 	&.active {
-
 		.mobile-btn__topper {
 			transform: rotate(-45deg) translate(-9px, 6px);
 		}
@@ -786,7 +783,7 @@
 			}
 			.blob-code-inner {
 				color: #fff;
-				white-wrap: break-word;
+				white-space: break-word;
 			}
 		}
 	}

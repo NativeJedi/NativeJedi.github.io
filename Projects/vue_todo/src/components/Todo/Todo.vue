@@ -25,6 +25,7 @@
 import TodoHeader from '../TodoHeader'
 import TodoItem from '../TodoItem'
 import TodoFooter from '../TodoFooter'
+import { mapMutations, mapState } from 'vuex'
 
 export default {
   name: 'Todo',
@@ -36,17 +37,19 @@ export default {
   data () {
     return {
       inputValue: '',
-      filter: this.lsGet('filter') || 'All',
-      todos: this.lsGet() || []
+      filter: this.lsGet('filter') || 'All'
     }
   },
   watch: {
     todos: {
       handler: function (todos) {
-        this.lsSet(this.todos)
+        this.setTodos({ todos })
       },
       deep: true
     }
+  },
+  created () {
+    console.log(this.todos)
   },
   computed: {
     todoCount () {
@@ -56,7 +59,10 @@ export default {
     isCompleted () {
       let todos = this.todos.filter(item => item.isChecked)
       return !!todos.length
-    }
+    },
+    ...mapState({
+      todos: state => state.todos.todos
+    })
   },
   methods: {
     addTodo: function () {
@@ -66,7 +72,7 @@ export default {
         isChecked: false,
         isVisible: !(this.filter === 'Completed')
       }
-      this.todos = [...this.todos, todo]
+      this.pushTodo({ todo })
     },
     removeTodo: function (id) {
       this.todos = this.todos.filter(todo => todo.id !== id)
@@ -113,7 +119,11 @@ export default {
     },
     lsSet: function (todos, STORAGE_KEY = 'todos') {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(todos))
-    }
+    },
+    ...mapMutations({
+      pushTodo: 'todos/pushTodo',
+      setTodos: 'todos/setTodos'
+    })
   }
 }
 </script>

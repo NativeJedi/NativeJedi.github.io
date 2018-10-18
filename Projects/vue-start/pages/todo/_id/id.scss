@@ -1,0 +1,19 @@
+.todo-description {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px 0;
+
+  &__title {
+    font-size: 20px;
+    text-align: center;
+  }
+  &__field {
+    font-weight: bold;
+    word-break: break-word;
+    span {
+      font-weight: normal;
+      font-style: italic;
+      margin-right: 20px;
+    }
+  }
+}

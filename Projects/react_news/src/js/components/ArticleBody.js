@@ -1,6 +1,5 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import ArticleComment from './ArticleComment/'
 
 class ArticleBody extends React.Component {
   static propTypes = {
@@ -21,7 +20,6 @@ class ArticleBody extends React.Component {
         <div className={this.switchClass(this.props.open)}>
           {this.props.text}
         </div>
-        {/* <ArticleComment id={this.props.id} /> */}
       </div>
     )
   }

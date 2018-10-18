@@ -1,26 +1,20 @@
 import React from 'react'
+import Cookies from 'js-cookie'
 
 class InputForm extends React.Component {
   state = {
     title: '',
-    text: ''
+    text: '',
+    image: null
   }
 
   addArticle = (e) => {
     e.preventDefault()
-
-    const article = {
-      title: this.state.title,
-      apiUrl: null,
-      text: this.state.text,
-      _id: this.props.articles.length + 1,
-      date: new Date(),
-      comments: []
-    }
-
-    this.props.addArticle(article)
+    this.props.addArticle(`${this.props.apiUrl}article/create`, this.state.title, this.state.text, this.state.image)
     this.setState({
-      title: '',
+      title: ''
+    })
+    this.setState({
       text: ''
     })
   }
@@ -41,11 +35,11 @@ class InputForm extends React.Component {
       <form className="input-form" action="#" onSubmit={this.addArticle}>
         <h3 className="input-form__title">Add your article</h3>
         <div className="input-field">
-          <input id="articleText" onBlur={this.handleTitle} type="text" />
+          <input value={this.state.title} id="articleText" onChange={this.handleTitle} type="text" />
           <label htmlFor="articleText">Enter your article title</label>
         </div>
         <div className="input-field">
-          <textarea id="textarea1" className="materialize-textarea" onBlur={this.handleText} />
+          <textarea value={this.state.text} id="textarea1" className="materialize-textarea" onChange={this.handleText} />
           <label htmlFor="textarea1">Enter your article text</label>
         </div>
         <button className="btn" type="submit">Add article</button>

@@ -1,7 +1,0 @@
-export const LOAD_ARTICLES = 'LOAD_ARTICLES'
-export const LOAD_DATA = 'LOAD_DATA'
-export const REMOVE_ARTICLE = 'REMOVE_ARTICLE'
-export const ADD_ARTICLE = 'ADD_ARTICLE'
-export const SWITCH_BUTTONS = 'SWITCH_BUTTONS'
-export const REMOVE_COMMENT = 'REMOVE_COMMENT'
-export const USER_LOGIN = 'USER_LOGIN'

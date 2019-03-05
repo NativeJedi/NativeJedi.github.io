@@ -1,0 +1,79 @@
+/*!
+ * Vue.js v2.5.21
+ * (c) 2014-2018 Evan You
+ * Released under the MIT License.
+ */
+
+/*!
+  * vue-router v3.0.2
+  * (c) 2018 Evan You
+  * @license MIT
+  */
+
+/*!
+ * cookie
+ * Copyright(c) 2012-2014 Roman Shtylman
+ * Copyright(c) 2015 Douglas Christopher Wilson
+ * MIT Licensed
+ */
+
+/*!
+ * JavaScript Cookie v2.2.0
+ * https://github.com/js-cookie/js-cookie
+ *
+ * Copyright 2006, 2015 Klaus Hartl & Fagner Brack
+ * Released under the MIT license
+ */
+
+/**
+ * vue-meta v1.5.8
+ * (c) 2018 Declan de Wet & Sébastien Chopin (@Atinux)
+ * @license MIT
+ */
+
+/*
+	object-assign
+	(c) Sindre Sorhus
+	@license MIT
+	*/
+
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
+/*!
+ * vue-no-ssr v1.1.1
+ * (c) 2018-present egoist <0x142857@gmail.com>
+ * Released under the MIT License.
+ */
+
+/**!
+ * MixItUp v3.3.1
+ * A high-performance, dependency-free library for animated filtering, sorting and more
+ * Build 94e0fbf6-cd0b-4987-b3c0-14b59b67b8a0
+ *
+ * @copyright Copyright 2014-2018 KunkaLabs Limited.
+ * @author    KunkaLabs Limited.
+ * @link      https://www.kunkalabs.com/mixitup/
+ *
+ * @license   Commercial use requires a commercial license.
+ *            https://www.kunkalabs.com/mixitup/licenses/
+ *
+ *            Non-commercial use permitted under same terms as CC BY-NC 3.0 license.
+ *            http://creativecommons.org/licenses/by-nc/3.0/
+ */
+
+/*!
+ * vue-i18n v8.7.0 
+ * (c) 2019 kazuya kawaguchi
+ * Released under the MIT License.
+ */
+
+/*!
+ * vue-carousel v0.16.2
+ * (c) 2018 todd.beauchamp@ssense.com
+ * https://github.com/ssense/vue-carousel#readme
+ */

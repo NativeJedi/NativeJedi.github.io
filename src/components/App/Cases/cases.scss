@@ -1,0 +1,170 @@
+.cases {
+  @extend %flex-sb;
+  @media only screen and (max-width : 1040px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &__ico {
+    position: absolute;
+    top: 25px;
+    left: 26px;
+    background-color: #fff;
+    border-radius: 50%;
+
+    &:nth-child(1) {
+      transform: translate(calc(-26px - 50%), 10px);
+      animation: rotation-first 8s linear infinite;
+    }
+    &:nth-child(2) {
+      transform: translate(calc(55px - 50%), 10px);
+      animation: rotation-second 8s linear infinite;
+    }
+    &:nth-child(3) {
+      transform: translateY(calc(-27.5px - 50%));
+      animation: rotation-third 8s linear infinite;
+    }
+  }
+  
+  &__icon {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 30px auto;
+    border: 3px solid $main-color;
+    border-radius: 50%;
+    color: $main-color;
+    font-size: 35px;
+
+    .cases__ico {
+      animation-play-state: paused;
+      @media only screen and (max-width : 767px) {
+        animation: none;
+      }
+    }
+  }
+
+  &__item {
+    width: calc(25% - 30px);
+    max-width: 280px;
+    @media only screen and (max-width : 1040px) {
+      width: 50%;
+      max-width: 280px;
+      margin: 30px 30px 0 30px;
+    }
+    @media only screen and (max-width : 800px) {
+      width: calc(50% - 30px);
+      margin: 30px 15px 0 15px;
+    }
+    @media only screen and (max-width : 767px) {
+      width: 100%;
+      margin: 0 0 30px 0;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    perspective: 1000;
+
+    &:hover {
+      .cases__ico {
+        animation-play-state: running;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .cases__container {
+        box-shadow: 0 0 70px 0 rgba(#000, .2);
+      }
+      .cases__details {
+        color: $main-color;
+        span {
+          transform: translateX(10px);
+        }
+      }
+      .cases__icon-back {
+        color: $main-color;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.is-flipped {
+      .cases__flipper {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+
+  &__flipper {
+    position: relative;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  &__container {
+    backface-visibility: hidden;
+    transition: box-shadow .5s;
+
+    &--front {
+      padding: 40px 15px;
+    }
+    &--back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 3;
+      padding: 20px 15px 40px 15px;
+      background-color: #fff;
+      transform: rotateY(180deg);
+      text-align: left;
+      font-size: 15px;
+
+      p:not(:last-child) {
+        margin: 0 0 5px 0;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 0 5px 0;
+    font-size: 20px;
+  }
+
+  &__details {
+    margin-top: 15px;
+    font-weight: 500;
+    transition: color .3s;
+    @media only screen and (max-width : 767px) {
+      color: $main-color;
+    }
+    span {
+      transition: transform .3s;
+    }
+  }
+
+  &__icon-back {
+    @extend %cent-x;
+    bottom: 15px;
+    font-size: 25px;
+  }
+}
+
+@keyframes rotation-third {
+  from { transform: rotate(0deg) translateY(calc(-27.5px - 50%)) rotate(0deg); }
+  to   { transform: rotate(360deg) translateY(calc(-27.5px - 50%)) rotate(-360deg); }
+}
+
+@keyframes rotation-first {
+  from { transform: rotate(0deg) translate(calc(-26px - 50%), 10px) rotate(0deg); }
+  to   { transform: rotate(360deg) translate(calc(-26px - 50%), 10px) rotate(-360deg); }
+}
+
+@keyframes rotation-second {
+  from { transform: rotate(0deg) translate(calc(55px - 50%), 10px) rotate(0deg); }
+  to   { transform: rotate(360deg) translate(calc(55px - 50%), 10px) rotate(-360deg); }
+}

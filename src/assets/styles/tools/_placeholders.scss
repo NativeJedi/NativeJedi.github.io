@@ -1,0 +1,56 @@
+%bg-repeat {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+%bg-cover {
+  @extend %bg-repeat;
+  background-size: cover;
+}
+%bg-contain {
+  @extend %bg-repeat;
+  background-size: contain;
+}
+
+%cent-x {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+%cent {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+%flex {
+  display: flex;
+}
+
+%flex-c {
+  @extend %flex;
+  justify-content: center;
+}
+
+%flex-c-c {
+  @extend %flex-c;
+  align-items: center;
+}
+
+%flex-sb {
+  @extend %flex;
+  justify-content: space-between;
+}
+
+%flex-sb-c {
+  @extend %flex-sb;
+  align-items: center;
+}
+
+%stretch {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}

@@ -1,0 +1,96 @@
+.about {
+  @extend %flex-sb;
+  padding-top: 20px;
+
+  @media only screen and (max-width : 1040px) {
+    padding-top: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__skills {
+    width: 50%;
+
+    @media only screen and (max-width : 1040px) {
+      margin-top: 40px;
+      width: 100%;
+    }
+  }
+
+  &__person {
+    margin: 0;
+  }
+
+  &__content {
+    max-width: 400px;
+    text-align: center;
+  }
+
+  &__img {
+    max-width: 250px;
+    width: 100%;
+    border-radius: 50%;
+  }
+
+  &__caption {
+    margin: 5px 0 15px 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.skills-list {
+  color: #fff;
+  @media only screen and (max-width : 767px) {
+    font-size: 15px;
+  }
+  &__item {
+    @extend %flex;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__name,
+  &__percent {
+    height: 30px;
+    line-height: 30px;
+  }
+
+  &__name {
+    width: 110px;
+    background-color: $main-color;
+    text-align: center;
+    @media only screen and (max-width : 767px) {
+      width: 100px;
+    }
+  }
+
+  &__percent {
+    background-color: $dark-bg;
+    flex: 1;
+    text-align: right;
+
+    &-line {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    &-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: $dark-main;
+      padding-right: 20px;
+      transition: transform 1s;
+      @media only screen and (max-width : 767px) {
+        font-size: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@import 'base';
+@import 'normalize';
+@import 'grid';
+@import 'animations';
+
+#__nuxt {
+  min-width: 360px;
+  width: 100%;
+}
+
+/* #Buttons */
+
+.btn-default {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+/* #UI */
+
+.caption {
+  color: $caption-color;
+  font-weight: 700;
+}
+
+.link {
+  color: $dark-main;
+  font-weight: 500;
+}
+/* #Typography */
+
+.section-title {
+  position: relative;
+  padding: 10px 0;
+  margin-bottom: 70px;
+  font-weight: 500;
+  font-size: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  @media only screen and (max-width : 1040px) {
+    margin-bottom: 50px;
+  }
+  @media only screen and (max-width : 767px) {
+    margin: 20px 0 50px 0;
+    font-size: 34px;
+  }
+  &:after {
+    @extend %cent-x;
+    bottom: 0;
+    content: '';
+    width: 60px;
+    height: 4px;
+    background-color: currentColor;
+  }
+}

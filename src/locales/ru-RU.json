@@ -1,0 +1,75 @@
+{
+  "myname": "Руслан Лукьяненко",
+  "main": {
+    "greetings": "Привет, моё имя",
+    "proffession": "и я front end разработчик"
+  },
+  "navigation": {
+    "home": "Главная",
+    "cases": "Кейсы",
+    "about": "Обо мне",
+    "projects": "Проекты"
+  },
+  "cases": {
+    "responsive": {
+      "title": "Отзывчивость",
+      "textUpper": "Моя разметка работает на любых девайсах.",
+      "textLower": "Диапазон поддерживаемых разрешений от 320px малых девайсов до больших 1920px+ широкоэкранных мониторов."
+    },
+    "fast": {
+      "title": "Скорость",
+      "textUpper": "Быстрая загрузка - приоритет №1.",
+      "textLower": "Увеличение скорости загрузки страницы с использованием лучших практик оптимизации изображений, минимизации, сжатия, разделения кода и т.д."
+    },
+    "browser": {
+      "title": "Кроссбраузерность",
+      "textUpper": "Предоставление всех необходимых функций для браузеров в вашем списке.",
+      "textLower": "Поддержка всех современных браузеров, включая Edge и IE11, с помощью Post CSS, Babel и различных полифиллов."
+    },
+    "code": {
+      "title": "Качество кода",
+      "textUpper": "Масштабируемый, структурированный, организованный код.",
+      "textLower": "Моя главная цель в процессе разработки. Я всегда стараюсь достичь её с помощью принципов DRY и использования лучших практик по написанию кода."
+    },
+    "details": "Детали"
+  },
+  "about": {
+    "figcaption": "Кто этот парень?",
+    "position": "Я front end разработчик в",
+    "currentJob": "jCash.co",
+    "location": "в Киеве",
+    "text": "У меня есть большой интерес к созданию веб-интерфейсов и их разработке. Более подробную информацию о моем образовании или опыте работы вы можете найти в моем",
+    "cv": "CV"
+  },
+  "projects": {
+    "look": "Посмотреть",
+    "all": "Все",
+    "technologies": "Технологии:",
+    "tools": "Инструменты:",
+    "view": "Перейти",
+    "astorun": {
+      "title": "Онлайн магазин",
+      "description": "<p>Асторан - это небольшой онлайн магазин спортивной одежды. Создан c помощью Vue.js, на платформе Nuxt.js для сервер сайд рендеринга.</p><pСоздан для целевой аудитории Инстаграма, через которую будет осуществлятся продвижение.</p>"
+    },
+    "anycash": {
+      "title": "Онлайн кошелек",
+      "description": "<p>Anycash - ваш надежный онлайн кошелек.</p><p>Создан c помощью Vue.js, на платформе Nuxt.js для сервер сайд рендеринга. С помощью сервиса Any.cash можно совершать обмены и конвертации криптовалют. Имеется система бонусов и партнерская программа.</p>"
+    },
+    "k2k": {
+      "title": "Мгновенные кредиты и переводы",
+      "description": "<p>K2K - проект по мгновенным онлайн кредитам и переводам.</p><p>Сайт создан без js фреймворков. Из библиотек использовалась только jQuery.</p>"
+    },
+    "express-finance": {
+      "title": "Мгновенные кредиты онлайн",
+      "description": "<p>Экспресс финанс - система онлайн кредитования и переводов. ПОдробнее о возможностях вы можете посмотреть в личном кабинете.</p><p>Сайт создан на чистом js. Из библиотек использовалась только jQuery.</p>"
+    },
+    "gnc": {
+      "title": "Блокчейн технология",
+      "description": "<p>GNC является американской технологической компанией в Силиконовой долине, которая сосредоточилась на создании технологии блокчейна следующего поколения</p><p>Сайт создан на чистом js. Из библиотек использовалась только jQuery.</p>"
+    },
+    "mvc": {
+      "title": "TODO's mvc",
+      "description": "<p>По моему мнению, туду приложение - это лучшее практическое задание для новичка. Именно с него я начинаю изучение любого фреймворка. Идеально для краткого кодревью.</p><p><h4>React todo</h4><div><b>Source: </b><a class='link' target='_blank' href='https://github.com/BlackJeezuz/react-todo/tree/master/src'>https://github.com/BlackJeezuz/react-todo/tree/master/src</a></div><div><b>Demo: </b><a class='link' target='_blank' href='https://blackjeezuz.github.io/react-todo/'>https://blackjeezuz.github.io/react-todo/</a></div></p><p><h4>Vanilla todo</h4><div><b>Source: </b><a class='link' target='_blank' href='https://github.com/BlackJeezuz/vanilla-todo'>https://github.com/BlackJeezuz/vanilla-todo</a></div><div><b>Demo: </b><a class='link' target='_blank' href='https://blackjeezuz.github.io/vanilla-todo/app/'>https://blackjeezuz.github.io/vanilla-todo/app/</a></div></p><p><h4>Vue todo</h4><div><b>Source: </b><a class='link' target='_blank' href='https://github.com/BlackJeezuz/vue-todo/src/'>https://github.com/BlackJeezuz/vue-todo/src</a></div><div><b>Demo: </b><a class='link' target='_blank' href='https://blackjeezuz.github.io/vue-todo/'>https://blackjeezuz.github.io/vue-todo/</a></div></p>"
+    }
+  }
+}

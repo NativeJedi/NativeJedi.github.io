@@ -1,0 +1,12 @@
+@mixin scrollbar($width, $color) {
+	overflow-y: auto;
+	
+	&::-webkit-scrollbar {
+		width: $width;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border-radius: 2px;
+		box-shadow: inset $width*2 0 0  $color;
+	}
+}

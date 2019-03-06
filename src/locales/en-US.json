@@ -7,35 +7,35 @@
   "navigation": {
     "home": "Home",
     "cases": "Cases",
-    "about": "About",
+    "about": "About me",
     "projects": "Projects"
   },
   "cases": {
     "responsive": {
       "title": "Responsive",
-      "textUpper": "My layouts will work on any device, big or small.",
-      "textLower": "The range of supported extensions from small 320px screen devices to large 1920px+ monitor wide screens."
+      "textUpper": "My layout looks good on all devices.",
+      "textLower": "It responds to different screen sizes; from 320px(small devices) to 1920px(widescreen monitors)."
     },
     "fast": {
       "title": "Fast",
-      "textUpper": "Fast load times my highest priority.",
-      "textLower": "Optimization with the help of various auditors using best practices of image optimization, minification and compression, code splitting, etc."
+      "textUpper": "Fast load times is my highest priority.",
+      "textLower": "I use different best practices for image optimization, minimization, compression, code splitting, etc."
     },
     "browser": {
       "title": "Cross-browser",
       "textUpper": "Providing all of required features in your browser list.",
-      "textLower": "Supporting of all modern browsers including Edge and IE11 with helping of Post CSS, Babel and different polyfills."
+      "textLower": "I take into account your browser support preferences (including Edge and IE11) using Post CSS, Babel and polyfills."
     },
     "code": {
       "title": "Code quality",
       "textUpper": "Scalable, structured, clean and well organized code.",
-      "textLower": "My main goal during development process and I always try to achieve it with DRY, KISS, YAGN principes and using code best practices."
+      "textLower": "This is one of my main goals in the process of development. For this purpose I use DRY Principle and best practices for writing super readable code"
     },
-    "details": "Details"
+    "details": "More"
   },
   "about": {
     "figcaption": "Who is this guy?",
-    "position": "I'm the Front-End Developer for",
+    "position": "I am a Front-End Developer at",
     "currentJob": "jCash.co",
     "location": "in Kyiv",
     "text": "I have serious passion for creating web interfaces and their development. Details about my education or work experience you can find in my",

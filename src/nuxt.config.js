@@ -32,7 +32,7 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
-    ['nuxt-sass-resources-loader', '~/assets/styles/tools/tools.scss'],
+    ['nuxt-sass-resources-loader', '@/assets/styles/tools/tools.scss'],
     ['nuxt-i18n', {
       defaultLocale: 'en',
       locales: [{
@@ -65,12 +65,14 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+    },
+    styleResources: {
+      scss: './assets/styles/tools/tools.scss'
     }
   },
   plugins: [
     { src: '~plugins/mixitup', ssr: false },
     { src: '~plugins/aos', ssr: false },
     { src: '~plugins/vue-carousel', ssr: false }
-  ],
-  ...routerBase
+  ]
 }

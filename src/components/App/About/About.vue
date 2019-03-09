@@ -59,10 +59,10 @@ export default {
         percent: '90'
       }, {
         name: 'JavaScript',
-        percent: '80'
+        percent: '75'
       }, {
         name: 'Vue',
-        percent: '80'
+        percent: '85'
       }, {
         name: 'React',
         percent: '30'
@@ -71,7 +71,7 @@ export default {
         percent: '90'
       }, {
         name: 'GIT',
-        percent: '40'
+        percent: '50'
       }, {
         name: 'Photoshop',
         percent: '40'

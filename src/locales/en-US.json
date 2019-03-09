@@ -13,30 +13,30 @@
   "cases": {
     "responsive": {
       "title": "Responsive",
-      "textUpper": "My layout looks good on all devices.",
+      "textUpper": "My layout looks good on all devices",
       "textLower": "It responds to different screen sizes; from 320px(small devices) to 1920px(widescreen monitors)."
     },
     "fast": {
       "title": "Fast",
-      "textUpper": "Fast load times is my highest priority.",
+      "textUpper": "Fast load times my highest priority.",
       "textLower": "I use different best practices for image optimization, minimization, compression, code splitting, etc."
     },
     "browser": {
       "title": "Cross-browser",
-      "textUpper": "Providing all of required features in your browser list.",
-      "textLower": "I take into account your browser support preferences (including Edge and IE11) using Post CSS, Babel and polyfills."
+      "textUpper": "I take into account your browser support preferences.",
+      "textLower": "Providing all of required features in your browser list using Post CSS, Babel and polyfills."
     },
     "code": {
       "title": "Code quality",
       "textUpper": "Scalable, structured, clean and well organized code.",
-      "textLower": "This is one of my main goals in the process of development. For this purpose I use DRY Principle and best practices for writing super readable code"
+      "textLower": "This is one of my main goals in the process of development. For this purpose I use DRY Principle and best practices  for writing super readable code."
     },
     "details": "More"
   },
   "about": {
     "figcaption": "Who is this guy?",
     "position": "I am a Front-End Developer at",
-    "currentJob": "jCash.co",
+    "currentJob": "jCash LLC",
     "location": "in Kyiv",
     "text": "I have serious passion for creating web interfaces and their development. Details about my education or work experience you can find in my",
     "cv": "CV"
@@ -69,7 +69,7 @@
     },
     "mvc": {
       "title": "TODO's mvc",
-      "description": "<p>In my opinion, todo application is the best practical task for a beginner. This is where I begin the study of any framework. Ideal for short code review.</p><p><h4>React todo</h4><div><b>Source: </b><a class='link' target='_blank' href='https://github.com/BlackJeezuz/react-todo/tree/master/src'>https://github.com/BlackJeezuz/react-todo/tree/master/src</a></div><div><b>Demo: </b><a class='link' target='_blank' href='https://blackjeezuz.github.io/react-todo/'>https://blackjeezuz.github.io/react-todo/</a></div></p><p><h4>Vanilla todo</h4><div><b>Source: </b><a class='link' target='_blank' href='https://github.com/BlackJeezuz/vanilla-todo'>https://github.com/BlackJeezuz/vanilla-todo</a></div><div><b>Demo: </b><a class='link' target='_blank' href='https://blackjeezuz.github.io/vanilla-todo/app/'>https://blackjeezuz.github.io/vanilla-todo/app/</a></div></p><p><h4>Vue todo</h4><div><b>Source: </b><a class='link' target='_blank' href='https://github.com/BlackJeezuz/vue-todo/src/'>https://github.com/BlackJeezuz/vue-todo/src</a></div><div><b>Demo: </b><a class='link' target='_blank' href='https://blackjeezuz.github.io/vue-todo/'>https://blackjeezuz.github.io/vue-todo/</a></div></p>"
+      "description": "<p>In my opinion, todo application is the best practical task for a beginner. This is where I begin the study of framework. Ideal for short code review.</p><p><h4>React todo</h4><div><b>Source:</b> <a class='link' target='_blank' href='https://github.com/BlackJeezuz/react-todo/tree/master/src/'>https://github.com/BlackJeezuz/react-todo/tree/master/src/</a></div><div><b>Demo:</b> <a class='link' target='_blank' href='https://blackjeezuz.github.io/react-todo/'>https://blackjeezuz.github.io/react-todo/</a></div></p><p><h4>Vanilla todo</h4><div><b>Source: </b><a class='link' target='_blank' href='https://github.com/BlackJeezuz/vanilla-todo'>https://github.com/BlackJeezuz/vanilla-todo</a></div><div><b>Demo: </b><a class='link' target='_blank' href='https://blackjeezuz.github.io/vanilla-todo/app/'>https://blackjeezuz.github.io/vanilla-todo/app/</a></div></p><p><h4>Vue todo</h4><div><b>Source: </b><a class='link' target='_blank' href='https://github.com/BlackJeezuz/vue-todo/src/'>https://github.com/BlackJeezuz/vue-todo/src</a></div><div><b>Demo: </b><a class='link' target='_blank' href='https://blackjeezuz.github.io/vue-todo/'>https://blackjeezuz.github.io/vue-todo/</a></div></p>"
     }
   }
 }

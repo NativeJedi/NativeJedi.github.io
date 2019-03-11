@@ -155,7 +155,7 @@ export default {
         link: 'https://blackjeezuz.github.io/gnc/index.html'
       }, {
         name: 'MVC',
-        filter: 'mvc vue js',
+        filter: 'mvc vue js react',
         image: require('~/static/images/mvc/logo.png'),
         images: [
           require('~/static/images/mvc/vue.jpg'),

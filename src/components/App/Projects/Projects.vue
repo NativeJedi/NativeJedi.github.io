@@ -96,7 +96,7 @@ export default {
         description: this.$t('projects.astorun.description'),
         technologies: 'HTML, CSS, SCSS, Vue.js, Nuxt.js, Vuex, vue-i18n, Axios',
         tools: 'Webpack, NPM, Git, Photoshop',
-        link: 'https://blackjeezuz.github.io/astorun/'
+        link: 'https://nativejedi.github.io/astorun/'
       }, {
         name: 'Any.cash',
         filter: 'vue',
@@ -124,7 +124,7 @@ export default {
         description: this.$t('projects.k2k.description'),
         technologies: 'HTML, CSS, SCSS, jQuery, jQuery UI, Ajax',
         tools: 'Gulp, NPM, Git, Photoshop, Trello',
-        link: 'https://blackjeezuz.github.io/k2k/'
+        link: 'https://nativejedi.github.io/k2k/'
       }, {
         name: 'Express Finance',
         filter: 'js',
@@ -138,7 +138,7 @@ export default {
         description: this.$t('projects.express-finance.description'),
         technologies: 'HTML, CSS, SCSS, jQuery, Ajax, Google map API',
         tools: 'Gulp, NPM, Git, Photoshop, Trello',
-        link: 'https://blackjeezuz.github.io/express-finance/'
+        link: 'https://nativejedi.github.io/express-finance/'
       }, {
         name: 'GNC',
         filter: 'js',
@@ -152,7 +152,7 @@ export default {
         description: this.$t('projects.gnc.description'),
         technologies: 'HTML, CSS, SCSS, jQuery, Ajax, Youtube API',
         tools: 'Gulp, NPM, Git, Photoshop, Trello',
-        link: 'https://blackjeezuz.github.io/gnc/index.html'
+        link: 'https://nativejedi.github.io/gnc/index.html'
       }, {
         name: 'MVC',
         filter: 'mvc vue js react',

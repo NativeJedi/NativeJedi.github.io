@@ -27,12 +27,14 @@ module.exports = {
   css: [
     '~/assets/styles/layout/layout.scss'
   ],
-  plugins: [
-  ],
+  styleResources: {
+    scss: [
+      '~/assets/styles/tools/tools.scss',
+    ],
+  },
   modules: [
-    // Doc: https://github.com/nuxt-community/axios-module#usage
+    '@nuxtjs/style-resources',
     '@nuxtjs/axios',
-    ['nuxt-sass-resources-loader', '~/assets/styles/tools/tools.scss'],
     ['nuxt-i18n', {
       defaultLocale: 'en',
       locales: [{
